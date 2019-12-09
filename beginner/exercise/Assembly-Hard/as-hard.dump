@@ -1,0 +1,88 @@
+0804846d <main>:
+ 804846d:	55                   	push   %ebp
+ 804846e:	89 e5                	mov    %esp,%ebp
+ 8048470:	53                   	push   %ebx
+ 8048471:	83 e4 f0             	and    $0xfffffff0,%esp
+ 8048474:	83 ec 40             	sub    $0x40,%esp
+ 8048477:	8d 44 24 3c          	lea    0x3c(%esp),%eax
+ 804847b:	89 44 24 04          	mov    %eax,0x4(%esp)
+ 804847f:	c7 04 24 b0 85 04 08 	movl   $0x80485b0,(%esp)
+ 8048486:	e8 d5 fe ff ff       	call   8048360 <__isoc99_scanf@plt> 
+ 804848b:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+ 804848f:	83 f8 01             	cmp    $0x1,%eax
+ 8048492:	75 6d                	jne    8048501 <main+0x94>
+ 8048494:	8b 54 24 3c          	mov    0x3c(%esp),%edx
+ 8048498:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+ 804849c:	01 c2                	add    %eax,%edx
+ 804849e:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+ 80484a2:	8d 1c 02             	lea    (%edx,%eax,1),%ebx
+ 80484a5:	8b 54 24 3c          	mov    0x3c(%esp),%edx
+ 80484a9:	89 d0                	mov    %edx,%eax
+ 80484ab:	01 c0                	add    %eax,%eax
+ 80484ad:	8d 0c 10             	lea    (%eax,%edx,1),%ecx
+ 80484b0:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+ 80484b4:	8d 50 ff             	lea    -0x1(%eax),%edx
+ 80484b7:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+ 80484bb:	c7 44 24 24 b3 85 04 	movl   $0x80485b3,0x24(%esp)
+ 80484c2:	08 
+ 80484c3:	89 5c 24 20          	mov    %ebx,0x20(%esp)
+ 80484c7:	c7 44 24 1c c1 85 04 	movl   $0x80485c1,0x1c(%esp)
+ 80484ce:	08 
+ 80484cf:	89 4c 24 18          	mov    %ecx,0x18(%esp)
+ 80484d3:	c7 44 24 14 c6 85 04 	movl   $0x80485c6,0x14(%esp)
+ 80484da:	08 
+ 80484db:	89 54 24 10          	mov    %edx,0x10(%esp)
+ 80484df:	c7 44 24 0c ca 85 04 	movl   $0x80485ca,0xc(%esp)
+ 80484e6:	08 
+ 80484e7:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 80484eb:	c7 44 24 04 ce 85 04 	movl   $0x80485ce,0x4(%esp)
+ 80484f2:	08 
+ 80484f3:	c7 04 24 d4 85 04 08 	movl   $0x80485d4,(%esp)
+ 80484fa:	e8 31 fe ff ff       	call   8048330 <printf@plt>
+ 80484ff:	eb 14                	jmp    8048515 <main+0xa8>
+ 8048501:	c7 44 24 04 e7 85 04 	movl   $0x80485e7,0x4(%esp)
+ 8048508:	08 
+ 8048509:	c7 04 24 f0 85 04 08 	movl   $0x80485f0,(%esp)
+ 8048510:	e8 1b fe ff ff       	call   8048330 <printf@plt>
+ 8048515:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+ 8048518:	c9                   	leave  
+ 8048519:	c3                   	ret
+ 804851a:	66 90                	xchg   %ax,%ax
+ 804851c:	66 90                	xchg   %ax,%ax
+ 804851e:	66 90                	xchg   %ax,%ax
+
+
+080485ac <_IO_stdin_used>:
+ 80485ac:	01 00                	add    %eax,(%eax)
+ 80485ae:	02 00                	add    (%eax),%al
+ 80485b0:	25 64 00 64 5f       	and    $0x5f640064,%eax
+ 80485b5:	74 30                	je     80485e7 <_IO_stdin_used+0x3b>
+ 80485b7:	5f                   	pop    %edi
+ 80485b8:	61                   	popa   
+ 80485b9:	73 6d                	jae    8048628 <_IO_stdin_used+0x7c>
+ 80485bb:	3f                   	aas    
+ 80485bc:	5f                   	pop    %edi
+ 80485bd:	50                   	push   %eax
+ 80485be:	44                   	inc    %esp
+ 80485bf:	7d 00                	jge    80485c1 <_IO_stdin_used+0x15>
+ 80485c1:	74 5f                	je     8048622 <_IO_stdin_used+0x76>
+ 80485c3:	75 73                	jne    8048638 <_IO_stdin_used+0x8c>
+ 80485c5:	00 75 5f             	add    %dh,0x5f(%ebp)
+ 80485c8:	67 00 64 5f          	add    %ah,0x5f(%si)
+ 80485cc:	79 00                	jns    80485ce <_IO_stdin_used+0x22>
+ 80485ce:	43                   	inc    %ebx
+ 80485cf:	54                   	push   %esp
+ 80485d0:	46                   	inc    %esi
+ 80485d1:	7b 44                	jnp    8048617 <_IO_stdin_used+0x6b>
+ 80485d3:	00 25 73 25 64 25    	add    %ah,0x25642573
+ 80485d9:	73 25                	jae    8048600 <_IO_stdin_used+0x54>
+ 80485db:	64                   	fs
+ 80485dc:	25 73 25 64 25       	and    $0x25642573,%eax
+ 80485e1:	73 25                	jae    8048608 <_IO_stdin_used+0x5c>
+ 80485e3:	64                   	fs
+ 80485e4:	25 73 00 57 72       	and    $0x72570073,%eax
+ 80485e9:	6f                   	outsl  %ds:(%esi),(%dx)
+ 80485ea:	6e                   	outsb  %ds:(%esi),(%dx)
+ 80485eb:	67 2e 2e 2e 00 25    	cs cs add %ah,%cs:(%di)
+ 80485f1:	73 00                	jae    80485f3 <_IO_stdin_used+0x47>
+

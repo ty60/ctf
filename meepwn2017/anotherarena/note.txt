@@ -1,0 +1,29 @@
+@ rbp-0x8
+open('flag') @ rbp-0x24
+
+read_buf @ 0x602101
+
+sub_0x400aa6 = read_int
+
+
+size(?) @ 0x6020e0
+size < 0x1000
+
+pthread_t pthread_1 @ rbp-0x20
+pthread_create(&pthread_1, NULL, 0x400b02, NULL)
+
+pthread_t pthread_2 @ rbp-0x0x18
+pthread_create(&pthread_2, NULL, 0x400b2a, NULL)
+
+
+IMPORTANT THREAD
+size @ rbp-0x430
+
+arg1 @ rbp-0x448
+
+# malloc first address
+(0x7ffff00008c0)
+(0x7ffff00008c0) @ rbp-0x420
+
+
+rbp-0x438 = read(0, *(rbp-0x448), 4, 0)

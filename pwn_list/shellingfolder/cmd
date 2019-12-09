@@ -1,0 +1,17 @@
+file ./shellingfolder
+target remote localhost:1234
+# Have read command
+#b *0x5555555555ee
+# libc free
+#b *0x555555554dc7
+# Add size
+#b *0x55555555543b
+# size ptr
+#b *0x555555555426
+#write at ls
+#b *0x5555555555fd
+#b *0x555555554fc1
+# Return from calc
+b *0x555555555488
+start
+c

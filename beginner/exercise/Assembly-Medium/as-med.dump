@@ -1,0 +1,42 @@
+0804841d <main>:
+ 804841d:	55                   	push   %ebp
+ 804841e:	89 e5                	mov    %esp,%ebp
+ 8048420:	83 e4 f0             	and    $0xfffffff0,%esp
+ 8048423:	83 ec 20             	sub    $0x20,%esp
+ 8048426:	c7 44 24 14 f0 84 04 	movl   $0x80484f0,0x14(%esp)
+ 804842d:	08 
+ 804842e:	c7 44 24 10 0d 00 00 	movl   $0xd,0x10(%esp)
+ 8048435:	00 
+ 8048436:	c7 44 24 0c 01 85 04 	movl   $0x8048501,0xc(%esp)
+ 804843d:	08 
+ 804843e:	c7 44 24 08 03 00 00 	movl   $0x3,0x8(%esp)
+ 8048445:	00 
+ 8048446:	c7 44 24 04 03 85 04 	movl   $0x8048503,0x4(%esp)
+ 804844d:	08 
+ 804844e:	c7 04 24 09 85 04 08 	movl   $0x8048509,(%esp)
+ 8048455:	e8 96 fe ff ff       	call   80482f0 <printf@plt>
+ 804845a:	c9                   	leave  
+ 804845b:	c3                   	ret    
+ 804845c:	66 90                	xchg   %ax,%ax
+ 804845e:	66 90                	xchg   %ax,%ax
+
+080484ec <_IO_stdin_used>:
+ 80484ec:	01 00                	add    %eax,(%eax)
+ 80484ee:	02 00                	add    (%eax),%al
+ 80484f0:	77 5f                	ja     8048551 <_IO_stdin_used+0x65>
+ 80484f2:	31 73 5f             	xor    %esi,0x5f(%ebx)
+ 80484f5:	33 6e 30             	xor    0x30(%esi),%ebp
+ 80484f8:	75 67                	jne    8048561 <_IO_stdin_used+0x75>
+ 80484fa:	68 3f 5f 58 45       	push   $0x45585f3f
+ 80484ff:	7d 00                	jge    8048501 <_IO_stdin_used+0x15>
+ 8048501:	76 00                	jbe    8048503 <_IO_stdin_used+0x17>
+ 8048503:	43                   	inc    %ebx
+ 8048504:	54                   	push   %esp
+ 8048505:	46                   	inc    %esi
+ 8048506:	7b 72                	jnp    804857a <_IO_stdin_used+0x8e>
+ 8048508:	00 25 73 25 64 25    	add    %ah,0x25642573
+ 804850e:	73 25                	jae    8048535 <_IO_stdin_used+0x49>
+ 8048510:	64                   	fs
+ 8048511:	25                   	.byte 0x25
+ 8048512:	73 00                	jae    8048514 <_IO_stdin_used+0x28>
+

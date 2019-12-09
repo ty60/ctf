@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %} | Snippet </title>
+        <link rel="stylesheet" href="/static/bulma.min.css" integrity="sha384-grOdOgbiGLquXGKNXkKpsnbx1eEGLCSnYloh9JKQdX31HHHQiQFf3uz8hhuIzUy8">
+        <script defer src="/static/fontawesome.js"  data-auto-add-css="false" integrity="sha384-QMu+Y+eu45Nfr9fmFOlw8EqjiUreChmoQ7k7C1pFNO8hEbGv9yzsszTmz+RzwyCh"></script>
+        <link rel="stylesheet" href="/static/fontawesome.css" integrity="sha384-G0mvrlfkz9DnjBCRmY8Wf7nC8wTxDsHE3pGAc7/4rDLh5+v9Z00qi/uyjjcDf1nf">
+        <script src="/static/util.js" integrity="sha384-Eo2bAZpCewP8cQpFC34WaxBJZHVkL/W0ZmCc9N9L4vWo28KoVzugz0ygeNlkgxGk"></script>
+        <link rel="stylesheet" href="/static/style.css" integrity="sha384-FTaJmk9l0YbCm8gdWsEdb6sQo0D09KuzTGvBD73bf4rtbgKqaQCZRkCmYdBauwZQ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% include "header.html" %}
+        {% block body %}{% endblock %}
+    </body>
+</html>

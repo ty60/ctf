@@ -1,0 +1,5 @@
+gef
+b greeet
+b *0x80481d0
+b *0x80481d8
+b *0x80481e0

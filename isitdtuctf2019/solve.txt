@@ -1,0 +1,29 @@
+<script>Object.freeze(location);</script>
+{input} <br>
+<script>location='http://{input}';</script>
+
+
+input = '"-alert(1);</script><script>";
+The first input will start the script.
+The second input will end the script
+
+<script>Object.freeze(location);</script>
+"-alert(1);</script><script>" <br>
+<script>location='http://"-alert(1);</script><script>';</script>
+
+" <br>
+<script>location='http://" is intepreted as a string and will be ignored
+so the above is kind of equalivant to 
+
+
+<script>Object.freeze(location);</script>
+"-alert(1);</script> <!-- This is just an HTML string -->
+<script>"string"-alert(1);</script> <!-- This is the actual script running -->
+<script>
+';</script>
+
+
+the "-" in front of alert is needed for the alert to be called.
+`"string"alert(1);` on browser console will cause an error.
+but `"string"-alert(1);` will trigger the alert.
+it is actually subtracting return value of alert() (undefined) from "string"

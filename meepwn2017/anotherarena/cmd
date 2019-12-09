@@ -1,0 +1,26 @@
+file ./anotherarena
+target remote localhost:1234
+peda
+
+# 1'st pthread_create
+# b *0x400ddd
+
+# in 1'st thread's func
+# b *0x400b02
+
+# 2'nd pthread_create
+
+# in 2'nd thread's func
+b *0x400b2a
+
+# after rep
+b *0x400b7c
+
+# last malloc
+b *0x400c85
+
+
+
+
+start
+c

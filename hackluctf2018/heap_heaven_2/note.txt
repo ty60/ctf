@@ -1,0 +1,24 @@
+malloc(0x10) @ 0x555555558040 <state>
+state[0] = malloc(0x10) = bye
+state[1] = menu
+
+udevrandom & 0xfffffff000 @ rbp - 0x40
+
+
+mmap(
+Guessed arguments:
+arg[0]: 0x2474083000
+arg[1]: 0x2000 ('')
+arg[2]: 0x3
+arg[3]: 0x32 ('2')
+arg[4]: 0xffffffff
+arg[5]: 0x0
+) @ 0x555555558048
+
+
+read_num_buf @ rbp - 0x38
+
+-- write --
+size @ rbp - 0x44
+offset @ rbp - 0x30
+

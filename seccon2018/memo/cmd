@@ -1,0 +1,12 @@
+file ./memo
+target remote localhost:1234
+peda
+
+# menu
+b *0x555555554cd9
+# just before calloc
+b *0x555555554dec
+
+start
+c
+

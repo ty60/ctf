@@ -1,0 +1,15 @@
+file ./search
+target remote localhost:1234
+
+# After input
+#b *0x400d7e
+# Error printf
+# b *0x400aaf
+#
+# searching structs
+#b *0x400b3d
+
+
+start
+c
+

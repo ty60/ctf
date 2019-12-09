@@ -1,0 +1,6 @@
+file ./onewrite
+target remote localhost:1234
+pwn
+start
+c
+

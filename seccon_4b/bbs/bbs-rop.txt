@@ -1,0 +1,89 @@
+0x40074f: ret
+0x40065a: repz ret
+0x4006f8: leave; ret
+0x400762: pop r15; ret
+0x400763: pop rdi; ret
+0x4005f0: pop rbp; ret
+0x4006f7: add cl,cl; ret
+0x40076f: add bl,dh; ret
+0x4004fe: add esp,0x8; ret
+0x4004fd: add rsp,0x8; ret
+0x400659: add ebx,esi; ret
+0x40069e: nop; pop rbp; ret
+0x40074c: fmul [rax-0x7d]; ret
+0x400760: pop r14; pop r15; ret
+0x400761: pop rsi; pop r15; ret
+0x40076e: add [rax],al; repz ret
+0x400658: add [rcx],al; repz ret
+0x400635: nop [rax]; pop rbp; ret
+0x4006f3: mov eax,0x0; leave; ret
+0x4006f6: add [rax],al; leave; ret
+0x4005ee: add [rax],al; pop rbp; ret
+0x4006f5: add [rax],al; add cl,cl; ret
+0x40076d: add [rax],al; add bl,dh; ret
+0x400775: sub esp,0x8; add rsp,0x8; ret
+0x400768: nop [rax+rax*1+0x0]; repz ret
+0x400774: sub rsp,0x8; add rsp,0x8; ret
+0x40075e: pop r13; pop r14; pop r15; ret
+0x40075f: pop rbp; pop r14; pop r15; ret
+0x4004fb: add [rax],al; add rsp,0x8; ret
+0x400657: and [rax],al; add ebx,esi; ret
+0x4004f8: call 0x400580; add rsp,0x8; ret
+0x400633: jmp rax; nop [rax]; pop rbp; ret
+0x400767: nop cs:[rax+rax*1+0x0]; repz ret
+0x4005e8: nop [rax+rax*1+0x0]; pop rbp; ret
+0x400654: add eax,0x200a06; add ebx,esi; ret
+0x400656: or ah,[rax]; add [rcx],al; repz ret
+0x40076c: add [rax],al; add [rax],al; repz ret
+0x400765: nop; nop cs:[rax+rax*1+0x0]; repz ret
+0x4006f4: add [rax],al; add [rax],al; leave; ret
+0x40075d: pop rsp; pop r13; pop r14; pop r15; ret
+0x40075c: pop r12; pop r13; pop r14; pop r15; ret
+0x4005ec: add [rax],al; add [rax],al; pop rbp; ret
+0x4005e5: jmp rax; nop [rax+rax*1+0x0]; pop rbp; ret
+0x40076b: add [rax],al; add [rax],al; add bl,dh; ret
+0x400772: add [rax],al; sub rsp,0x8; add rsp,0x8; ret
+0x400699: call 0x400530 <setbuf@plt>; nop; pop rbp; ret
+0x40075b: pop rbp; pop r12; pop r13; pop r14; pop r15; ret
+0x400630: adc [rax+0x0],ah; jmp rax; nop [rax]; pop rbp; ret
+0x40062e: mov edi,0x601058; jmp rax; nop [rax]; pop rbp; ret
+0x4006ee: call 0x400550 <printf@plt>; mov eax,0x0; leave; ret
+0x40076a: test [rax],al; add [rax],al; add [rax],al; repz ret
+0x400651: call [rbp-0x3a]; add eax,0x200a06; add ebx,esi; ret
+0x4005ea: test [rax],al; add [rax],al; add [rax],al; pop rbp; ret
+0x4004f6: je 0x4004fd <_init+21>; call 0x400580; add rsp,0x8; ret
+0x400759: or [rbx+0x5d],bl; pop r12; pop r13; pop r14; pop r15; ret
+0x400697: mov edi,eax; call 0x400530 <setbuf@plt>; nop; pop rbp; ret
+0x400696: mov rdi,rax; call 0x400530 <setbuf@plt>; nop; pop rbp; ret
+0x40062d: pop rbp; mov edi,0x601058; jmp rax; nop [rax]; pop rbp; ret
+0x40062f: pop rax; adc [rax+0x0],ah; jmp rax; nop [rax]; pop rbp; ret
+0x400653: mov [rip+0x200a06],0x1 # 0x601060 <completed.7594>; repz ret
+0x4005e2: adc [rax+0x0],ah; jmp rax; nop [rax+rax*1+0x0]; pop rbp; ret
+0x4005e0: mov edi,0x601058; jmp rax; nop [rax+rax*1+0x0]; pop rbp; ret
+0x4006e9: mov eax,0x0; call 0x400550 <printf@plt>; mov eax,0x0; leave; ret
+0x4006ec: add [rax],al; call 0x400550 <printf@plt>; mov eax,0x0; leave; ret
+0x4004f4: test eax,eax; je 0x4004fd <_init+21>; call 0x400580; add rsp,0x8; ret
+0x4004f3: test rax,rax; je 0x4004fd <_init+21>; call 0x400580; add rsp,0x8; ret
+0x4005e1: pop rax; adc [rax+0x0],ah; jmp rax; nop [rax+rax*1+0x0]; pop rbp; ret
+0x4006e8: add [rax+0x0],bh; call 0x400550 <printf@plt>; mov eax,0x0; leave; ret
+0x400652: pop rbp; mov [rip+0x200a06],0x1 # 0x601060 <completed.7594>; repz ret
+0x4005df: pop rbp; mov edi,0x601058; jmp rax; nop [rax+rax*1+0x0]; pop rbp; ret
+0x4006e7: add [rax+0x0],dil; call 0x400550 <printf@plt>; mov eax,0x0; leave; ret
+0x400691: mov esi,0x0; mov rdi,rax; call 0x400530 <setbuf@plt>; nop; pop rbp; ret
+0x400694: add [rax],al; mov rdi,rax; call 0x400530 <setbuf@plt>; nop; pop rbp; ret
+0x400690: add [rsi+0x0],bh; mov rdi,rax; call 0x400530 <setbuf@plt>; nop; pop rbp; ret
+0x4005e6: loopne 0x40064e <__do_global_dtors_aux+14>; nop [rax+rax*1+0x0]; pop rbp; ret
+0x4006ea: add [rax],al; add [rax],al; call 0x400550 <printf@plt>; mov eax,0x0; leave; ret
+0x4006e4: mov edi,0x4007c8; mov eax,0x0; call 0x400550 <printf@plt>; mov eax,0x0; leave; ret
+0x4006e5: enter 0x4007,0x0; mov eax,0x0; call 0x400550 <printf@plt>; mov eax,0x0; leave; ret
+0x4004f1: and [rax],al; test rax,rax; je 0x4004fd <_init+21>; call 0x400580; add rsp,0x8; ret
+0x4004ee: add eax,0x200b05; test rax,rax; je 0x4004fd <_init+21>; call 0x400580; add rsp,0x8; ret
+0x4005e4: add bh,bh; loopne 0x40064e <__do_global_dtors_aux+14>; nop [rax+rax*1+0x0]; pop rbp; ret
+0x4004ef: add eax,0x4800200b; test eax,eax; je 0x4004fd <_init+21>; call 0x400580; add rsp,0x8; ret
+0x4004ec: mov rax,[rip+0x200b05] # 0x600ff8; test rax,rax; je 0x4004fd <_init+21>; call 0x400580; add rsp,0x8; ret
+0x4004ed: mov eax,[rip+0x200b05] # 0x600ff8; test rax,rax; je 0x4004fd <_init+21>; call 0x400580; add rsp,0x8; ret
+0x40064d: call 0x4005c0 <deregister_tm_clones>; pop rbp; mov [rip+0x200a06],0x1 # 0x601060 <completed.7594>; repz ret
+0x40064b: mov ebp,esp; call 0x4005c0 <deregister_tm_clones>; pop rbp; mov [rip+0x200a06],0x1 # 0x601060 <completed.7594>; repz ret
+0x40064a: mov rbp,rsp; call 0x4005c0 <deregister_tm_clones>; pop rbp; mov [rip+0x200a06],0x1 # 0x601060 <completed.7594>; repz ret
+0x400649: push rbp; mov rbp,rsp; call 0x4005c0 <deregister_tm_clones>; pop rbp; mov [rip+0x200a06],0x1 # 0x601060 <completed.7594>; repz ret
+0x400648: adc [rbp+0x48],edx; mov ebp,esp; call 0x4005c0 <deregister_tm_clones>; pop rbp; mov [rip+0x200a06],0x1 # 0x601060 <completed.7594>; repz ret

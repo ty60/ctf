@@ -1,0 +1,10 @@
+file ./zerostorage
+target remote localhost:1234
+# Read command
+b *0x555555554cd6
+# Store data pointer
+b *0x5555555550b1
+# merge
+b *0x555555554d32
+c
+

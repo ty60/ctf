@@ -1,0 +1,6 @@
+file ./0ctfbabyheap
+target remote localhost:1234
+start
+b *0x555555555142
+c
+

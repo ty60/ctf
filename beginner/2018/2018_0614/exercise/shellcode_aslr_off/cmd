@@ -1,0 +1,5 @@
+file ./shellcode
+target remote localhost:1234
+start
+c
+

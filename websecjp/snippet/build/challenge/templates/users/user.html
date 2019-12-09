@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}{{ user.username }}{% endblock %}
+{% block body %}
+<section class="section">
+    <div class="columns">
+        <div class="column is-3 is-offset-1">            
+            <div class="container">
+                <figure class="image is-full has-image-centered pd">
+                    <img src="{{ user | gravatar }}&s=512;">
+                </figure>
+                <h1 class="title is-1">
+                    {{ user.username }}
+                </h1>
+                <label for="profile">Profile:</label>
+                {% if user.profile == '' %}
+                {% else %}
+                <p id="profile">{{ user.profile }}</p>
+                {% endif %}
+                <p class="has-text-grey">Registered at: {{ user.created_at }}</p>
+            </div>
+        </div>
+        <div class="column is-7">
+            <div class="container">
+                <h1 class="title">{{ user.username }}'s snippets</h1>
+                {% for snippet in snippets %}
+                <div class="snippet-detail">
+                    <div class="columns is-vcentered">
+                        <div class="column is-1">
+                            <figure class="image is-32x32 has-image-centered">
+                                <img src="{{ user | gravatar }}&s=32;">
+                            </figure>
+                        </div>
+                        <div class="column">                            
+                            <h2><a href="{{ url_for('snippets.show_snippet', username=snippet.user.username, snippet_id=snippet.id) }}">{{ snippet.title }}</a></h2>
+                            <p>Created at {{ snippet.created_at }}</p>
+                        </div>
+                    </div>
+                    <a class="link-overlay" href="{{ url_for('snippets.show_snippet', username=snippet.user.username, snippet_id=snippet.id) }}">
+                        <div class="card">
+                            <div class="card-content">
+                                 <div class="content">
+                                     {{ snippet.content | mdlike }}
+                                 </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}                
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,11 @@
+file ./diary
+target remote localhost:1234
+
+# menu
+# b *0x400f55
+b *0x400f95 
+
+peda
+start
+c
+

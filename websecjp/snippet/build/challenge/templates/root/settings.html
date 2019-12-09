@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block title %}Settings{% endblock %}
+{% block body %}
+<section class="section">
+    <div class="container">
+        <div class="has-text-centered">
+            <span class="icon is-large">
+                <i class="fa fa-3x fa-cogs" aria-hidden="true"></i>
+            </span>
+            <h1 class="title is-1">
+                Settings
+            </h1>
+        </div>
+        <div class="columns is-centered">
+            <div class="column is-10">
+                <form method="POST">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                    <div class="field">
+                        <label class="label is-small" for="email">E-mail</label>
+                        <p class="control has-icons-left">
+                            <input class="input" type="text" placeholder="sample@example.com" name="email" id="email" value="{{ current_user.email }}">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label class="label is-small" for="profile">Profile</label>
+                        <p class="control has-icons-left has-icons-right">
+                            <input class="input" type="text" placeholder="profile" id="profile" name="profile" value="{{ current_user.profile }}">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label class="label is-small" for="job">Job</label>
+                        <div class="control has-icons-left">
+                            <div class="select">
+                                <select name="job" id="job">
+                                    {% for job in jobs %}
+                                    {% if job == current_user.job %}
+                                    <option value="{{ loop.index0 }}" selected>{{ job }}</option>
+                                    {% else %}
+                                    <option value="{{ loop.index0 }}">{{ job }}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                                </select>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-building"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label is-small" for="gender">Gender</label>
+                        <div class="control has-icons-left">
+                            <div class="select">
+                                <select name="gender" id="gender">
+                                    {% for gender in genders %}
+                                    {% if gender == current_user.gender %}
+                                    <option value="{{ loop.index0 }}" selected>{{ gender }}</option>
+                                    {% else %}
+                                    <option value="{{ loop.index0 }}">{{ gender }}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                                </select>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-heart"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label is-small" for="zone">Zone</label>
+                        <div class="control has-icons-left">
+                            <div class="select">
+                                <select name="zone" id="zone">
+                                    {% for zone in zones %}
+                                    {% if zone == current_user.zone %}
+                                    <option value="{{ loop.index0 }}" selected>{{ zone }}</option>
+                                    {% else %}
+                                    <option value="{{ loop.index0 }}">{{ zone }}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                                </select>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-globe"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <button class="button is-primary is-pulled-right" id="formButton" data-action="{{ url_for('root.change_settings') }}">Change</button>
+                    </div>                    
+                </form>                
+            </div>
+        </div>
+    </div>    
+</section>
+{% endblock %}

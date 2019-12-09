@@ -1,0 +1,4 @@
+break *0x555555554f40
+break *0x555555555013 
+  condition $bpnum $rax==0x7fffffffcebe
+

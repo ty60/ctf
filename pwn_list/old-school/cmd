@@ -1,0 +1,12 @@
+file ./old-school
+
+b main
+# fgets
+b *0x80484f4
+# printf
+b *0x8048516
+
+target remote localhost:1234
+start
+c
+

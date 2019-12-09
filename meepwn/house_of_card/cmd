@@ -1,0 +1,11 @@
+file ./house_of_card
+peda
+target remote localhost:1234
+
+b *0x5555555558b2
+# new note func
+b *0x555555555862
+# edit func
+b *0x555555555870
+
+c

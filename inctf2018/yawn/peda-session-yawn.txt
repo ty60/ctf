@@ -1,0 +1,7 @@
+break *0x40103a
+break add_note
+break edit_note
+break remove_note
+break view_note
+tbreak main
+

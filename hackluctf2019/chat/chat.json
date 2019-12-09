@@ -1,0 +1,99 @@
+{
+	"architecture" : 
+	{
+		"bitSize" : 32,
+		"endian" : "little",
+		"name" : "x86 (or later and compatible)"
+	},
+	"classes" : [],
+	"date" : "2019-11-13",
+	"decompParams" : 
+	{
+		"abiPaths" : [],
+		"frontendFunctions" : [],
+		"keepAllFuncs" : false,
+		"libraryTypeInfoPaths" : 
+		[
+			"/opt/retdec/bin/../share/retdec/support/generic/types/arm.json",
+			"/opt/retdec/bin/../share/retdec/support/generic/types/cstdlib.json",
+			"/opt/retdec/bin/../share/retdec/support/generic/types/linux.json",
+			"/opt/retdec/bin/../share/retdec/support/generic/types/windows.json",
+			"/opt/retdec/bin/../share/retdec/support/generic/types/windrivers.json"
+		],
+		"ordinalNumDirectory" : "/opt/retdec/bin/../share/retdec/support/x86/ords/",
+		"outputFile" : "/home/ty/work/ctf/hackluctf2019/chat/chat.c",
+		"selectedDecodeOnly" : false,
+		"selectedFunctions" : [],
+		"selectedNotFoundFncs" : [],
+		"selectedRanges" : [],
+		"staticSignPaths" : 
+		[
+			"/opt/retdec/bin/../share/retdec/support/generic/yara_patterns/static-code/elf/32/le/x86/x86-gcc-4.7.2.yarac"
+		],
+		"userStaticSignPaths" : [],
+		"verboseOut" : false
+	},
+	"entryPoint" : "0x80499e0",
+	"fileFormat" : "elf32",
+	"fileType" : "executable",
+	"functions" : [],
+	"globals" : [],
+	"inputFile" : "/home/ty/work/ctf/hackluctf2019/chat/chat",
+	"languages" : [],
+	"patterns" : 
+	[
+		{
+			"description" : "CRC_1_poly_0x1 (8-bit, little endian)",
+			"endian" : "little",
+			"matches" : 
+			[
+				{
+					"address" : "0x80d6c00",
+					"entrySize" : 1,
+					"offset" : "0x8ec00",
+					"size" : 256,
+					"type" : "integral"
+				}
+			],
+			"name" : "CRC_1_poly_0x1",
+			"type" : "crypto",
+			"yaraRule" : "CRC_1_poly_0x1__8_byt_refl_True_"
+		}
+	],
+	"registers" : [],
+	"segments" : [],
+	"structures" : [],
+	"time" : "20:43:29",
+	"tools" : 
+	[
+		{
+			"heuristics" : true,
+			"identicalSignificantNibbles" : 0,
+			"name" : "gcc",
+			"percentage" : 0.0,
+			"totalSignificantNibbles" : 0,
+			"type" : "compiler",
+			"version" : "8.2.0"
+		},
+		{
+			"heuristics" : true,
+			"identicalSignificantNibbles" : 0,
+			"name" : "gcc",
+			"percentage" : 0.0,
+			"totalSignificantNibbles" : 0,
+			"type" : "compiler",
+			"version" : "8.3.0"
+		},
+		{
+			"additional" : "RHEL",
+			"heuristics" : false,
+			"identicalSignificantNibbles" : 27,
+			"name" : "gcc",
+			"percentage" : 55.102040816326522,
+			"totalSignificantNibbles" : 49,
+			"type" : "compiler",
+			"version" : "4.6.3"
+		}
+	],
+	"vtables" : []
+}

@@ -1,0 +1,11 @@
+flask
+flask_restful
+sqlalchemy
+sqlalchemy_utils
+flask-sqlalchemy
+pymysql
+flask-login
+flask-wtf
+uwsgi
+timeout-decorator
+redis

@@ -1,0 +1,4 @@
+break *0x4006dd
+break *0x4006f8
+break system
+

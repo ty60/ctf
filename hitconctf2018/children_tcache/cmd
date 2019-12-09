@@ -1,0 +1,6 @@
+file ./children_tcache
+target extended-remote 192.168.33.10:1234
+peda
+start
+c
+

@@ -1,0 +1,27 @@
+set architecture i386:x86-64:intel
+target remote localhost:1234
+
+pwn
+
+# ffffffffc0000190 t blazeme_open [blazeme]
+# ffffffffc00002f0 t cleanup_module       [blazeme]
+# ffffffffc00001a0 t init_module  [blazeme]
+# ffffffffc0000010 t blazeme_read [blazeme]
+# ffffffffc0000000 t blazeme_close        [blazeme]
+# ffffffffc00001a0 t blazeme_init [blazeme]
+# ffffffffc0000050 t blazeme_write        [blazeme]
+# ffffffffc00002f0 t blazeme_exit [blazeme]
+
+
+# blazeme_read
+# b *0xffffffffc0000010
+# blazeme_write
+# b *0xffffffffc0000050
+
+# ret from blazeme_write (start of KROP)
+# b *0xffffffffc00000ee
+# only if the ret address is successfully overwritten
+b *0xffffffffc00000ee if *(unsigned long *)$rsp != 0xffffffff8110d5b3
+
+# ?
+# b *0xffffffffc000016f

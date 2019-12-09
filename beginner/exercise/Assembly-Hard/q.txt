@@ -1,0 +1,31 @@
+問題: printfで表示される文字列を答えよ
+
+Hint:
+途中のscanf(%d)に入力が入る。
+その入力はif文とかで特定の場合にしかOKにならない
+
+元々はこんな感じのProgram
+
+++++++++++++++++++++++++++++++
+#include <stdio.h>
+
+void main(){
+  int num;
+  scanf("%d",&num);
+  if(num == ???){
+    printf(??????);
+  }
+  else{
+    printf("Wrong");
+  }
+}
+++++++++++++++++++++++++++++++
+
+
+lea 0x3c(%esp), %eax
+--> eaxにnumのアドレス(pointer)を入れる
+--> C言語で言う eax = &num
+
+mov 0x3c(%esp), %eax
+--> eaxにnumの中身を入れる
+--> C言語で言う eax = num

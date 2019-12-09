@@ -1,0 +1,8 @@
+keep(small) -> wipe(small) -> keep(big) and consolidate -> double wipe(small)
+now small is at both unsorted list and fastbins
+
+keep(small) (create fake fd here) -> keep(small) -> keep(small)
+
+small_p @ 0x6020D0
+big_p @ 0x6020C0
+

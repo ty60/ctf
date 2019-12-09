@@ -1,0 +1,15 @@
+問題: printfで表示される文字列を答えよ
+
+
+Hint: 初回のBinary初心者勉強会と同じ 
+
+
+python使うと、ASCIIコード <-> 文字　の変換が楽。
+
+root@ubuntu:~/sandbox/BinBeginners# python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13)
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> chr(0x44)
+'D'
+

@@ -1,0 +1,13 @@
+file ./bcloud
+target remote localhost:1234
+
+peda
+
+b *0x8048cf9
+
+# menu
+b *0x8048d03
+
+start
+c
+

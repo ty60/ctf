@@ -1,0 +1,6 @@
+file ./oreo
+target remote localhost:1234
+peda
+start
+c
+

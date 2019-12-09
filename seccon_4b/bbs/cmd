@@ -1,0 +1,9 @@
+file ./bbs
+target remote localhost:1234
+b *0x4006dd
+b *0x4006f8
+b system
+set follow-fork-mode parent
+start
+c
+

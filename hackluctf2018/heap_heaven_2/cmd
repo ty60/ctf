@@ -1,0 +1,10 @@
+file ./heap_heaven_2
+target remote localhost:1234
+peda
+
+# first malloc
+b *0x55555555524a
+
+start
+c
+

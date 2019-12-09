@@ -1,0 +1,11 @@
+file ./canary
+target remote localhost:1234
+peda-arm
+
+# b main
+# read
+# b *0x10530
+b *0x1058c
+
+start
+c

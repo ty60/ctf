@@ -1,0 +1,9 @@
+file ./freeze
+target remote localhost:1234
+peda
+
+
+start
+b *0x401a75
+c
+

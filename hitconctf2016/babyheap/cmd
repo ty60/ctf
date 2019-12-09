@@ -1,0 +1,9 @@
+file ./babyheap
+target remote localhost:1234
+peda
+
+# menu
+b *0x400cd9
+
+start
+c

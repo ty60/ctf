@@ -1,0 +1,40 @@
+-- add robot --
+glob
+robot_id_input @ 0x603110
+robot_counter  @ 0x603130
+
+tinny_tim_heap @ 0x6030f8
+tinny_tim_flag @ 0x603120
+
+id: 2(1)
+blender_heap @ 0x6030f0
+blender_inte @ 0x603138
+blender_flag @ 0x603114
+
+evil_heap @ 0x603100
+evil_crul @ 0x603124
+
+chain_heap @ 0x6030e0
+
+dest_heap @ 0x6030e8
+
+bill_heap @ 0x603108
+
+
+stack
+input_buf @ rbp-0x14
+
+blender_intelligence_input @ rbp-0x10
+
+calloc(intelligence_input * 20)
+
+
+
+where to point fastbins next to ?
+-> 0x6030cd
+0x6030cd+0x8 (size) will be just 0x70
+0x6030cd+0x10 (user space) will start three bytes before the heap array of robots
+
+
+the exit message sometimes prints the robot name.
+if the robot names is printed, we have 4/6 chance of getting address leak.

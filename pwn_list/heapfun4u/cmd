@@ -1,0 +1,20 @@
+file ./heapfun4u
+target remote localhost:1234
+
+# After command
+b *0x4009db
+
+# free main
+#b *0x400b49
+
+# ret from main
+b *0x400b96
+
+# After looping all sizes in free
+#b *0x400806
+
+ignore 1 5
+
+start
+c
+

@@ -1,0 +1,17 @@
+file ./yawn
+target remote localhost:1234
+peda
+
+# After menu
+b *0x40103a
+
+b add_note
+b edit_note
+# b insert
+b remove_note
+b view_note
+
+
+start
+c
+

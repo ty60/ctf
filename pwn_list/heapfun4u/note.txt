@@ -1,0 +1,60 @@
+chunk:
+chunk_size
+allocated...
+
+fd
+bk
+
+
+-- global --
+first_chunk_start @ 0x7ffff7ff6060
+
+remaining_size
+
+free_chunk_header @ 0x602558
+
+chunks @ 0x6020a0
+sizes @ 0x6023c0
+
+
+-- allocate --
+size @ rbp-0x14
+
+sub_0x400cfa
+
+    sub_0x400c30
+        chunk_ptr @ rbp-0x30
+        small_chunk_size @ rbp-0x54
+        large_chunk_last_ptr @ rbp-0x10
+        small_chunk_ptr @ rbp-0x18
+        remaining_size @ rbp-0x24
+
+        small_chunk_size = small_chunk_size | 0x1 | 0x2
+        next_chunk = small_chunk_ptr + small_chunk_size @ rbp-0x20
+        next_chunk = small_chunk_ptr + small_chunk_size @ rbp-0x38
+        (*next_chunk) = remaining_size - 8
+
+-- free --
+sub_0x40079d
+    i @ rbp-0x4
+
+    check all 64 (maximum available chunks) sizes stored in global sizes.
+    call printf if there is size stored. ignore if the size is 0.
+
+free_index-1 @ rbp-0x14
+
+sub_0x40101d
+    target_chunk @ rbp-0x38
+    chunk_size >> 0x3 << 0x3 @ rbp-0x8
+    target_chunk_start @ rbp-0x10
+    next_chunk_start @ rbp-0x18
+    target_chunk->fd @ rbp-0x20
+    next_free_header @ rbp-0x28
+
+    size & 1: check free or not? immediately return if already freed.
+    if(size & 1 == 0) is_free;
+
+
+-- write --
+sub_0x40082a
+    sub_0x40079d

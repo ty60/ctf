@@ -1,0 +1,34 @@
+0804841d <main>:
+ 804841d:	55                   	push   %ebp
+ 804841e:	89 e5                	mov    %esp,%ebp
+ 8048420:	83 e4 f0             	and    $0xfffffff0,%esp
+ 8048423:	83 ec 10             	sub    $0x10,%esp
+ 8048426:	c7 44 24 04 d0 84 04 	movl   $0x80484d0,0x4(%esp) #arg2
+ 804842d:	08 
+ 804842e:	c7 04 24 e7 84 04 08 	movl   $0x80484e7,(%esp) #arg1
+ 8048435:	e8 b6 fe ff ff       	call   80482f0 <printf@plt>
+ 804843a:	c9                   	leave  
+ 804843b:	c3                   	ret    
+ 804843c:	66 90                	xchg   %ax,%ax
+ 804843e:	66 90                	xchg   %ax,%ax
+
+080484cc <_IO_stdin_used>:
+ 80484cc:	01 00                	add    %eax,(%eax)
+ 80484ce:	02 00                	add    (%eax),%al
+ 80484d0:	43                   	inc    %ebx
+ 80484d1:	54                   	push   %esp
+ 80484d2:	46                   	inc    %esi
+ 80484d3:	7b 31                	jnp    8048506 <_IO_stdin_used+0x3a>
+ 80484d5:	73 5f                	jae    8048536 <_IO_stdin_used+0x6a>
+ 80484d7:	31 74 5f 73          	xor    %esi,0x73(%edi,%ebx,2)
+ 80484db:	30 5f 33             	xor    %bl,0x33(%edi)
+ 80484de:	61                   	popa   
+ 80484df:	73 79                	jae    804855a <_IO_stdin_used+0x8e>
+ 80484e1:	3f                   	aas    
+ 80484e2:	5f                   	pop    %edi
+ 80484e3:	43                   	inc    %ebx
+ 80484e4:	51                   	push   %ecx
+ 80484e5:	7d 00                	jge    80484e7 <_IO_stdin_used+0x1b>
+ 80484e7:	25                   	.byte 0x25
+ 80484e8:	73 00                	jae    80484ea <_IO_stdin_used+0x1e>
+

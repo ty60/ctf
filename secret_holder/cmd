@@ -1,0 +1,16 @@
+file ./SecretHolder
+target remote localhost:1234
+peda
+
+# main menu
+b *0x400d52
+# keep menu
+#b *0x4008e9
+# renew menu
+# b *0x400b9a
+# wipe menu
+#b *0x400aa3
+# the unlink free
+# b *0x400add
+
+c

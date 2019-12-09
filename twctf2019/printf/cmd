@@ -1,0 +1,4 @@
+set $dump=0x2940
+set $printf=0x136e
+set $last=0x12F2
+set $alloca=0x1C81

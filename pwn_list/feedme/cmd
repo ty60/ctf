@@ -1,0 +1,8 @@
+target remote localhost:1234
+pwn
+#b *0x8049053
+#b *0x804904e
+#b *0x8049094
+#b *0x804904e
+file ./feedme
+start

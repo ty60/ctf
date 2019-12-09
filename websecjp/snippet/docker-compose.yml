@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  challenge:
+    build: ./build/challenge
+    ports:
+      - "10060:8000"
+    volumes:
+      - "./flag:/flag"    
+    depends_on:
+      - mysql      
+    environment:
+      - TRIAL_NUMBER=1
+    
+  worker:
+    build: ./build/worker
+    volumes:
+      - "./flag:/flag"    
+    depends_on:
+      - challenge
+      - redis
+      
+  mysql:
+    image: mysql:5.6
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD: password
+      
+  redis:
+    image: redis:4.0.8

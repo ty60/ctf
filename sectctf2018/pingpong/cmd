@@ -1,0 +1,15 @@
+file ./pingpong
+target remote localhost:1234
+peda
+start
+
+# Read input
+b *0x555555554bf8
+# getc
+# b *0x555555554a5b
+# after reading
+b *0x555555554a6f
+# before return
+b *0x555555554af7
+
+c

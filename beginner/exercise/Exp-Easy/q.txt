@@ -1,0 +1,16 @@
+問題: 条件分岐をすり抜けてprint_flag()関数まで辿り着いてFLAGを入手しろ。
+
+注意: Exp-Medium, Exp-Hardも同様です。以下
+buf[512]で取っていますが、実際には512byteよりも大きくメモリが確保されています。
+この辺はおそらくコンパイラ依存です。色々なサイズで試してみてください。
+
+exploitのサンプルとしてsolve.pyを用意しました。
+buf = 'HOGE'のところを自分の好きな入力に書き換えて使用してください(使わなくても良いです)。
+
+Buffer OverflowでExploitしてほしかったのでprint_flag関数を解析してFLAGが出ないように少し読みづらくしています。
+
+
+gdbで挙動を確認したいときは、一度python solve.py実行してから以下。
+
+root@ubuntu:~/sandbox/BinBeginners/Exp-Easy# gdb ./exp-easy.elf
+gdb-peda$ run < buf

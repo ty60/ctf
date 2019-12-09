@@ -1,0 +1,24 @@
+file ./Echo
+target remote localhost:1234
+#set print elements 5000
+#set print repeats 100
+
+#b *0x555555554dc2
+
+#concat func
+#b *0x555555554f3b
+
+# after first loop
+#b *0x555555554b2a
+
+# after encoded flag
+b *0x555555554f40
+
+# compare at last loop
+#b *0x555555555152
+
+b *0x555555555013 if $rax==0x7fffffffcebe
+
+# flag 0x7fffffffb402
+start
+c

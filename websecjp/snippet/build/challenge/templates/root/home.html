@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="columns is-vcentered has-background-light snippet-list">        
+    {% for snippet in snippets %}
+    <div class="column is-one-fifth has-text-centered">
+        <span class="icon">
+            <i class="fas fa-lg fa-home"></i>
+            <strong><a class="snippet-title" href="{{ url_for('snippets.show_snippet', username=snippet.user.username, snippet_id=snippet.id) }}">{{ snippet.title }}</a></strong>
+        </span>
+    </div>
+    {% endfor %}
+    <div class="column is-one-fifth has-text-centered">
+        <a href="{{ url_for('users.show_user', username=current_user.username) }}">See all of your snippets</a>
+    </div>
+</div>
+<section class="section">
+    <div class="container">
+        {% if message is defined and message == '0' %}
+        <article class="message is-danger">
+            <div class="message-header">
+                <p>Error</p>
+            </div>
+            <div class="message-body">
+                <p>Failed to report.</p>
+            </div>
+        </article>
+        {% endif %}
+        {% if message is defined and message == '1' %}
+        <article class="message is-success">
+            <div class="message-header">
+                <p>Reported Sucessfully.</p>
+            </div>
+            <div class="message-body">
+                <p>Admin will see the URL you have just reported :-)</p>
+            </div>
+        </article>
+        {% endif %}
+        <form action="{{ url_for('root.post') }}" method="POST">
+            {% include "form.html" %}            
+        </form>
+    </div>
+</section>
+{% endblock %}

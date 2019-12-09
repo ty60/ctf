@@ -1,0 +1,37 @@
+.has-image-centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+.pd {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.snippet-list {
+    margin: 0em;
+}
+
+.snippet-detail {
+    margin: 0em 1em;
+    margin-bottom: 4em;    
+}
+
+.snippet-title {
+    margin-left: 0.5em;
+}
+
+.snippet-content {
+    padding: 1em 1em;
+    margin-left: 1em;        
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
+}
+
+.link-overlay {
+    display: block;
+}
+
+.is-multiple {
+    height: auto !important;
+}

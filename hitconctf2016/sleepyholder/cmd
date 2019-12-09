@@ -1,0 +1,9 @@
+file ./sleepyholder
+target remote localhost:1234
+peda
+
+# menu
+b *0x400e26
+
+start
+c

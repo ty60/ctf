@@ -1,0 +1,19 @@
+問題: BOFによってprint_flag関数を呼び出してFLAGを入手せよ。
+
+Hint: 引数の積み方は以下
+
+  Stack Layout
++---------------+ 低位address   
+|  return addr  |  
++---------------+ 
+|    padding    | (なんでもOK) 
++---------------+ 
+|     Arg1      |   
++---------------+   
+|     Arg2      |   
++---------------+   
+|     Arg3      |
++---------------+ 高位address
+
+
+Hint2: 32bitだと、0xffffffff + 0x1 == 0x0

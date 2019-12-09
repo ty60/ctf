@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ snippet.title }}{% endblock %}
+{% block body %}
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-four-fifths">
+                <h1 class="title">{{ snippet.title }}</h1>
+                <p>Created at {{ snippet.created_at }}</p>
+                {% if snippet.crawled %}
+                <p>(Crawled by admin)</p>
+                {% endif %}
+            </div>
+            <div class="column">
+                {% if snippet.user.username == current_user.username %}
+                <a class="button is-pulled-right" href="{{ url_for('snippets.edit_snippet', username=snippet.user.username, snippet_id=snippet.id) }}">Edit</a>
+                {% endif %}
+                <form action="/report" method="POST">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="url" value="{{app_origin}}{{ url_for('snippets.show_snippet', username=snippet.user.username, snippet_id=snippet.id) }}">
+                    <button class="button is-pulled-right" href="{{ url_for('root.report') }}">Report this Snippet</a>
+                </form>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+                    {{ snippet.content | mdlike }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <iframe id="twitFrame" allowtransparency="true" frameborder="0" scrolling="no" src="//platform.twitter.com/widgets/tweet_button.html?via=hoge style="width:200px; height:25px;"></iframe>    
+</section>
+{% endblock %}

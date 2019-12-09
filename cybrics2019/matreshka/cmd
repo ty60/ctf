@@ -1,0 +1,6 @@
+peda
+b *0x0000000000475fc8
+
+set $key=0xc00004673f
+set $answer=0xc000046747
+set $encrypted=0xc000014560

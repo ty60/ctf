@@ -1,0 +1,30 @@
+-- stack -- 
+char org_buf[0x40];
+char *org_p;
+char host_buf[0x40];
+char *host_p;
+
+
+by writing exactly 0x40 bytes to org_buf,
+the following strcpy(org_heap, org_buf) will overwritten.
+we can change top chunk's size.
+use house of force.
+
+
+ebp-0x9c+0x40 @ ebp-0xa8
+ebp-0x9c+0x44 @ ebp-0xa4
+ebp-0x9c+0x88 @ ebp-0xa0
+
+org_buf @ ebp-0x9c
+
+host_buf @ ebp-0x9c+0x44
+
+
+host_p
+malloc(0x40) @ ebp-0x9c+0x88
+             @ 0x804b0c8
+
+
+org_p
+malloc(0x40) @ ebp-0x9c+0x40
+             @ 0x804b0c8

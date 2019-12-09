@@ -1,0 +1,11 @@
+global
+
+
+hidden_flag @ 0x006020c0
+edit_flag @ 0x006020a8
+show_flag @ 0x006020b0
+
+malloc_p @ 0x006020c8
+
+
+secret_cmd 1337

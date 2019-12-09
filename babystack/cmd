@@ -1,0 +1,6 @@
+file ./babystack
+target remote localhost:1234
+b *0x804844c
+#b *0x80482f0
+start
+c

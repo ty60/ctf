@@ -1,0 +1,14 @@
+file ./profile
+target remote localhost:1234
+peda
+
+
+# b _ZN7Profile10update_msgEv
+# b _ZN7Profile4showEv
+# ret in main
+b *0x40148d
+
+start
+
+
+c

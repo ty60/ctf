@@ -1,0 +1,9 @@
+*.pdf
+*.pptx
+*.pyc
+m1z0r3*
+
+csawctf2015/linux-3.18.4.tar.gz
+seccon2018/cross-gcc494-seccon2018-special_instructions_solved.zip
+seccon2018/q-escape/qemu-system-x86_64.id0
+wctf/wctf2018/camera/data.img
