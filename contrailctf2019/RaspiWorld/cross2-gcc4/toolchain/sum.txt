@@ -1,0 +1,7 @@
+MD5 (binutils-2.23.1.tar.gz) = 7a519f12859baa0282866b8e8a4d04f0
+MD5 (gcc-4.7.2.tar.gz) = 5199d34506d4fa6528778ddba362d3f4
+MD5 (gdb-7.5.1.tar.gz) = b1519bf899890d21d4774845a6e602fe
+MD5 (newlib-1.20.0.tar.gz) = e5488f545c46287d360e68a801d470e8
+MD5 (gmp-5.1.1.tar.bz2) = 2fa018a7cd193c78494525f236d02dd6
+MD5 (mpfr-3.1.2.tar.gz) = 181aa7bb0e452c409f2788a4a7f38476
+MD5 (mpc-1.0.1.tar.gz) = b32a2e1a3daa392372fbd586d1ed3679

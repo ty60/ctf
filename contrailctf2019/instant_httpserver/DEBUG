@@ -1,0 +1,372 @@
+================================================================================
+= Started at 2020-01-02T22:08:52                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x8bc write
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x8d0 strlen
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x8e0 __stack_chk_fail
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x8f0 htons
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x900 snprintf
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x910 close
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x920 read
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x930 strcmp
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x940 listen
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x950 bind
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x960 accept
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x970 sprintf
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x980 exit
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x990 fwrite
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x9a0 fork
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x9b0 socket
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x9c0 __cxa_finalize
+2020-01-02T22:08:52:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/instant_httpserver'
+Arch:     amd64-64-little
+RELRO:    [32mFull RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x21020 realloc
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x21060 __tls_get_addr
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x210a0 memalign
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x210b0 _dl_exception_create
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x210f0 __tunable_get_val
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x211a0 _dl_find_dso_for_object
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x211e0 calloc
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x212c0 malloc
+2020-01-02T22:08:52:DEBUG:pwnlib.elf.elf:PLT 0x212c4 free
+2020-01-02T22:08:52:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/libc.so.6'
+Arch:     amd64-64-little
+RELRO:    [33mPartial RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+================================================================================
+= Started at 2020-01-02T22:08:52                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:08:52:INFO:pwnlib.tubes.remote.remote.140021282386944:Opening connection to localhost on port 4445
+2020-01-02T22:08:52:INFO:pwnlib.tubes.remote.remote.140021282386944:Opening connection to localhost on port 4445: Trying 127.0.0.1
+2020-01-02T22:08:52:INFO:pwnlib.tubes.remote.remote.140021282386944:Opening connection to localhost on port 4445: Done
+================================================================================
+= Started at 2020-01-02T22:08:55                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x8bc write
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x8d0 strlen
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x8e0 __stack_chk_fail
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x8f0 htons
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x900 snprintf
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x910 close
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x920 read
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x930 strcmp
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x940 listen
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x950 bind
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x960 accept
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x970 sprintf
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x980 exit
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x990 fwrite
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x9a0 fork
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x9b0 socket
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x9c0 __cxa_finalize
+2020-01-02T22:08:55:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/instant_httpserver'
+Arch:     amd64-64-little
+RELRO:    [32mFull RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x21020 realloc
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x21060 __tls_get_addr
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x210a0 memalign
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x210b0 _dl_exception_create
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x210f0 __tunable_get_val
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x211a0 _dl_find_dso_for_object
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x211e0 calloc
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x212c0 malloc
+2020-01-02T22:08:55:DEBUG:pwnlib.elf.elf:PLT 0x212c4 free
+2020-01-02T22:08:55:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/libc.so.6'
+Arch:     amd64-64-little
+RELRO:    [33mPartial RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+================================================================================
+= Started at 2020-01-02T22:08:55                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:08:55:INFO:pwnlib.tubes.remote.remote.140239157103136:Opening connection to localhost on port 4445
+2020-01-02T22:08:55:INFO:pwnlib.tubes.remote.remote.140239157103136:Opening connection to localhost on port 4445: Trying 127.0.0.1
+2020-01-02T22:08:55:INFO:pwnlib.tubes.remote.remote.140239157103136:Opening connection to localhost on port 4445: Done
+================================================================================
+= Started at 2020-01-02T22:09:10                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x8bc write
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x8d0 strlen
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x8e0 __stack_chk_fail
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x8f0 htons
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x900 snprintf
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x910 close
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x920 read
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x930 strcmp
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x940 listen
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x950 bind
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x960 accept
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x970 sprintf
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x980 exit
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x990 fwrite
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x9a0 fork
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x9b0 socket
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x9c0 __cxa_finalize
+2020-01-02T22:09:10:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/instant_httpserver'
+Arch:     amd64-64-little
+RELRO:    [32mFull RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x21020 realloc
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x21060 __tls_get_addr
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x210a0 memalign
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x210b0 _dl_exception_create
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x210f0 __tunable_get_val
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x211a0 _dl_find_dso_for_object
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x211e0 calloc
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x212c0 malloc
+2020-01-02T22:09:10:DEBUG:pwnlib.elf.elf:PLT 0x212c4 free
+2020-01-02T22:09:11:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/libc.so.6'
+Arch:     amd64-64-little
+RELRO:    [33mPartial RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+================================================================================
+= Started at 2020-01-02T22:09:11                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:09:11:INFO:pwnlib.tubes.remote.remote.139817849891304:Opening connection to localhost on port 4445
+2020-01-02T22:09:11:INFO:pwnlib.tubes.remote.remote.139817849891304:Opening connection to localhost on port 4445: Trying 127.0.0.1
+2020-01-02T22:09:11:INFO:pwnlib.tubes.remote.remote.139817849891304:Opening connection to localhost on port 4445: Done
+================================================================================
+= Started at 2020-01-02T22:10:08                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x8bc write
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x8d0 strlen
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x8e0 __stack_chk_fail
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x8f0 htons
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x900 snprintf
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x910 close
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x920 read
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x930 strcmp
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x940 listen
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x950 bind
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x960 accept
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x970 sprintf
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x980 exit
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x990 fwrite
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x9a0 fork
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x9b0 socket
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x9c0 __cxa_finalize
+2020-01-02T22:10:08:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/instant_httpserver'
+Arch:     amd64-64-little
+RELRO:    [32mFull RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x21020 realloc
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x21060 __tls_get_addr
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x210a0 memalign
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x210b0 _dl_exception_create
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x210f0 __tunable_get_val
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x211a0 _dl_find_dso_for_object
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x211e0 calloc
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x212c0 malloc
+2020-01-02T22:10:08:DEBUG:pwnlib.elf.elf:PLT 0x212c4 free
+2020-01-02T22:10:08:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/libc.so.6'
+Arch:     amd64-64-little
+RELRO:    [33mPartial RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+================================================================================
+= Started at 2020-01-02T22:10:08                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:10:08:INFO:pwnlib.tubes.remote.remote.139899201885128:Opening connection to 114.177.250.4 on port 4445
+2020-01-02T22:10:08:INFO:pwnlib.tubes.remote.remote.139899201885128:Opening connection to 114.177.250.4 on port 4445: Trying 114.177.250.4
+2020-01-02T22:10:08:INFO:pwnlib.tubes.remote.remote.139899201885128:Opening connection to 114.177.250.4 on port 4445: Done
+================================================================================
+= Started at 2020-01-02T22:10:11                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x8bc write
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x8d0 strlen
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x8e0 __stack_chk_fail
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x8f0 htons
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x900 snprintf
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x910 close
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x920 read
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x930 strcmp
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x940 listen
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x950 bind
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x960 accept
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x970 sprintf
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x980 exit
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x990 fwrite
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x9a0 fork
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x9b0 socket
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x9c0 __cxa_finalize
+2020-01-02T22:10:11:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/instant_httpserver'
+Arch:     amd64-64-little
+RELRO:    [32mFull RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x21020 realloc
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x21060 __tls_get_addr
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x210a0 memalign
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x210b0 _dl_exception_create
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x210f0 __tunable_get_val
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x211a0 _dl_find_dso_for_object
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x211e0 calloc
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x212c0 malloc
+2020-01-02T22:10:11:DEBUG:pwnlib.elf.elf:PLT 0x212c4 free
+2020-01-02T22:10:11:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/libc.so.6'
+Arch:     amd64-64-little
+RELRO:    [33mPartial RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+================================================================================
+= Started at 2020-01-02T22:10:11                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:10:11:INFO:pwnlib.tubes.remote.remote.140101574691360:Opening connection to 114.177.250.4 on port 4445
+2020-01-02T22:10:11:INFO:pwnlib.tubes.remote.remote.140101574691360:Opening connection to 114.177.250.4 on port 4445: Trying 114.177.250.4
+2020-01-02T22:10:11:INFO:pwnlib.tubes.remote.remote.140101574691360:Opening connection to 114.177.250.4 on port 4445: Done
+================================================================================
+= Started at 2020-01-02T22:14:54                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x8bc write
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x8d0 strlen
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x8e0 __stack_chk_fail
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x8f0 htons
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x900 snprintf
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x910 close
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x920 read
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x930 strcmp
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x940 listen
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x950 bind
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x960 accept
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x970 sprintf
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x980 exit
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x990 fwrite
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x9a0 fork
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x9b0 socket
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x9c0 __cxa_finalize
+2020-01-02T22:14:54:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/instant_httpserver'
+Arch:     amd64-64-little
+RELRO:    [32mFull RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x21020 realloc
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x21060 __tls_get_addr
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x210a0 memalign
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x210b0 _dl_exception_create
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x210f0 __tunable_get_val
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x211a0 _dl_find_dso_for_object
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x211e0 calloc
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x212c0 malloc
+2020-01-02T22:14:54:DEBUG:pwnlib.elf.elf:PLT 0x212c4 free
+2020-01-02T22:14:54:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/libc.so.6'
+Arch:     amd64-64-little
+RELRO:    [33mPartial RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+================================================================================
+= Started at 2020-01-02T22:14:54                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:14:54:INFO:pwnlib.tubes.remote.remote.139815670635040:Opening connection to 114.177.250.4 on port 4445
+2020-01-02T22:14:54:INFO:pwnlib.tubes.remote.remote.139815670635040:Opening connection to 114.177.250.4 on port 4445: Trying 114.177.250.4
+2020-01-02T22:14:54:ERROR:pwnlib.tubes.remote.remote.139815670635040:Could not connect to 114.177.250.4 on port 4445
+2020-01-02T22:14:54:INFO:pwnlib.tubes.remote.remote.139815670635040:Opening connection to 114.177.250.4 on port 4445: Failed
+================================================================================
+= Started at 2020-01-02T22:15:03                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x8bc write
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x8d0 strlen
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x8e0 __stack_chk_fail
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x8f0 htons
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x900 snprintf
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x910 close
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x920 read
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x930 strcmp
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x940 listen
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x950 bind
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x960 accept
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x970 sprintf
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x980 exit
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x990 fwrite
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x9a0 fork
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x9b0 socket
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x9c0 __cxa_finalize
+2020-01-02T22:15:03:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/instant_httpserver'
+Arch:     amd64-64-little
+RELRO:    [32mFull RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x21020 realloc
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x21060 __tls_get_addr
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x210a0 memalign
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x210b0 _dl_exception_create
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x210f0 __tunable_get_val
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x211a0 _dl_find_dso_for_object
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x211e0 calloc
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x212c0 malloc
+2020-01-02T22:15:03:DEBUG:pwnlib.elf.elf:PLT 0x212c4 free
+2020-01-02T22:15:03:INFO:pwnlib.elf.elf:'/home/ty/work/ctf/contrailctf2019/instant_httpserver/libc.so.6'
+Arch:     amd64-64-little
+RELRO:    [33mPartial RELRO[m
+Stack:    [32mCanary found[m
+NX:       [32mNX enabled[m
+PIE:      [32mPIE enabled[m
+================================================================================
+= Started at 2020-01-02T22:15:03                                               =
+= sys.argv = [                                                                 =
+=   'leak_libc.py',                                                            =
+= ]                                                                            =
+================================================================================
+2020-01-02T22:15:03:INFO:pwnlib.tubes.remote.remote.139903693351512:Opening connection to 114.177.250.4 on port 4445
+2020-01-02T22:15:03:INFO:pwnlib.tubes.remote.remote.139903693351512:Opening connection to 114.177.250.4 on port 4445: Trying 114.177.250.4
+2020-01-02T22:15:03:INFO:pwnlib.tubes.remote.remote.139903693351512:Opening connection to 114.177.250.4 on port 4445: Done

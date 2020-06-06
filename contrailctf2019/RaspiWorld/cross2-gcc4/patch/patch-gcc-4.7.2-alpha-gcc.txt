@@ -1,0 +1,14 @@
+--- gcc/config.gcc.orig	2012-09-12 18:03:54.000000000 +0900
++++ gcc/config.gcc	2013-03-22 20:56:15.000000000 +0900
+@@ -827,6 +827,11 @@
+ 	xm_file="alpha/xm-vms.h"
+ 	tmake_file="${tmake_file} alpha/t-vms"
+ 	;;
++alpha*-*-elf*)
++	tm_file="${tm_file} alpha/elf.h"
++	extra_options="${extra_options} alpha/elf.opt"
++	target_cpu_default="MASK_GAS"
++	;;
+ arm-wrs-vxworks)
+ 	tm_file="elfos.h arm/elf.h arm/aout.h ${tm_file} vx-common.h vxworks.h arm/vxworks.h"
+ 	extra_options="${extra_options} arm/vxworks.opt"

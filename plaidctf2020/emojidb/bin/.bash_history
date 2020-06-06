@@ -1,0 +1,9 @@
+tmux 
+ls
+ls
+cd
+ls
+ll
+tmux 
+nvim
+ls

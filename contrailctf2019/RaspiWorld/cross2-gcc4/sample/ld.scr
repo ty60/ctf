@@ -1,0 +1,78 @@
+ENTRY("_start")
+
+SECTIONS
+{
+	/* for Motorola 68HC11 */
+	_.tmp = 0x40; . += 4;
+	/* for option -fno-omit-frame-pointer */
+	_.frame = .; . += 4;
+	/* without option -msoft-reg-count */
+	_.d1 = .; . += 4; _.d2 = .; . += 4;
+	_.d3 = .; . += 4; _.d4 = .; . += 4;
+
+	/* for M32C */
+	mem0 = .; . += 4; mem2 = .; . += 4;
+
+	/* for Xtensa without option -mtext-section-literals */
+	.literal 0xfe1200 : {
+		*(.literal)
+	}
+
+	.text 0xfe1400 : {
+		*(.text .text.*)
+		_etext = .;
+	}
+
+	. += 4;
+	_start       = .; . += 4; /* dummy startup */
+	exit         = .; . += 4; /* for AVR */
+	__main       = .; . += 4; /* for FR-V */
+	___main      = .; . += 4; /* for PDP-11 and i960 */
+	_call_via_r0 = .; . += 4; /* for ARM thumb */
+
+	/* for V850 without option -mno-prolog-function */
+	__save_r28_r31 = .; . += 4; __return_r28_r31 = .; . += 4;
+	__save_r29_r31 = .; . += 4; __return_r29_r31 = .; . += 4;
+	__save_r30_r31 = .; . += 4; __return_r30_r31 = .; . += 4;
+	__save_r31     = .; . += 4; __return_r31     = .; . += 4;
+
+	/* for M32C */
+	m32c_jsri16 = .; . += 4;
+
+	/* for C6x */
+	__c6xabi_DSBT_BASE = .; . += 4;
+
+	/* for HP/PA without option -mfast-indirect-calls */
+	$$dyncall = .; . += 4;
+
+	.rodata : {
+		*(.rodata .rodata.*)
+		_erodata = .;
+	}
+
+	.data ALIGN(0x400) : {
+		*(.data .data.*)
+		*(.sdata .sdata.*)
+		_edata = .;
+	}
+
+	.bss : {
+		*(.bss .bss.*)
+		*(.sbss .sbss.*)
+		*(.scommon)
+		*(COMMON)
+		_ebss = .;
+	}
+
+	/* for MIPS family and FR-V without option -G 0 */
+	. += 4; _gp = .; . += 4;
+
+	.eh_frame : { /* for S/390 and others */
+		*(.eh_frame) /* If not, .data is not fixed. */
+	}
+
+	/* for AVR without option -minit-stack */
+	. += 4; __stack = .; . += 4;
+
+	_end = .;
+}

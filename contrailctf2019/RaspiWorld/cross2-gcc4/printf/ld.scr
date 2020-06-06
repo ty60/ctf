@@ -1,0 +1,68 @@
+ENTRY("_start")
+
+SECTIONS
+{
+	/* for Motorola 68HC11 */
+	_.tmp = 0x40; . += 4;
+	_.xy = .; . += 4; _.z = .; . += 4;
+	/* for option -fno-omit-frame-pointer */
+	_.frame = .; . += 4;
+	/* without option -msoft-reg-count */
+	_.d1 = .; . += 4; _.d2 = .; . += 4;
+	_.d3 = .; . += 4; _.d4 = .; . += 4;
+
+	.text 0x1400 : {
+		*(.text .text.*)
+		_etext = .;
+		__etext = .;
+	}
+
+	.rodata : {
+		*(.rodata .rodata.*)
+		*(.rosdata .rosdata.*)
+		_erodata = .;
+		__erodata = .;
+	}
+
+	.eh_frame : {
+		*(.eh_frame)
+	}
+
+	. = ALIGN(0x400);
+	_gp = .;
+	__gp = .; /* for V850 with newlib */
+
+	.data : {
+		*(.data .data.*)
+		*(.sdata .sdata.*)
+		_edata = .;
+		__edata = .;
+	}
+
+	.bss : {
+		_bss_start = .;
+		__bss_start = .;
+		*(.bss .bss.*)
+		*(.sbss .sbss.*)
+		*(.scommon)
+		*(COMMON)
+
+		. = ALIGN(4);
+		_heap = .;
+		__heap = .;
+		_heap_start = .; /* for V850 with newlib */
+		. += 1024 * 16;
+
+		_ebss = .;
+		__ebss = .;
+	}
+
+	.stack ALIGN(16) : {
+		. += 1024;
+		_estack = .;
+		__estack = .;
+	}
+
+	_end = .;
+	__end = .;
+}

@@ -1,0 +1,12 @@
+--- libgcc/config.host.orig	2012-09-05 21:19:47.000000000 +0900
++++ libgcc/config.host	2013-03-22 20:59:31.000000000 +0900
+@@ -314,6 +314,9 @@
+ 	extra_parts="$extra_parts vms-dwarf2.o vms-dwarf2eh.o"
+ 	md_unwind_header=alpha/vms-unwind.h
+ 	;;
++alpha*-*-elf*)
++	tmake_file="${tmake_file} alpha/t-alpha alpha/t-ieee t-crtfm"
++	;;
+ arm-wrs-vxworks)
+ 	tmake_file="$tmake_file arm/t-arm arm/t-vxworks t-fdpbit"
+ 	extra_parts="$extra_parts crti.o crtn.o"

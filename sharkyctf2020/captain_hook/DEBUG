@@ -1,0 +1,23 @@
+================================================================================
+= Started at 2020-05-09T14:03:22                                               =
+= sys.argv = [                                                                 =
+=   'solve.py',                                                                =
+= ]                                                                            =
+================================================================================
+2020-05-09T14:03:22:WARNING:pwnlib.gdb:Debugging process with ASLR disabled
+================================================================================
+= Started at 2020-05-09T14:03:22                                               =
+= sys.argv = [                                                                 =
+=   'solve.py',                                                                =
+= ]                                                                            =
+================================================================================
+2020-05-09T14:03:22:INFO:pwnlib.tubes.process.process.139972352743016:Starting local process '/usr/bin/gdbserver'
+2020-05-09T14:03:22:INFO:pwnlib.tubes.process.process.139972352743016:Starting local process '/usr/bin/gdbserver': pid 29712
+2020-05-09T14:03:22:DEBUG:pwnlib.gdb:Wrote gdb script to '/tmp/pwnr12dt7ug.gdb'
+target remote 127.0.0.1:36873
+
+gef
+b *(0x0000555555554000+0x132A)
+
+2020-05-09T14:03:22:INFO:pwnlib.gdb:running in new terminal: /usr/bin/gdb -q  "./captain_hook" -x "/tmp/pwnr12dt7ug.gdb"
+2020-05-09T14:03:22:DEBUG:pwnlib.util.misc:Launching a new terminal: ['/usr/bin/tmux', 'split-w', '-h', '/usr/bin/gdb -q  "./captain_hook" -x "/tmp/pwnr12dt7ug.gdb"']

