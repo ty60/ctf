@@ -1,0 +1,95 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVerticalChainControlWidget()Landroid/support/constraint/solver/widgets/ConstraintWidget; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:android.support.constraint.solver.widgets.ConstraintWidget
+
+getVerticalChainControlWidget-BB@0x0 : [ getVerticalChainControlWidget-BB@0xe getVerticalChainControlWidget-BB@0x8a ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-virtual       v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->isInVerticalChain()Z
+	2       (00000008) move-result          v1
+	3       (0000000a) if-eqz               v1, +40
+
+getVerticalChainControlWidget-BB@0xe : [ getVerticalChainControlWidget-BB@0x12 ]
+	4       (0000000e) move-object          v1, v0
+	5       (00000010) move-object          v0, v7
+
+getVerticalChainControlWidget-BB@0x12 : [ getVerticalChainControlWidget-BB@0x16 getVerticalChainControlWidget-BB@0x8c ]
+	6       (00000012) if-nez               v1, +3d
+
+getVerticalChainControlWidget-BB@0x16 : [ getVerticalChainControlWidget-BB@0x1a getVerticalChainControlWidget-BB@0x8c ]
+	7       (00000016) if-eqz               v0, +3b
+
+getVerticalChainControlWidget-BB@0x1a : [ getVerticalChainControlWidget-BB@0x2c getVerticalChainControlWidget-BB@0x30 ]
+	8       (0000001a) sget-object          v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->TOP Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	9       (0000001e) invoke-virtual       v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	10      (00000024) move-result-object   v2
+	11      (00000026) const/4              v3, 0
+	12      (00000028) if-nez               v2, +4
+
+getVerticalChainControlWidget-BB@0x2c : [ getVerticalChainControlWidget-BB@0x38 ]
+	13      (0000002c) move-object          v4, v3
+	14      (0000002e) goto                 +5
+
+getVerticalChainControlWidget-BB@0x30 : [ getVerticalChainControlWidget-BB@0x38 ]
+	15      (00000030) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getTarget()Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	16      (00000036) move-result-object   v4
+
+getVerticalChainControlWidget-BB@0x38 : [ getVerticalChainControlWidget-BB@0x3c getVerticalChainControlWidget-BB@0x40 ]
+	17      (00000038) if-nez               v4, +4
+
+getVerticalChainControlWidget-BB@0x3c : [ getVerticalChainControlWidget-BB@0x48 ]
+	18      (0000003c) move-object          v5, v3
+	19      (0000003e) goto                 +5
+
+getVerticalChainControlWidget-BB@0x40 : [ getVerticalChainControlWidget-BB@0x48 ]
+	20      (00000040) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getOwner()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	21      (00000046) move-result-object   v5
+
+getVerticalChainControlWidget-BB@0x48 : [ getVerticalChainControlWidget-BB@0x54 getVerticalChainControlWidget-BB@0x58 ]
+	22      (00000048) invoke-virtual       v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	23      (0000004e) move-result-object   v6
+	24      (00000050) if-ne                v5, v6, +4
+
+getVerticalChainControlWidget-BB@0x54 : [ getVerticalChainControlWidget-BB@0x8c ]
+	25      (00000054) move-object          v1, v0
+	26      (00000056) goto                 +1b
+
+getVerticalChainControlWidget-BB@0x58 : [ getVerticalChainControlWidget-BB@0x5c getVerticalChainControlWidget-BB@0x5e ]
+	27      (00000058) if-nez               v5, +3
+
+getVerticalChainControlWidget-BB@0x5c : [ getVerticalChainControlWidget-BB@0x72 ]
+	28      (0000005c) goto                 +b
+
+getVerticalChainControlWidget-BB@0x5e : [ getVerticalChainControlWidget-BB@0x72 ]
+	29      (0000005e) sget-object          v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->BOTTOM Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	30      (00000062) invoke-virtual       v5, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	31      (00000068) move-result-object   v3
+	32      (0000006a) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getTarget()Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	33      (00000070) move-result-object   v3
+
+getVerticalChainControlWidget-BB@0x72 : [ getVerticalChainControlWidget-BB@0x76 getVerticalChainControlWidget-BB@0x86 ]
+	34      (00000072) if-eqz               v3, +a
+
+getVerticalChainControlWidget-BB@0x76 : [ getVerticalChainControlWidget-BB@0x82 getVerticalChainControlWidget-BB@0x86 ]
+	35      (00000076) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getOwner()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	36      (0000007c) move-result-object   v6
+	37      (0000007e) if-eq                v6, v0, +4
+
+getVerticalChainControlWidget-BB@0x82 : [ getVerticalChainControlWidget-BB@0x88 ]
+	38      (00000082) move-object          v1, v0
+	39      (00000084) goto                 +2
+
+getVerticalChainControlWidget-BB@0x86 : [ getVerticalChainControlWidget-BB@0x88 ]
+	40      (00000086) move-object          v0, v5
+
+getVerticalChainControlWidget-BB@0x88 : [ getVerticalChainControlWidget-BB@0x12 ]
+	41      (00000088) goto                 -3b
+
+getVerticalChainControlWidget-BB@0x8a : [ getVerticalChainControlWidget-BB@0x8c ]
+	42      (0000008a) move-object          v1, v0
+
+getVerticalChainControlWidget-BB@0x8c : 
+	43      (0000008c) return-object        v1
+

@@ -1,0 +1,37 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v3, Landroid/support/constraint/solver/widgets/WidgetContainer;-><init>()V
+	1       (00000006) const/4              v0, 0
+	2       (00000008) iput-boolean         v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mIsRtl Z
+	3       (0000000c) new-instance         v1, Landroid/support/constraint/solver/LinearSystem;
+	4       (00000010) invoke-direct        v1, Landroid/support/constraint/solver/LinearSystem;-><init>()V
+	5       (00000016) iput-object          v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mSystem Landroid/support/constraint/solver/LinearSystem;
+	6       (0000001a) iput                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsSize I
+	7       (0000001e) iput                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mVerticalChainsSize I
+	8       (00000022) const/4              v1, 4
+	9       (00000024) new-array            v2, v1, [Landroid/support/constraint/solver/widgets/ChainHead;
+	10      (00000028) iput-object          v2, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mVerticalChainsArray [Landroid/support/constraint/solver/widgets/ChainHead;
+	11      (0000002c) new-array            v1, v1, [Landroid/support/constraint/solver/widgets/ChainHead;
+	12      (00000030) iput-object          v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsArray [Landroid/support/constraint/solver/widgets/ChainHead;
+	13      (00000034) new-instance         v1, Ljava/util/ArrayList;
+	14      (00000038) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	15      (0000003e) iput-object          v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWidgetGroups Ljava/util/List;
+	16      (00000042) iput-boolean         v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mGroupsWrapOptimized Z
+	17      (00000046) iput-boolean         v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalWrapOptimized Z
+	18      (0000004a) iput-boolean         v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mVerticalWrapOptimized Z
+	19      (0000004e) iput                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWrapFixedWidth I
+	20      (00000052) iput                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWrapFixedHeight I
+	21      (00000056) const/4              v1, 7
+	22      (00000058) iput                 v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mOptimizationLevel I
+	23      (0000005c) iput-boolean         v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mSkipSolver Z
+	24      (00000060) iput-boolean         v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWidthMeasuredTooSmall Z
+	25      (00000064) iput-boolean         v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHeightMeasuredTooSmall Z
+	26      (00000068) iput                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mDebugSolverPassCount I
+	27      (0000006c) return-void          
+

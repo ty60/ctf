@@ -1,0 +1,21 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->isRoot()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isRoot-BB@0x0 : [ isRoot-BB@0x8 isRoot-BB@0xc ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mParent Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	1       (00000004) if-nez               v0, +4
+
+isRoot-BB@0x8 : [ isRoot-BB@0xe ]
+	2       (00000008) const/4              v0, 1
+	3       (0000000a) goto                 +2
+
+isRoot-BB@0xc : [ isRoot-BB@0xe ]
+	4       (0000000c) const/4              v0, 0
+
+isRoot-BB@0xe : 
+	5       (0000000e) return               v0
+

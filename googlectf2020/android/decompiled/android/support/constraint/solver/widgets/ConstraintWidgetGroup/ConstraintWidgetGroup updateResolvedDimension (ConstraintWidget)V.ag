@@ -1,0 +1,221 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->updateResolvedDimension(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.support.constraint.solver.widgets.ConstraintWidget
+#
+# - return:void
+
+updateResolvedDimension-BB@0x0 : [ updateResolvedDimension-BB@0xc updateResolvedDimension-BB@0x1e8 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const/4              v1, 0
+	2       (00000004) iget-boolean         v2, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mOptimizerMeasurable Z
+	3       (00000008) if-eqz               v2, +f0
+
+updateResolvedDimension-BB@0xc : [ updateResolvedDimension-BB@0x18 updateResolvedDimension-BB@0x1a ]
+	4       (0000000c) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->isFullyResolved()Z
+	5       (00000012) move-result          v2
+	6       (00000014) if-eqz               v2, +3
+
+updateResolvedDimension-BB@0x18 : 
+	7       (00000018) return-void          
+
+updateResolvedDimension-BB@0x1a : [ updateResolvedDimension-BB@0x2a updateResolvedDimension-BB@0x2e ]
+	8       (0000001a) iget-object          v2, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	9       (0000001e) iget-object          v2, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	10      (00000022) const/4              v3, 0
+	11      (00000024) const/4              v4, 1
+	12      (00000026) if-eqz               v2, +4
+
+updateResolvedDimension-BB@0x2a : [ updateResolvedDimension-BB@0x30 ]
+	13      (0000002a) move                 v2, v4
+	14      (0000002c) goto                 +2
+
+updateResolvedDimension-BB@0x2e : [ updateResolvedDimension-BB@0x30 ]
+	15      (0000002e) move                 v2, v3
+
+updateResolvedDimension-BB@0x30 : [ updateResolvedDimension-BB@0x34 updateResolvedDimension-BB@0x3e ]
+	16      (00000030) if-eqz               v2, +7
+
+updateResolvedDimension-BB@0x34 : [ updateResolvedDimension-BB@0x46 ]
+	17      (00000034) iget-object          v5, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	18      (00000038) iget-object          v5, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	19      (0000003c) goto                 +5
+
+updateResolvedDimension-BB@0x3e : [ updateResolvedDimension-BB@0x46 ]
+	20      (0000003e) iget-object          v5, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	21      (00000042) iget-object          v5, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+
+updateResolvedDimension-BB@0x46 : [ updateResolvedDimension-BB@0x4a updateResolvedDimension-BB@0x9a ]
+	22      (00000046) if-eqz               v5, +2a
+
+updateResolvedDimension-BB@0x4a : [ updateResolvedDimension-BB@0x56 updateResolvedDimension-BB@0x60 ]
+	23      (0000004a) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	24      (0000004e) iget-boolean         v6, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mOptimizerMeasured Z
+	25      (00000052) if-nez               v6, +7
+
+updateResolvedDimension-BB@0x56 : [ updateResolvedDimension-BB@0x60 ]
+	26      (00000056) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	27      (0000005a) invoke-direct        v8, v6, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->updateResolvedDimension(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+
+updateResolvedDimension-BB@0x60 : [ updateResolvedDimension-BB@0x6c updateResolvedDimension-BB@0x86 ]
+	28      (00000060) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	29      (00000064) sget-object          v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->RIGHT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	30      (00000068) if-ne                v6, v7, +f
+
+updateResolvedDimension-BB@0x6c : [ updateResolvedDimension-BB@0x9a ]
+	31      (0000006c) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	32      (00000070) iget                 v6, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mX I
+	33      (00000074) iget-object          v7, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	34      (00000078) invoke-virtual       v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	35      (0000007e) move-result          v7
+	36      (00000080) add-int              v1, v6, v7
+	37      (00000084) goto                 +b
+
+updateResolvedDimension-BB@0x86 : [ updateResolvedDimension-BB@0x92 updateResolvedDimension-BB@0x9a ]
+	38      (00000086) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	39      (0000008a) sget-object          v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->LEFT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	40      (0000008e) if-ne                v6, v7, +6
+
+updateResolvedDimension-BB@0x92 : [ updateResolvedDimension-BB@0x9a ]
+	41      (00000092) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	42      (00000096) iget                 v1, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mX I
+
+updateResolvedDimension-BB@0x9a : [ updateResolvedDimension-BB@0x9e updateResolvedDimension-BB@0xae ]
+	43      (0000009a) if-eqz               v2, +a
+
+updateResolvedDimension-BB@0x9e : [ updateResolvedDimension-BB@0xc6 ]
+	44      (0000009e) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	45      (000000a2) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	46      (000000a8) move-result          v6
+	47      (000000aa) sub-int/2addr        v1, v6
+	48      (000000ac) goto                 +d
+
+updateResolvedDimension-BB@0xae : [ updateResolvedDimension-BB@0xc6 ]
+	49      (000000ae) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	50      (000000b2) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	51      (000000b8) move-result          v6
+	52      (000000ba) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	53      (000000c0) move-result          v7
+	54      (000000c2) add-int/2addr        v6, v7
+	55      (000000c4) add-int/2addr        v1, v6
+
+updateResolvedDimension-BB@0xc6 : [ updateResolvedDimension-BB@0xe4 updateResolvedDimension-BB@0x12c ]
+	56      (000000c6) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	57      (000000cc) move-result          v6
+	58      (000000ce) sub-int              v0, v1, v6
+	59      (000000d2) invoke-virtual       v9, v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalDimension(I I)V
+	60      (000000d8) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaseline Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	61      (000000dc) iget-object          v6, v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	62      (000000e0) if-eqz               v6, +26
+
+updateResolvedDimension-BB@0xe4 : [ updateResolvedDimension-BB@0xf8 updateResolvedDimension-BB@0x102 ]
+	63      (000000e4) iget-object          v3, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaseline Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	64      (000000e8) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	65      (000000ec) iget-object          v5, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	66      (000000f0) iget-boolean         v5, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mOptimizerMeasured Z
+	67      (000000f4) if-nez               v5, +7
+
+updateResolvedDimension-BB@0xf8 : [ updateResolvedDimension-BB@0x102 ]
+	68      (000000f8) iget-object          v5, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	69      (000000fc) invoke-direct        v8, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->updateResolvedDimension(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+
+updateResolvedDimension-BB@0x102 : 
+	70      (00000102) iget-object          v5, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	71      (00000106) iget                 v5, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mY I
+	72      (0000010a) iget-object          v6, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	73      (0000010e) iget                 v6, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaselineDistance I
+	74      (00000112) add-int/2addr        v5, v6
+	75      (00000114) iget                 v6, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaselineDistance I
+	76      (00000118) sub-int/2addr        v5, v6
+	77      (0000011a) iget                 v0, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHeight I
+	78      (0000011e) add-int/2addr        v0, v5
+	79      (00000120) invoke-virtual       v9, v5, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setVerticalDimension(I I)V
+	80      (00000126) iput-boolean         v4, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mOptimizerMeasured Z
+	81      (0000012a) return-void          
+
+updateResolvedDimension-BB@0x12c : [ updateResolvedDimension-BB@0x138 updateResolvedDimension-BB@0x13c ]
+	82      (0000012c) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	83      (00000130) iget-object          v6, v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	84      (00000134) if-eqz               v6, +4
+
+updateResolvedDimension-BB@0x138 : [ updateResolvedDimension-BB@0x13c ]
+	85      (00000138) move                 v3, v4
+	86      (0000013a) nop                  
+
+updateResolvedDimension-BB@0x13c : [ updateResolvedDimension-BB@0x140 updateResolvedDimension-BB@0x14a ]
+	87      (0000013c) if-eqz               v3, +7
+
+updateResolvedDimension-BB@0x140 : [ updateResolvedDimension-BB@0x152 ]
+	88      (00000140) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	89      (00000144) iget-object          v5, v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	90      (00000148) goto                 +5
+
+updateResolvedDimension-BB@0x14a : [ updateResolvedDimension-BB@0x152 ]
+	91      (0000014a) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	92      (0000014e) iget-object          v5, v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+
+updateResolvedDimension-BB@0x152 : [ updateResolvedDimension-BB@0x156 updateResolvedDimension-BB@0x1a6 ]
+	93      (00000152) if-eqz               v5, +2a
+
+updateResolvedDimension-BB@0x156 : [ updateResolvedDimension-BB@0x162 updateResolvedDimension-BB@0x16c ]
+	94      (00000156) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	95      (0000015a) iget-boolean         v6, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mOptimizerMeasured Z
+	96      (0000015e) if-nez               v6, +7
+
+updateResolvedDimension-BB@0x162 : [ updateResolvedDimension-BB@0x16c ]
+	97      (00000162) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	98      (00000166) invoke-direct        v8, v6, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->updateResolvedDimension(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+
+updateResolvedDimension-BB@0x16c : [ updateResolvedDimension-BB@0x178 updateResolvedDimension-BB@0x192 ]
+	99      (0000016c) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	100     (00000170) sget-object          v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->BOTTOM Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	101     (00000174) if-ne                v6, v7, +f
+
+updateResolvedDimension-BB@0x178 : [ updateResolvedDimension-BB@0x1a6 ]
+	102     (00000178) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	103     (0000017c) iget                 v6, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mY I
+	104     (00000180) iget-object          v7, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	105     (00000184) invoke-virtual       v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	106     (0000018a) move-result          v7
+	107     (0000018c) add-int              v1, v6, v7
+	108     (00000190) goto                 +b
+
+updateResolvedDimension-BB@0x192 : [ updateResolvedDimension-BB@0x19e updateResolvedDimension-BB@0x1a6 ]
+	109     (00000192) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	110     (00000196) sget-object          v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->TOP Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	111     (0000019a) if-ne                v6, v7, +6
+
+updateResolvedDimension-BB@0x19e : [ updateResolvedDimension-BB@0x1a6 ]
+	112     (0000019e) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	113     (000001a2) iget                 v1, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mY I
+
+updateResolvedDimension-BB@0x1a6 : [ updateResolvedDimension-BB@0x1aa updateResolvedDimension-BB@0x1ba ]
+	114     (000001a6) if-eqz               v3, +a
+
+updateResolvedDimension-BB@0x1aa : [ updateResolvedDimension-BB@0x1d2 ]
+	115     (000001aa) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	116     (000001ae) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	117     (000001b4) move-result          v6
+	118     (000001b6) sub-int/2addr        v1, v6
+	119     (000001b8) goto                 +d
+
+updateResolvedDimension-BB@0x1ba : [ updateResolvedDimension-BB@0x1d2 ]
+	120     (000001ba) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	121     (000001be) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	122     (000001c4) move-result          v6
+	123     (000001c6) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	124     (000001cc) move-result          v7
+	125     (000001ce) add-int/2addr        v6, v7
+	126     (000001d0) add-int/2addr        v1, v6
+
+updateResolvedDimension-BB@0x1d2 : [ updateResolvedDimension-BB@0x1e8 ]
+	127     (000001d2) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	128     (000001d8) move-result          v6
+	129     (000001da) sub-int              v0, v1, v6
+	130     (000001de) invoke-virtual       v9, v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setVerticalDimension(I I)V
+	131     (000001e4) iput-boolean         v4, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mOptimizerMeasured Z
+
+updateResolvedDimension-BB@0x1e8 : 
+	132     (000001e8) return-void          
+

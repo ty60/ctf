@@ -1,0 +1,116 @@
+# Landroid/support/constraint/solver/widgets/Optimizer;->checkMatchParent(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/LinearSystem; Landroid/support/constraint/solver/widgets/ConstraintWidget;)V [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.support.constraint.solver.widgets.ConstraintWidgetContainer
+# - v6:android.support.constraint.solver.LinearSystem
+# - v7:android.support.constraint.solver.widgets.ConstraintWidget
+#
+# - return:void
+
+checkMatchParent-BB@0x0 : [ checkMatchParent-BB@0x14 checkMatchParent-BB@0x8c ]
+	0       (00000000) iget-object          v0, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) aget-object          v0, v0, v1
+	3       (0000000a) sget-object          v2, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	4       (0000000e) const/4              v3, 2
+	5       (00000010) if-eq                v0, v2, +3e
+
+checkMatchParent-BB@0x14 : [ checkMatchParent-BB@0x24 checkMatchParent-BB@0x8c ]
+	6       (00000014) iget-object          v0, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	7       (00000018) aget-object          v0, v0, v1
+	8       (0000001c) sget-object          v1, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_PARENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	9       (00000020) if-ne                v0, v1, +36
+
+checkMatchParent-BB@0x24 : [ checkMatchParent-BB@0x8c ]
+	10      (00000024) iget-object          v0, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	11      (00000028) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mMargin I
+	12      (0000002c) invoke-virtual       v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getWidth()I
+	13      (00000032) move-result          v1
+	14      (00000034) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	15      (00000038) iget                 v2, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mMargin I
+	16      (0000003c) sub-int/2addr        v1, v2
+	17      (0000003e) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	18      (00000042) iget-object          v4, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	19      (00000046) invoke-virtual       v6, v4, Landroid/support/constraint/solver/LinearSystem;->createObjectVariable(Ljava/lang/Object;)Landroid/support/constraint/solver/SolverVariable;
+	20      (0000004c) move-result-object   v4
+	21      (0000004e) iput-object          v4, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	22      (00000052) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	23      (00000056) iget-object          v4, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	24      (0000005a) invoke-virtual       v6, v4, Landroid/support/constraint/solver/LinearSystem;->createObjectVariable(Ljava/lang/Object;)Landroid/support/constraint/solver/SolverVariable;
+	25      (00000060) move-result-object   v4
+	26      (00000062) iput-object          v4, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	27      (00000066) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	28      (0000006a) iget-object          v2, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	29      (0000006e) invoke-virtual       v6, v2, v0, Landroid/support/constraint/solver/LinearSystem;->addEquality(Landroid/support/constraint/solver/SolverVariable; I)V
+	30      (00000074) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	31      (00000078) iget-object          v2, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	32      (0000007c) invoke-virtual       v6, v2, v1, Landroid/support/constraint/solver/LinearSystem;->addEquality(Landroid/support/constraint/solver/SolverVariable; I)V
+	33      (00000082) iput                 v3, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHorizontalResolution I
+	34      (00000086) invoke-virtual       v7, v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalDimension(I I)V
+
+checkMatchParent-BB@0x8c : [ checkMatchParent-BB@0x9e checkMatchParent-BB@0x156 ]
+	35      (0000008c) iget-object          v0, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	36      (00000090) const/4              v1, 1
+	37      (00000092) aget-object          v0, v0, v1
+	38      (00000096) sget-object          v2, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	39      (0000009a) if-eq                v0, v2, +5e
+
+checkMatchParent-BB@0x9e : [ checkMatchParent-BB@0xae checkMatchParent-BB@0x156 ]
+	40      (0000009e) iget-object          v0, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	41      (000000a2) aget-object          v0, v0, v1
+	42      (000000a6) sget-object          v1, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_PARENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	43      (000000aa) if-ne                v0, v1, +56
+
+checkMatchParent-BB@0xae : [ checkMatchParent-BB@0x114 checkMatchParent-BB@0x124 ]
+	44      (000000ae) iget-object          v0, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	45      (000000b2) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mMargin I
+	46      (000000b6) invoke-virtual       v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getHeight()I
+	47      (000000bc) move-result          v1
+	48      (000000be) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	49      (000000c2) iget                 v2, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mMargin I
+	50      (000000c6) sub-int/2addr        v1, v2
+	51      (000000c8) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	52      (000000cc) iget-object          v4, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	53      (000000d0) invoke-virtual       v6, v4, Landroid/support/constraint/solver/LinearSystem;->createObjectVariable(Ljava/lang/Object;)Landroid/support/constraint/solver/SolverVariable;
+	54      (000000d6) move-result-object   v4
+	55      (000000d8) iput-object          v4, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	56      (000000dc) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	57      (000000e0) iget-object          v4, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	58      (000000e4) invoke-virtual       v6, v4, Landroid/support/constraint/solver/LinearSystem;->createObjectVariable(Ljava/lang/Object;)Landroid/support/constraint/solver/SolverVariable;
+	59      (000000ea) move-result-object   v4
+	60      (000000ec) iput-object          v4, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	61      (000000f0) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	62      (000000f4) iget-object          v2, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	63      (000000f8) invoke-virtual       v6, v2, v0, Landroid/support/constraint/solver/LinearSystem;->addEquality(Landroid/support/constraint/solver/SolverVariable; I)V
+	64      (000000fe) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	65      (00000102) iget-object          v2, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	66      (00000106) invoke-virtual       v6, v2, v1, Landroid/support/constraint/solver/LinearSystem;->addEquality(Landroid/support/constraint/solver/SolverVariable; I)V
+	67      (0000010c) iget                 v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaselineDistance I
+	68      (00000110) if-gtz               v2, +a
+
+checkMatchParent-BB@0x114 : [ checkMatchParent-BB@0x124 checkMatchParent-BB@0x14c ]
+	69      (00000114) invoke-virtual       v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVisibility()I
+	70      (0000011a) move-result          v2
+	71      (0000011c) const/16             v4, 8
+	72      (00000120) if-ne                v2, v4, +16
+
+checkMatchParent-BB@0x124 : [ checkMatchParent-BB@0x14c ]
+	73      (00000124) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaseline Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	74      (00000128) iget-object          v4, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaseline Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	75      (0000012c) invoke-virtual       v6, v4, Landroid/support/constraint/solver/LinearSystem;->createObjectVariable(Ljava/lang/Object;)Landroid/support/constraint/solver/SolverVariable;
+	76      (00000132) move-result-object   v4
+	77      (00000134) iput-object          v4, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	78      (00000138) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaseline Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	79      (0000013c) iget-object          v2, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	80      (00000140) iget                 v4, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaselineDistance I
+	81      (00000144) add-int/2addr        v4, v0
+	82      (00000146) invoke-virtual       v6, v2, v4, Landroid/support/constraint/solver/LinearSystem;->addEquality(Landroid/support/constraint/solver/SolverVariable; I)V
+
+checkMatchParent-BB@0x14c : [ checkMatchParent-BB@0x156 ]
+	83      (0000014c) iput                 v3, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mVerticalResolution I
+	84      (00000150) invoke-virtual       v7, v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setVerticalDimension(I I)V
+
+checkMatchParent-BB@0x156 : 
+	85      (00000156) return-void          
+

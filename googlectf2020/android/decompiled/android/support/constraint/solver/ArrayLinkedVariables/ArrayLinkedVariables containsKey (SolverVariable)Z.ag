@@ -1,0 +1,48 @@
+# Landroid/support/constraint/solver/ArrayLinkedVariables;->containsKey(Landroid/support/constraint/solver/SolverVariable;)Z [access_flags=final]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.support.constraint.solver.SolverVariable
+#
+# - return:boolean
+
+containsKey-BB@0x0 : [ containsKey-BB@0xc containsKey-BB@0xe ]
+	0       (00000000) iget                 v0, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	1       (00000004) const/4              v1, -1
+	2       (00000006) const/4              v2, 0
+	3       (00000008) if-ne                v0, v1, +3
+
+containsKey-BB@0xc : 
+	4       (0000000c) return               v2
+
+containsKey-BB@0xe : [ containsKey-BB@0x16 ]
+	5       (0000000e) iget                 v0, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	6       (00000012) move                 v3, v0
+	7       (00000014) move                 v0, v2
+
+containsKey-BB@0x16 : [ containsKey-BB@0x1a containsKey-BB@0x44 ]
+	8       (00000016) if-eq                v3, v1, +17
+
+containsKey-BB@0x1a : [ containsKey-BB@0x22 containsKey-BB@0x44 ]
+	9       (0000001a) iget                 v4, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	10      (0000001e) if-ge                v0, v4, +13
+
+containsKey-BB@0x22 : [ containsKey-BB@0x32 containsKey-BB@0x36 ]
+	11      (00000022) iget-object          v4, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	12      (00000026) aget                 v4, v4, v3
+	13      (0000002a) iget                 v5, v7, Landroid/support/constraint/solver/SolverVariable;->id I
+	14      (0000002e) if-ne                v4, v5, +4
+
+containsKey-BB@0x32 : 
+	15      (00000032) const/4              v1, 1
+	16      (00000034) return               v1
+
+containsKey-BB@0x36 : [ containsKey-BB@0x16 ]
+	17      (00000036) iget-object          v4, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	18      (0000003a) aget                 v3, v4, v3
+	19      (0000003e) add-int/lit8         v0, v0, 1
+	20      (00000042) goto                 -16
+
+containsKey-BB@0x44 : 
+	21      (00000044) return               v2
+

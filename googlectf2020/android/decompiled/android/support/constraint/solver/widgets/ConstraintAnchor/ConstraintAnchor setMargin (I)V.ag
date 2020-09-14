@@ -1,0 +1,19 @@
+# Landroid/support/constraint/solver/widgets/ConstraintAnchor;->setMargin(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setMargin-BB@0x0 : [ setMargin-BB@0xc setMargin-BB@0x10 ]
+	0       (00000000) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->isConnected()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +4
+
+setMargin-BB@0xc : [ setMargin-BB@0x10 ]
+	3       (0000000c) iput                 v2, v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mMargin I
+
+setMargin-BB@0x10 : 
+	4       (00000010) return-void          
+

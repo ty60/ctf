@@ -1,0 +1,291 @@
+# Landroid/support/constraint/solver/ArrayLinkedVariables;->add(Landroid/support/constraint/solver/SolverVariable; F Z)V [access_flags=final]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:android.support.constraint.solver.SolverVariable
+# - v12:float
+# - v13:boolean
+#
+# - return:void
+
+add-BB@0x0 : [ add-BB@0xa add-BB@0xc ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) cmpl-float           v1, v12, v0
+	2       (00000006) if-nez               v1, +3
+
+add-BB@0xa : 
+	3       (0000000a) return-void          
+
+add-BB@0xc : [ add-BB@0x1a add-BB@0x96 ]
+	4       (0000000c) iget                 v1, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	5       (00000010) const/4              v2, 0
+	6       (00000012) const/4              v3, -1
+	7       (00000014) const/4              v4, 1
+	8       (00000016) if-ne                v1, v3, +40
+
+add-BB@0x1a : [ add-BB@0x6c add-BB@0x94 ]
+	9       (0000001a) iput                 v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	10      (0000001e) iget-object          v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	11      (00000022) iget                 v1, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	12      (00000026) aput                 v12, v0, v1
+	13      (0000002a) iget-object          v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	14      (0000002e) iget                 v1, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	15      (00000032) iget                 v2, v11, Landroid/support/constraint/solver/SolverVariable;->id I
+	16      (00000036) aput                 v2, v0, v1
+	17      (0000003a) iget-object          v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	18      (0000003e) iget                 v1, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	19      (00000042) aput                 v3, v0, v1
+	20      (00000046) iget                 v0, v11, Landroid/support/constraint/solver/SolverVariable;->usageInRowCount I
+	21      (0000004a) add-int/2addr        v0, v4
+	22      (0000004c) iput                 v0, v11, Landroid/support/constraint/solver/SolverVariable;->usageInRowCount I
+	23      (00000050) iget-object          v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mRow Landroid/support/constraint/solver/ArrayRow;
+	24      (00000054) invoke-virtual       v11, v0, Landroid/support/constraint/solver/SolverVariable;->addToRow(Landroid/support/constraint/solver/ArrayRow;)V
+	25      (0000005a) iget                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	26      (0000005e) add-int/2addr        v0, v4
+	27      (00000060) iput                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	28      (00000064) iget-boolean         v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mDidFillOnce Z
+	29      (00000068) if-nez               v0, +16
+
+add-BB@0x6c : [ add-BB@0x84 add-BB@0x94 ]
+	30      (0000006c) iget                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+	31      (00000070) add-int/2addr        v0, v4
+	32      (00000072) iput                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+	33      (00000076) iget                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+	34      (0000007a) iget-object          v1, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	35      (0000007e) array-length         v1, v1
+	36      (00000080) if-lt                v0, v1, +a
+
+add-BB@0x84 : [ add-BB@0x94 ]
+	37      (00000084) iput-boolean         v4, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mDidFillOnce Z
+	38      (00000088) iget-object          v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	39      (0000008c) array-length         v0, v0
+	40      (0000008e) sub-int/2addr        v0, v4
+	41      (00000090) iput                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+
+add-BB@0x94 : 
+	42      (00000094) return-void          
+
+add-BB@0x96 : [ add-BB@0xa2 ]
+	43      (00000096) iget                 v1, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	44      (0000009a) const/4              v5, -1
+	45      (0000009c) move                 v6, v5
+	46      (0000009e) move                 v5, v1
+	47      (000000a0) move                 v1, v2
+
+add-BB@0xa2 : [ add-BB@0xa6 add-BB@0x152 ]
+	48      (000000a2) if-eq                v5, v3, +58
+
+add-BB@0xa6 : [ add-BB@0xae add-BB@0x152 ]
+	49      (000000a6) iget                 v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	50      (000000aa) if-ge                v1, v7, +54
+
+add-BB@0xae : [ add-BB@0xbe add-BB@0x132 ]
+	51      (000000ae) iget-object          v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	52      (000000b2) aget                 v7, v7, v5
+	53      (000000b6) iget                 v8, v11, Landroid/support/constraint/solver/SolverVariable;->id I
+	54      (000000ba) if-ne                v7, v8, +3c
+
+add-BB@0xbe : [ add-BB@0xdc add-BB@0x130 ]
+	55      (000000be) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	56      (000000c2) aget                 v3, v2, v5
+	57      (000000c6) add-float/2addr      v3, v12
+	58      (000000c8) aput                 v3, v2, v5
+	59      (000000cc) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	60      (000000d0) aget                 v2, v2, v5
+	61      (000000d4) cmpl-float           v0, v2, v0
+	62      (000000d8) if-nez               v0, +2c
+
+add-BB@0xdc : [ add-BB@0xe4 add-BB@0xf2 ]
+	63      (000000dc) iget                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	64      (000000e0) if-ne                v5, v0, +9
+
+add-BB@0xe4 : [ add-BB@0x102 ]
+	65      (000000e4) iget-object          v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	66      (000000e8) aget                 v0, v0, v5
+	67      (000000ec) iput                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	68      (000000f0) goto                 +9
+
+add-BB@0xf2 : [ add-BB@0x102 ]
+	69      (000000f2) iget-object          v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	70      (000000f6) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	71      (000000fa) aget                 v2, v2, v5
+	72      (000000fe) aput                 v2, v0, v6
+
+add-BB@0x102 : [ add-BB@0x106 add-BB@0x110 ]
+	73      (00000102) if-eqz               v13, +7
+
+add-BB@0x106 : [ add-BB@0x110 ]
+	74      (00000106) iget-object          v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mRow Landroid/support/constraint/solver/ArrayRow;
+	75      (0000010a) invoke-virtual       v11, v0, Landroid/support/constraint/solver/SolverVariable;->removeFromRow(Landroid/support/constraint/solver/ArrayRow;)V
+
+add-BB@0x110 : [ add-BB@0x118 add-BB@0x11c ]
+	76      (00000110) iget-boolean         v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mDidFillOnce Z
+	77      (00000114) if-eqz               v0, +4
+
+add-BB@0x118 : [ add-BB@0x11c ]
+	78      (00000118) iput                 v5, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+
+add-BB@0x11c : [ add-BB@0x130 ]
+	79      (0000011c) iget                 v0, v11, Landroid/support/constraint/solver/SolverVariable;->usageInRowCount I
+	80      (00000120) sub-int/2addr        v0, v4
+	81      (00000122) iput                 v0, v11, Landroid/support/constraint/solver/SolverVariable;->usageInRowCount I
+	82      (00000126) iget                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	83      (0000012a) sub-int/2addr        v0, v4
+	84      (0000012c) iput                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+
+add-BB@0x130 : 
+	85      (00000130) return-void          
+
+add-BB@0x132 : [ add-BB@0x142 add-BB@0x144 ]
+	86      (00000132) iget-object          v8, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	87      (00000136) aget                 v8, v8, v5
+	88      (0000013a) iget                 v9, v11, Landroid/support/constraint/solver/SolverVariable;->id I
+	89      (0000013e) if-ge                v8, v9, +3
+
+add-BB@0x142 : [ add-BB@0x144 ]
+	90      (00000142) move                 v6, v5
+
+add-BB@0x144 : [ add-BB@0xa2 ]
+	91      (00000144) iget-object          v8, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	92      (00000148) aget                 v5, v8, v5
+	93      (0000014c) add-int/lit8         v1, v1, 1
+	94      (00000150) goto                 -57
+
+add-BB@0x152 : [ add-BB@0x160 add-BB@0x17c ]
+	95      (00000152) iget                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+	96      (00000156) add-int/2addr        v0, v4
+	97      (00000158) iget-boolean         v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mDidFillOnce Z
+	98      (0000015c) if-eqz               v7, +10
+
+add-BB@0x160 : [ add-BB@0x170 add-BB@0x176 ]
+	99      (00000160) iget-object          v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	100     (00000164) iget                 v8, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+	101     (00000168) aget                 v7, v7, v8
+	102     (0000016c) if-ne                v7, v3, +5
+
+add-BB@0x170 : [ add-BB@0x17c ]
+	103     (00000170) iget                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+	104     (00000174) goto                 +4
+
+add-BB@0x176 : [ add-BB@0x17c ]
+	105     (00000176) iget-object          v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	106     (0000017a) array-length         v0, v7
+
+add-BB@0x17c : [ add-BB@0x186 add-BB@0x1b6 ]
+	107     (0000017c) iget-object          v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	108     (00000180) array-length         v7, v7
+	109     (00000182) if-lt                v0, v7, +1a
+
+add-BB@0x186 : [ add-BB@0x194 add-BB@0x1b6 ]
+	110     (00000186) iget                 v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	111     (0000018a) iget-object          v8, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	112     (0000018e) array-length         v8, v8
+	113     (00000190) if-ge                v7, v8, +13
+
+add-BB@0x194 : [ add-BB@0x196 ]
+	114     (00000194) move                 v7, v2
+
+add-BB@0x196 : [ add-BB@0x1a0 add-BB@0x1b6 ]
+	115     (00000196) iget-object          v8, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	116     (0000019a) array-length         v8, v8
+	117     (0000019c) if-ge                v7, v8, +d
+
+add-BB@0x1a0 : [ add-BB@0x1ac add-BB@0x1b0 ]
+	118     (000001a0) iget-object          v8, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	119     (000001a4) aget                 v8, v8, v7
+	120     (000001a8) if-ne                v8, v3, +4
+
+add-BB@0x1ac : [ add-BB@0x1b6 ]
+	121     (000001ac) move                 v0, v7
+	122     (000001ae) goto                 +4
+
+add-BB@0x1b0 : [ add-BB@0x196 ]
+	123     (000001b0) add-int/lit8         v7, v7, 1
+	124     (000001b4) goto                 -f
+
+add-BB@0x1b6 : [ add-BB@0x1c0 add-BB@0x21a ]
+	125     (000001b6) iget-object          v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	126     (000001ba) array-length         v7, v7
+	127     (000001bc) if-lt                v0, v7, +2f
+
+add-BB@0x1c0 : [ add-BB@0x21a ]
+	128     (000001c0) iget-object          v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	129     (000001c4) array-length         v0, v7
+	130     (000001c6) iget                 v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->ROW_SIZE I
+	131     (000001ca) mul-int/lit8         v7, v7, 2
+	132     (000001ce) iput                 v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->ROW_SIZE I
+	133     (000001d2) iput-boolean         v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mDidFillOnce Z
+	134     (000001d6) add-int/lit8         v2, v0, -1
+	135     (000001da) iput                 v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+	136     (000001de) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	137     (000001e2) iget                 v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->ROW_SIZE I
+	138     (000001e6) invoke-static        v2, v7, Ljava/util/Arrays;->copyOf([F I)[F
+	139     (000001ec) move-result-object   v2
+	140     (000001ee) iput-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	141     (000001f2) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	142     (000001f6) iget                 v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->ROW_SIZE I
+	143     (000001fa) invoke-static        v2, v7, Ljava/util/Arrays;->copyOf([I I)[I
+	144     (00000200) move-result-object   v2
+	145     (00000202) iput-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	146     (00000206) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	147     (0000020a) iget                 v7, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->ROW_SIZE I
+	148     (0000020e) invoke-static        v2, v7, Ljava/util/Arrays;->copyOf([I I)[I
+	149     (00000214) move-result-object   v2
+	150     (00000216) iput-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+
+add-BB@0x21a : [ add-BB@0x232 add-BB@0x24c ]
+	151     (0000021a) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	152     (0000021e) iget                 v7, v11, Landroid/support/constraint/solver/SolverVariable;->id I
+	153     (00000222) aput                 v7, v2, v0
+	154     (00000226) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	155     (0000022a) aput                 v12, v2, v0
+	156     (0000022e) if-eq                v6, v3, +f
+
+add-BB@0x232 : [ add-BB@0x25c ]
+	157     (00000232) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	158     (00000236) iget-object          v3, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	159     (0000023a) aget                 v3, v3, v6
+	160     (0000023e) aput                 v3, v2, v0
+	161     (00000242) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	162     (00000246) aput                 v0, v2, v6
+	163     (0000024a) goto                 +9
+
+add-BB@0x24c : [ add-BB@0x25c ]
+	164     (0000024c) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	165     (00000250) iget                 v3, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	166     (00000254) aput                 v3, v2, v0
+	167     (00000258) iput                 v0, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+
+add-BB@0x25c : [ add-BB@0x282 add-BB@0x28c ]
+	168     (0000025c) iget                 v2, v11, Landroid/support/constraint/solver/SolverVariable;->usageInRowCount I
+	169     (00000260) add-int/2addr        v2, v4
+	170     (00000262) iput                 v2, v11, Landroid/support/constraint/solver/SolverVariable;->usageInRowCount I
+	171     (00000266) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mRow Landroid/support/constraint/solver/ArrayRow;
+	172     (0000026a) invoke-virtual       v11, v2, Landroid/support/constraint/solver/SolverVariable;->addToRow(Landroid/support/constraint/solver/ArrayRow;)V
+	173     (00000270) iget                 v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	174     (00000274) add-int/2addr        v2, v4
+	175     (00000276) iput                 v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	176     (0000027a) iget-boolean         v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mDidFillOnce Z
+	177     (0000027e) if-nez               v2, +7
+
+add-BB@0x282 : [ add-BB@0x28c ]
+	178     (00000282) iget                 v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+	179     (00000286) add-int/2addr        v2, v4
+	180     (00000288) iput                 v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+
+add-BB@0x28c : [ add-BB@0x29a add-BB@0x2aa ]
+	181     (0000028c) iget                 v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+	182     (00000290) iget-object          v3, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	183     (00000294) array-length         v3, v3
+	184     (00000296) if-lt                v2, v3, +a
+
+add-BB@0x29a : [ add-BB@0x2aa ]
+	185     (0000029a) iput-boolean         v4, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mDidFillOnce Z
+	186     (0000029e) iget-object          v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	187     (000002a2) array-length         v2, v2
+	188     (000002a4) sub-int/2addr        v2, v4
+	189     (000002a6) iput                 v2, v10, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+
+add-BB@0x2aa : 
+	190     (000002aa) return-void          
+

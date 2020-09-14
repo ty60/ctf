@@ -1,0 +1,58 @@
+# Landroid/support/constraint/solver/widgets/ConstraintAnchor;->connect(Landroid/support/constraint/solver/widgets/ConstraintAnchor; I I Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength; I Z)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.support.constraint.solver.widgets.ConstraintAnchor
+# - v5:int
+# - v6:int
+# - v7:android.support.constraint.solver.widgets.ConstraintAnchor$Strength
+# - v8:int
+# - v9:boolean
+#
+# - return:boolean
+
+connect-BB@0x0 : [ connect-BB@0x8 connect-BB@0x28 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) if-nez               v4, +12
+
+connect-BB@0x8 : 
+	3       (00000008) const/4              v2, 0
+	4       (0000000a) iput-object          v2, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	5       (0000000e) iput                 v1, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mMargin I
+	6       (00000012) const/4              v1, -1
+	7       (00000014) iput                 v1, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mGoneMargin I
+	8       (00000018) sget-object          v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;->NONE Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;
+	9       (0000001c) iput-object          v1, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mStrength Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;
+	10      (00000020) const/4              v1, 2
+	11      (00000022) iput                 v1, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mConnectionCreator I
+	12      (00000026) return               v0
+
+connect-BB@0x28 : [ connect-BB@0x2c connect-BB@0x3a ]
+	13      (00000028) if-nez               v9, +9
+
+connect-BB@0x2c : [ connect-BB@0x38 connect-BB@0x3a ]
+	14      (0000002c) invoke-virtual       v3, v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->isValidConnection(Landroid/support/constraint/solver/widgets/ConstraintAnchor;)Z
+	15      (00000032) move-result          v2
+	16      (00000034) if-nez               v2, +3
+
+connect-BB@0x38 : 
+	17      (00000038) return               v1
+
+connect-BB@0x3a : [ connect-BB@0x42 connect-BB@0x48 ]
+	18      (0000003a) iput-object          v4, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	19      (0000003e) if-lez               v5, +5
+
+connect-BB@0x42 : [ connect-BB@0x4c ]
+	20      (00000042) iput                 v5, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mMargin I
+	21      (00000046) goto                 +3
+
+connect-BB@0x48 : [ connect-BB@0x4c ]
+	22      (00000048) iput                 v1, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mMargin I
+
+connect-BB@0x4c : 
+	23      (0000004c) iput                 v6, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mGoneMargin I
+	24      (00000050) iput-object          v7, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mStrength Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;
+	25      (00000054) iput                 v8, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mConnectionCreator I
+	26      (00000058) return               v0
+

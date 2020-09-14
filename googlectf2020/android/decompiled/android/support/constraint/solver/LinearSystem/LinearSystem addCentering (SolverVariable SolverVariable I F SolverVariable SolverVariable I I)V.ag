@@ -1,0 +1,39 @@
+# Landroid/support/constraint/solver/LinearSystem;->addCentering(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; I F Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:android.support.constraint.solver.SolverVariable
+# - v13:android.support.constraint.solver.SolverVariable
+# - v14:int
+# - v15:float
+# - v16:android.support.constraint.solver.SolverVariable
+# - v17:android.support.constraint.solver.SolverVariable
+# - v18:int
+# - v19:int
+#
+# - return:void
+
+addCentering-BB@0x0 : [ addCentering-BB@0x30 addCentering-BB@0x36 ]
+	0       (00000000) move-object          v0, v11
+	1       (00000002) move/from16          v1, v19
+	2       (00000006) invoke-virtual       v0, Landroid/support/constraint/solver/LinearSystem;->createRow()Landroid/support/constraint/solver/ArrayRow;
+	3       (0000000c) move-result-object   v10
+	4       (0000000e) move-object          v2, v10
+	5       (00000010) move-object          v3, v12
+	6       (00000012) move-object          v4, v13
+	7       (00000014) move                 v5, v14
+	8       (00000016) move                 v6, v15
+	9       (00000018) move-object/from16   v7, v16
+	10      (0000001c) move-object/from16   v8, v17
+	11      (00000020) move/from16          v9, v18
+	12      (00000024) invoke-virtual/range v2 ... v9, Landroid/support/constraint/solver/ArrayRow;->createRowCentering(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; I F Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; I)Landroid/support/constraint/solver/ArrayRow;
+	13      (0000002a) const/4              v2, 6
+	14      (0000002c) if-eq                v1, v2, +5
+
+addCentering-BB@0x30 : [ addCentering-BB@0x36 ]
+	15      (00000030) invoke-virtual       v10, v0, v1, Landroid/support/constraint/solver/ArrayRow;->addError(Landroid/support/constraint/solver/LinearSystem; I)Landroid/support/constraint/solver/ArrayRow;
+
+addCentering-BB@0x36 : 
+	16      (00000036) invoke-virtual       v0, v10, Landroid/support/constraint/solver/LinearSystem;->addConstraint(Landroid/support/constraint/solver/ArrayRow;)V
+	17      (0000003c) return-void          
+

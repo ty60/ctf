@@ -1,0 +1,288 @@
+# Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolveLayoutDirection(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:int
+#
+# - return:void
+
+resolveLayoutDirection-BB@0x0 : [ resolveLayoutDirection-BB@0x66 resolveLayoutDirection-BB@0x6a ]
+	0       (00000000) iget                 v0, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->leftMargin I
+	1       (00000004) iget                 v1, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->rightMargin I
+	2       (00000008) invoke-super         v8, v9, Landroid/view/ViewGroup$MarginLayoutParams;->resolveLayoutDirection(I)V
+	3       (0000000e) const/4              v2, -1
+	4       (00000010) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedRightToLeft I
+	5       (00000014) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedRightToRight I
+	6       (00000018) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedLeftToLeft I
+	7       (0000001c) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedLeftToRight I
+	8       (00000020) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolveGoneLeftMargin I
+	9       (00000024) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolveGoneRightMargin I
+	10      (00000028) iget                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneLeftMargin I
+	11      (0000002c) iput                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolveGoneLeftMargin I
+	12      (00000030) iget                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneRightMargin I
+	13      (00000034) iput                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolveGoneRightMargin I
+	14      (00000038) iget                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalBias F
+	15      (0000003c) iput                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedHorizontalBias F
+	16      (00000040) iget                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guideBegin I
+	17      (00000044) iput                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuideBegin I
+	18      (00000048) iget                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guideEnd I
+	19      (0000004c) iput                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuideEnd I
+	20      (00000050) iget                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guidePercent F
+	21      (00000054) iput                 v3, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuidePercent F
+	22      (00000058) invoke-virtual       v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->getLayoutDirection()I
+	23      (0000005e) move-result          v3
+	24      (00000060) const/4              v4, 1
+	25      (00000062) if-ne                v4, v3, +4
+
+resolveLayoutDirection-BB@0x66 : [ resolveLayoutDirection-BB@0x6c ]
+	26      (00000066) move                 v3, v4
+	27      (00000068) goto                 +2
+
+resolveLayoutDirection-BB@0x6a : [ resolveLayoutDirection-BB@0x6c ]
+	28      (0000006a) const/4              v3, 0
+
+resolveLayoutDirection-BB@0x6c : [ resolveLayoutDirection-BB@0x70 resolveLayoutDirection-BB@0x158 ]
+	29      (0000006c) if-eqz               v3, +76
+
+resolveLayoutDirection-BB@0x70 : [ resolveLayoutDirection-BB@0x7a resolveLayoutDirection-BB@0x86 ]
+	30      (00000070) const/4              v5, 0
+	31      (00000072) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToEnd I
+	32      (00000076) if-eq                v6, v2, +8
+
+resolveLayoutDirection-BB@0x7a : [ resolveLayoutDirection-BB@0x98 ]
+	33      (0000007a) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToEnd I
+	34      (0000007e) iput                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedRightToLeft I
+	35      (00000082) const/4              v5, 1
+	36      (00000084) goto                 +a
+
+resolveLayoutDirection-BB@0x86 : [ resolveLayoutDirection-BB@0x8e resolveLayoutDirection-BB@0x98 ]
+	37      (00000086) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToStart I
+	38      (0000008a) if-eq                v6, v2, +7
+
+resolveLayoutDirection-BB@0x8e : [ resolveLayoutDirection-BB@0x98 ]
+	39      (0000008e) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToStart I
+	40      (00000092) iput                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedRightToRight I
+	41      (00000096) const/4              v5, 1
+
+resolveLayoutDirection-BB@0x98 : [ resolveLayoutDirection-BB@0xa0 resolveLayoutDirection-BB@0xaa ]
+	42      (00000098) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToStart I
+	43      (0000009c) if-eq                v6, v2, +7
+
+resolveLayoutDirection-BB@0xa0 : [ resolveLayoutDirection-BB@0xaa ]
+	44      (000000a0) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToStart I
+	45      (000000a4) iput                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedLeftToRight I
+	46      (000000a8) const/4              v5, 1
+
+resolveLayoutDirection-BB@0xaa : [ resolveLayoutDirection-BB@0xb2 resolveLayoutDirection-BB@0xbc ]
+	47      (000000aa) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToEnd I
+	48      (000000ae) if-eq                v6, v2, +7
+
+resolveLayoutDirection-BB@0xb2 : [ resolveLayoutDirection-BB@0xbc ]
+	49      (000000b2) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToEnd I
+	50      (000000b6) iput                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedLeftToLeft I
+	51      (000000ba) const/4              v5, 1
+
+resolveLayoutDirection-BB@0xbc : [ resolveLayoutDirection-BB@0xc4 resolveLayoutDirection-BB@0xcc ]
+	52      (000000bc) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneStartMargin I
+	53      (000000c0) if-eq                v6, v2, +6
+
+resolveLayoutDirection-BB@0xc4 : [ resolveLayoutDirection-BB@0xcc ]
+	54      (000000c4) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneStartMargin I
+	55      (000000c8) iput                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolveGoneRightMargin I
+
+resolveLayoutDirection-BB@0xcc : [ resolveLayoutDirection-BB@0xd4 resolveLayoutDirection-BB@0xdc ]
+	56      (000000cc) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneEndMargin I
+	57      (000000d0) if-eq                v6, v2, +6
+
+resolveLayoutDirection-BB@0xd4 : [ resolveLayoutDirection-BB@0xdc ]
+	58      (000000d4) iget                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneEndMargin I
+	59      (000000d8) iput                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolveGoneLeftMargin I
+
+resolveLayoutDirection-BB@0xdc : [ resolveLayoutDirection-BB@0xe4 resolveLayoutDirection-BB@0xf0 ]
+	60      (000000dc) const/high16         v6, 16256 # [1.0]
+	61      (000000e0) if-eqz               v5, +8
+
+resolveLayoutDirection-BB@0xe4 : [ resolveLayoutDirection-BB@0xf0 ]
+	62      (000000e4) iget                 v7, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalBias F
+	63      (000000e8) sub-float            v7, v6, v7
+	64      (000000ec) iput                 v7, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedHorizontalBias F
+
+resolveLayoutDirection-BB@0xf0 : [ resolveLayoutDirection-BB@0xf8 resolveLayoutDirection-BB@0x156 ]
+	65      (000000f0) iget-boolean         v7, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isGuideline Z
+	66      (000000f4) if-eqz               v7, +31
+
+resolveLayoutDirection-BB@0xf8 : [ resolveLayoutDirection-BB@0x100 resolveLayoutDirection-BB@0x156 ]
+	67      (000000f8) iget                 v7, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->orientation I
+	68      (000000fc) if-ne                v7, v4, +2d
+
+resolveLayoutDirection-BB@0x100 : [ resolveLayoutDirection-BB@0x110 resolveLayoutDirection-BB@0x124 ]
+	69      (00000100) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guidePercent F
+	70      (00000104) const/high16         v7, -16512 # [-1.0]
+	71      (00000108) cmpl-float           v4, v4, v7
+	72      (0000010c) if-eqz               v4, +c
+
+resolveLayoutDirection-BB@0x110 : [ resolveLayoutDirection-BB@0x156 ]
+	73      (00000110) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guidePercent F
+	74      (00000114) sub-float/2addr      v6, v4
+	75      (00000116) iput                 v6, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuidePercent F
+	76      (0000011a) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuideBegin I
+	77      (0000011e) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuideEnd I
+	78      (00000122) goto                 +1a
+
+resolveLayoutDirection-BB@0x124 : [ resolveLayoutDirection-BB@0x12c resolveLayoutDirection-BB@0x13e ]
+	79      (00000124) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guideBegin I
+	80      (00000128) if-eq                v4, v2, +b
+
+resolveLayoutDirection-BB@0x12c : [ resolveLayoutDirection-BB@0x156 ]
+	81      (0000012c) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guideBegin I
+	82      (00000130) iput                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuideEnd I
+	83      (00000134) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuideBegin I
+	84      (00000138) iput                 v7, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuidePercent F
+	85      (0000013c) goto                 +d
+
+resolveLayoutDirection-BB@0x13e : [ resolveLayoutDirection-BB@0x146 resolveLayoutDirection-BB@0x156 ]
+	86      (0000013e) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guideEnd I
+	87      (00000142) if-eq                v4, v2, +a
+
+resolveLayoutDirection-BB@0x146 : [ resolveLayoutDirection-BB@0x156 ]
+	88      (00000146) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guideEnd I
+	89      (0000014a) iput                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuideBegin I
+	90      (0000014e) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuideEnd I
+	91      (00000152) iput                 v7, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedGuidePercent F
+
+resolveLayoutDirection-BB@0x156 : [ resolveLayoutDirection-BB@0x1b8 ]
+	92      (00000156) goto                 +31
+
+resolveLayoutDirection-BB@0x158 : [ resolveLayoutDirection-BB@0x160 resolveLayoutDirection-BB@0x168 ]
+	93      (00000158) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToEnd I
+	94      (0000015c) if-eq                v4, v2, +6
+
+resolveLayoutDirection-BB@0x160 : [ resolveLayoutDirection-BB@0x168 ]
+	95      (00000160) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToEnd I
+	96      (00000164) iput                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedLeftToRight I
+
+resolveLayoutDirection-BB@0x168 : [ resolveLayoutDirection-BB@0x170 resolveLayoutDirection-BB@0x178 ]
+	97      (00000168) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToStart I
+	98      (0000016c) if-eq                v4, v2, +6
+
+resolveLayoutDirection-BB@0x170 : [ resolveLayoutDirection-BB@0x178 ]
+	99      (00000170) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToStart I
+	100     (00000174) iput                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedLeftToLeft I
+
+resolveLayoutDirection-BB@0x178 : [ resolveLayoutDirection-BB@0x180 resolveLayoutDirection-BB@0x188 ]
+	101     (00000178) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToStart I
+	102     (0000017c) if-eq                v4, v2, +6
+
+resolveLayoutDirection-BB@0x180 : [ resolveLayoutDirection-BB@0x188 ]
+	103     (00000180) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToStart I
+	104     (00000184) iput                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedRightToLeft I
+
+resolveLayoutDirection-BB@0x188 : [ resolveLayoutDirection-BB@0x190 resolveLayoutDirection-BB@0x198 ]
+	105     (00000188) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToEnd I
+	106     (0000018c) if-eq                v4, v2, +6
+
+resolveLayoutDirection-BB@0x190 : [ resolveLayoutDirection-BB@0x198 ]
+	107     (00000190) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToEnd I
+	108     (00000194) iput                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedRightToRight I
+
+resolveLayoutDirection-BB@0x198 : [ resolveLayoutDirection-BB@0x1a0 resolveLayoutDirection-BB@0x1a8 ]
+	109     (00000198) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneStartMargin I
+	110     (0000019c) if-eq                v4, v2, +6
+
+resolveLayoutDirection-BB@0x1a0 : [ resolveLayoutDirection-BB@0x1a8 ]
+	111     (000001a0) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneStartMargin I
+	112     (000001a4) iput                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolveGoneLeftMargin I
+
+resolveLayoutDirection-BB@0x1a8 : [ resolveLayoutDirection-BB@0x1b0 resolveLayoutDirection-BB@0x1b8 ]
+	113     (000001a8) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneEndMargin I
+	114     (000001ac) if-eq                v4, v2, +6
+
+resolveLayoutDirection-BB@0x1b0 : [ resolveLayoutDirection-BB@0x1b8 ]
+	115     (000001b0) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneEndMargin I
+	116     (000001b4) iput                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolveGoneRightMargin I
+
+resolveLayoutDirection-BB@0x1b8 : [ resolveLayoutDirection-BB@0x1c0 resolveLayoutDirection-BB@0x25c ]
+	117     (000001b8) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToStart I
+	118     (000001bc) if-ne                v4, v2, +50
+
+resolveLayoutDirection-BB@0x1c0 : [ resolveLayoutDirection-BB@0x1c8 resolveLayoutDirection-BB@0x25c ]
+	119     (000001c0) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToEnd I
+	120     (000001c4) if-ne                v4, v2, +4c
+
+resolveLayoutDirection-BB@0x1c8 : [ resolveLayoutDirection-BB@0x1d0 resolveLayoutDirection-BB@0x25c ]
+	121     (000001c8) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToStart I
+	122     (000001cc) if-ne                v4, v2, +48
+
+resolveLayoutDirection-BB@0x1d0 : [ resolveLayoutDirection-BB@0x1d8 resolveLayoutDirection-BB@0x25c ]
+	123     (000001d0) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToEnd I
+	124     (000001d4) if-ne                v4, v2, +44
+
+resolveLayoutDirection-BB@0x1d8 : [ resolveLayoutDirection-BB@0x1e0 resolveLayoutDirection-BB@0x1fa ]
+	125     (000001d8) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->rightToLeft I
+	126     (000001dc) if-eq                v4, v2, +f
+
+resolveLayoutDirection-BB@0x1e0 : [ resolveLayoutDirection-BB@0x1f0 resolveLayoutDirection-BB@0x21a ]
+	127     (000001e0) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->rightToLeft I
+	128     (000001e4) iput                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedRightToLeft I
+	129     (000001e8) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->rightMargin I
+	130     (000001ec) if-gtz               v4, +17
+
+resolveLayoutDirection-BB@0x1f0 : [ resolveLayoutDirection-BB@0x1f4 resolveLayoutDirection-BB@0x21a ]
+	131     (000001f0) if-lez               v1, +15
+
+resolveLayoutDirection-BB@0x1f4 : [ resolveLayoutDirection-BB@0x21a ]
+	132     (000001f4) iput                 v1, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->rightMargin I
+	133     (000001f8) goto                 +11
+
+resolveLayoutDirection-BB@0x1fa : [ resolveLayoutDirection-BB@0x202 resolveLayoutDirection-BB@0x21a ]
+	134     (000001fa) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->rightToRight I
+	135     (000001fe) if-eq                v4, v2, +e
+
+resolveLayoutDirection-BB@0x202 : [ resolveLayoutDirection-BB@0x212 resolveLayoutDirection-BB@0x21a ]
+	136     (00000202) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->rightToRight I
+	137     (00000206) iput                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedRightToRight I
+	138     (0000020a) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->rightMargin I
+	139     (0000020e) if-gtz               v4, +6
+
+resolveLayoutDirection-BB@0x212 : [ resolveLayoutDirection-BB@0x216 resolveLayoutDirection-BB@0x21a ]
+	140     (00000212) if-lez               v1, +4
+
+resolveLayoutDirection-BB@0x216 : [ resolveLayoutDirection-BB@0x21a ]
+	141     (00000216) iput                 v1, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->rightMargin I
+
+resolveLayoutDirection-BB@0x21a : [ resolveLayoutDirection-BB@0x222 resolveLayoutDirection-BB@0x23c ]
+	142     (0000021a) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->leftToLeft I
+	143     (0000021e) if-eq                v4, v2, +f
+
+resolveLayoutDirection-BB@0x222 : [ resolveLayoutDirection-BB@0x232 resolveLayoutDirection-BB@0x25c ]
+	144     (00000222) iget                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->leftToLeft I
+	145     (00000226) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedLeftToLeft I
+	146     (0000022a) iget                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->leftMargin I
+	147     (0000022e) if-gtz               v2, +17
+
+resolveLayoutDirection-BB@0x232 : [ resolveLayoutDirection-BB@0x236 resolveLayoutDirection-BB@0x25c ]
+	148     (00000232) if-lez               v0, +15
+
+resolveLayoutDirection-BB@0x236 : [ resolveLayoutDirection-BB@0x25c ]
+	149     (00000236) iput                 v0, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->leftMargin I
+	150     (0000023a) goto                 +11
+
+resolveLayoutDirection-BB@0x23c : [ resolveLayoutDirection-BB@0x244 resolveLayoutDirection-BB@0x25c ]
+	151     (0000023c) iget                 v4, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->leftToRight I
+	152     (00000240) if-eq                v4, v2, +e
+
+resolveLayoutDirection-BB@0x244 : [ resolveLayoutDirection-BB@0x254 resolveLayoutDirection-BB@0x25c ]
+	153     (00000244) iget                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->leftToRight I
+	154     (00000248) iput                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedLeftToRight I
+	155     (0000024c) iget                 v2, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->leftMargin I
+	156     (00000250) if-gtz               v2, +6
+
+resolveLayoutDirection-BB@0x254 : [ resolveLayoutDirection-BB@0x258 resolveLayoutDirection-BB@0x25c ]
+	157     (00000254) if-lez               v0, +4
+
+resolveLayoutDirection-BB@0x258 : [ resolveLayoutDirection-BB@0x25c ]
+	158     (00000258) iput                 v0, v8, Landroid/support/constraint/ConstraintLayout$LayoutParams;->leftMargin I
+
+resolveLayoutDirection-BB@0x25c : 
+	159     (0000025c) return-void          
+

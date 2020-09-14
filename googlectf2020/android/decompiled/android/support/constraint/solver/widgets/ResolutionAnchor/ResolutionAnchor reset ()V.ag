@@ -1,0 +1,27 @@
+# Landroid/support/constraint/solver/widgets/ResolutionAnchor;->reset()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+reset-BB@0x0 : 
+	0       (00000000) invoke-super         v3, Landroid/support/constraint/solver/widgets/ResolutionNode;->reset()V
+	1       (00000006) const/4              v0, 0
+	2       (00000008) iput-object          v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) iput                 v1, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->offset F
+	5       (00000012) iput-object          v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->dimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	6       (00000016) const/4              v2, 1
+	7       (00000018) iput                 v2, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->dimensionMultiplier I
+	8       (0000001c) iput-object          v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeDimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	9       (00000020) iput                 v2, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeDimensionMultiplier I
+	10      (00000024) iput-object          v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	11      (00000028) iput                 v1, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	12      (0000002c) iput                 v1, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->computedValue F
+	13      (00000030) iput-object          v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	14      (00000034) iput                 v1, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeOffset F
+	15      (00000038) const/4              v0, 0
+	16      (0000003a) iput                 v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->type I
+	17      (0000003e) return-void          
+

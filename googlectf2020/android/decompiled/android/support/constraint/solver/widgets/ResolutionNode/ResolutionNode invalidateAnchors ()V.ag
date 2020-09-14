@@ -1,0 +1,35 @@
+# Landroid/support/constraint/solver/widgets/ResolutionNode;->invalidateAnchors()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+invalidateAnchors-BB@0x0 : [ invalidateAnchors-BB@0x8 invalidateAnchors-BB@0xe ]
+	0       (00000000) instance-of          v0, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	1       (00000004) if-eqz               v0, +5
+
+invalidateAnchors-BB@0x8 : [ invalidateAnchors-BB@0xe ]
+	2       (00000008) const/4              v0, 0
+	3       (0000000a) iput                 v0, v2, Landroid/support/constraint/solver/widgets/ResolutionNode;->state I
+
+invalidateAnchors-BB@0xe : [ invalidateAnchors-BB@0x1a ]
+	4       (0000000e) iget-object          v0, v2, Landroid/support/constraint/solver/widgets/ResolutionNode;->dependents Ljava/util/HashSet;
+	5       (00000012) invoke-virtual       v0, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+	6       (00000018) move-result-object   v0
+
+invalidateAnchors-BB@0x1a : [ invalidateAnchors-BB@0x26 invalidateAnchors-BB@0x3a ]
+	7       (0000001a) invoke-interface     v0, Ljava/util/Iterator;->hasNext()Z
+	8       (00000020) move-result          v1
+	9       (00000022) if-eqz               v1, +c
+
+invalidateAnchors-BB@0x26 : [ invalidateAnchors-BB@0x1a ]
+	10      (00000026) invoke-interface     v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) check-cast           v1, Landroid/support/constraint/solver/widgets/ResolutionNode;
+	13      (00000032) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ResolutionNode;->invalidateAnchors()V
+	14      (00000038) goto                 -f
+
+invalidateAnchors-BB@0x3a : 
+	15      (0000003a) return-void          
+

@@ -1,0 +1,840 @@
+# Landroid/support/constraint/ConstraintLayout;->onMeasure(I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v45
+# - v46:int
+# - v47:int
+#
+# - return:void
+
+onMeasure-BB@0x0 : [ onMeasure-BB@0x86 onMeasure-BB@0xa2 ]
+	0       (00000000) move-object/from16   v0, v45
+	1       (00000004) move/from16          v1, v46
+	2       (00000008) move/from16          v2, v47
+	3       (0000000c) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	4       (00000012) move-result-wide     v3
+	5       (00000014) const/4              v5, 0
+	6       (00000016) const/4              v6, 0
+	7       (00000018) invoke-static/range  v46, Landroid/view/View$MeasureSpec;->getMode(I)I
+	8       (0000001e) move-result          v7
+	9       (00000020) invoke-static/range  v46, Landroid/view/View$MeasureSpec;->getSize(I)I
+	10      (00000026) move-result          v8
+	11      (00000028) invoke-static/range  v47, Landroid/view/View$MeasureSpec;->getMode(I)I
+	12      (0000002e) move-result          v9
+	13      (00000030) invoke-static/range  v47, Landroid/view/View$MeasureSpec;->getSize(I)I
+	14      (00000036) move-result          v10
+	15      (00000038) invoke-virtual/range v45, Landroid/support/constraint/ConstraintLayout;->getPaddingLeft()I
+	16      (0000003e) move-result          v11
+	17      (00000040) invoke-virtual/range v45, Landroid/support/constraint/ConstraintLayout;->getPaddingTop()I
+	18      (00000046) move-result          v12
+	19      (00000048) iget-object          v13, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	20      (0000004c) invoke-virtual       v13, v11, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setX(I)V
+	21      (00000052) iget-object          v13, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	22      (00000056) invoke-virtual       v13, v12, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setY(I)V
+	23      (0000005c) iget-object          v13, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	24      (00000060) iget                 v14, v0, Landroid/support/constraint/ConstraintLayout;->mMaxWidth I
+	25      (00000064) invoke-virtual       v13, v14, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setMaxWidth(I)V
+	26      (0000006a) iget-object          v13, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	27      (0000006e) iget                 v14, v0, Landroid/support/constraint/ConstraintLayout;->mMaxHeight I
+	28      (00000072) invoke-virtual       v13, v14, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setMaxHeight(I)V
+	29      (00000078) sget                 v13, Landroid/os/Build$VERSION;->SDK_INT I
+	30      (0000007c) const/4              v15, 1
+	31      (0000007e) const/16             v14, 17
+	32      (00000082) if-lt                v13, v14, +10
+
+onMeasure-BB@0x86 : [ onMeasure-BB@0x96 onMeasure-BB@0x9a ]
+	33      (00000086) iget-object          v13, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	34      (0000008a) invoke-virtual/range v45, Landroid/support/constraint/ConstraintLayout;->getLayoutDirection()I
+	35      (00000090) move-result          v14
+	36      (00000092) if-ne                v14, v15, +4
+
+onMeasure-BB@0x96 : [ onMeasure-BB@0x9c ]
+	37      (00000096) move                 v14, v15
+	38      (00000098) goto                 +2
+
+onMeasure-BB@0x9a : [ onMeasure-BB@0x9c ]
+	39      (0000009a) const/4              v14, 0
+
+onMeasure-BB@0x9c : [ onMeasure-BB@0xa2 ]
+	40      (0000009c) invoke-virtual       v13, v14, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setRtl(Z)V
+
+onMeasure-BB@0xa2 : [ onMeasure-BB@0xcc onMeasure-BB@0xdc ]
+	41      (000000a2) invoke-direct/range  v45 ... v47, Landroid/support/constraint/ConstraintLayout;->setSelfDimensionBehaviour(I I)V
+	42      (000000a8) iget-object          v13, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	43      (000000ac) invoke-virtual       v13, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getWidth()I
+	44      (000000b2) move-result          v13
+	45      (000000b4) iget-object          v14, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	46      (000000b8) invoke-virtual       v14, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getHeight()I
+	47      (000000be) move-result          v14
+	48      (000000c0) const/16             v17, 0
+	49      (000000c4) iget-boolean         v15, v0, Landroid/support/constraint/ConstraintLayout;->mDirtyHierarchy Z
+	50      (000000c8) if-eqz               v15, +a
+
+onMeasure-BB@0xcc : [ onMeasure-BB@0xdc ]
+	51      (000000cc) const/4              v15, 0
+	52      (000000ce) iput-boolean         v15, v0, Landroid/support/constraint/ConstraintLayout;->mDirtyHierarchy Z
+	53      (000000d2) invoke-direct/range  v45, Landroid/support/constraint/ConstraintLayout;->updateHierarchy()V
+	54      (000000d8) const/16             v17, 1
+
+onMeasure-BB@0xdc : [ onMeasure-BB@0xf0 onMeasure-BB@0xf4 ]
+	55      (000000dc) iget                 v15, v0, Landroid/support/constraint/ConstraintLayout;->mOptimizationLevel I
+	56      (000000e0) move-wide/from16     v19, v3
+	57      (000000e4) const/16             v3, 8
+	58      (000000e8) and-int/lit8         v4, v15, 8
+	59      (000000ec) if-ne                v4, v3, +4
+
+onMeasure-BB@0xf0 : [ onMeasure-BB@0xf6 ]
+	60      (000000f0) const/4              v4, 1
+	61      (000000f2) goto                 +2
+
+onMeasure-BB@0xf4 : [ onMeasure-BB@0xf6 ]
+	62      (000000f4) const/4              v4, 0
+
+onMeasure-BB@0xf6 : [ onMeasure-BB@0xfa onMeasure-BB@0x116 ]
+	63      (000000f6) if-eqz               v4, +10
+
+onMeasure-BB@0xfa : [ onMeasure-BB@0x11c ]
+	64      (000000fa) iget-object          v15, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	65      (000000fe) invoke-virtual       v15, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->preOptimize()V
+	66      (00000104) iget-object          v15, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	67      (00000108) invoke-virtual       v15, v13, v14, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->optimizeForDimensions(I I)V
+	68      (0000010e) invoke-direct/range  v45 ... v47, Landroid/support/constraint/ConstraintLayout;->internalMeasureDimensions(I I)V
+	69      (00000114) goto                 +4
+
+onMeasure-BB@0x116 : [ onMeasure-BB@0x11c ]
+	70      (00000116) invoke-direct/range  v45 ... v47, Landroid/support/constraint/ConstraintLayout;->internalMeasureChildren(I I)V
+
+onMeasure-BB@0x11c : [ onMeasure-BB@0x12e onMeasure-BB@0x13c ]
+	71      (0000011c) invoke-direct/range  v45, Landroid/support/constraint/ConstraintLayout;->updatePostMeasures()V
+	72      (00000122) invoke-virtual/range v45, Landroid/support/constraint/ConstraintLayout;->getChildCount()I
+	73      (00000128) move-result          v15
+	74      (0000012a) if-lez               v15, +9
+
+onMeasure-BB@0x12e : [ onMeasure-BB@0x132 onMeasure-BB@0x13c ]
+	75      (0000012e) if-eqz               v17, +7
+
+onMeasure-BB@0x132 : [ onMeasure-BB@0x13c ]
+	76      (00000132) iget-object          v15, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	77      (00000136) invoke-static        v15, Landroid/support/constraint/solver/widgets/Analyzer;->determineGroups(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;)V
+
+onMeasure-BB@0x13c : [ onMeasure-BB@0x148 onMeasure-BB@0x1c8 ]
+	78      (0000013c) iget-object          v15, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	79      (00000140) iget-boolean         v15, v15, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mGroupsWrapOptimized Z
+	80      (00000144) if-eqz               v15, +42
+
+onMeasure-BB@0x148 : [ onMeasure-BB@0x158 onMeasure-BB@0x188 ]
+	81      (00000148) iget-object          v15, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	82      (0000014c) iget-boolean         v15, v15, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalWrapOptimized Z
+	83      (00000150) const/high16         v3, -32768 # [-0.0]
+	84      (00000154) if-eqz               v15, +1a
+
+onMeasure-BB@0x158 : [ onMeasure-BB@0x15c onMeasure-BB@0x188 ]
+	85      (00000158) if-ne                v7, v3, +18
+
+onMeasure-BB@0x15c : [ onMeasure-BB@0x168 onMeasure-BB@0x17a ]
+	86      (0000015c) iget-object          v15, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	87      (00000160) iget                 v15, v15, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWrapFixedWidth I
+	88      (00000164) if-ge                v15, v8, +b
+
+onMeasure-BB@0x168 : [ onMeasure-BB@0x17a ]
+	89      (00000168) iget-object          v15, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	90      (0000016c) iget-object          v3, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	91      (00000170) iget                 v3, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWrapFixedWidth I
+	92      (00000174) invoke-virtual       v15, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setWidth(I)V
+
+onMeasure-BB@0x17a : [ onMeasure-BB@0x188 ]
+	93      (0000017a) iget-object          v3, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	94      (0000017e) sget-object          v15, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->FIXED Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	95      (00000182) invoke-virtual       v3, v15, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setHorizontalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
+
+onMeasure-BB@0x188 : [ onMeasure-BB@0x194 onMeasure-BB@0x1c8 ]
+	96      (00000188) iget-object          v3, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	97      (0000018c) iget-boolean         v3, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mVerticalWrapOptimized Z
+	98      (00000190) if-eqz               v3, +1c
+
+onMeasure-BB@0x194 : [ onMeasure-BB@0x19c onMeasure-BB@0x1c8 ]
+	99      (00000194) const/high16         v3, -32768 # [-0.0]
+	100     (00000198) if-ne                v9, v3, +18
+
+onMeasure-BB@0x19c : [ onMeasure-BB@0x1a8 onMeasure-BB@0x1ba ]
+	101     (0000019c) iget-object          v3, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	102     (000001a0) iget                 v3, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWrapFixedHeight I
+	103     (000001a4) if-ge                v3, v10, +b
+
+onMeasure-BB@0x1a8 : [ onMeasure-BB@0x1ba ]
+	104     (000001a8) iget-object          v3, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	105     (000001ac) iget-object          v15, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	106     (000001b0) iget                 v15, v15, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWrapFixedHeight I
+	107     (000001b4) invoke-virtual       v3, v15, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setHeight(I)V
+
+onMeasure-BB@0x1ba : [ onMeasure-BB@0x1c8 ]
+	108     (000001ba) iget-object          v3, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	109     (000001be) sget-object          v15, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->FIXED Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	110     (000001c2) invoke-virtual       v3, v15, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setVerticalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
+
+onMeasure-BB@0x1c8 : [ onMeasure-BB@0x1da onMeasure-BB@0x296 ]
+	111     (000001c8) iget                 v3, v0, Landroid/support/constraint/ConstraintLayout;->mOptimizationLevel I
+	112     (000001cc) const/16             v15, 32
+	113     (000001d0) and-int/2addr        v3, v15
+	114     (000001d2) move/from16          v21, v5
+	115     (000001d6) if-ne                v3, v15, +60
+
+onMeasure-BB@0x1da : [ onMeasure-BB@0x1fa onMeasure-BB@0x218 ]
+	116     (000001da) iget-object          v3, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	117     (000001de) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getWidth()I
+	118     (000001e4) move-result          v3
+	119     (000001e6) iget-object          v15, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	120     (000001ea) invoke-virtual       v15, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getHeight()I
+	121     (000001f0) move-result          v15
+	122     (000001f2) iget                 v5, v0, Landroid/support/constraint/ConstraintLayout;->mLastMeasureWidth I
+	123     (000001f6) if-eq                v5, v3, +11
+
+onMeasure-BB@0x1fa : [ onMeasure-BB@0x202 onMeasure-BB@0x218 ]
+	124     (000001fa) const/high16         v5, 16384 # [2.0]
+	125     (000001fe) if-ne                v7, v5, +d
+
+onMeasure-BB@0x202 : [ onMeasure-BB@0x21c ]
+	126     (00000202) iget-object          v5, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	127     (00000206) iget-object          v5, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWidgetGroups Ljava/util/List;
+	128     (0000020a) move/from16          v22, v6
+	129     (0000020e) const/4              v6, 0
+	130     (00000210) invoke-static        v5, v6, v3, Landroid/support/constraint/solver/widgets/Analyzer;->setPosition(Ljava/util/List; I I)V
+	131     (00000216) goto                 +3
+
+onMeasure-BB@0x218 : [ onMeasure-BB@0x21c ]
+	132     (00000218) move/from16          v22, v6
+
+onMeasure-BB@0x21c : [ onMeasure-BB@0x224 onMeasure-BB@0x23c ]
+	133     (0000021c) iget                 v5, v0, Landroid/support/constraint/ConstraintLayout;->mLastMeasureHeight I
+	134     (00000220) if-eq                v5, v15, +e
+
+onMeasure-BB@0x224 : [ onMeasure-BB@0x22c onMeasure-BB@0x23c ]
+	135     (00000224) const/high16         v5, 16384 # [2.0]
+	136     (00000228) if-ne                v9, v5, +a
+
+onMeasure-BB@0x22c : [ onMeasure-BB@0x23c ]
+	137     (0000022c) iget-object          v5, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	138     (00000230) iget-object          v5, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWidgetGroups Ljava/util/List;
+	139     (00000234) const/4              v6, 1
+	140     (00000236) invoke-static        v5, v6, v15, Landroid/support/constraint/solver/widgets/Analyzer;->setPosition(Ljava/util/List; I I)V
+
+onMeasure-BB@0x23c : [ onMeasure-BB@0x248 onMeasure-BB@0x266 ]
+	141     (0000023c) iget-object          v5, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	142     (00000240) iget-boolean         v5, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalWrapOptimized Z
+	143     (00000244) if-eqz               v5, +11
+
+onMeasure-BB@0x248 : [ onMeasure-BB@0x254 onMeasure-BB@0x266 ]
+	144     (00000248) iget-object          v5, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	145     (0000024c) iget                 v5, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWrapFixedWidth I
+	146     (00000250) if-le                v5, v8, +b
+
+onMeasure-BB@0x254 : [ onMeasure-BB@0x268 ]
+	147     (00000254) iget-object          v5, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	148     (00000258) iget-object          v5, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWidgetGroups Ljava/util/List;
+	149     (0000025c) const/4              v6, 0
+	150     (0000025e) invoke-static        v5, v6, v8, Landroid/support/constraint/solver/widgets/Analyzer;->setPosition(Ljava/util/List; I I)V
+	151     (00000264) goto                 +2
+
+onMeasure-BB@0x266 : [ onMeasure-BB@0x268 ]
+	152     (00000266) const/4              v6, 0
+
+onMeasure-BB@0x268 : [ onMeasure-BB@0x274 onMeasure-BB@0x292 ]
+	153     (00000268) iget-object          v5, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	154     (0000026c) iget-boolean         v5, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mVerticalWrapOptimized Z
+	155     (00000270) if-eqz               v5, +11
+
+onMeasure-BB@0x274 : [ onMeasure-BB@0x280 onMeasure-BB@0x292 ]
+	156     (00000274) iget-object          v5, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	157     (00000278) iget                 v5, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWrapFixedHeight I
+	158     (0000027c) if-le                v5, v10, +b
+
+onMeasure-BB@0x280 : [ onMeasure-BB@0x29c ]
+	159     (00000280) iget-object          v5, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	160     (00000284) iget-object          v5, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mWidgetGroups Ljava/util/List;
+	161     (00000288) const/4              v6, 1
+	162     (0000028a) invoke-static        v5, v6, v10, Landroid/support/constraint/solver/widgets/Analyzer;->setPosition(Ljava/util/List; I I)V
+	163     (00000290) goto                 +6
+
+onMeasure-BB@0x292 : [ onMeasure-BB@0x29c ]
+	164     (00000292) const/4              v6, 1
+	165     (00000294) goto                 +4
+
+onMeasure-BB@0x296 : [ onMeasure-BB@0x29c ]
+	166     (00000296) move/from16          v22, v6
+	167     (0000029a) const/4              v6, 1
+
+onMeasure-BB@0x29c : [ onMeasure-BB@0x2a8 onMeasure-BB@0x2b2 ]
+	168     (0000029c) invoke-virtual/range v45, Landroid/support/constraint/ConstraintLayout;->getChildCount()I
+	169     (000002a2) move-result          v3
+	170     (000002a4) if-lez               v3, +7
+
+onMeasure-BB@0x2a8 : [ onMeasure-BB@0x2b2 ]
+	171     (000002a8) const-string         v3, 'First pass'
+	172     (000002ac) invoke-virtual       v0, v3, Landroid/support/constraint/ConstraintLayout;->solveLinearSystem(Ljava/lang/String;)V
+
+onMeasure-BB@0x2b2 : [ onMeasure-BB@0x2de onMeasure-BB@0x7b0 ]
+	173     (000002b2) const/4              v3, 0
+	174     (000002b4) iget-object          v5, v0, Landroid/support/constraint/ConstraintLayout;->mVariableDimensionsWidgets Ljava/util/ArrayList;
+	175     (000002b8) invoke-virtual       v5, Ljava/util/ArrayList;->size()I
+	176     (000002be) move-result          v5
+	177     (000002c0) invoke-virtual/range v45, Landroid/support/constraint/ConstraintLayout;->getPaddingBottom()I
+	178     (000002c6) move-result          v15
+	179     (000002c8) add-int/2addr        v15, v12
+	180     (000002ca) invoke-virtual/range v45, Landroid/support/constraint/ConstraintLayout;->getPaddingRight()I
+	181     (000002d0) move-result          v16
+	182     (000002d2) add-int              v6, v11, v16
+	183     (000002d6) move/from16          v25, v3
+	184     (000002da) if-lez               v5, +26b
+
+onMeasure-BB@0x2de : [ onMeasure-BB@0x2fa onMeasure-BB@0x2fe ]
+	185     (000002de) const/16             v16, 0
+	186     (000002e2) iget-object          v3, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	187     (000002e6) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getHorizontalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	188     (000002ec) move-result-object   v3
+	189     (000002ee) move/from16          v26, v7
+	190     (000002f2) sget-object          v7, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	191     (000002f6) if-ne                v3, v7, +4
+
+onMeasure-BB@0x2fa : [ onMeasure-BB@0x300 ]
+	192     (000002fa) const/4              v3, 1
+	193     (000002fc) goto                 +2
+
+onMeasure-BB@0x2fe : [ onMeasure-BB@0x300 ]
+	194     (000002fe) const/4              v3, 0
+
+onMeasure-BB@0x300 : [ onMeasure-BB@0x318 onMeasure-BB@0x31e ]
+	195     (00000300) iget-object          v7, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	196     (00000304) invoke-virtual       v7, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getVerticalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	197     (0000030a) move-result-object   v7
+	198     (0000030c) move/from16          v27, v8
+	199     (00000310) sget-object          v8, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	200     (00000314) if-ne                v7, v8, +5
+
+onMeasure-BB@0x318 : [ onMeasure-BB@0x322 ]
+	201     (00000318) const/16             v24, 1
+	202     (0000031c) goto                 +3
+
+onMeasure-BB@0x31e : [ onMeasure-BB@0x322 ]
+	203     (0000031e) const/16             v24, 0
+
+onMeasure-BB@0x322 : [ onMeasure-BB@0x372 ]
+	204     (00000322) move/from16          v7, v24
+	205     (00000326) iget-object          v8, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	206     (0000032a) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getWidth()I
+	207     (00000330) move-result          v8
+	208     (00000332) move/from16          v28, v9
+	209     (00000336) iget                 v9, v0, Landroid/support/constraint/ConstraintLayout;->mMinWidth I
+	210     (0000033a) invoke-static        v8, v9, Ljava/lang/Math;->max(I I)I
+	211     (00000340) move-result          v8
+	212     (00000342) iget-object          v9, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	213     (00000346) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getHeight()I
+	214     (0000034c) move-result          v9
+	215     (0000034e) move/from16          v29, v8
+	216     (00000352) iget                 v8, v0, Landroid/support/constraint/ConstraintLayout;->mMinHeight I
+	217     (00000356) invoke-static        v9, v8, Ljava/lang/Math;->max(I I)I
+	218     (0000035c) move-result          v8
+	219     (0000035e) move/from16          v30, v10
+	220     (00000362) move/from16          v31, v11
+	221     (00000366) move/from16          v11, v25
+	222     (0000036a) move/from16          v9, v29
+	223     (0000036e) move                 v10, v8
+	224     (00000370) const/4              v8, 0
+
+onMeasure-BB@0x372 : [ onMeasure-BB@0x37a onMeasure-BB@0x620 ]
+	225     (00000372) const-wide/16        v24, 1 # [1.0]
+	226     (00000376) if-ge                v8, v5, +155
+
+onMeasure-BB@0x37a : [ onMeasure-BB@0x3a6 onMeasure-BB@0x3b8 ]
+	227     (0000037a) move/from16          v32, v12
+	228     (0000037e) iget-object          v12, v0, Landroid/support/constraint/ConstraintLayout;->mVariableDimensionsWidgets Ljava/util/ArrayList;
+	229     (00000382) invoke-virtual       v12, v8, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	230     (00000388) move-result-object   v12
+	231     (0000038a) check-cast           v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	232     (0000038e) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getCompanionWidget()Ljava/lang/Object;
+	233     (00000394) move-result-object   v18
+	234     (00000396) move/from16          v33, v5
+	235     (0000039a) move-object/from16   v5, v18
+	236     (0000039e) check-cast           v5, Landroid/view/View;
+	237     (000003a2) if-nez               v5, +b
+
+onMeasure-BB@0x3a6 : [ onMeasure-BB@0x600 ]
+	238     (000003a6) nop                  
+	239     (000003a8) move/from16          v36, v8
+	240     (000003ac) move/from16          v35, v13
+	241     (000003b0) move/from16          v34, v14
+	242     (000003b4) goto/16              +126
+
+onMeasure-BB@0x3b8 : [ onMeasure-BB@0x3d8 onMeasure-BB@0x5fc ]
+	243     (000003b8) invoke-virtual       v5, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	244     (000003be) move-result-object   v18
+	245     (000003c0) move/from16          v34, v14
+	246     (000003c4) move-object/from16   v14, v18
+	247     (000003c8) check-cast           v14, Landroid/support/constraint/ConstraintLayout$LayoutParams;
+	248     (000003cc) move/from16          v35, v13
+	249     (000003d0) iget-boolean         v13, v14, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isHelper Z
+	250     (000003d4) if-nez               v13, +114
+
+onMeasure-BB@0x3d8 : [ onMeasure-BB@0x3e0 onMeasure-BB@0x3ea ]
+	251     (000003d8) iget-boolean         v13, v14, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isGuideline Z
+	252     (000003dc) if-eqz               v13, +7
+
+onMeasure-BB@0x3e0 : [ onMeasure-BB@0x600 ]
+	253     (000003e0) nop                  
+	254     (000003e2) move/from16          v36, v8
+	255     (000003e6) goto/16              +10d
+
+onMeasure-BB@0x3ea : [ onMeasure-BB@0x3fe onMeasure-BB@0x402 ]
+	256     (000003ea) invoke-virtual       v5, Landroid/view/View;->getVisibility()I
+	257     (000003f0) move-result          v13
+	258     (000003f2) move/from16          v36, v8
+	259     (000003f6) const/16             v8, 8
+	260     (000003fa) if-ne                v13, v8, +4
+
+onMeasure-BB@0x3fe : [ onMeasure-BB@0x600 ]
+	261     (000003fe) goto/16              +101
+
+onMeasure-BB@0x402 : [ onMeasure-BB@0x406 onMeasure-BB@0x432 ]
+	262     (00000402) if-eqz               v4, +18
+
+onMeasure-BB@0x406 : [ onMeasure-BB@0x41a onMeasure-BB@0x432 ]
+	263     (00000406) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getResolutionWidth()Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	264     (0000040c) move-result-object   v8
+	265     (0000040e) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ResolutionDimension;->isResolved()Z
+	266     (00000414) move-result          v8
+	267     (00000416) if-eqz               v8, +e
+
+onMeasure-BB@0x41a : [ onMeasure-BB@0x42e onMeasure-BB@0x432 ]
+	268     (0000041a) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getResolutionHeight()Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	269     (00000420) move-result-object   v8
+	270     (00000422) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ResolutionDimension;->isResolved()Z
+	271     (00000428) move-result          v8
+	272     (0000042a) if-eqz               v8, +4
+
+onMeasure-BB@0x42e : [ onMeasure-BB@0x600 ]
+	273     (0000042e) goto/16              +e9
+
+onMeasure-BB@0x432 : [ onMeasure-BB@0x448 onMeasure-BB@0x45e ]
+	274     (00000432) const/4              v8, 0
+	275     (00000434) const/4              v13, 0
+	276     (00000436) move/from16          v37, v8
+	277     (0000043a) iget                 v8, v14, Landroid/support/constraint/ConstraintLayout$LayoutParams;->width I
+	278     (0000043e) move/from16          v38, v13
+	279     (00000442) const/4              v13, -2
+	280     (00000444) if-ne                v8, v13, +d
+
+onMeasure-BB@0x448 : [ onMeasure-BB@0x450 onMeasure-BB@0x45e ]
+	281     (00000448) iget-boolean         v8, v14, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalDimensionFixed Z
+	282     (0000044c) if-eqz               v8, +9
+
+onMeasure-BB@0x450 : [ onMeasure-BB@0x472 ]
+	283     (00000450) iget                 v8, v14, Landroid/support/constraint/ConstraintLayout$LayoutParams;->width I
+	284     (00000454) invoke-static        v1, v6, v8, Landroid/support/constraint/ConstraintLayout;->getChildMeasureSpec(I I I)I
+	285     (0000045a) move-result          v8
+	286     (0000045c) goto                 +b
+
+onMeasure-BB@0x45e : [ onMeasure-BB@0x472 ]
+	287     (0000045e) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	288     (00000464) move-result          v8
+	289     (00000466) const/high16         v13, 16384 # [2.0]
+	290     (0000046a) invoke-static        v8, v13, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	291     (00000470) move-result          v8
+
+onMeasure-BB@0x472 : [ onMeasure-BB@0x47c onMeasure-BB@0x492 ]
+	292     (00000472) iget                 v13, v14, Landroid/support/constraint/ConstraintLayout$LayoutParams;->height I
+	293     (00000476) const/4              v1, -2
+	294     (00000478) if-ne                v13, v1, +d
+
+onMeasure-BB@0x47c : [ onMeasure-BB@0x484 onMeasure-BB@0x492 ]
+	295     (0000047c) iget-boolean         v1, v14, Landroid/support/constraint/ConstraintLayout$LayoutParams;->verticalDimensionFixed Z
+	296     (00000480) if-eqz               v1, +9
+
+onMeasure-BB@0x484 : [ onMeasure-BB@0x4a6 ]
+	297     (00000484) iget                 v1, v14, Landroid/support/constraint/ConstraintLayout$LayoutParams;->height I
+	298     (00000488) invoke-static        v2, v15, v1, Landroid/support/constraint/ConstraintLayout;->getChildMeasureSpec(I I I)I
+	299     (0000048e) move-result          v1
+	300     (00000490) goto                 +b
+
+onMeasure-BB@0x492 : [ onMeasure-BB@0x4a6 ]
+	301     (00000492) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	302     (00000498) move-result          v1
+	303     (0000049a) const/high16         v13, 16384 # [2.0]
+	304     (0000049e) invoke-static        v1, v13, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	305     (000004a4) move-result          v1
+
+onMeasure-BB@0x4a6 : [ onMeasure-BB@0x4b4 onMeasure-BB@0x4ca ]
+	306     (000004a6) invoke-virtual       v5, v8, v1, Landroid/view/View;->measure(I I)V
+	307     (000004ac) iget-object          v13, v0, Landroid/support/constraint/ConstraintLayout;->mMetrics Landroid/support/constraint/solver/Metrics;
+	308     (000004b0) if-eqz               v13, +d
+
+onMeasure-BB@0x4b4 : [ onMeasure-BB@0x4ce ]
+	309     (000004b4) iget-object          v13, v0, Landroid/support/constraint/ConstraintLayout;->mMetrics Landroid/support/constraint/solver/Metrics;
+	310     (000004b8) move/from16          v39, v1
+	311     (000004bc) iget-wide            v1, v13, Landroid/support/constraint/solver/Metrics;->additionalMeasures J
+	312     (000004c0) add-long             v1, v1, v24
+	313     (000004c4) iput-wide            v1, v13, Landroid/support/constraint/solver/Metrics;->additionalMeasures J
+	314     (000004c8) goto                 +3
+
+onMeasure-BB@0x4ca : [ onMeasure-BB@0x4ce ]
+	315     (000004ca) move/from16          v39, v1
+
+onMeasure-BB@0x4ce : [ onMeasure-BB@0x4ee onMeasure-BB@0x54e ]
+	316     (000004ce) add-int/lit8         v21, v21, 1
+	317     (000004d2) invoke-virtual       v5, Landroid/view/View;->getMeasuredWidth()I
+	318     (000004d8) move-result          v1
+	319     (000004da) invoke-virtual       v5, Landroid/view/View;->getMeasuredHeight()I
+	320     (000004e0) move-result          v2
+	321     (000004e2) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	322     (000004e8) move-result          v13
+	323     (000004ea) if-eq                v1, v13, +32
+
+onMeasure-BB@0x4ee : [ onMeasure-BB@0x4f8 onMeasure-BB@0x506 ]
+	324     (000004ee) invoke-virtual       v12, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setWidth(I)V
+	325     (000004f4) if-eqz               v4, +9
+
+onMeasure-BB@0x4f8 : [ onMeasure-BB@0x506 ]
+	326     (000004f8) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getResolutionWidth()Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	327     (000004fe) move-result-object   v13
+	328     (00000500) invoke-virtual       v13, v1, Landroid/support/constraint/solver/widgets/ResolutionDimension;->resolve(I)V
+
+onMeasure-BB@0x506 : [ onMeasure-BB@0x50a onMeasure-BB@0x544 ]
+	329     (00000506) if-eqz               v3, +1f
+
+onMeasure-BB@0x50a : [ onMeasure-BB@0x516 onMeasure-BB@0x544 ]
+	330     (0000050a) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getRight()I
+	331     (00000510) move-result          v13
+	332     (00000512) if-le                v13, v9, +19
+
+onMeasure-BB@0x516 : [ onMeasure-BB@0x548 ]
+	333     (00000516) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getRight()I
+	334     (0000051c) move-result          v13
+	335     (0000051e) move/from16          v40, v1
+	336     (00000522) sget-object          v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->RIGHT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	337     (00000526) invoke-virtual       v12, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	338     (0000052c) move-result-object   v1
+	339     (0000052e) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	340     (00000534) move-result          v1
+	341     (00000536) add-int/2addr        v13, v1
+	342     (00000538) invoke-static        v9, v13, Ljava/lang/Math;->max(I I)I
+	343     (0000053e) move-result          v1
+	344     (00000540) move                 v9, v1
+	345     (00000542) goto                 +3
+
+onMeasure-BB@0x544 : [ onMeasure-BB@0x548 ]
+	346     (00000544) move/from16          v40, v1
+
+onMeasure-BB@0x548 : [ onMeasure-BB@0x552 ]
+	347     (00000548) const/16             v16, 1
+	348     (0000054c) goto                 +3
+
+onMeasure-BB@0x54e : [ onMeasure-BB@0x552 ]
+	349     (0000054e) move/from16          v40, v1
+
+onMeasure-BB@0x552 : [ onMeasure-BB@0x55e onMeasure-BB@0x5b2 ]
+	350     (00000552) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	351     (00000558) move-result          v1
+	352     (0000055a) if-eq                v2, v1, +2c
+
+onMeasure-BB@0x55e : [ onMeasure-BB@0x568 onMeasure-BB@0x576 ]
+	353     (0000055e) invoke-virtual       v12, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHeight(I)V
+	354     (00000564) if-eqz               v4, +9
+
+onMeasure-BB@0x568 : [ onMeasure-BB@0x576 ]
+	355     (00000568) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getResolutionHeight()Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	356     (0000056e) move-result-object   v1
+	357     (00000570) invoke-virtual       v1, v2, Landroid/support/constraint/solver/widgets/ResolutionDimension;->resolve(I)V
+
+onMeasure-BB@0x576 : [ onMeasure-BB@0x57a onMeasure-BB@0x5ae ]
+	358     (00000576) if-eqz               v7, +1c
+
+onMeasure-BB@0x57a : [ onMeasure-BB@0x586 onMeasure-BB@0x5ae ]
+	359     (0000057a) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getBottom()I
+	360     (00000580) move-result          v1
+	361     (00000582) if-le                v1, v10, +16
+
+onMeasure-BB@0x586 : [ onMeasure-BB@0x5ae ]
+	362     (00000586) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getBottom()I
+	363     (0000058c) move-result          v1
+	364     (0000058e) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->BOTTOM Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	365     (00000592) invoke-virtual       v12, v13, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	366     (00000598) move-result-object   v13
+	367     (0000059a) invoke-virtual       v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	368     (000005a0) move-result          v13
+	369     (000005a2) add-int/2addr        v1, v13
+	370     (000005a4) invoke-static        v10, v1, Ljava/lang/Math;->max(I I)I
+	371     (000005aa) move-result          v1
+	372     (000005ac) move                 v10, v1
+
+onMeasure-BB@0x5ae : [ onMeasure-BB@0x5b2 ]
+	373     (000005ae) const/16             v16, 1
+
+onMeasure-BB@0x5b2 : [ onMeasure-BB@0x5ba onMeasure-BB@0x5de ]
+	374     (000005b2) iget-boolean         v1, v14, Landroid/support/constraint/ConstraintLayout$LayoutParams;->needsBaseline Z
+	375     (000005b6) if-eqz               v1, +14
+
+onMeasure-BB@0x5ba : [ onMeasure-BB@0x5c8 onMeasure-BB@0x5de ]
+	376     (000005ba) invoke-virtual       v5, Landroid/view/View;->getBaseline()I
+	377     (000005c0) move-result          v1
+	378     (000005c2) const/4              v13, -1
+	379     (000005c4) if-eq                v1, v13, +d
+
+onMeasure-BB@0x5c8 : [ onMeasure-BB@0x5d4 onMeasure-BB@0x5de ]
+	380     (000005c8) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getBaselineDistance()I
+	381     (000005ce) move-result          v13
+	382     (000005d0) if-eq                v1, v13, +7
+
+onMeasure-BB@0x5d4 : [ onMeasure-BB@0x5de ]
+	383     (000005d4) invoke-virtual       v12, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setBaselineDistance(I)V
+	384     (000005da) const/16             v16, 1
+
+onMeasure-BB@0x5de : [ onMeasure-BB@0x5ea onMeasure-BB@0x600 ]
+	385     (000005de) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	386     (000005e2) const/16             v13, 11
+	387     (000005e6) if-lt                v1, v13, +d
+
+onMeasure-BB@0x5ea : [ onMeasure-BB@0x600 ]
+	388     (000005ea) invoke-virtual       v5, Landroid/view/View;->getMeasuredState()I
+	389     (000005f0) move-result          v1
+	390     (000005f2) invoke-static        v11, v1, Landroid/support/constraint/ConstraintLayout;->combineMeasuredStates(I I)I
+	391     (000005f8) move-result          v11
+	392     (000005fa) goto                 +3
+
+onMeasure-BB@0x5fc : [ onMeasure-BB@0x600 ]
+	393     (000005fc) move/from16          v36, v8
+
+onMeasure-BB@0x600 : [ onMeasure-BB@0x372 ]
+	394     (00000600) add-int/lit8         v8, v36, 1
+	395     (00000604) move/from16          v12, v32
+	396     (00000608) move/from16          v5, v33
+	397     (0000060c) move/from16          v14, v34
+	398     (00000610) move/from16          v13, v35
+	399     (00000614) move/from16          v1, v46
+	400     (00000618) move/from16          v2, v47
+	401     (0000061c) goto/16              -155
+
+onMeasure-BB@0x620 : [ onMeasure-BB@0x634 onMeasure-BB@0x6b6 ]
+	402     (00000620) move/from16          v33, v5
+	403     (00000624) move/from16          v32, v12
+	404     (00000628) move/from16          v35, v13
+	405     (0000062c) move/from16          v34, v14
+	406     (00000630) if-eqz               v16, +43
+
+onMeasure-BB@0x634 : [ onMeasure-BB@0x654 onMeasure-BB@0x65e ]
+	407     (00000634) iget-object          v1, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	408     (00000638) move/from16          v2, v35
+	409     (0000063c) invoke-virtual       v1, v2, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setWidth(I)V
+	410     (00000642) iget-object          v1, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	411     (00000646) move/from16          v5, v34
+	412     (0000064a) invoke-virtual       v1, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setHeight(I)V
+	413     (00000650) if-eqz               v4, +7
+
+onMeasure-BB@0x654 : [ onMeasure-BB@0x65e ]
+	414     (00000654) iget-object          v1, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	415     (00000658) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->solveGraph()V
+
+onMeasure-BB@0x65e : [ onMeasure-BB@0x67a onMeasure-BB@0x686 ]
+	416     (0000065e) const-string         v1, '2nd pass'
+	417     (00000662) invoke-virtual       v0, v1, Landroid/support/constraint/ConstraintLayout;->solveLinearSystem(Ljava/lang/String;)V
+	418     (00000668) const/4              v1, 0
+	419     (0000066a) iget-object          v8, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	420     (0000066e) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getWidth()I
+	421     (00000674) move-result          v8
+	422     (00000676) if-ge                v8, v9, +8
+
+onMeasure-BB@0x67a : [ onMeasure-BB@0x686 ]
+	423     (0000067a) iget-object          v8, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	424     (0000067e) invoke-virtual       v8, v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setWidth(I)V
+	425     (00000684) const/4              v1, 1
+
+onMeasure-BB@0x686 : [ onMeasure-BB@0x696 onMeasure-BB@0x6a2 ]
+	426     (00000686) iget-object          v8, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	427     (0000068a) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getHeight()I
+	428     (00000690) move-result          v8
+	429     (00000692) if-ge                v8, v10, +8
+
+onMeasure-BB@0x696 : [ onMeasure-BB@0x6a2 ]
+	430     (00000696) iget-object          v8, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	431     (0000069a) invoke-virtual       v8, v10, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setHeight(I)V
+	432     (000006a0) const/4              v1, 1
+
+onMeasure-BB@0x6a2 : [ onMeasure-BB@0x6aa onMeasure-BB@0x6be ]
+	433     (000006a2) move/from16          v16, v1
+	434     (000006a6) if-eqz               v16, +c
+
+onMeasure-BB@0x6aa : [ onMeasure-BB@0x6be ]
+	435     (000006aa) const-string         v1, '3rd pass'
+	436     (000006ae) invoke-virtual       v0, v1, Landroid/support/constraint/ConstraintLayout;->solveLinearSystem(Ljava/lang/String;)V
+	437     (000006b4) goto                 +5
+
+onMeasure-BB@0x6b6 : [ onMeasure-BB@0x6be ]
+	438     (000006b6) move/from16          v5, v34
+	439     (000006ba) move/from16          v2, v35
+
+onMeasure-BB@0x6be : [ onMeasure-BB@0x6c2 ]
+	440     (000006be) const/16             v23, 0
+
+onMeasure-BB@0x6c2 : [ onMeasure-BB@0x6ce onMeasure-BB@0x7aa ]
+	441     (000006c2) move/from16          v1, v23
+	442     (000006c6) move/from16          v8, v33
+	443     (000006ca) if-ge                v1, v8, +70
+
+onMeasure-BB@0x6ce : [ onMeasure-BB@0x6ee onMeasure-BB@0x6fa ]
+	444     (000006ce) iget-object          v12, v0, Landroid/support/constraint/ConstraintLayout;->mVariableDimensionsWidgets Ljava/util/ArrayList;
+	445     (000006d2) invoke-virtual       v12, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	446     (000006d8) move-result-object   v12
+	447     (000006da) check-cast           v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	448     (000006de) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getCompanionWidget()Ljava/lang/Object;
+	449     (000006e4) move-result-object   v13
+	450     (000006e6) check-cast           v13, Landroid/view/View;
+	451     (000006ea) if-nez               v13, +8
+
+onMeasure-BB@0x6ee : [ onMeasure-BB@0x6f4 ]
+	452     (000006ee) nop                  
+	453     (000006f0) move/from16          v41, v2
+
+onMeasure-BB@0x6f4 : [ onMeasure-BB@0x798 ]
+	454     (000006f4) move/from16          v42, v3
+	455     (000006f8) goto                 +50
+
+onMeasure-BB@0x6fa : [ onMeasure-BB@0x712 onMeasure-BB@0x726 ]
+	456     (000006fa) invoke-virtual       v13, Landroid/view/View;->getMeasuredWidth()I
+	457     (00000700) move-result          v14
+	458     (00000702) move/from16          v41, v2
+	459     (00000706) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	460     (0000070c) move-result          v2
+	461     (0000070e) if-ne                v14, v2, +c
+
+onMeasure-BB@0x712 : [ onMeasure-BB@0x726 onMeasure-BB@0x6f4 ]
+	462     (00000712) invoke-virtual       v13, Landroid/view/View;->getMeasuredHeight()I
+	463     (00000718) move-result          v2
+	464     (0000071a) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	465     (00000720) move-result          v14
+	466     (00000722) if-eq                v2, v14, -17
+
+onMeasure-BB@0x726 : [ onMeasure-BB@0x736 onMeasure-BB@0x794 ]
+	467     (00000726) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVisibility()I
+	468     (0000072c) move-result          v2
+	469     (0000072e) const/16             v14, 8
+	470     (00000732) if-eq                v2, v14, +31
+
+onMeasure-BB@0x736 : [ onMeasure-BB@0x76c onMeasure-BB@0x786 ]
+	471     (00000736) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	472     (0000073c) move-result          v2
+	473     (0000073e) const/high16         v14, 16384 # [2.0]
+	474     (00000742) invoke-static        v2, v14, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	475     (00000748) move-result          v2
+	476     (0000074a) move/from16          v42, v3
+	477     (0000074e) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	478     (00000754) move-result          v3
+	479     (00000756) invoke-static        v3, v14, Landroid/view/View$MeasureSpec;->makeMeasureSpec(I I)I
+	480     (0000075c) move-result          v3
+	481     (0000075e) invoke-virtual       v13, v2, v3, Landroid/view/View;->measure(I I)V
+	482     (00000764) iget-object          v14, v0, Landroid/support/constraint/ConstraintLayout;->mMetrics Landroid/support/constraint/solver/Metrics;
+	483     (00000768) if-eqz               v14, +f
+
+onMeasure-BB@0x76c : [ onMeasure-BB@0x78e ]
+	484     (0000076c) iget-object          v14, v0, Landroid/support/constraint/ConstraintLayout;->mMetrics Landroid/support/constraint/solver/Metrics;
+	485     (00000770) move/from16          v43, v2
+	486     (00000774) move/from16          v44, v3
+	487     (00000778) iget-wide            v2, v14, Landroid/support/constraint/solver/Metrics;->additionalMeasures J
+	488     (0000077c) add-long             v2, v2, v24
+	489     (00000780) iput-wide            v2, v14, Landroid/support/constraint/solver/Metrics;->additionalMeasures J
+	490     (00000784) goto                 +5
+
+onMeasure-BB@0x786 : [ onMeasure-BB@0x78e ]
+	491     (00000786) move/from16          v43, v2
+	492     (0000078a) move/from16          v44, v3
+
+onMeasure-BB@0x78e : [ onMeasure-BB@0x798 ]
+	493     (0000078e) add-int/lit8         v22, v22, 1
+	494     (00000792) goto                 +3
+
+onMeasure-BB@0x794 : [ onMeasure-BB@0x798 ]
+	495     (00000794) move/from16          v42, v3
+
+onMeasure-BB@0x798 : [ onMeasure-BB@0x6c2 ]
+	496     (00000798) add-int/lit8         v23, v1, 1
+	497     (0000079c) move/from16          v33, v8
+	498     (000007a0) move/from16          v2, v41
+	499     (000007a4) move/from16          v3, v42
+	500     (000007a8) goto                 -73
+
+onMeasure-BB@0x7aa : [ onMeasure-BB@0x7d4 ]
+	501     (000007aa) move/from16          v41, v2
+	502     (000007ae) goto                 +13
+
+onMeasure-BB@0x7b0 : [ onMeasure-BB@0x7d4 ]
+	503     (000007b0) move/from16          v26, v7
+	504     (000007b4) move/from16          v27, v8
+	505     (000007b8) move/from16          v28, v9
+	506     (000007bc) move/from16          v30, v10
+	507     (000007c0) move/from16          v31, v11
+	508     (000007c4) move/from16          v32, v12
+	509     (000007c8) move/from16          v41, v13
+	510     (000007cc) move                 v8, v5
+	511     (000007ce) move                 v5, v14
+	512     (000007d0) move/from16          v11, v25
+
+onMeasure-BB@0x7d4 : [ onMeasure-BB@0x7fc onMeasure-BB@0x872 ]
+	513     (000007d4) iget-object          v1, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	514     (000007d8) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getWidth()I
+	515     (000007de) move-result          v1
+	516     (000007e0) add-int/2addr        v1, v6
+	517     (000007e2) iget-object          v2, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	518     (000007e6) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getHeight()I
+	519     (000007ec) move-result          v2
+	520     (000007ee) add-int/2addr        v2, v15
+	521     (000007f0) sget                 v3, Landroid/os/Build$VERSION;->SDK_INT I
+	522     (000007f4) const/16             v7, 11
+	523     (000007f8) if-lt                v3, v7, +3d
+
+onMeasure-BB@0x7fc : [ onMeasure-BB@0x84e onMeasure-BB@0x850 ]
+	524     (000007fc) move/from16          v3, v46
+	525     (00000800) invoke-static        v1, v3, v11, Landroid/support/constraint/ConstraintLayout;->resolveSizeAndState(I I I)I
+	526     (00000806) move-result          v7
+	527     (00000808) shl-int/lit8         v9, v11, 16
+	528     (0000080c) move/from16          v10, v47
+	529     (00000810) invoke-static        v2, v10, v9, Landroid/support/constraint/ConstraintLayout;->resolveSizeAndState(I I I)I
+	530     (00000816) move-result          v9
+	531     (00000818) const                v12, 16777215 # [2.3509885615147286e-38]
+	532     (0000081e) and-int/2addr        v7, v12
+	533     (00000820) and-int/2addr        v9, v12
+	534     (00000822) iget                 v12, v0, Landroid/support/constraint/ConstraintLayout;->mMaxWidth I
+	535     (00000826) invoke-static        v12, v7, Ljava/lang/Math;->min(I I)I
+	536     (0000082c) move-result          v7
+	537     (0000082e) iget                 v12, v0, Landroid/support/constraint/ConstraintLayout;->mMaxHeight I
+	538     (00000832) invoke-static        v12, v9, Ljava/lang/Math;->min(I I)I
+	539     (00000838) move-result          v9
+	540     (0000083a) iget-object          v12, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	541     (0000083e) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->isWidthMeasuredTooSmall()Z
+	542     (00000844) move-result          v12
+	543     (00000846) const/high16         v13, 256 # [2.350988701644575e-38]
+	544     (0000084a) if-eqz               v12, +3
+
+onMeasure-BB@0x84e : [ onMeasure-BB@0x850 ]
+	545     (0000084e) or-int/2addr         v7, v13
+
+onMeasure-BB@0x850 : [ onMeasure-BB@0x860 onMeasure-BB@0x862 ]
+	546     (00000850) iget-object          v12, v0, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	547     (00000854) invoke-virtual       v12, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->isHeightMeasuredTooSmall()Z
+	548     (0000085a) move-result          v12
+	549     (0000085c) if-eqz               v12, +3
+
+onMeasure-BB@0x860 : [ onMeasure-BB@0x862 ]
+	550     (00000860) or-int/2addr         v9, v13
+
+onMeasure-BB@0x862 : [ onMeasure-BB@0x888 ]
+	551     (00000862) invoke-virtual       v0, v7, v9, Landroid/support/constraint/ConstraintLayout;->setMeasuredDimension(I I)V
+	552     (00000868) iput                 v7, v0, Landroid/support/constraint/ConstraintLayout;->mLastMeasureWidth I
+	553     (0000086c) iput                 v9, v0, Landroid/support/constraint/ConstraintLayout;->mLastMeasureHeight I
+	554     (00000870) goto                 +c
+
+onMeasure-BB@0x872 : [ onMeasure-BB@0x888 ]
+	555     (00000872) move/from16          v3, v46
+	556     (00000876) move/from16          v10, v47
+	557     (0000087a) invoke-virtual       v0, v1, v2, Landroid/support/constraint/ConstraintLayout;->setMeasuredDimension(I I)V
+	558     (00000880) iput                 v1, v0, Landroid/support/constraint/ConstraintLayout;->mLastMeasureWidth I
+	559     (00000884) iput                 v2, v0, Landroid/support/constraint/ConstraintLayout;->mLastMeasureHeight I
+
+onMeasure-BB@0x888 : 
+	560     (00000888) return-void          
+

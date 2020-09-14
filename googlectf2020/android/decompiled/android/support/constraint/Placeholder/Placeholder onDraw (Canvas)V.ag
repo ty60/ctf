@@ -1,0 +1,71 @@
+# Landroid/support/constraint/Placeholder;->onDraw(Landroid/graphics/Canvas;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.graphics.Canvas
+#
+# - return:void
+
+onDraw-BB@0x0 : [ onDraw-BB@0xc onDraw-BB@0xd6 ]
+	0       (00000000) invoke-virtual       v9, Landroid/support/constraint/Placeholder;->isInEditMode()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +67
+
+onDraw-BB@0xc : [ onDraw-BB@0xd6 ]
+	3       (0000000c) const/16             v0, 223
+	4       (00000010) invoke-virtual       v10, v0, v0, v0, Landroid/graphics/Canvas;->drawRGB(I I I)V
+	5       (00000016) new-instance         v0, Landroid/graphics/Paint;
+	6       (0000001a) invoke-direct        v0, Landroid/graphics/Paint;-><init>()V
+	7       (00000020) const/16             v1, 255
+	8       (00000024) const/16             v2, 210
+	9       (00000028) invoke-virtual       v0, v1, v2, v2, v2, Landroid/graphics/Paint;->setARGB(I I I I)V
+	10      (0000002e) sget-object          v1, Landroid/graphics/Paint$Align;->CENTER Landroid/graphics/Paint$Align;
+	11      (00000032) invoke-virtual       v0, v1, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
+	12      (00000038) sget-object          v1, Landroid/graphics/Typeface;->DEFAULT Landroid/graphics/Typeface;
+	13      (0000003c) const/4              v2, 0
+	14      (0000003e) invoke-static        v1, v2, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface; I)Landroid/graphics/Typeface;
+	15      (00000044) move-result-object   v1
+	16      (00000046) invoke-virtual       v0, v1, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+	17      (0000004c) new-instance         v1, Landroid/graphics/Rect;
+	18      (00000050) invoke-direct        v1, Landroid/graphics/Rect;-><init>()V
+	19      (00000056) invoke-virtual       v10, v1, Landroid/graphics/Canvas;->getClipBounds(Landroid/graphics/Rect;)Z
+	20      (0000005c) invoke-virtual       v1, Landroid/graphics/Rect;->height()I
+	21      (00000062) move-result          v3
+	22      (00000064) int-to-float         v3, v3
+	23      (00000066) invoke-virtual       v0, v3, Landroid/graphics/Paint;->setTextSize(F)V
+	24      (0000006c) invoke-virtual       v1, Landroid/graphics/Rect;->height()I
+	25      (00000072) move-result          v3
+	26      (00000074) invoke-virtual       v1, Landroid/graphics/Rect;->width()I
+	27      (0000007a) move-result          v4
+	28      (0000007c) sget-object          v5, Landroid/graphics/Paint$Align;->LEFT Landroid/graphics/Paint$Align;
+	29      (00000080) invoke-virtual       v0, v5, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
+	30      (00000086) const-string         v5, '?'
+	31      (0000008a) invoke-virtual       v5, Ljava/lang/String;->length()I
+	32      (00000090) move-result          v6
+	33      (00000092) invoke-virtual       v0, v5, v2, v6, v1, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String; I I Landroid/graphics/Rect;)V
+	34      (00000098) int-to-float         v2, v4
+	35      (0000009a) const/high16         v6, 16384 # [2.0]
+	36      (0000009e) div-float/2addr      v2, v6
+	37      (000000a0) invoke-virtual       v1, Landroid/graphics/Rect;->width()I
+	38      (000000a6) move-result          v7
+	39      (000000a8) int-to-float         v7, v7
+	40      (000000aa) div-float/2addr      v7, v6
+	41      (000000ac) sub-float/2addr      v2, v7
+	42      (000000ae) iget                 v7, v1, Landroid/graphics/Rect;->left I
+	43      (000000b2) int-to-float         v7, v7
+	44      (000000b4) sub-float/2addr      v2, v7
+	45      (000000b6) int-to-float         v7, v3
+	46      (000000b8) div-float/2addr      v7, v6
+	47      (000000ba) invoke-virtual       v1, Landroid/graphics/Rect;->height()I
+	48      (000000c0) move-result          v8
+	49      (000000c2) int-to-float         v8, v8
+	50      (000000c4) div-float/2addr      v8, v6
+	51      (000000c6) add-float/2addr      v7, v8
+	52      (000000c8) iget                 v6, v1, Landroid/graphics/Rect;->bottom I
+	53      (000000cc) int-to-float         v6, v6
+	54      (000000ce) sub-float/2addr      v7, v6
+	55      (000000d0) invoke-virtual       v10, v5, v2, v7, v0, Landroid/graphics/Canvas;->drawText(Ljava/lang/String; F F Landroid/graphics/Paint;)V
+
+onDraw-BB@0xd6 : 
+	56      (000000d6) return-void          
+

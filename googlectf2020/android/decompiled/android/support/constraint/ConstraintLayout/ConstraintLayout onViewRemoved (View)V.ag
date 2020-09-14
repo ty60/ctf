@@ -1,0 +1,33 @@
+# Landroid/support/constraint/ConstraintLayout;->onViewRemoved(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onViewRemoved-BB@0x0 : [ onViewRemoved-BB@0xc onViewRemoved-BB@0x12 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 14
+	2       (00000008) if-lt                v0, v1, +5
+
+onViewRemoved-BB@0xc : [ onViewRemoved-BB@0x12 ]
+	3       (0000000c) invoke-super         v2, v3, Landroid/view/ViewGroup;->onViewRemoved(Landroid/view/View;)V
+
+onViewRemoved-BB@0x12 : 
+	4       (00000012) iget-object          v0, v2, Landroid/support/constraint/ConstraintLayout;->mChildrenByIds Landroid/util/SparseArray;
+	5       (00000016) invoke-virtual       v3, Landroid/view/View;->getId()I
+	6       (0000001c) move-result          v1
+	7       (0000001e) invoke-virtual       v0, v1, Landroid/util/SparseArray;->remove(I)V
+	8       (00000024) invoke-virtual       v2, v3, Landroid/support/constraint/ConstraintLayout;->getViewWidget(Landroid/view/View;)Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	9       (0000002a) move-result-object   v0
+	10      (0000002c) iget-object          v1, v2, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	11      (00000030) invoke-virtual       v1, v0, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->remove(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+	12      (00000036) iget-object          v1, v2, Landroid/support/constraint/ConstraintLayout;->mConstraintHelpers Ljava/util/ArrayList;
+	13      (0000003a) invoke-virtual       v1, v3, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+	14      (00000040) iget-object          v1, v2, Landroid/support/constraint/ConstraintLayout;->mVariableDimensionsWidgets Ljava/util/ArrayList;
+	15      (00000044) invoke-virtual       v1, v0, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+	16      (0000004a) const/4              v1, 1
+	17      (0000004c) iput-boolean         v1, v2, Landroid/support/constraint/ConstraintLayout;->mDirtyHierarchy Z
+	18      (00000050) return-void          
+

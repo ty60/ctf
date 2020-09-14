@@ -1,0 +1,37 @@
+# Landroid/support/constraint/solver/widgets/Guideline;->getRelativeBehaviour()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+getRelativeBehaviour-BB@0x0 : [ getRelativeBehaviour-BB@0x10 getRelativeBehaviour-BB@0x14 ]
+	0       (00000000) iget                 v0, v2, Landroid/support/constraint/solver/widgets/Guideline;->mRelativePercent F
+	1       (00000004) const/high16         v1, -16512 # [-1.0]
+	2       (00000008) cmpl-float           v0, v0, v1
+	3       (0000000c) if-eqz               v0, +4
+
+getRelativeBehaviour-BB@0x10 : 
+	4       (00000010) const/4              v0, 0
+	5       (00000012) return               v0
+
+getRelativeBehaviour-BB@0x14 : [ getRelativeBehaviour-BB@0x1e getRelativeBehaviour-BB@0x22 ]
+	6       (00000014) iget                 v0, v2, Landroid/support/constraint/solver/widgets/Guideline;->mRelativeBegin I
+	7       (00000018) const/4              v1, -1
+	8       (0000001a) if-eq                v0, v1, +4
+
+getRelativeBehaviour-BB@0x1e : 
+	9       (0000001e) const/4              v0, 1
+	10      (00000020) return               v0
+
+getRelativeBehaviour-BB@0x22 : [ getRelativeBehaviour-BB@0x2a getRelativeBehaviour-BB@0x2e ]
+	11      (00000022) iget                 v0, v2, Landroid/support/constraint/solver/widgets/Guideline;->mRelativeEnd I
+	12      (00000026) if-eq                v0, v1, +4
+
+getRelativeBehaviour-BB@0x2a : 
+	13      (0000002a) const/4              v0, 2
+	14      (0000002c) return               v0
+
+getRelativeBehaviour-BB@0x2e : 
+	15      (0000002e) return               v1
+

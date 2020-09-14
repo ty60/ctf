@@ -1,0 +1,255 @@
+# Landroid/support/constraint/ConstraintSet;->applyToInternal(Landroid/support/constraint/ConstraintLayout;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.support.constraint.ConstraintLayout
+#
+# - return:void
+
+applyToInternal-BB@0x0 : [ applyToInternal-BB@0x20 ]
+	0       (00000000) invoke-virtual       v10, Landroid/support/constraint/ConstraintLayout;->getChildCount()I
+	1       (00000006) move-result          v0
+	2       (00000008) new-instance         v1, Ljava/util/HashSet;
+	3       (0000000c) iget-object          v2, v9, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	4       (00000010) invoke-virtual       v2, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+	5       (00000016) move-result-object   v2
+	6       (00000018) invoke-direct        v1, v2, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+	7       (0000001e) const/4              v2, 0
+
+applyToInternal-BB@0x20 : [ applyToInternal-BB@0x28 applyToInternal-BB@0x1e2 ]
+	8       (00000020) const/4              v3, -1
+	9       (00000022) const/4              v4, 1
+	10      (00000024) if-ge                v2, v0, +df
+
+applyToInternal-BB@0x28 : [ applyToInternal-BB@0x3c applyToInternal-BB@0x4c ]
+	11      (00000028) invoke-virtual       v10, v2, Landroid/support/constraint/ConstraintLayout;->getChildAt(I)Landroid/view/View;
+	12      (0000002e) move-result-object   v5
+	13      (00000030) invoke-virtual       v5, Landroid/view/View;->getId()I
+	14      (00000036) move-result          v6
+	15      (00000038) if-ne                v6, v3, +a
+
+applyToInternal-BB@0x3c : 
+	16      (0000003c) new-instance         v3, Ljava/lang/RuntimeException;
+	17      (00000040) const-string         v4, 'All children of ConstraintLayout must have ids to use ConstraintSet'
+	18      (00000044) invoke-direct        v3, v4, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	19      (0000004a) throw                v3
+
+applyToInternal-BB@0x4c : [ applyToInternal-BB@0x64 applyToInternal-BB@0x1da ]
+	20      (0000004c) iget-object          v7, v9, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	21      (00000050) invoke-static        v6, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	22      (00000056) move-result-object   v8
+	23      (00000058) invoke-virtual       v7, v8, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+	24      (0000005e) move-result          v7
+	25      (00000060) if-eqz               v7, +bd
+
+applyToInternal-BB@0x64 : [ applyToInternal-BB@0x92 applyToInternal-BB@0x96 ]
+	26      (00000064) invoke-static        v6, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	27      (0000006a) move-result-object   v7
+	28      (0000006c) invoke-virtual       v1, v7, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+	29      (00000072) iget-object          v7, v9, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	30      (00000076) invoke-static        v6, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	31      (0000007c) move-result-object   v8
+	32      (0000007e) invoke-virtual       v7, v8, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	33      (00000084) move-result-object   v7
+	34      (00000086) check-cast           v7, Landroid/support/constraint/ConstraintSet$Constraint;
+	35      (0000008a) instance-of          v8, v5, Landroid/support/constraint/Barrier;
+	36      (0000008e) if-eqz               v8, +4
+
+applyToInternal-BB@0x92 : [ applyToInternal-BB@0x96 ]
+	37      (00000092) iput                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->mHelperType I
+
+applyToInternal-BB@0x96 : [ applyToInternal-BB@0x9e applyToInternal-BB@0xfe ]
+	38      (00000096) iget                 v8, v7, Landroid/support/constraint/ConstraintSet$Constraint;->mHelperType I
+	39      (0000009a) if-eq                v8, v3, +32
+
+applyToInternal-BB@0x9e : [ applyToInternal-BB@0xa6 applyToInternal-BB@0xa8 ]
+	40      (0000009e) iget                 v3, v7, Landroid/support/constraint/ConstraintSet$Constraint;->mHelperType I
+	41      (000000a2) if-eq                v3, v4, +3
+
+applyToInternal-BB@0xa6 : [ applyToInternal-BB@0xfe ]
+	42      (000000a6) goto                 +2c
+
+applyToInternal-BB@0xa8 : [ applyToInternal-BB@0xd0 applyToInternal-BB@0xdc ]
+	43      (000000a8) move-object          v3, v5
+	44      (000000aa) check-cast           v3, Landroid/support/constraint/Barrier;
+	45      (000000ae) invoke-virtual       v3, v6, Landroid/support/constraint/Barrier;->setId(I)V
+	46      (000000b4) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->mBarrierDirection I
+	47      (000000b8) invoke-virtual       v3, v4, Landroid/support/constraint/Barrier;->setType(I)V
+	48      (000000be) iget-boolean         v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->mBarrierAllowsGoneWidgets Z
+	49      (000000c2) invoke-virtual       v3, v4, Landroid/support/constraint/Barrier;->setAllowsGoneWidget(Z)V
+	50      (000000c8) iget-object          v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIds [I
+	51      (000000cc) if-eqz               v4, +8
+
+applyToInternal-BB@0xd0 : [ applyToInternal-BB@0xfe ]
+	52      (000000d0) iget-object          v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIds [I
+	53      (000000d4) invoke-virtual       v3, v4, Landroid/support/constraint/Barrier;->setReferencedIds([I)V
+	54      (000000da) goto                 +12
+
+applyToInternal-BB@0xdc : [ applyToInternal-BB@0xe4 applyToInternal-BB@0xfe ]
+	55      (000000dc) iget-object          v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIdString Ljava/lang/String;
+	56      (000000e0) if-eqz               v4, +f
+
+applyToInternal-BB@0xe4 : [ applyToInternal-BB@0xfe ]
+	57      (000000e4) iget-object          v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIdString Ljava/lang/String;
+	58      (000000e8) invoke-direct        v9, v3, v4, Landroid/support/constraint/ConstraintSet;->convertReferenceString(Landroid/view/View; Ljava/lang/String;)[I
+	59      (000000ee) move-result-object   v4
+	60      (000000f0) iput-object          v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIds [I
+	61      (000000f4) iget-object          v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIds [I
+	62      (000000f8) invoke-virtual       v3, v4, Landroid/support/constraint/Barrier;->setReferencedIds([I)V
+
+applyToInternal-BB@0xfe : [ applyToInternal-BB@0x12e applyToInternal-BB@0x1da ]
+	63      (000000fe) nop                  
+	64      (00000100) invoke-virtual       v5, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	65      (00000106) move-result-object   v3
+	66      (00000108) check-cast           v3, Landroid/support/constraint/ConstraintLayout$LayoutParams;
+	67      (0000010c) invoke-virtual       v7, v3, Landroid/support/constraint/ConstraintSet$Constraint;->applyTo(Landroid/support/constraint/ConstraintLayout$LayoutParams;)V
+	68      (00000112) invoke-virtual       v5, v3, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+	69      (00000118) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->visibility I
+	70      (0000011c) invoke-virtual       v5, v4, Landroid/view/View;->setVisibility(I)V
+	71      (00000122) sget                 v4, Landroid/os/Build$VERSION;->SDK_INT I
+	72      (00000126) const/16             v8, 17
+	73      (0000012a) if-lt                v4, v8, +58
+
+applyToInternal-BB@0x12e : [ applyToInternal-BB@0x17a applyToInternal-BB@0x184 ]
+	74      (0000012e) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->alpha F
+	75      (00000132) invoke-virtual       v5, v4, Landroid/view/View;->setAlpha(F)V
+	76      (00000138) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->rotation F
+	77      (0000013c) invoke-virtual       v5, v4, Landroid/view/View;->setRotation(F)V
+	78      (00000142) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->rotationX F
+	79      (00000146) invoke-virtual       v5, v4, Landroid/view/View;->setRotationX(F)V
+	80      (0000014c) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->rotationY F
+	81      (00000150) invoke-virtual       v5, v4, Landroid/view/View;->setRotationY(F)V
+	82      (00000156) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->scaleX F
+	83      (0000015a) invoke-virtual       v5, v4, Landroid/view/View;->setScaleX(F)V
+	84      (00000160) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->scaleY F
+	85      (00000164) invoke-virtual       v5, v4, Landroid/view/View;->setScaleY(F)V
+	86      (0000016a) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->transformPivotX F
+	87      (0000016e) invoke-static        v4, Ljava/lang/Float;->isNaN(F)Z
+	88      (00000174) move-result          v4
+	89      (00000176) if-nez               v4, +7
+
+applyToInternal-BB@0x17a : [ applyToInternal-BB@0x184 ]
+	90      (0000017a) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->transformPivotX F
+	91      (0000017e) invoke-virtual       v5, v4, Landroid/view/View;->setPivotX(F)V
+
+applyToInternal-BB@0x184 : [ applyToInternal-BB@0x194 applyToInternal-BB@0x19e ]
+	92      (00000184) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->transformPivotY F
+	93      (00000188) invoke-static        v4, Ljava/lang/Float;->isNaN(F)Z
+	94      (0000018e) move-result          v4
+	95      (00000190) if-nez               v4, +7
+
+applyToInternal-BB@0x194 : [ applyToInternal-BB@0x19e ]
+	96      (00000194) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->transformPivotY F
+	97      (00000198) invoke-virtual       v5, v4, Landroid/view/View;->setPivotY(F)V
+
+applyToInternal-BB@0x19e : [ applyToInternal-BB@0x1be applyToInternal-BB@0x1da ]
+	98      (0000019e) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->translationX F
+	99      (000001a2) invoke-virtual       v5, v4, Landroid/view/View;->setTranslationX(F)V
+	100     (000001a8) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->translationY F
+	101     (000001ac) invoke-virtual       v5, v4, Landroid/view/View;->setTranslationY(F)V
+	102     (000001b2) sget                 v4, Landroid/os/Build$VERSION;->SDK_INT I
+	103     (000001b6) const/16             v8, 21
+	104     (000001ba) if-lt                v4, v8, +10
+
+applyToInternal-BB@0x1be : [ applyToInternal-BB@0x1d0 applyToInternal-BB@0x1da ]
+	105     (000001be) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->translationZ F
+	106     (000001c2) invoke-virtual       v5, v4, Landroid/view/View;->setTranslationZ(F)V
+	107     (000001c8) iget-boolean         v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->applyElevation Z
+	108     (000001cc) if-eqz               v4, +7
+
+applyToInternal-BB@0x1d0 : [ applyToInternal-BB@0x1da ]
+	109     (000001d0) iget                 v4, v7, Landroid/support/constraint/ConstraintSet$Constraint;->elevation F
+	110     (000001d4) invoke-virtual       v5, v4, Landroid/view/View;->setElevation(F)V
+
+applyToInternal-BB@0x1da : [ applyToInternal-BB@0x20 ]
+	111     (000001da) add-int/lit8         v2, v2, 1
+	112     (000001de) goto/16              -df
+
+applyToInternal-BB@0x1e2 : [ applyToInternal-BB@0x1ea ]
+	113     (000001e2) invoke-virtual       v1, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+	114     (000001e8) move-result-object   v2
+
+applyToInternal-BB@0x1ea : [ applyToInternal-BB@0x1f6 applyToInternal-BB@0x2de ]
+	115     (000001ea) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	116     (000001f0) move-result          v5
+	117     (000001f2) if-eqz               v5, +76
+
+applyToInternal-BB@0x1f6 : [ applyToInternal-BB@0x21a applyToInternal-BB@0x2a0 ]
+	118     (000001f6) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	119     (000001fc) move-result-object   v5
+	120     (000001fe) check-cast           v5, Ljava/lang/Integer;
+	121     (00000202) iget-object          v6, v9, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	122     (00000206) invoke-virtual       v6, v5, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	123     (0000020c) move-result-object   v6
+	124     (0000020e) check-cast           v6, Landroid/support/constraint/ConstraintSet$Constraint;
+	125     (00000212) iget                 v7, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mHelperType I
+	126     (00000216) if-eq                v7, v3, +45
+
+applyToInternal-BB@0x21a : [ applyToInternal-BB@0x222 applyToInternal-BB@0x224 ]
+	127     (0000021a) iget                 v7, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mHelperType I
+	128     (0000021e) if-eq                v7, v4, +3
+
+applyToInternal-BB@0x222 : [ applyToInternal-BB@0x2a0 ]
+	129     (00000222) goto                 +3f
+
+applyToInternal-BB@0x224 : [ applyToInternal-BB@0x24c applyToInternal-BB@0x258 ]
+	130     (00000224) new-instance         v7, Landroid/support/constraint/Barrier;
+	131     (00000228) invoke-virtual       v10, Landroid/support/constraint/ConstraintLayout;->getContext()Landroid/content/Context;
+	132     (0000022e) move-result-object   v8
+	133     (00000230) invoke-direct        v7, v8, Landroid/support/constraint/Barrier;-><init>(Landroid/content/Context;)V
+	134     (00000236) invoke-virtual       v5, Ljava/lang/Integer;->intValue()I
+	135     (0000023c) move-result          v8
+	136     (0000023e) invoke-virtual       v7, v8, Landroid/support/constraint/Barrier;->setId(I)V
+	137     (00000244) iget-object          v8, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIds [I
+	138     (00000248) if-eqz               v8, +8
+
+applyToInternal-BB@0x24c : [ applyToInternal-BB@0x27a ]
+	139     (0000024c) iget-object          v8, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIds [I
+	140     (00000250) invoke-virtual       v7, v8, Landroid/support/constraint/Barrier;->setReferencedIds([I)V
+	141     (00000256) goto                 +12
+
+applyToInternal-BB@0x258 : [ applyToInternal-BB@0x260 applyToInternal-BB@0x27a ]
+	142     (00000258) iget-object          v8, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIdString Ljava/lang/String;
+	143     (0000025c) if-eqz               v8, +f
+
+applyToInternal-BB@0x260 : [ applyToInternal-BB@0x27a ]
+	144     (00000260) iget-object          v8, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIdString Ljava/lang/String;
+	145     (00000264) invoke-direct        v9, v7, v8, Landroid/support/constraint/ConstraintSet;->convertReferenceString(Landroid/view/View; Ljava/lang/String;)[I
+	146     (0000026a) move-result-object   v8
+	147     (0000026c) iput-object          v8, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIds [I
+	148     (00000270) iget-object          v8, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIds [I
+	149     (00000274) invoke-virtual       v7, v8, Landroid/support/constraint/Barrier;->setReferencedIds([I)V
+
+applyToInternal-BB@0x27a : [ applyToInternal-BB@0x2a0 ]
+	150     (0000027a) iget                 v8, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mBarrierDirection I
+	151     (0000027e) invoke-virtual       v7, v8, Landroid/support/constraint/Barrier;->setType(I)V
+	152     (00000284) nop                  
+	153     (00000286) invoke-virtual       v10, Landroid/support/constraint/ConstraintLayout;->generateDefaultLayoutParams()Landroid/support/constraint/ConstraintLayout$LayoutParams;
+	154     (0000028c) move-result-object   v8
+	155     (0000028e) invoke-virtual       v7, Landroid/support/constraint/Barrier;->validateParams()V
+	156     (00000294) invoke-virtual       v6, v8, Landroid/support/constraint/ConstraintSet$Constraint;->applyTo(Landroid/support/constraint/ConstraintLayout$LayoutParams;)V
+	157     (0000029a) invoke-virtual       v10, v7, v8, Landroid/support/constraint/ConstraintLayout;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+
+applyToInternal-BB@0x2a0 : [ applyToInternal-BB@0x2a8 applyToInternal-BB@0x2dc ]
+	158     (000002a0) iget-boolean         v7, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mIsGuideline Z
+	159     (000002a4) if-eqz               v7, +1c
+
+applyToInternal-BB@0x2a8 : [ applyToInternal-BB@0x2dc ]
+	160     (000002a8) new-instance         v7, Landroid/support/constraint/Guideline;
+	161     (000002ac) invoke-virtual       v10, Landroid/support/constraint/ConstraintLayout;->getContext()Landroid/content/Context;
+	162     (000002b2) move-result-object   v8
+	163     (000002b4) invoke-direct        v7, v8, Landroid/support/constraint/Guideline;-><init>(Landroid/content/Context;)V
+	164     (000002ba) invoke-virtual       v5, Ljava/lang/Integer;->intValue()I
+	165     (000002c0) move-result          v8
+	166     (000002c2) invoke-virtual       v7, v8, Landroid/support/constraint/Guideline;->setId(I)V
+	167     (000002c8) invoke-virtual       v10, Landroid/support/constraint/ConstraintLayout;->generateDefaultLayoutParams()Landroid/support/constraint/ConstraintLayout$LayoutParams;
+	168     (000002ce) move-result-object   v8
+	169     (000002d0) invoke-virtual       v6, v8, Landroid/support/constraint/ConstraintSet$Constraint;->applyTo(Landroid/support/constraint/ConstraintLayout$LayoutParams;)V
+	170     (000002d6) invoke-virtual       v10, v7, v8, Landroid/support/constraint/ConstraintLayout;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+
+applyToInternal-BB@0x2dc : [ applyToInternal-BB@0x1ea ]
+	171     (000002dc) goto                 -79
+
+applyToInternal-BB@0x2de : 
+	172     (000002de) return-void          
+

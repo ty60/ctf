@@ -1,0 +1,52 @@
+# Landroid/support/constraint/solver/ArrayRow;->createRowLowerThan(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; I)Landroid/support/constraint/solver/ArrayRow; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.support.constraint.solver.SolverVariable
+# - v6:android.support.constraint.solver.SolverVariable
+# - v7:android.support.constraint.solver.SolverVariable
+# - v8:int
+#
+# - return:android.support.constraint.solver.ArrayRow
+
+createRowLowerThan-BB@0x0 : [ createRowLowerThan-BB@0x6 createRowLowerThan-BB@0x18 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-eqz               v8, +b
+
+createRowLowerThan-BB@0x6 : [ createRowLowerThan-BB@0xc createRowLowerThan-BB@0x12 ]
+	2       (00000006) move                 v1, v8
+	3       (00000008) if-gez               v1, +5
+
+createRowLowerThan-BB@0xc : [ createRowLowerThan-BB@0x12 ]
+	4       (0000000c) mul-int/lit8         v1, v1, -1
+	5       (00000010) const/4              v0, 1
+
+createRowLowerThan-BB@0x12 : [ createRowLowerThan-BB@0x18 ]
+	6       (00000012) int-to-float         v2, v1
+	7       (00000014) iput                 v2, v4, Landroid/support/constraint/solver/ArrayRow;->constantValue F
+
+createRowLowerThan-BB@0x18 : [ createRowLowerThan-BB@0x24 createRowLowerThan-BB@0x44 ]
+	8       (00000018) const/high16         v1, 16256 # [1.0]
+	9       (0000001c) const/high16         v2, -16512 # [-1.0]
+	10      (00000020) if-nez               v0, +12
+
+createRowLowerThan-BB@0x24 : [ createRowLowerThan-BB@0x62 ]
+	11      (00000024) iget-object          v3, v4, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	12      (00000028) invoke-virtual       v3, v5, v2, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	13      (0000002e) iget-object          v3, v4, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	14      (00000032) invoke-virtual       v3, v6, v1, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	15      (00000038) iget-object          v1, v4, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	16      (0000003c) invoke-virtual       v1, v7, v2, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	17      (00000042) goto                 +10
+
+createRowLowerThan-BB@0x44 : [ createRowLowerThan-BB@0x62 ]
+	18      (00000044) iget-object          v3, v4, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	19      (00000048) invoke-virtual       v3, v5, v1, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	20      (0000004e) iget-object          v3, v4, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	21      (00000052) invoke-virtual       v3, v6, v2, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	22      (00000058) iget-object          v2, v4, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	23      (0000005c) invoke-virtual       v2, v7, v1, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+
+createRowLowerThan-BB@0x62 : 
+	24      (00000062) return-object        v4
+

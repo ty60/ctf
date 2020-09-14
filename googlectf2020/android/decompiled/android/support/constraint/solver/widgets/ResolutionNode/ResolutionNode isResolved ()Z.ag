@@ -1,0 +1,21 @@
+# Landroid/support/constraint/solver/widgets/ResolutionNode;->isResolved()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isResolved-BB@0x0 : [ isResolved-BB@0xa isResolved-BB@0xc ]
+	0       (00000000) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ResolutionNode;->state I
+	1       (00000004) const/4              v1, 1
+	2       (00000006) if-ne                v0, v1, +3
+
+isResolved-BB@0xa : [ isResolved-BB@0xe ]
+	3       (0000000a) goto                 +2
+
+isResolved-BB@0xc : [ isResolved-BB@0xe ]
+	4       (0000000c) const/4              v1, 0
+
+isResolved-BB@0xe : 
+	5       (0000000e) return               v1
+

@@ -1,0 +1,79 @@
+# Landroid/support/constraint/solver/widgets/ResolutionAnchor;->toString()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : [ toString-BB@0xa toString-BB@0xd6 ]
+	0       (00000000) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	1       (00000004) const/4              v1, 1
+	2       (00000006) if-ne                v0, v1, +68
+
+toString-BB@0xa : [ toString-BB@0x12 toString-BB@0x6a ]
+	3       (0000000a) iget-object          v0, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	4       (0000000e) if-ne                v0, v2, +2e
+
+toString-BB@0x12 : 
+	5       (00000012) new-instance         v0, Ljava/lang/StringBuilder;
+	6       (00000016) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	7       (0000001c) const-string         v1, '['
+	8       (00000020) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000026) iget-object          v1, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	10      (0000002a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	11      (00000030) const-string         v1, ', RESOLVED: '
+	12      (00000034) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (0000003a) iget                 v1, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	14      (0000003e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+	15      (00000044) const-string         v1, ']  type: '
+	16      (00000048) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (0000004e) iget                 v1, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->type I
+	18      (00000052) invoke-virtual       v2, v1, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->sType(I)Ljava/lang/String;
+	19      (00000058) move-result-object   v1
+	20      (0000005a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000060) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	22      (00000066) move-result-object   v0
+	23      (00000068) return-object        v0
+
+toString-BB@0x6a : 
+	24      (0000006a) new-instance         v0, Ljava/lang/StringBuilder;
+	25      (0000006e) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	26      (00000074) const-string         v1, '['
+	27      (00000078) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (0000007e) iget-object          v1, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	29      (00000082) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	30      (00000088) const-string         v1, ', RESOLVED: '
+	31      (0000008c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	32      (00000092) iget-object          v1, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	33      (00000096) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	34      (0000009c) const-string         v1, ':'
+	35      (000000a0) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	36      (000000a6) iget                 v1, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	37      (000000aa) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+	38      (000000b0) const-string         v1, '] type: '
+	39      (000000b4) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000ba) iget                 v1, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->type I
+	41      (000000be) invoke-virtual       v2, v1, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->sType(I)Ljava/lang/String;
+	42      (000000c4) move-result-object   v1
+	43      (000000c6) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	44      (000000cc) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	45      (000000d2) move-result-object   v0
+	46      (000000d4) return-object        v0
+
+toString-BB@0xd6 : 
+	47      (000000d6) new-instance         v0, Ljava/lang/StringBuilder;
+	48      (000000da) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	49      (000000e0) const-string         v1, '{ '
+	50      (000000e4) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	51      (000000ea) iget-object          v1, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	52      (000000ee) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	53      (000000f4) const-string         v1, ' UNRESOLVED} type: '
+	54      (000000f8) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	55      (000000fe) iget                 v1, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->type I
+	56      (00000102) invoke-virtual       v2, v1, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->sType(I)Ljava/lang/String;
+	57      (00000108) move-result-object   v1
+	58      (0000010a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	59      (00000110) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	60      (00000116) move-result-object   v0
+	61      (00000118) return-object        v0
+

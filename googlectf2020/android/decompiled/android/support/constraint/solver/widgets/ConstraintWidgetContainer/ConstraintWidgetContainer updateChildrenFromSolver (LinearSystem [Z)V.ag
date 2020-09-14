@@ -1,0 +1,67 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->updateChildrenFromSolver(Landroid/support/constraint/solver/LinearSystem; [Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.support.constraint.solver.LinearSystem
+# - v10:boolean[]
+#
+# - return:void
+
+updateChildrenFromSolver-BB@0x0 : [ updateChildrenFromSolver-BB@0x1c ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const/4              v1, 2
+	2       (00000004) aput-boolean         v0, v10, v1
+	3       (00000008) invoke-virtual       v8, v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->updateFromSolver(Landroid/support/constraint/solver/LinearSystem;)V
+	4       (0000000e) iget-object          v2, v8, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mChildren Ljava/util/ArrayList;
+	5       (00000012) invoke-virtual       v2, Ljava/util/ArrayList;->size()I
+	6       (00000018) move-result          v2
+	7       (0000001a) move                 v3, v0
+
+updateChildrenFromSolver-BB@0x1c : [ updateChildrenFromSolver-BB@0x20 updateChildrenFromSolver-BB@0x8e ]
+	8       (0000001c) if-ge                v3, v2, +39
+
+updateChildrenFromSolver-BB@0x20 : [ updateChildrenFromSolver-BB@0x48 updateChildrenFromSolver-BB@0x60 ]
+	9       (00000020) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mChildren Ljava/util/ArrayList;
+	10      (00000024) invoke-virtual       v4, v3, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	11      (0000002a) move-result-object   v4
+	12      (0000002c) check-cast           v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	13      (00000030) invoke-virtual       v4, v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->updateFromSolver(Landroid/support/constraint/solver/LinearSystem;)V
+	14      (00000036) iget-object          v5, v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	15      (0000003a) aget-object          v5, v5, v0
+	16      (0000003e) sget-object          v6, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	17      (00000042) const/4              v7, 1
+	18      (00000044) if-ne                v5, v6, +e
+
+updateChildrenFromSolver-BB@0x48 : [ updateChildrenFromSolver-BB@0x5c updateChildrenFromSolver-BB@0x60 ]
+	19      (00000048) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	20      (0000004e) move-result          v5
+	21      (00000050) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWrapWidth()I
+	22      (00000056) move-result          v6
+	23      (00000058) if-ge                v5, v6, +4
+
+updateChildrenFromSolver-BB@0x5c : [ updateChildrenFromSolver-BB@0x60 ]
+	24      (0000005c) aput-boolean         v7, v10, v1
+
+updateChildrenFromSolver-BB@0x60 : [ updateChildrenFromSolver-BB@0x70 updateChildrenFromSolver-BB@0x88 ]
+	25      (00000060) iget-object          v5, v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	26      (00000064) aget-object          v5, v5, v7
+	27      (00000068) sget-object          v6, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	28      (0000006c) if-ne                v5, v6, +e
+
+updateChildrenFromSolver-BB@0x70 : [ updateChildrenFromSolver-BB@0x84 updateChildrenFromSolver-BB@0x88 ]
+	29      (00000070) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	30      (00000076) move-result          v5
+	31      (00000078) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWrapHeight()I
+	32      (0000007e) move-result          v6
+	33      (00000080) if-ge                v5, v6, +4
+
+updateChildrenFromSolver-BB@0x84 : [ updateChildrenFromSolver-BB@0x88 ]
+	34      (00000084) aput-boolean         v7, v10, v1
+
+updateChildrenFromSolver-BB@0x88 : [ updateChildrenFromSolver-BB@0x1c ]
+	35      (00000088) add-int/lit8         v3, v3, 1
+	36      (0000008c) goto                 -38
+
+updateChildrenFromSolver-BB@0x8e : 
+	37      (0000008e) return-void          
+

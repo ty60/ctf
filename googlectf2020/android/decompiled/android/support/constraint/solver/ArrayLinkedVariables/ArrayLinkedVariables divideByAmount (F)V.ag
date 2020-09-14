@@ -1,0 +1,33 @@
+# Landroid/support/constraint/solver/ArrayLinkedVariables;->divideByAmount(F)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:float
+#
+# - return:void
+
+divideByAmount-BB@0x0 : [ divideByAmount-BB@0x6 ]
+	0       (00000000) iget                 v0, v4, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	1       (00000004) const/4              v1, 0
+
+divideByAmount-BB@0x6 : [ divideByAmount-BB@0xc divideByAmount-BB@0x30 ]
+	2       (00000006) const/4              v2, -1
+	3       (00000008) if-eq                v0, v2, +14
+
+divideByAmount-BB@0xc : [ divideByAmount-BB@0x14 divideByAmount-BB@0x30 ]
+	4       (0000000c) iget                 v2, v4, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	5       (00000010) if-ge                v1, v2, +10
+
+divideByAmount-BB@0x14 : [ divideByAmount-BB@0x6 ]
+	6       (00000014) iget-object          v2, v4, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	7       (00000018) aget                 v3, v2, v0
+	8       (0000001c) div-float/2addr      v3, v5
+	9       (0000001e) aput                 v3, v2, v0
+	10      (00000022) iget-object          v2, v4, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	11      (00000026) aget                 v0, v2, v0
+	12      (0000002a) add-int/lit8         v1, v1, 1
+	13      (0000002e) goto                 -14
+
+divideByAmount-BB@0x30 : 
+	14      (00000030) return-void          
+

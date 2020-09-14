@@ -1,0 +1,135 @@
+# Landroid/support/constraint/solver/LinearSystem;->addConstraint(Landroid/support/constraint/solver/ArrayRow;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.support.constraint.solver.ArrayRow
+#
+# - return:void
+
+addConstraint-BB@0x0 : [ addConstraint-BB@0x4 addConstraint-BB@0x6 ]
+	0       (00000000) if-nez               v10, +3
+
+addConstraint-BB@0x4 : 
+	1       (00000004) return-void          
+
+addConstraint-BB@0x6 : [ addConstraint-BB@0x12 addConstraint-BB@0x36 ]
+	2       (00000006) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	3       (0000000a) const-wide/16        v1, 1 # [1.0]
+	4       (0000000e) if-eqz               v0, +14
+
+addConstraint-BB@0x12 : [ addConstraint-BB@0x28 addConstraint-BB@0x36 ]
+	5       (00000012) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	6       (00000016) iget-wide            v3, v0, Landroid/support/constraint/solver/Metrics;->constraints J
+	7       (0000001a) add-long/2addr       v3, v1
+	8       (0000001c) iput-wide            v3, v0, Landroid/support/constraint/solver/Metrics;->constraints J
+	9       (00000020) iget-boolean         v0, v10, Landroid/support/constraint/solver/ArrayRow;->isSimpleDefinition Z
+	10      (00000024) if-eqz               v0, +9
+
+addConstraint-BB@0x28 : [ addConstraint-BB@0x36 ]
+	11      (00000028) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	12      (0000002c) iget-wide            v3, v0, Landroid/support/constraint/solver/Metrics;->simpleconstraints J
+	13      (00000030) add-long/2addr       v3, v1
+	14      (00000032) iput-wide            v3, v0, Landroid/support/constraint/solver/Metrics;->simpleconstraints J
+
+addConstraint-BB@0x36 : [ addConstraint-BB@0x46 addConstraint-BB@0x54 ]
+	15      (00000036) iget                 v0, v9, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	16      (0000003a) const/4              v3, 1
+	17      (0000003c) add-int/2addr        v0, v3
+	18      (0000003e) iget                 v4, v9, Landroid/support/constraint/solver/LinearSystem;->mMaxRows I
+	19      (00000042) if-ge                v0, v4, +9
+
+addConstraint-BB@0x46 : [ addConstraint-BB@0x54 addConstraint-BB@0x5a ]
+	20      (00000046) iget                 v0, v9, Landroid/support/constraint/solver/LinearSystem;->mNumColumns I
+	21      (0000004a) add-int/2addr        v0, v3
+	22      (0000004c) iget                 v4, v9, Landroid/support/constraint/solver/LinearSystem;->mMaxColumns I
+	23      (00000050) if-lt                v0, v4, +5
+
+addConstraint-BB@0x54 : [ addConstraint-BB@0x5a ]
+	24      (00000054) invoke-direct        v9, Landroid/support/constraint/solver/LinearSystem;->increaseTableSize()V
+
+addConstraint-BB@0x5a : [ addConstraint-BB@0x64 addConstraint-BB@0x116 ]
+	25      (0000005a) const/4              v0, 0
+	26      (0000005c) iget-boolean         v4, v10, Landroid/support/constraint/solver/ArrayRow;->isSimpleDefinition Z
+	27      (00000060) if-nez               v4, +5b
+
+addConstraint-BB@0x64 : [ addConstraint-BB@0x76 addConstraint-BB@0x78 ]
+	28      (00000064) invoke-direct        v9, v10, Landroid/support/constraint/solver/LinearSystem;->updateRowFromVariables(Landroid/support/constraint/solver/ArrayRow;)V
+	29      (0000006a) invoke-virtual       v10, Landroid/support/constraint/solver/ArrayRow;->isEmpty()Z
+	30      (00000070) move-result          v4
+	31      (00000072) if-eqz               v4, +3
+
+addConstraint-BB@0x76 : 
+	32      (00000076) return-void          
+
+addConstraint-BB@0x78 : [ addConstraint-BB@0x8a addConstraint-BB@0x108 ]
+	33      (00000078) invoke-virtual       v10, Landroid/support/constraint/solver/ArrayRow;->ensurePositiveConstant()V
+	34      (0000007e) invoke-virtual       v10, v9, Landroid/support/constraint/solver/ArrayRow;->chooseSubject(Landroid/support/constraint/solver/LinearSystem;)Z
+	35      (00000084) move-result          v4
+	36      (00000086) if-eqz               v4, +41
+
+addConstraint-BB@0x8a : [ addConstraint-BB@0xbc addConstraint-BB@0x108 ]
+	37      (0000008a) invoke-virtual       v9, Landroid/support/constraint/solver/LinearSystem;->createExtraVariable()Landroid/support/constraint/solver/SolverVariable;
+	38      (00000090) move-result-object   v4
+	39      (00000092) iput-object          v4, v10, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	40      (00000096) invoke-direct        v9, v10, Landroid/support/constraint/solver/LinearSystem;->addRow(Landroid/support/constraint/solver/ArrayRow;)V
+	41      (0000009c) const/4              v0, 1
+	42      (0000009e) iget-object          v5, v9, Landroid/support/constraint/solver/LinearSystem;->mTempGoal Landroid/support/constraint/solver/LinearSystem$Row;
+	43      (000000a2) invoke-interface     v5, v10, Landroid/support/constraint/solver/LinearSystem$Row;->initFromRow(Landroid/support/constraint/solver/LinearSystem$Row;)V
+	44      (000000a8) iget-object          v5, v9, Landroid/support/constraint/solver/LinearSystem;->mTempGoal Landroid/support/constraint/solver/LinearSystem$Row;
+	45      (000000ac) invoke-direct        v9, v5, v3, Landroid/support/constraint/solver/LinearSystem;->optimize(Landroid/support/constraint/solver/LinearSystem$Row; Z)I
+	46      (000000b2) iget                 v5, v4, Landroid/support/constraint/solver/SolverVariable;->definitionId I
+	47      (000000b6) const/4              v6, -1
+	48      (000000b8) if-ne                v5, v6, +28
+
+addConstraint-BB@0xbc : [ addConstraint-BB@0xc4 addConstraint-BB@0xec ]
+	49      (000000bc) iget-object          v5, v10, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	50      (000000c0) if-ne                v5, v4, +16
+
+addConstraint-BB@0xc4 : [ addConstraint-BB@0xd0 addConstraint-BB@0xec ]
+	51      (000000c4) invoke-virtual       v10, v4, Landroid/support/constraint/solver/ArrayRow;->pickPivot(Landroid/support/constraint/solver/SolverVariable;)Landroid/support/constraint/solver/SolverVariable;
+	52      (000000ca) move-result-object   v5
+	53      (000000cc) if-eqz               v5, +10
+
+addConstraint-BB@0xd0 : [ addConstraint-BB@0xd8 addConstraint-BB@0xe6 ]
+	54      (000000d0) sget-object          v6, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	55      (000000d4) if-eqz               v6, +9
+
+addConstraint-BB@0xd8 : [ addConstraint-BB@0xe6 ]
+	56      (000000d8) sget-object          v6, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	57      (000000dc) iget-wide            v7, v6, Landroid/support/constraint/solver/Metrics;->pivots J
+	58      (000000e0) add-long/2addr       v7, v1
+	59      (000000e2) iput-wide            v7, v6, Landroid/support/constraint/solver/Metrics;->pivots J
+
+addConstraint-BB@0xe6 : [ addConstraint-BB@0xec ]
+	60      (000000e6) invoke-virtual       v10, v5, Landroid/support/constraint/solver/ArrayRow;->pivot(Landroid/support/constraint/solver/SolverVariable;)V
+
+addConstraint-BB@0xec : [ addConstraint-BB@0xf4 addConstraint-BB@0xfe ]
+	61      (000000ec) iget-boolean         v1, v10, Landroid/support/constraint/solver/ArrayRow;->isSimpleDefinition Z
+	62      (000000f0) if-nez               v1, +7
+
+addConstraint-BB@0xf4 : [ addConstraint-BB@0xfe ]
+	63      (000000f4) iget-object          v1, v10, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	64      (000000f8) invoke-virtual       v1, v10, Landroid/support/constraint/solver/SolverVariable;->updateReferencesWithNewDefinition(Landroid/support/constraint/solver/ArrayRow;)V
+
+addConstraint-BB@0xfe : [ addConstraint-BB@0x108 ]
+	65      (000000fe) iget                 v1, v9, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	66      (00000102) sub-int/2addr        v1, v3
+	67      (00000104) iput                 v1, v9, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+
+addConstraint-BB@0x108 : [ addConstraint-BB@0x114 addConstraint-BB@0x116 ]
+	68      (00000108) invoke-virtual       v10, Landroid/support/constraint/solver/ArrayRow;->hasKeyVariable()Z
+	69      (0000010e) move-result          v1
+	70      (00000110) if-nez               v1, +3
+
+addConstraint-BB@0x114 : 
+	71      (00000114) return-void          
+
+addConstraint-BB@0x116 : [ addConstraint-BB@0x11a addConstraint-BB@0x120 ]
+	72      (00000116) if-nez               v0, +5
+
+addConstraint-BB@0x11a : [ addConstraint-BB@0x120 ]
+	73      (0000011a) invoke-direct        v9, v10, Landroid/support/constraint/solver/LinearSystem;->addRow(Landroid/support/constraint/solver/ArrayRow;)V
+
+addConstraint-BB@0x120 : 
+	74      (00000120) return-void          
+

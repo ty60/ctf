@@ -1,0 +1,59 @@
+# Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->setHorizontalSlices()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+setHorizontalSlices-BB@0x0 : [ setHorizontalSlices-BB@0x20 ]
+	0       (00000000) iget-object          v0, v8, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mHorizontalSlices Ljava/util/ArrayList;
+	1       (00000004) invoke-virtual       v0, Ljava/util/ArrayList;->clear()V
+	2       (0000000a) iget                 v0, v8, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mNumRows I
+	3       (0000000e) int-to-float         v0, v0
+	4       (00000010) const/high16         v1, 17096 # [100.0]
+	5       (00000014) div-float/2addr      v1, v0
+	6       (00000016) move                 v0, v1
+	7       (00000018) move-object          v2, v8
+	8       (0000001a) const/4              v3, 0
+	9       (0000001c) move                 v4, v0
+	10      (0000001e) move                 v0, v3
+
+setHorizontalSlices-BB@0x20 : [ setHorizontalSlices-BB@0x28 setHorizontalSlices-BB@0x8a ]
+	11      (00000020) iget                 v5, v8, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mNumRows I
+	12      (00000024) if-ge                v0, v5, +33
+
+setHorizontalSlices-BB@0x28 : [ setHorizontalSlices-BB@0x42 setHorizontalSlices-BB@0x72 ]
+	13      (00000028) new-instance         v5, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$HorizontalSlice;
+	14      (0000002c) invoke-direct        v5, v8, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$HorizontalSlice;-><init>(Landroid/support/constraint/solver/widgets/ConstraintTableLayout;)V
+	15      (00000032) iput-object          v2, v5, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$HorizontalSlice;->top Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	16      (00000036) iget                 v6, v8, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mNumRows I
+	17      (0000003a) add-int/lit8         v6, v6, -1
+	18      (0000003e) if-ge                v0, v6, +1a
+
+setHorizontalSlices-BB@0x42 : [ setHorizontalSlices-BB@0x76 ]
+	19      (00000042) new-instance         v6, Landroid/support/constraint/solver/widgets/Guideline;
+	20      (00000046) invoke-direct        v6, Landroid/support/constraint/solver/widgets/Guideline;-><init>()V
+	21      (0000004c) invoke-virtual       v6, v3, Landroid/support/constraint/solver/widgets/Guideline;->setOrientation(I)V
+	22      (00000052) invoke-virtual       v6, v8, Landroid/support/constraint/solver/widgets/Guideline;->setParent(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+	23      (00000058) float-to-int         v7, v4
+	24      (0000005a) invoke-virtual       v6, v7, Landroid/support/constraint/solver/widgets/Guideline;->setGuidePercent(I)V
+	25      (00000060) add-float/2addr      v4, v1
+	26      (00000062) iput-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$HorizontalSlice;->bottom Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	27      (00000066) iget-object          v7, v8, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mHorizontalGuidelines Ljava/util/ArrayList;
+	28      (0000006a) invoke-virtual       v7, v6, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	29      (00000070) goto                 +3
+
+setHorizontalSlices-BB@0x72 : [ setHorizontalSlices-BB@0x76 ]
+	30      (00000072) iput-object          v8, v5, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$HorizontalSlice;->bottom Landroid/support/constraint/solver/widgets/ConstraintWidget;
+
+setHorizontalSlices-BB@0x76 : [ setHorizontalSlices-BB@0x20 ]
+	31      (00000076) iget-object          v2, v5, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$HorizontalSlice;->bottom Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	32      (0000007a) iget-object          v6, v8, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mHorizontalSlices Ljava/util/ArrayList;
+	33      (0000007e) invoke-virtual       v6, v5, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	34      (00000084) add-int/lit8         v0, v0, 1
+	35      (00000088) goto                 -34
+
+setHorizontalSlices-BB@0x8a : 
+	36      (0000008a) invoke-direct        v8, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->updateDebugSolverNames()V
+	37      (00000090) return-void          
+

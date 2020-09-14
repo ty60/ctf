@@ -1,0 +1,44 @@
+# Landroid/support/constraint/solver/widgets/WidgetContainer;->layout()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+layout-BB@0x0 : [ layout-BB@0xe layout-BB@0x10 ]
+	0       (00000000) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/WidgetContainer;->updateDrawPosition()V
+	1       (00000006) iget-object          v0, v4, Landroid/support/constraint/solver/widgets/WidgetContainer;->mChildren Ljava/util/ArrayList;
+	2       (0000000a) if-nez               v0, +3
+
+layout-BB@0xe : 
+	3       (0000000e) return-void          
+
+layout-BB@0x10 : [ layout-BB@0x1e ]
+	4       (00000010) iget-object          v0, v4, Landroid/support/constraint/solver/widgets/WidgetContainer;->mChildren Ljava/util/ArrayList;
+	5       (00000014) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	6       (0000001a) move-result          v0
+	7       (0000001c) const/4              v1, 0
+
+layout-BB@0x1e : [ layout-BB@0x22 layout-BB@0x4c ]
+	8       (0000001e) if-ge                v1, v0, +17
+
+layout-BB@0x22 : [ layout-BB@0x3a layout-BB@0x46 ]
+	9       (00000022) iget-object          v2, v4, Landroid/support/constraint/solver/widgets/WidgetContainer;->mChildren Ljava/util/ArrayList;
+	10      (00000026) invoke-virtual       v2, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	11      (0000002c) move-result-object   v2
+	12      (0000002e) check-cast           v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	13      (00000032) instance-of          v3, v2, Landroid/support/constraint/solver/widgets/WidgetContainer;
+	14      (00000036) if-eqz               v3, +8
+
+layout-BB@0x3a : [ layout-BB@0x46 ]
+	15      (0000003a) move-object          v3, v2
+	16      (0000003c) check-cast           v3, Landroid/support/constraint/solver/widgets/WidgetContainer;
+	17      (00000040) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/WidgetContainer;->layout()V
+
+layout-BB@0x46 : [ layout-BB@0x1e ]
+	18      (00000046) add-int/lit8         v1, v1, 1
+	19      (0000004a) goto                 -16
+
+layout-BB@0x4c : 
+	20      (0000004c) return-void          
+

@@ -1,0 +1,31 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalMatchStyle(I I I F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+# - v4:int
+# - v5:float
+#
+# - return:void
+
+setHorizontalMatchStyle-BB@0x0 : [ setHorizontalMatchStyle-BB@0x1c setHorizontalMatchStyle-BB@0x2a ]
+	0       (00000000) iput                 v2, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintDefaultWidth I
+	1       (00000004) iput                 v3, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintMinWidth I
+	2       (00000008) iput                 v4, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintMaxWidth I
+	3       (0000000c) iput                 v5, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintPercentWidth F
+	4       (00000010) const/high16         v0, 16256 # [1.0]
+	5       (00000014) cmpg-float           v0, v5, v0
+	6       (00000018) if-gez               v0, +9
+
+setHorizontalMatchStyle-BB@0x1c : [ setHorizontalMatchStyle-BB@0x24 setHorizontalMatchStyle-BB@0x2a ]
+	7       (0000001c) iget                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintDefaultWidth I
+	8       (00000020) if-nez               v0, +5
+
+setHorizontalMatchStyle-BB@0x24 : [ setHorizontalMatchStyle-BB@0x2a ]
+	9       (00000024) const/4              v0, 2
+	10      (00000026) iput                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintDefaultWidth I
+
+setHorizontalMatchStyle-BB@0x2a : 
+	11      (0000002a) return-void          
+

@@ -1,0 +1,15 @@
+# Landroid/support/constraint/solver/widgets/ConstraintHorizontalLayout;-><init>(I I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, v2, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;-><init>(I I)V
+	1       (00000006) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintHorizontalLayout$ContentAlignment;->MIDDLE Landroid/support/constraint/solver/widgets/ConstraintHorizontalLayout$ContentAlignment;
+	2       (0000000a) iput-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintHorizontalLayout;->mAlignment Landroid/support/constraint/solver/widgets/ConstraintHorizontalLayout$ContentAlignment;
+	3       (0000000e) return-void          
+

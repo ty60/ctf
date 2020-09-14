@@ -1,0 +1,41 @@
+# Landroid/support/constraint/solver/ArrayLinkedVariables;->hasAtLeastOnePositiveVariable()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:boolean
+
+hasAtLeastOnePositiveVariable-BB@0x0 : [ hasAtLeastOnePositiveVariable-BB@0xa ]
+	0       (00000000) iget                 v0, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	1       (00000004) const/4              v1, 0
+	2       (00000006) move                 v2, v0
+	3       (00000008) move                 v0, v1
+
+hasAtLeastOnePositiveVariable-BB@0xa : [ hasAtLeastOnePositiveVariable-BB@0x10 hasAtLeastOnePositiveVariable-BB@0x3c ]
+	4       (0000000a) const/4              v3, -1
+	5       (0000000c) if-eq                v2, v3, +18
+
+hasAtLeastOnePositiveVariable-BB@0x10 : [ hasAtLeastOnePositiveVariable-BB@0x18 hasAtLeastOnePositiveVariable-BB@0x3c ]
+	6       (00000010) iget                 v3, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	7       (00000014) if-ge                v0, v3, +14
+
+hasAtLeastOnePositiveVariable-BB@0x18 : [ hasAtLeastOnePositiveVariable-BB@0x2a hasAtLeastOnePositiveVariable-BB@0x2e ]
+	8       (00000018) iget-object          v3, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	9       (0000001c) aget                 v3, v3, v2
+	10      (00000020) const/4              v4, 0
+	11      (00000022) cmpl-float           v3, v3, v4
+	12      (00000026) if-lez               v3, +4
+
+hasAtLeastOnePositiveVariable-BB@0x2a : 
+	13      (0000002a) const/4              v1, 1
+	14      (0000002c) return               v1
+
+hasAtLeastOnePositiveVariable-BB@0x2e : [ hasAtLeastOnePositiveVariable-BB@0xa ]
+	15      (0000002e) iget-object          v3, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	16      (00000032) aget                 v2, v3, v2
+	17      (00000036) add-int/lit8         v0, v0, 1
+	18      (0000003a) goto                 -18
+
+hasAtLeastOnePositiveVariable-BB@0x3c : 
+	19      (0000003c) return               v1
+

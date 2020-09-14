@@ -1,0 +1,69 @@
+# Landroid/support/constraint/solver/widgets/Analyzer;->getMaxDimension(Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup; I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.support.constraint.solver.widgets.ConstraintWidgetGroup
+# - v10:int
+#
+# - return:int
+
+getMaxDimension-BB@0x0 : [ getMaxDimension-BB@0x1c ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) mul-int/lit8         v1, v10, 2
+	2       (00000006) invoke-virtual       v9, v10, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->getStartWidgets(I)Ljava/util/List;
+	3       (0000000c) move-result-object   v2
+	4       (0000000e) invoke-interface     v2, Ljava/util/List;->size()I
+	5       (00000014) move-result          v3
+	6       (00000016) const/4              v4, 0
+	7       (00000018) move                 v5, v0
+	8       (0000001a) move                 v0, v4
+
+getMaxDimension-BB@0x1c : [ getMaxDimension-BB@0x20 getMaxDimension-BB@0x82 ]
+	9       (0000001c) if-ge                v0, v3, +33
+
+getMaxDimension-BB@0x20 : [ getMaxDimension-BB@0x40 getMaxDimension-BB@0x6a ]
+	10      (00000020) invoke-interface     v2, v0, Ljava/util/List;->get(I)Ljava/lang/Object;
+	11      (00000026) move-result-object   v6
+	12      (00000028) check-cast           v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	13      (0000002c) iget-object          v7, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	14      (00000030) add-int/lit8         v8, v1, 1
+	15      (00000034) aget-object          v7, v7, v8
+	16      (00000038) iget-object          v7, v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	17      (0000003c) if-eqz               v7, +17
+
+getMaxDimension-BB@0x40 : [ getMaxDimension-BB@0x50 getMaxDimension-BB@0x66 ]
+	18      (00000040) iget-object          v7, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	19      (00000044) aget-object          v7, v7, v1
+	20      (00000048) iget-object          v7, v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	21      (0000004c) if-eqz               v7, +d
+
+getMaxDimension-BB@0x50 : [ getMaxDimension-BB@0x64 getMaxDimension-BB@0x66 ]
+	22      (00000050) iget-object          v7, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	23      (00000054) add-int/lit8         v8, v1, 1
+	24      (00000058) aget-object          v7, v7, v8
+	25      (0000005c) iget-object          v7, v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	26      (00000060) if-eqz               v7, +3
+
+getMaxDimension-BB@0x64 : [ getMaxDimension-BB@0x6a ]
+	27      (00000064) goto                 +3
+
+getMaxDimension-BB@0x66 : [ getMaxDimension-BB@0x6c ]
+	28      (00000066) move                 v7, v4
+	29      (00000068) goto                 +2
+
+getMaxDimension-BB@0x6a : [ getMaxDimension-BB@0x6c ]
+	30      (0000006a) const/4              v7, 1
+
+getMaxDimension-BB@0x6c : [ getMaxDimension-BB@0x1c ]
+	31      (0000006c) invoke-static        v6, v10, v7, v4, Landroid/support/constraint/solver/widgets/Analyzer;->getMaxDimensionTraversal(Landroid/support/constraint/solver/widgets/ConstraintWidget; I Z I)I
+	32      (00000072) move-result          v8
+	33      (00000074) invoke-static        v5, v8, Ljava/lang/Math;->max(I I)I
+	34      (0000007a) move-result          v5
+	35      (0000007c) add-int/lit8         v0, v0, 1
+	36      (00000080) goto                 -32
+
+getMaxDimension-BB@0x82 : 
+	37      (00000082) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mGroupDimensions [I
+	38      (00000086) aput                 v5, v0, v10
+	39      (0000008a) return               v5
+

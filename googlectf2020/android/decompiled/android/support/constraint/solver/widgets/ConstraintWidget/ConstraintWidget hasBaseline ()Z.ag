@@ -1,0 +1,21 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->hasBaseline()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+hasBaseline-BB@0x0 : [ hasBaseline-BB@0x8 hasBaseline-BB@0xc ]
+	0       (00000000) iget                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaselineDistance I
+	1       (00000004) if-lez               v0, +4
+
+hasBaseline-BB@0x8 : [ hasBaseline-BB@0xe ]
+	2       (00000008) const/4              v0, 1
+	3       (0000000a) goto                 +2
+
+hasBaseline-BB@0xc : [ hasBaseline-BB@0xe ]
+	4       (0000000c) const/4              v0, 0
+
+hasBaseline-BB@0xe : 
+	5       (0000000e) return               v0
+

@@ -1,0 +1,33 @@
+# Landroid/support/constraint/solver/LinearSystem;->addRatio(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; F I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.support.constraint.solver.SolverVariable
+# - v9:android.support.constraint.solver.SolverVariable
+# - v10:android.support.constraint.solver.SolverVariable
+# - v11:android.support.constraint.solver.SolverVariable
+# - v12:float
+# - v13:int
+#
+# - return:void
+
+addRatio-BB@0x0 : [ addRatio-BB@0x20 addRatio-BB@0x26 ]
+	0       (00000000) invoke-virtual       v7, Landroid/support/constraint/solver/LinearSystem;->createRow()Landroid/support/constraint/solver/ArrayRow;
+	1       (00000006) move-result-object   v6
+	2       (00000008) move-object          v0, v6
+	3       (0000000a) move-object          v1, v8
+	4       (0000000c) move-object          v2, v9
+	5       (0000000e) move-object          v3, v10
+	6       (00000010) move-object          v4, v11
+	7       (00000012) move                 v5, v12
+	8       (00000014) invoke-virtual/range v0 ... v5, Landroid/support/constraint/solver/ArrayRow;->createRowDimensionRatio(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; F)Landroid/support/constraint/solver/ArrayRow;
+	9       (0000001a) const/4              v0, 6
+	10      (0000001c) if-eq                v13, v0, +5
+
+addRatio-BB@0x20 : [ addRatio-BB@0x26 ]
+	11      (00000020) invoke-virtual       v6, v7, v13, Landroid/support/constraint/solver/ArrayRow;->addError(Landroid/support/constraint/solver/LinearSystem; I)Landroid/support/constraint/solver/ArrayRow;
+
+addRatio-BB@0x26 : 
+	12      (00000026) invoke-virtual       v7, v6, Landroid/support/constraint/solver/LinearSystem;->addConstraint(Landroid/support/constraint/solver/ArrayRow;)V
+	13      (0000002c) return-void          
+

@@ -1,0 +1,79 @@
+# Landroid/support/constraint/solver/ArrayRow;->createRowEqualMatchDimensions(F F F Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable;)Landroid/support/constraint/solver/ArrayRow; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:float
+# - v8:float
+# - v9:float
+# - v10:android.support.constraint.solver.SolverVariable
+# - v11:android.support.constraint.solver.SolverVariable
+# - v12:android.support.constraint.solver.SolverVariable
+# - v13:android.support.constraint.solver.SolverVariable
+#
+# - return:android.support.constraint.solver.ArrayRow
+
+createRowEqualMatchDimensions-BB@0x0 : [ createRowEqualMatchDimensions-BB@0x16 createRowEqualMatchDimensions-BB@0x94 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput                 v0, v6, Landroid/support/constraint/solver/ArrayRow;->constantValue F
+	2       (00000006) cmpl-float           v1, v8, v0
+	3       (0000000a) const/high16         v2, -16512 # [-1.0]
+	4       (0000000e) const/high16         v3, 16256 # [1.0]
+	5       (00000012) if-eqz               v1, +41
+
+createRowEqualMatchDimensions-BB@0x16 : [ createRowEqualMatchDimensions-BB@0x1e createRowEqualMatchDimensions-BB@0x20 ]
+	6       (00000016) cmpl-float           v1, v7, v9
+	7       (0000001a) if-nez               v1, +3
+
+createRowEqualMatchDimensions-BB@0x1e : [ createRowEqualMatchDimensions-BB@0x94 ]
+	8       (0000001e) goto                 +3b
+
+createRowEqualMatchDimensions-BB@0x20 : [ createRowEqualMatchDimensions-BB@0x28 createRowEqualMatchDimensions-BB@0x3e ]
+	9       (00000020) cmpl-float           v1, v7, v0
+	10      (00000024) if-nez               v1, +d
+
+createRowEqualMatchDimensions-BB@0x28 : [ createRowEqualMatchDimensions-BB@0xbc ]
+	11      (00000028) iget-object          v0, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	12      (0000002c) invoke-virtual       v0, v10, v3, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	13      (00000032) iget-object          v0, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	14      (00000036) invoke-virtual       v0, v11, v2, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	15      (0000003c) goto                 +40
+
+createRowEqualMatchDimensions-BB@0x3e : [ createRowEqualMatchDimensions-BB@0x46 createRowEqualMatchDimensions-BB@0x5c ]
+	16      (0000003e) cmpl-float           v0, v9, v0
+	17      (00000042) if-nez               v0, +d
+
+createRowEqualMatchDimensions-BB@0x46 : [ createRowEqualMatchDimensions-BB@0xbc ]
+	18      (00000046) iget-object          v0, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	19      (0000004a) invoke-virtual       v0, v12, v3, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	20      (00000050) iget-object          v0, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	21      (00000054) invoke-virtual       v0, v13, v2, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	22      (0000005a) goto                 +31
+
+createRowEqualMatchDimensions-BB@0x5c : [ createRowEqualMatchDimensions-BB@0xbc ]
+	23      (0000005c) div-float            v0, v7, v8
+	24      (00000060) div-float            v1, v9, v8
+	25      (00000064) div-float            v4, v0, v1
+	26      (00000068) iget-object          v5, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	27      (0000006c) invoke-virtual       v5, v10, v3, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	28      (00000072) iget-object          v3, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	29      (00000076) invoke-virtual       v3, v11, v2, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	30      (0000007c) iget-object          v2, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	31      (00000080) invoke-virtual       v2, v13, v4, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	32      (00000086) iget-object          v2, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	33      (0000008a) neg-float            v3, v4
+	34      (0000008c) invoke-virtual       v2, v12, v3, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	35      (00000092) goto                 +15
+
+createRowEqualMatchDimensions-BB@0x94 : [ createRowEqualMatchDimensions-BB@0xbc ]
+	36      (00000094) iget-object          v0, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	37      (00000098) invoke-virtual       v0, v10, v3, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	38      (0000009e) iget-object          v0, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	39      (000000a2) invoke-virtual       v0, v11, v2, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	40      (000000a8) iget-object          v0, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	41      (000000ac) invoke-virtual       v0, v13, v3, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	42      (000000b2) iget-object          v0, v6, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	43      (000000b6) invoke-virtual       v0, v12, v2, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+
+createRowEqualMatchDimensions-BB@0xbc : 
+	44      (000000bc) return-object        v6
+

@@ -1,0 +1,24 @@
+# Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->setNumRows(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setNumRows-BB@0x0 : [ setNumRows-BB@0x8 setNumRows-BB@0x20 ]
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mVerticalGrowth Z
+	1       (00000004) if-nez               v0, +e
+
+setNumRows-BB@0x8 : [ setNumRows-BB@0x10 setNumRows-BB@0x20 ]
+	2       (00000008) iget                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mNumCols I
+	3       (0000000c) if-eq                v0, v2, +a
+
+setNumRows-BB@0x10 : [ setNumRows-BB@0x20 ]
+	4       (00000010) iput                 v2, v1, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mNumRows I
+	5       (00000014) invoke-direct        v1, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->setHorizontalSlices()V
+	6       (0000001a) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->setTableDimensions()V
+
+setNumRows-BB@0x20 : 
+	7       (00000020) return-void          
+

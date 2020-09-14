@@ -1,0 +1,41 @@
+# Landroid/support/constraint/solver/widgets/Snapshot;->updateFrom(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.support.constraint.solver.widgets.ConstraintWidget
+#
+# - return:void
+
+updateFrom-BB@0x0 : [ updateFrom-BB@0x3e ]
+	0       (00000000) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getX()I
+	1       (00000006) move-result          v0
+	2       (00000008) iput                 v0, v3, Landroid/support/constraint/solver/widgets/Snapshot;->mX I
+	3       (0000000c) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getY()I
+	4       (00000012) move-result          v0
+	5       (00000014) iput                 v0, v3, Landroid/support/constraint/solver/widgets/Snapshot;->mY I
+	6       (00000018) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	7       (0000001e) move-result          v0
+	8       (00000020) iput                 v0, v3, Landroid/support/constraint/solver/widgets/Snapshot;->mWidth I
+	9       (00000024) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	10      (0000002a) move-result          v0
+	11      (0000002c) iput                 v0, v3, Landroid/support/constraint/solver/widgets/Snapshot;->mHeight I
+	12      (00000030) iget-object          v0, v3, Landroid/support/constraint/solver/widgets/Snapshot;->mConnections Ljava/util/ArrayList;
+	13      (00000034) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	14      (0000003a) move-result          v0
+	15      (0000003c) const/4              v1, 0
+
+updateFrom-BB@0x3e : [ updateFrom-BB@0x42 updateFrom-BB@0x5e ]
+	16      (0000003e) if-ge                v1, v0, +10
+
+updateFrom-BB@0x42 : [ updateFrom-BB@0x3e ]
+	17      (00000042) iget-object          v2, v3, Landroid/support/constraint/solver/widgets/Snapshot;->mConnections Ljava/util/ArrayList;
+	18      (00000046) invoke-virtual       v2, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	19      (0000004c) move-result-object   v2
+	20      (0000004e) check-cast           v2, Landroid/support/constraint/solver/widgets/Snapshot$Connection;
+	21      (00000052) invoke-virtual       v2, v4, Landroid/support/constraint/solver/widgets/Snapshot$Connection;->updateFrom(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+	22      (00000058) add-int/lit8         v1, v1, 1
+	23      (0000005c) goto                 -f
+
+updateFrom-BB@0x5e : 
+	24      (0000005e) return-void          
+

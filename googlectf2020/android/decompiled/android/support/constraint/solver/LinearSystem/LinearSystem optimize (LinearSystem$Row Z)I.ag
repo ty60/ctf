@@ -1,0 +1,194 @@
+# Landroid/support/constraint/solver/LinearSystem;->optimize(Landroid/support/constraint/solver/LinearSystem$Row; Z)I [access_flags=private final]
+#
+# Parameters:
+# - local registers: v0...v16
+# - v17:android.support.constraint.solver.LinearSystem$Row
+# - v18:boolean
+#
+# - return:int
+
+optimize-BB@0x0 : [ optimize-BB@0x10 optimize-BB@0x1e ]
+	0       (00000000) move-object/from16   v0, v16
+	1       (00000004) sget-object          v1, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	2       (00000008) const-wide/16        v2, 1 # [1.0]
+	3       (0000000c) if-eqz               v1, +9
+
+optimize-BB@0x10 : [ optimize-BB@0x1e ]
+	4       (00000010) sget-object          v1, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	5       (00000014) iget-wide            v4, v1, Landroid/support/constraint/solver/Metrics;->optimize J
+	6       (00000018) add-long/2addr       v4, v2
+	7       (0000001a) iput-wide            v4, v1, Landroid/support/constraint/solver/Metrics;->optimize J
+
+optimize-BB@0x1e : [ optimize-BB@0x26 ]
+	8       (0000001e) const/4              v1, 0
+	9       (00000020) const/4              v4, 0
+	10      (00000022) const/4              v5, 0
+	11      (00000024) move                 v6, v5
+
+optimize-BB@0x26 : [ optimize-BB@0x2e optimize-BB@0x3c ]
+	12      (00000026) iget                 v7, v0, Landroid/support/constraint/solver/LinearSystem;->mNumColumns I
+	13      (0000002a) if-ge                v6, v7, +9
+
+optimize-BB@0x2e : [ optimize-BB@0x26 ]
+	14      (0000002e) iget-object          v7, v0, Landroid/support/constraint/solver/LinearSystem;->mAlreadyTestedCandidates [Z
+	15      (00000032) aput-boolean         v5, v7, v6
+	16      (00000036) add-int/lit8         v6, v6, 1
+	17      (0000003a) goto                 -a
+
+optimize-BB@0x3c : [ optimize-BB@0x40 optimize-BB@0x184 ]
+	18      (0000003c) if-nez               v1, +a4
+
+optimize-BB@0x40 : [ optimize-BB@0x48 optimize-BB@0x56 ]
+	19      (00000040) sget-object          v6, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	20      (00000044) if-eqz               v6, +9
+
+optimize-BB@0x48 : [ optimize-BB@0x56 ]
+	21      (00000048) sget-object          v6, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	22      (0000004c) iget-wide            v7, v6, Landroid/support/constraint/solver/Metrics;->iterations J
+	23      (00000050) add-long/2addr       v7, v2
+	24      (00000052) iput-wide            v7, v6, Landroid/support/constraint/solver/Metrics;->iterations J
+
+optimize-BB@0x56 : [ optimize-BB@0x66 optimize-BB@0x68 ]
+	25      (00000056) add-int/lit8         v4, v4, 1
+	26      (0000005a) iget                 v6, v0, Landroid/support/constraint/solver/LinearSystem;->mNumColumns I
+	27      (0000005e) mul-int/lit8         v6, v6, 2
+	28      (00000062) if-lt                v4, v6, +3
+
+optimize-BB@0x66 : 
+	29      (00000066) return               v4
+
+optimize-BB@0x68 : [ optimize-BB@0x76 optimize-BB@0x8a ]
+	30      (00000068) invoke-interface/range v17, Landroid/support/constraint/solver/LinearSystem$Row;->getKey()Landroid/support/constraint/solver/SolverVariable;
+	31      (0000006e) move-result-object   v6
+	32      (00000070) const/4              v7, 1
+	33      (00000072) if-eqz               v6, +c
+
+optimize-BB@0x76 : [ optimize-BB@0x8a ]
+	34      (00000076) iget-object          v6, v0, Landroid/support/constraint/solver/LinearSystem;->mAlreadyTestedCandidates [Z
+	35      (0000007a) invoke-interface/range v17, Landroid/support/constraint/solver/LinearSystem$Row;->getKey()Landroid/support/constraint/solver/SolverVariable;
+	36      (00000080) move-result-object   v8
+	37      (00000082) iget                 v8, v8, Landroid/support/constraint/solver/SolverVariable;->id I
+	38      (00000086) aput-boolean         v7, v6, v8
+
+optimize-BB@0x8a : [ optimize-BB@0x9e optimize-BB@0xbc ]
+	39      (0000008a) iget-object          v6, v0, Landroid/support/constraint/solver/LinearSystem;->mAlreadyTestedCandidates [Z
+	40      (0000008e) move-object/from16   v8, v17
+	41      (00000092) invoke-interface     v8, v0, v6, Landroid/support/constraint/solver/LinearSystem$Row;->getPivotCandidate(Landroid/support/constraint/solver/LinearSystem; [Z)Landroid/support/constraint/solver/SolverVariable;
+	42      (00000098) move-result-object   v6
+	43      (0000009a) if-eqz               v6, +11
+
+optimize-BB@0x9e : [ optimize-BB@0xae optimize-BB@0xb0 ]
+	44      (0000009e) iget-object          v9, v0, Landroid/support/constraint/solver/LinearSystem;->mAlreadyTestedCandidates [Z
+	45      (000000a2) iget                 v10, v6, Landroid/support/constraint/solver/SolverVariable;->id I
+	46      (000000a6) aget-boolean         v9, v9, v10
+	47      (000000aa) if-eqz               v9, +3
+
+optimize-BB@0xae : 
+	48      (000000ae) return               v4
+
+optimize-BB@0xb0 : [ optimize-BB@0xbc ]
+	49      (000000b0) iget-object          v9, v0, Landroid/support/constraint/solver/LinearSystem;->mAlreadyTestedCandidates [Z
+	50      (000000b4) iget                 v10, v6, Landroid/support/constraint/solver/SolverVariable;->id I
+	51      (000000b8) aput-boolean         v7, v9, v10
+
+optimize-BB@0xbc : [ optimize-BB@0xc0 optimize-BB@0x17e ]
+	52      (000000bc) if-eqz               v6, +61
+
+optimize-BB@0xc0 : [ optimize-BB@0xcc ]
+	53      (000000c0) const                v7, 2139095039 # [3.4028234663852886e+38]
+	54      (000000c6) const/4              v9, -1
+	55      (000000c8) move                 v10, v7
+	56      (000000ca) move                 v7, v5
+
+optimize-BB@0xcc : [ optimize-BB@0xd4 optimize-BB@0x134 ]
+	57      (000000cc) iget                 v11, v0, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	58      (000000d0) if-ge                v7, v11, +32
+
+optimize-BB@0xd4 : [ optimize-BB@0xec optimize-BB@0xee ]
+	59      (000000d4) iget-object          v11, v0, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	60      (000000d8) aget-object          v11, v11, v7
+	61      (000000dc) iget-object          v12, v11, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	62      (000000e0) iget-object          v13, v12, Landroid/support/constraint/solver/SolverVariable;->mType Landroid/support/constraint/solver/SolverVariable$Type;
+	63      (000000e4) sget-object          v14, Landroid/support/constraint/solver/SolverVariable$Type;->UNRESTRICTED Landroid/support/constraint/solver/SolverVariable$Type;
+	64      (000000e8) if-ne                v13, v14, +3
+
+optimize-BB@0xec : [ optimize-BB@0x12e ]
+	65      (000000ec) goto                 +21
+
+optimize-BB@0xee : [ optimize-BB@0xf6 optimize-BB@0xf8 ]
+	66      (000000ee) iget-boolean         v13, v11, Landroid/support/constraint/solver/ArrayRow;->isSimpleDefinition Z
+	67      (000000f2) if-eqz               v13, +3
+
+optimize-BB@0xf6 : [ optimize-BB@0x12e ]
+	68      (000000f6) goto                 +1c
+
+optimize-BB@0xf8 : [ optimize-BB@0x104 optimize-BB@0x12e ]
+	69      (000000f8) invoke-virtual       v11, v6, Landroid/support/constraint/solver/ArrayRow;->hasVariable(Landroid/support/constraint/solver/SolverVariable;)Z
+	70      (000000fe) move-result          v13
+	71      (00000100) if-eqz               v13, +17
+
+optimize-BB@0x104 : [ optimize-BB@0x11a optimize-BB@0x12e ]
+	72      (00000104) iget-object          v13, v11, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	73      (00000108) invoke-virtual       v13, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->get(Landroid/support/constraint/solver/SolverVariable;)F
+	74      (0000010e) move-result          v13
+	75      (00000110) const/4              v14, 0
+	76      (00000112) cmpg-float           v14, v13, v14
+	77      (00000116) if-gez               v14, +c
+
+optimize-BB@0x11a : [ optimize-BB@0x12a optimize-BB@0x12e ]
+	78      (0000011a) iget                 v14, v11, Landroid/support/constraint/solver/ArrayRow;->constantValue F
+	79      (0000011e) neg-float            v14, v14
+	80      (00000120) div-float/2addr      v14, v13
+	81      (00000122) cmpg-float           v15, v14, v10
+	82      (00000126) if-gez               v15, +4
+
+optimize-BB@0x12a : [ optimize-BB@0x12e ]
+	83      (0000012a) move                 v10, v14
+	84      (0000012c) move                 v9, v7
+
+optimize-BB@0x12e : [ optimize-BB@0xcc ]
+	85      (0000012e) add-int/lit8         v7, v7, 1
+	86      (00000132) goto                 -33
+
+optimize-BB@0x134 : [ optimize-BB@0x13a optimize-BB@0x17a ]
+	87      (00000134) const/4              v7, -1
+	88      (00000136) if-le                v9, v7, +22
+
+optimize-BB@0x13a : [ optimize-BB@0x152 optimize-BB@0x160 ]
+	89      (0000013a) iget-object          v11, v0, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	90      (0000013e) aget-object          v11, v11, v9
+	91      (00000142) iget-object          v12, v11, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	92      (00000146) iput                 v7, v12, Landroid/support/constraint/solver/SolverVariable;->definitionId I
+	93      (0000014a) sget-object          v7, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	94      (0000014e) if-eqz               v7, +9
+
+optimize-BB@0x152 : [ optimize-BB@0x160 ]
+	95      (00000152) sget-object          v7, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	96      (00000156) iget-wide            v12, v7, Landroid/support/constraint/solver/Metrics;->pivots J
+	97      (0000015a) add-long/2addr       v12, v2
+	98      (0000015c) iput-wide            v12, v7, Landroid/support/constraint/solver/Metrics;->pivots J
+
+optimize-BB@0x160 : [ optimize-BB@0x17c ]
+	99      (00000160) invoke-virtual       v11, v6, Landroid/support/constraint/solver/ArrayRow;->pivot(Landroid/support/constraint/solver/SolverVariable;)V
+	100     (00000166) iget-object          v7, v11, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	101     (0000016a) iput                 v9, v7, Landroid/support/constraint/solver/SolverVariable;->definitionId I
+	102     (0000016e) iget-object          v7, v11, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	103     (00000172) invoke-virtual       v7, v11, Landroid/support/constraint/solver/SolverVariable;->updateReferencesWithNewDefinition(Landroid/support/constraint/solver/ArrayRow;)V
+	104     (00000178) goto                 +2
+
+optimize-BB@0x17a : [ optimize-BB@0x17c ]
+	105     (0000017a) const/4              v1, 1
+
+optimize-BB@0x17c : [ optimize-BB@0x180 ]
+	106     (0000017c) goto                 +2
+
+optimize-BB@0x17e : [ optimize-BB@0x180 ]
+	107     (0000017e) const/4              v1, 1
+
+optimize-BB@0x180 : [ optimize-BB@0x3c ]
+	108     (00000180) goto/16              -a2
+
+optimize-BB@0x184 : 
+	109     (00000184) move-object/from16   v8, v17
+	110     (00000188) return               v4
+

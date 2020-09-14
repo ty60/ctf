@@ -1,0 +1,50 @@
+# Landroid/support/constraint/solver/widgets/Guideline;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.constraint.solver.widgets.ConstraintAnchor$Type
+#
+# - return:android.support.constraint.solver.widgets.ConstraintAnchor
+
+getAnchor-BB@0x0 : [ D:getAnchor-BB@0x16 1:getAnchor-BB@0x2a 2:getAnchor-BB@0x2a 3:getAnchor-BB@0x1c 4:getAnchor-BB@0x1c 5:getAnchor-BB@0x18 6:getAnchor-BB@0x18 7:getAnchor-BB@0x18 8:getAnchor-BB@0x18 9:getAnchor-BB@0x18 ]
+	0       (00000000) sget-object          v0, Landroid/support/constraint/solver/widgets/Guideline$1;->$SwitchMap$android$support$constraint$solver$widgets$ConstraintAnchor$Type [I
+	1       (00000004) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->ordinal()I
+	2       (0000000a) move-result          v1
+	3       (0000000c) aget                 v0, v0, v1
+	4       (00000010) packed-switch        v0, +20 (0x50)
+
+getAnchor-BB@0x16 : [ getAnchor-BB@0x3a ]
+	5       (00000016) goto                 +12
+
+getAnchor-BB@0x18 : 
+	6       (00000018) const/4              v0, 0
+	7       (0000001a) return-object        v0
+
+getAnchor-BB@0x1c : [ getAnchor-BB@0x24 getAnchor-BB@0x3a ]
+	8       (0000001c) iget                 v0, v2, Landroid/support/constraint/solver/widgets/Guideline;->mOrientation I
+	9       (00000020) if-nez               v0, +d
+
+getAnchor-BB@0x24 : 
+	10      (00000024) iget-object          v0, v2, Landroid/support/constraint/solver/widgets/Guideline;->mAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	11      (00000028) return-object        v0
+
+getAnchor-BB@0x2a : [ getAnchor-BB@0x34 getAnchor-BB@0x3a ]
+	12      (0000002a) iget                 v0, v2, Landroid/support/constraint/solver/widgets/Guideline;->mOrientation I
+	13      (0000002e) const/4              v1, 1
+	14      (00000030) if-ne                v0, v1, +5
+
+getAnchor-BB@0x34 : 
+	15      (00000034) iget-object          v0, v2, Landroid/support/constraint/solver/widgets/Guideline;->mAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	16      (00000038) return-object        v0
+
+getAnchor-BB@0x3a : 
+	17      (0000003a) new-instance         v0, Ljava/lang/AssertionError;
+	18      (0000003e) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->name()Ljava/lang/String;
+	19      (00000044) move-result-object   v1
+	20      (00000046) invoke-direct        v0, v1, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	21      (0000004c) throw                v0
+
+getAnchor-BB@0x4e : 
+	22      (0000004e) nop                  
+	23      (00000050) packed-switch-payload 1 2 3 4 5 6 7 8 9
+

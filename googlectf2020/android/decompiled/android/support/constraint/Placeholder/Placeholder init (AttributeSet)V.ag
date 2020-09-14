@@ -1,0 +1,58 @@
+# Landroid/support/constraint/Placeholder;->init(Landroid/util/AttributeSet;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.util.AttributeSet
+#
+# - return:void
+
+init-BB@0x0 : [ init-BB@0x14 init-BB@0x76 ]
+	0       (00000000) iget                 v0, v5, Landroid/support/constraint/Placeholder;->mEmptyVisibility I
+	1       (00000004) invoke-super         v5, v0, Landroid/view/View;->setVisibility(I)V
+	2       (0000000a) const/4              v0, -1
+	3       (0000000c) iput                 v0, v5, Landroid/support/constraint/Placeholder;->mContentId I
+	4       (00000010) if-eqz               v6, +33
+
+init-BB@0x14 : [ init-BB@0x32 ]
+	5       (00000014) invoke-virtual       v5, Landroid/support/constraint/Placeholder;->getContext()Landroid/content/Context;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) sget-object          v1, Landroid/support/constraint/R$styleable;->ConstraintLayout_placeholder [I
+	8       (00000020) invoke-virtual       v0, v6, v1, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+	9       (00000026) move-result-object   v0
+	10      (00000028) invoke-virtual       v0, Landroid/content/res/TypedArray;->getIndexCount()I
+	11      (0000002e) move-result          v1
+	12      (00000030) const/4              v2, 0
+
+init-BB@0x32 : [ init-BB@0x36 init-BB@0x76 ]
+	13      (00000032) if-ge                v2, v1, +22
+
+init-BB@0x36 : [ init-BB@0x46 init-BB@0x58 ]
+	14      (00000036) invoke-virtual       v0, v2, Landroid/content/res/TypedArray;->getIndex(I)I
+	15      (0000003c) move-result          v3
+	16      (0000003e) sget                 v4, Landroid/support/constraint/R$styleable;->ConstraintLayout_placeholder_content I
+	17      (00000042) if-ne                v3, v4, +b
+
+init-BB@0x46 : [ init-BB@0x70 ]
+	18      (00000046) iget                 v4, v5, Landroid/support/constraint/Placeholder;->mContentId I
+	19      (0000004a) invoke-virtual       v0, v3, v4, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	20      (00000050) move-result          v4
+	21      (00000052) iput                 v4, v5, Landroid/support/constraint/Placeholder;->mContentId I
+	22      (00000056) goto                 +d
+
+init-BB@0x58 : [ init-BB@0x60 init-BB@0x70 ]
+	23      (00000058) sget                 v4, Landroid/support/constraint/R$styleable;->ConstraintLayout_placeholder_emptyVisibility I
+	24      (0000005c) if-ne                v3, v4, +a
+
+init-BB@0x60 : [ init-BB@0x70 ]
+	25      (00000060) iget                 v4, v5, Landroid/support/constraint/Placeholder;->mEmptyVisibility I
+	26      (00000064) invoke-virtual       v0, v3, v4, Landroid/content/res/TypedArray;->getInt(I I)I
+	27      (0000006a) move-result          v4
+	28      (0000006c) iput                 v4, v5, Landroid/support/constraint/Placeholder;->mEmptyVisibility I
+
+init-BB@0x70 : [ init-BB@0x32 ]
+	29      (00000070) add-int/lit8         v2, v2, 1
+	30      (00000074) goto                 -21
+
+init-BB@0x76 : 
+	31      (00000076) return-void          
+

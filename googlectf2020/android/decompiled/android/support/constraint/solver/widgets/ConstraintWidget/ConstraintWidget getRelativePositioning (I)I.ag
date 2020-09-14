@@ -1,0 +1,27 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->getRelativePositioning(I)I [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:int
+
+getRelativePositioning-BB@0x0 : [ getRelativePositioning-BB@0x4 getRelativePositioning-BB@0xa ]
+	0       (00000000) if-nez               v2, +5
+
+getRelativePositioning-BB@0x4 : 
+	1       (00000004) iget                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRelX I
+	2       (00000008) return               v0
+
+getRelativePositioning-BB@0xa : [ getRelativePositioning-BB@0x10 getRelativePositioning-BB@0x16 ]
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) if-ne                v2, v0, +5
+
+getRelativePositioning-BB@0x10 : 
+	5       (00000010) iget                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRelY I
+	6       (00000014) return               v0
+
+getRelativePositioning-BB@0x16 : 
+	7       (00000016) const/4              v0, 0
+	8       (00000018) return               v0
+

@@ -1,0 +1,51 @@
+# Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->getColumnAlignmentRepresentation(I)Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:java.lang.String
+
+getColumnAlignmentRepresentation-BB@0x0 : [ getColumnAlignmentRepresentation-BB@0x1a getColumnAlignmentRepresentation-BB@0x20 ]
+	0       (00000000) iget-object          v0, v3, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mVerticalSlices Ljava/util/ArrayList;
+	1       (00000004) invoke-virtual       v0, v4, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$VerticalSlice;
+	4       (00000010) iget                 v1, v0, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$VerticalSlice;->alignment I
+	5       (00000014) const/4              v2, 1
+	6       (00000016) if-ne                v1, v2, +5
+
+getColumnAlignmentRepresentation-BB@0x1a : 
+	7       (0000001a) const-string         v1, 'L'
+	8       (0000001e) return-object        v1
+
+getColumnAlignmentRepresentation-BB@0x20 : [ getColumnAlignmentRepresentation-BB@0x28 getColumnAlignmentRepresentation-BB@0x2e ]
+	9       (00000020) iget                 v1, v0, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$VerticalSlice;->alignment I
+	10      (00000024) if-nez               v1, +5
+
+getColumnAlignmentRepresentation-BB@0x28 : 
+	11      (00000028) const-string         v1, 'C'
+	12      (0000002c) return-object        v1
+
+getColumnAlignmentRepresentation-BB@0x2e : [ getColumnAlignmentRepresentation-BB@0x38 getColumnAlignmentRepresentation-BB@0x3e ]
+	13      (0000002e) iget                 v1, v0, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$VerticalSlice;->alignment I
+	14      (00000032) const/4              v2, 3
+	15      (00000034) if-ne                v1, v2, +5
+
+getColumnAlignmentRepresentation-BB@0x38 : 
+	16      (00000038) const-string         v1, 'F'
+	17      (0000003c) return-object        v1
+
+getColumnAlignmentRepresentation-BB@0x3e : [ getColumnAlignmentRepresentation-BB@0x48 getColumnAlignmentRepresentation-BB@0x4e ]
+	18      (0000003e) iget                 v1, v0, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$VerticalSlice;->alignment I
+	19      (00000042) const/4              v2, 2
+	20      (00000044) if-ne                v1, v2, +5
+
+getColumnAlignmentRepresentation-BB@0x48 : 
+	21      (00000048) const-string         v1, 'R'
+	22      (0000004c) return-object        v1
+
+getColumnAlignmentRepresentation-BB@0x4e : 
+	23      (0000004e) const-string         v1, '!'
+	24      (00000052) return-object        v1
+

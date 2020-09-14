@@ -1,0 +1,116 @@
+# Landroid/support/constraint/ConstraintLayout$LayoutParams;->validate()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+validate-BB@0x0 : [ validate-BB@0x1a validate-BB@0x2a ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-boolean         v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isGuideline Z
+	2       (00000006) const/4              v1, 1
+	3       (00000008) iput-boolean         v1, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalDimensionFixed Z
+	4       (0000000c) iput-boolean         v1, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->verticalDimensionFixed Z
+	5       (00000010) iget                 v2, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->width I
+	6       (00000014) const/4              v3, -2
+	7       (00000016) if-ne                v2, v3, +a
+
+validate-BB@0x1a : [ validate-BB@0x22 validate-BB@0x2a ]
+	8       (0000001a) iget-boolean         v2, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->constrainedWidth Z
+	9       (0000001e) if-eqz               v2, +6
+
+validate-BB@0x22 : [ validate-BB@0x2a ]
+	10      (00000022) iput-boolean         v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalDimensionFixed Z
+	11      (00000026) iput                 v1, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintDefaultWidth I
+
+validate-BB@0x2a : [ validate-BB@0x32 validate-BB@0x42 ]
+	12      (0000002a) iget                 v2, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->height I
+	13      (0000002e) if-ne                v2, v3, +a
+
+validate-BB@0x32 : [ validate-BB@0x3a validate-BB@0x42 ]
+	14      (00000032) iget-boolean         v2, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->constrainedHeight Z
+	15      (00000036) if-eqz               v2, +6
+
+validate-BB@0x3a : [ validate-BB@0x42 ]
+	16      (0000003a) iput-boolean         v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->verticalDimensionFixed Z
+	17      (0000003e) iput                 v1, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintDefaultHeight I
+
+validate-BB@0x42 : [ validate-BB@0x4c validate-BB@0x54 ]
+	18      (00000042) iget                 v2, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->width I
+	19      (00000046) const/4              v4, -1
+	20      (00000048) if-eqz               v2, +6
+
+validate-BB@0x4c : [ validate-BB@0x54 validate-BB@0x70 ]
+	21      (0000004c) iget                 v2, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->width I
+	22      (00000050) if-ne                v2, v4, +10
+
+validate-BB@0x54 : [ validate-BB@0x60 validate-BB@0x70 ]
+	23      (00000054) iput-boolean         v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalDimensionFixed Z
+	24      (00000058) iget                 v2, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->width I
+	25      (0000005c) if-nez               v2, +a
+
+validate-BB@0x60 : [ validate-BB@0x68 validate-BB@0x70 ]
+	26      (00000060) iget                 v2, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintDefaultWidth I
+	27      (00000064) if-ne                v2, v1, +6
+
+validate-BB@0x68 : [ validate-BB@0x70 ]
+	28      (00000068) iput                 v3, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->width I
+	29      (0000006c) iput-boolean         v1, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->constrainedWidth Z
+
+validate-BB@0x70 : [ validate-BB@0x78 validate-BB@0x80 ]
+	30      (00000070) iget                 v2, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->height I
+	31      (00000074) if-eqz               v2, +6
+
+validate-BB@0x78 : [ validate-BB@0x80 validate-BB@0x9c ]
+	32      (00000078) iget                 v2, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->height I
+	33      (0000007c) if-ne                v2, v4, +10
+
+validate-BB@0x80 : [ validate-BB@0x8c validate-BB@0x9c ]
+	34      (00000080) iput-boolean         v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->verticalDimensionFixed Z
+	35      (00000084) iget                 v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->height I
+	36      (00000088) if-nez               v0, +a
+
+validate-BB@0x8c : [ validate-BB@0x94 validate-BB@0x9c ]
+	37      (0000008c) iget                 v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintDefaultHeight I
+	38      (00000090) if-ne                v0, v1, +6
+
+validate-BB@0x94 : [ validate-BB@0x9c ]
+	39      (00000094) iput                 v3, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->height I
+	40      (00000098) iput-boolean         v1, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->constrainedHeight Z
+
+validate-BB@0x9c : [ validate-BB@0xac validate-BB@0xbc ]
+	41      (0000009c) iget                 v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guidePercent F
+	42      (000000a0) const/high16         v2, -16512 # [-1.0]
+	43      (000000a4) cmpl-float           v0, v0, v2
+	44      (000000a8) if-nez               v0, +a
+
+validate-BB@0xac : [ validate-BB@0xb4 validate-BB@0xbc ]
+	45      (000000ac) iget                 v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guideBegin I
+	46      (000000b0) if-ne                v0, v4, +6
+
+validate-BB@0xb4 : [ validate-BB@0xbc validate-BB@0xf4 ]
+	47      (000000b4) iget                 v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guideEnd I
+	48      (000000b8) if-eq                v0, v4, +1e
+
+validate-BB@0xbc : [ validate-BB@0xd4 validate-BB@0xe2 ]
+	49      (000000bc) iput-boolean         v1, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isGuideline Z
+	50      (000000c0) iput-boolean         v1, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalDimensionFixed Z
+	51      (000000c4) iput-boolean         v1, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->verticalDimensionFixed Z
+	52      (000000c8) iget-object          v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->widget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	53      (000000cc) instance-of          v0, v0, Landroid/support/constraint/solver/widgets/Guideline;
+	54      (000000d0) if-nez               v0, +9
+
+validate-BB@0xd4 : [ validate-BB@0xe2 ]
+	55      (000000d4) new-instance         v0, Landroid/support/constraint/solver/widgets/Guideline;
+	56      (000000d8) invoke-direct        v0, Landroid/support/constraint/solver/widgets/Guideline;-><init>()V
+	57      (000000de) iput-object          v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->widget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+
+validate-BB@0xe2 : [ validate-BB@0xf4 ]
+	58      (000000e2) iget-object          v0, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->widget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	59      (000000e6) check-cast           v0, Landroid/support/constraint/solver/widgets/Guideline;
+	60      (000000ea) iget                 v1, v5, Landroid/support/constraint/ConstraintLayout$LayoutParams;->orientation I
+	61      (000000ee) invoke-virtual       v0, v1, Landroid/support/constraint/solver/widgets/Guideline;->setOrientation(I)V
+
+validate-BB@0xf4 : 
+	62      (000000f4) return-void          
+

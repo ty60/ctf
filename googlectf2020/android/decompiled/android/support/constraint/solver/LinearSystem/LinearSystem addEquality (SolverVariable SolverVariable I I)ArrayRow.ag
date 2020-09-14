@@ -1,0 +1,25 @@
+# Landroid/support/constraint/solver/LinearSystem;->addEquality(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; I I)Landroid/support/constraint/solver/ArrayRow; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.constraint.solver.SolverVariable
+# - v4:android.support.constraint.solver.SolverVariable
+# - v5:int
+# - v6:int
+#
+# - return:android.support.constraint.solver.ArrayRow
+
+addEquality-BB@0x0 : [ addEquality-BB@0x14 addEquality-BB@0x1a ]
+	0       (00000000) invoke-virtual       v2, Landroid/support/constraint/solver/LinearSystem;->createRow()Landroid/support/constraint/solver/ArrayRow;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, v3, v4, v5, Landroid/support/constraint/solver/ArrayRow;->createRowEquals(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; I)Landroid/support/constraint/solver/ArrayRow;
+	3       (0000000e) const/4              v1, 6
+	4       (00000010) if-eq                v6, v1, +5
+
+addEquality-BB@0x14 : [ addEquality-BB@0x1a ]
+	5       (00000014) invoke-virtual       v0, v2, v6, Landroid/support/constraint/solver/ArrayRow;->addError(Landroid/support/constraint/solver/LinearSystem; I)Landroid/support/constraint/solver/ArrayRow;
+
+addEquality-BB@0x1a : 
+	6       (0000001a) invoke-virtual       v2, v0, Landroid/support/constraint/solver/LinearSystem;->addConstraint(Landroid/support/constraint/solver/ArrayRow;)V
+	7       (00000020) return-object        v0
+

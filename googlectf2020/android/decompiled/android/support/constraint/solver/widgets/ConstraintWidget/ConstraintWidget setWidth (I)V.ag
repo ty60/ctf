@@ -1,0 +1,21 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setWidth(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+setWidth-BB@0x0 : [ setWidth-BB@0x10 setWidth-BB@0x18 ]
+	0       (00000000) iput                 v3, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWidth I
+	1       (00000004) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWidth I
+	2       (00000008) iget                 v1, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinWidth I
+	3       (0000000c) if-ge                v0, v1, +6
+
+setWidth-BB@0x10 : [ setWidth-BB@0x18 ]
+	4       (00000010) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinWidth I
+	5       (00000014) iput                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWidth I
+
+setWidth-BB@0x18 : 
+	6       (00000018) return-void          
+

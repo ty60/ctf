@@ -1,0 +1,146 @@
+# Landroid/support/constraint/ConstraintSet;->center(I I I I I I I F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:int
+# - v12:int
+# - v13:int
+# - v14:int
+# - v15:int
+# - v16:int
+# - v17:int
+# - v18:float
+#
+# - return:void
+
+center-BB@0x0 : [ center-BB@0xc center-BB@0x1c ]
+	0       (00000000) move-object          v6, v10
+	1       (00000002) move                 v7, v13
+	2       (00000004) move/from16          v8, v18
+	3       (00000008) if-gez               v14, +a
+
+center-BB@0xc : 
+	4       (0000000c) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	5       (00000010) const-string         v1, 'margin must be > 0'
+	6       (00000014) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	7       (0000001a) throw                v0
+
+center-BB@0x1c : [ center-BB@0x20 center-BB@0x30 ]
+	8       (0000001c) if-gez               v17, +a
+
+center-BB@0x20 : 
+	9       (00000020) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	10      (00000024) const-string         v1, 'margin must be > 0'
+	11      (00000028) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	12      (0000002e) throw                v0
+
+center-BB@0x30 : [ center-BB@0x3a center-BB@0x12e ]
+	13      (00000030) const/4              v0, 0
+	14      (00000032) cmpg-float           v0, v8, v0
+	15      (00000036) if-lez               v0, +7c
+
+center-BB@0x3a : [ center-BB@0x46 center-BB@0x4a ]
+	16      (0000003a) const/high16         v0, 16256 # [1.0]
+	17      (0000003e) cmpl-float           v0, v8, v0
+	18      (00000042) if-lez               v0, +4
+
+center-BB@0x46 : [ center-BB@0x12e ]
+	19      (00000046) goto/16              +74
+
+center-BB@0x4a : [ center-BB@0x50 center-BB@0xea ]
+	20      (0000004a) const/4              v0, 1
+	21      (0000004c) if-eq                v7, v0, +4f
+
+center-BB@0x50 : [ center-BB@0x56 center-BB@0x58 ]
+	22      (00000050) const/4              v0, 2
+	23      (00000052) if-ne                v7, v0, +3
+
+center-BB@0x56 : [ center-BB@0xea ]
+	24      (00000056) goto                 +4a
+
+center-BB@0x58 : [ center-BB@0x5e center-BB@0xa8 ]
+	25      (00000058) const/4              v0, 6
+	26      (0000005a) if-eq                v7, v0, +27
+
+center-BB@0x5e : [ center-BB@0x64 center-BB@0x66 ]
+	27      (0000005e) const/4              v0, 7
+	28      (00000060) if-ne                v7, v0, +3
+
+center-BB@0x64 : [ center-BB@0xa8 ]
+	29      (00000064) goto                 +22
+
+center-BB@0x66 : [ center-BB@0x12c ]
+	30      (00000066) const/4              v2, 3
+	31      (00000068) move-object          v0, v6
+	32      (0000006a) move                 v1, v11
+	33      (0000006c) move                 v3, v12
+	34      (0000006e) move                 v4, v7
+	35      (00000070) move                 v5, v14
+	36      (00000072) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	37      (00000078) const/4              v2, 4
+	38      (0000007a) move                 v3, v15
+	39      (0000007c) move/from16          v4, v16
+	40      (00000080) move/from16          v5, v17
+	41      (00000084) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	42      (0000008a) iget-object          v0, v6, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	43      (0000008e) invoke-static        v11, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	44      (00000094) move-result-object   v1
+	45      (00000096) invoke-virtual       v0, v1, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	46      (0000009c) move-result-object   v0
+	47      (0000009e) check-cast           v0, Landroid/support/constraint/ConstraintSet$Constraint;
+	48      (000000a2) iput                 v8, v0, Landroid/support/constraint/ConstraintSet$Constraint;->verticalBias F
+	49      (000000a6) goto                 +43
+
+center-BB@0xa8 : [ center-BB@0x12c ]
+	50      (000000a8) const/4              v2, 6
+	51      (000000aa) move-object          v0, v6
+	52      (000000ac) move                 v1, v11
+	53      (000000ae) move                 v3, v12
+	54      (000000b0) move                 v4, v7
+	55      (000000b2) move                 v5, v14
+	56      (000000b4) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	57      (000000ba) const/4              v2, 7
+	58      (000000bc) move                 v3, v15
+	59      (000000be) move/from16          v4, v16
+	60      (000000c2) move/from16          v5, v17
+	61      (000000c6) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	62      (000000cc) iget-object          v0, v6, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	63      (000000d0) invoke-static        v11, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	64      (000000d6) move-result-object   v1
+	65      (000000d8) invoke-virtual       v0, v1, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	66      (000000de) move-result-object   v0
+	67      (000000e0) check-cast           v0, Landroid/support/constraint/ConstraintSet$Constraint;
+	68      (000000e4) iput                 v8, v0, Landroid/support/constraint/ConstraintSet$Constraint;->horizontalBias F
+	69      (000000e8) goto                 +22
+
+center-BB@0xea : [ center-BB@0x12c ]
+	70      (000000ea) const/4              v2, 1
+	71      (000000ec) move-object          v0, v6
+	72      (000000ee) move                 v1, v11
+	73      (000000f0) move                 v3, v12
+	74      (000000f2) move                 v4, v7
+	75      (000000f4) move                 v5, v14
+	76      (000000f6) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	77      (000000fc) const/4              v2, 2
+	78      (000000fe) move                 v3, v15
+	79      (00000100) move/from16          v4, v16
+	80      (00000104) move/from16          v5, v17
+	81      (00000108) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	82      (0000010e) iget-object          v0, v6, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	83      (00000112) invoke-static        v11, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	84      (00000118) move-result-object   v1
+	85      (0000011a) invoke-virtual       v0, v1, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	86      (00000120) move-result-object   v0
+	87      (00000122) check-cast           v0, Landroid/support/constraint/ConstraintSet$Constraint;
+	88      (00000126) iput                 v8, v0, Landroid/support/constraint/ConstraintSet$Constraint;->horizontalBias F
+	89      (0000012a) nop                  
+
+center-BB@0x12c : 
+	90      (0000012c) return-void          
+
+center-BB@0x12e : 
+	91      (0000012e) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	92      (00000132) const-string         v1, 'bias must be between 0 and 1 inclusive'
+	93      (00000136) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	94      (0000013c) throw                v0
+

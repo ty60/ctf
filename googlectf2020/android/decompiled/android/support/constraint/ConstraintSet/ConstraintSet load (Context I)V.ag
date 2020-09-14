@@ -1,0 +1,123 @@
+# Landroid/support/constraint/ConstraintSet;->load(Landroid/content/Context; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.content.Context
+# - v10:int
+#
+# - return:void
+
+load-BB@0x0 : [ load-BB@0x14 ]
+	0       (00000000) invoke-virtual       v9, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, v10, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) const/4              v2, 0
+	5       (00000012) const/4              v3, 0
+
+load-BB@0x14 : [ load-BB@0x1c ]
+	6       (00000014) invoke-interface     v1, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
+	7       (0000001a) move-result          v4
+	14:8b
+	(Lorg/xmlpull/v1/XmlPullParserException; -> 9a load-BB@0x9a)
+	(Ljava/io/IOException; -> 90 load-BB@0x90)
+
+load-BB@0x1c : [ load-BB@0x22 load-BB@0xa2 ]
+	8       (0000001c) const/4              v5, 1
+	9       (0000001e) if-eq                v4, v5, +42
+	14:8b
+	(Lorg/xmlpull/v1/XmlPullParserException; -> 9a load-BB@0x9a)
+	(Ljava/io/IOException; -> 90 load-BB@0x90)
+
+load-BB@0x22 : [ load-BB@0x26 load-BB@0x78 ]
+	10      (00000022) if-eqz               v4, +2b
+	14:8b
+	(Lorg/xmlpull/v1/XmlPullParserException; -> 9a load-BB@0x9a)
+	(Ljava/io/IOException; -> 90 load-BB@0x90)
+
+load-BB@0x26 : [ D:load-BB@0x2c 2:load-BB@0x32 3:load-BB@0x2e ]
+	11      (00000026) packed-switch        v4, +41 (0xa8)
+	14:8b
+	(Lorg/xmlpull/v1/XmlPullParserException; -> 9a load-BB@0x9a)
+	(Ljava/io/IOException; -> 90 load-BB@0x90)
+
+load-BB@0x2c : [ load-BB@0x84 ]
+	12      (0000002c) goto                 +2c
+	14:8b
+	(Lorg/xmlpull/v1/XmlPullParserException; -> 9a load-BB@0x9a)
+	(Ljava/io/IOException; -> 90 load-BB@0x90)
+
+load-BB@0x2e : [ load-BB@0x84 ]
+	13      (0000002e) const/4              v3, 0
+	14      (00000030) goto                 +2a
+	14:8b
+	(Lorg/xmlpull/v1/XmlPullParserException; -> 9a load-BB@0x9a)
+	(Ljava/io/IOException; -> 90 load-BB@0x90)
+
+load-BB@0x32 : [ load-BB@0x5c load-BB@0x60 ]
+	15      (00000032) invoke-interface     v1, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
+	16      (00000038) move-result-object   v6
+	17      (0000003a) move-object          v3, v6
+	18      (0000003c) invoke-static        v1, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
+	19      (00000042) move-result-object   v6
+	20      (00000044) invoke-direct        v8, v9, v6, Landroid/support/constraint/ConstraintSet;->fillFromAttributeList(Landroid/content/Context; Landroid/util/AttributeSet;)Landroid/support/constraint/ConstraintSet$Constraint;
+	21      (0000004a) move-result-object   v6
+	22      (0000004c) const-string         v7, 'Guideline'
+	23      (00000050) invoke-virtual       v3, v7, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+	24      (00000056) move-result          v7
+	25      (00000058) if-eqz               v7, +4
+	14:8b
+	(Lorg/xmlpull/v1/XmlPullParserException; -> 9a load-BB@0x9a)
+	(Ljava/io/IOException; -> 90 load-BB@0x90)
+
+load-BB@0x5c : [ load-BB@0x60 ]
+	26      (0000005c) iput-boolean         v5, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mIsGuideline Z
+	14:8b
+	(Lorg/xmlpull/v1/XmlPullParserException; -> 9a load-BB@0x9a)
+	(Ljava/io/IOException; -> 90 load-BB@0x90)
+
+load-BB@0x60 : [ load-BB@0x84 ]
+	27      (00000060) iget-object          v5, v8, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	28      (00000064) iget                 v7, v6, Landroid/support/constraint/ConstraintSet$Constraint;->mViewId I
+	29      (00000068) invoke-static        v7, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	30      (0000006e) move-result-object   v7
+	31      (00000070) invoke-virtual       v5, v7, v6, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	32      (00000076) goto                 +7
+	14:8b
+	(Lorg/xmlpull/v1/XmlPullParserException; -> 9a load-BB@0x9a)
+	(Ljava/io/IOException; -> 90 load-BB@0x90)
+
+load-BB@0x78 : [ load-BB@0x84 ]
+	33      (00000078) invoke-interface     v1, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
+	34      (0000007e) move-result-object   v5
+	35      (00000080) move-object          v2, v5
+	36      (00000082) nop                  
+	14:8b
+	(Lorg/xmlpull/v1/XmlPullParserException; -> 9a load-BB@0x9a)
+	(Ljava/io/IOException; -> 90 load-BB@0x90)
+
+load-BB@0x84 : [ load-BB@0x1c ]
+	37      (00000084) invoke-interface     v1, Lorg/xmlpull/v1/XmlPullParser;->next()I
+	38      (0000008a) move-result          v5
+	39      (0000008c) move                 v4, v5
+	40      (0000008e) goto                 -39
+
+load-BB@0x90 : [ load-BB@0xa4 ]
+	41      (00000090) move-exception       v4
+	42      (00000092) invoke-virtual       v4, Ljava/io/IOException;->printStackTrace()V
+	43      (00000098) goto                 +6
+
+load-BB@0x9a : [ load-BB@0xa2 ]
+	44      (0000009a) move-exception       v4
+	45      (0000009c) invoke-virtual       v4, Lorg/xmlpull/v1/XmlPullParserException;->printStackTrace()V
+
+load-BB@0xa2 : [ load-BB@0xa4 ]
+	46      (000000a2) nop                  
+
+load-BB@0xa4 : 
+	47      (000000a4) return-void          
+
+load-BB@0xa6 : 
+	48      (000000a6) nop                  
+	49      (000000a8) packed-switch-payload 2 3
+

@@ -1,0 +1,21 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->connectCircularConstraint(Landroid/support/constraint/solver/widgets/ConstraintWidget; F I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.support.constraint.solver.widgets.ConstraintWidget
+# - v8:float
+# - v9:int
+#
+# - return:void
+
+connectCircularConstraint-BB@0x0 : 
+	0       (00000000) sget-object          v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->CENTER Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	1       (00000004) sget-object          v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->CENTER Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	2       (00000008) const/4              v5, 0
+	3       (0000000a) move-object          v0, v6
+	4       (0000000c) move-object          v2, v7
+	5       (0000000e) move                 v4, v9
+	6       (00000010) invoke-virtual/range v0 ... v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->immediateConnect(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type; Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type; I I)V
+	7       (00000016) iput                 v8, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mCircleConstraintAngle F
+	8       (0000001a) return-void          
+

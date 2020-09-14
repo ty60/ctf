@@ -1,0 +1,55 @@
+# Landroid/support/constraint/ConstraintLayout;->updatePostMeasures()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+updatePostMeasures-BB@0x0 : [ updatePostMeasures-BB@0xc ]
+	0       (00000000) invoke-virtual       v5, Landroid/support/constraint/ConstraintLayout;->getChildCount()I
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) move                 v2, v1
+
+updatePostMeasures-BB@0xc : [ updatePostMeasures-BB@0x10 updatePostMeasures-BB@0x32 ]
+	4       (0000000c) if-ge                v2, v0, +13
+
+updatePostMeasures-BB@0x10 : [ updatePostMeasures-BB@0x20 updatePostMeasures-BB@0x2c ]
+	5       (00000010) invoke-virtual       v5, v2, Landroid/support/constraint/ConstraintLayout;->getChildAt(I)Landroid/view/View;
+	6       (00000016) move-result-object   v3
+	7       (00000018) instance-of          v4, v3, Landroid/support/constraint/Placeholder;
+	8       (0000001c) if-eqz               v4, +8
+
+updatePostMeasures-BB@0x20 : [ updatePostMeasures-BB@0x2c ]
+	9       (00000020) move-object          v4, v3
+	10      (00000022) check-cast           v4, Landroid/support/constraint/Placeholder;
+	11      (00000026) invoke-virtual       v4, v5, Landroid/support/constraint/Placeholder;->updatePostMeasure(Landroid/support/constraint/ConstraintLayout;)V
+
+updatePostMeasures-BB@0x2c : [ updatePostMeasures-BB@0xc ]
+	12      (0000002c) add-int/lit8         v2, v2, 1
+	13      (00000030) goto                 -12
+
+updatePostMeasures-BB@0x32 : [ updatePostMeasures-BB@0x42 updatePostMeasures-BB@0x64 ]
+	14      (00000032) iget-object          v2, v5, Landroid/support/constraint/ConstraintLayout;->mConstraintHelpers Ljava/util/ArrayList;
+	15      (00000036) invoke-virtual       v2, Ljava/util/ArrayList;->size()I
+	16      (0000003c) move-result          v2
+	17      (0000003e) if-lez               v2, +13
+
+updatePostMeasures-BB@0x42 : [ updatePostMeasures-BB@0x44 ]
+	18      (00000042) nop                  
+
+updatePostMeasures-BB@0x44 : [ updatePostMeasures-BB@0x48 updatePostMeasures-BB@0x64 ]
+	19      (00000044) if-ge                v1, v2, +10
+
+updatePostMeasures-BB@0x48 : [ updatePostMeasures-BB@0x44 ]
+	20      (00000048) iget-object          v3, v5, Landroid/support/constraint/ConstraintLayout;->mConstraintHelpers Ljava/util/ArrayList;
+	21      (0000004c) invoke-virtual       v3, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	22      (00000052) move-result-object   v3
+	23      (00000054) check-cast           v3, Landroid/support/constraint/ConstraintHelper;
+	24      (00000058) invoke-virtual       v3, v5, Landroid/support/constraint/ConstraintHelper;->updatePostMeasure(Landroid/support/constraint/ConstraintLayout;)V
+	25      (0000005e) add-int/lit8         v1, v1, 1
+	26      (00000062) goto                 -f
+
+updatePostMeasures-BB@0x64 : 
+	27      (00000064) return-void          
+

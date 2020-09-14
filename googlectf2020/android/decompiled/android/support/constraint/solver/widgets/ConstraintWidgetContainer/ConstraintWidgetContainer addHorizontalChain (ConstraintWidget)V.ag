@@ -1,0 +1,39 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->addHorizontalChain(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.support.constraint.solver.widgets.ConstraintWidget
+#
+# - return:void
+
+addHorizontalChain-BB@0x0 : [ addHorizontalChain-BB@0x12 addHorizontalChain-BB@0x30 ]
+	0       (00000000) iget                 v0, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsSize I
+	1       (00000004) add-int/lit8         v0, v0, 1
+	2       (00000008) iget-object          v1, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsArray [Landroid/support/constraint/solver/widgets/ChainHead;
+	3       (0000000c) array-length         v1, v1
+	4       (0000000e) if-lt                v0, v1, +11
+
+addHorizontalChain-BB@0x12 : [ addHorizontalChain-BB@0x30 ]
+	5       (00000012) iget-object          v0, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsArray [Landroid/support/constraint/solver/widgets/ChainHead;
+	6       (00000016) iget-object          v1, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsArray [Landroid/support/constraint/solver/widgets/ChainHead;
+	7       (0000001a) array-length         v1, v1
+	8       (0000001c) mul-int/lit8         v1, v1, 2
+	9       (00000020) invoke-static        v0, v1, Ljava/util/Arrays;->copyOf([Ljava/lang/Object; I)[Ljava/lang/Object;
+	10      (00000026) move-result-object   v0
+	11      (00000028) check-cast           v0, [Landroid/support/constraint/solver/widgets/ChainHead;
+	12      (0000002c) iput-object          v0, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsArray [Landroid/support/constraint/solver/widgets/ChainHead;
+
+addHorizontalChain-BB@0x30 : 
+	13      (00000030) iget-object          v0, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsArray [Landroid/support/constraint/solver/widgets/ChainHead;
+	14      (00000034) iget                 v1, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsSize I
+	15      (00000038) new-instance         v2, Landroid/support/constraint/solver/widgets/ChainHead;
+	16      (0000003c) const/4              v3, 0
+	17      (0000003e) invoke-virtual       v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->isRtl()Z
+	18      (00000044) move-result          v4
+	19      (00000046) invoke-direct        v2, v6, v3, v4, Landroid/support/constraint/solver/widgets/ChainHead;-><init>(Landroid/support/constraint/solver/widgets/ConstraintWidget; I Z)V
+	20      (0000004c) aput-object          v2, v0, v1
+	21      (00000050) iget                 v0, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsSize I
+	22      (00000054) add-int/lit8         v0, v0, 1
+	23      (00000058) iput                 v0, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsSize I
+	24      (0000005c) return-void          
+

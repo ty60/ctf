@@ -1,0 +1,22 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->allowedInBarrier()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+allowedInBarrier-BB@0x0 : [ allowedInBarrier-BB@0xc allowedInBarrier-BB@0x10 ]
+	0       (00000000) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mVisibility I
+	1       (00000004) const/16             v1, 8
+	2       (00000008) if-eq                v0, v1, +4
+
+allowedInBarrier-BB@0xc : [ allowedInBarrier-BB@0x12 ]
+	3       (0000000c) const/4              v0, 1
+	4       (0000000e) goto                 +2
+
+allowedInBarrier-BB@0x10 : [ allowedInBarrier-BB@0x12 ]
+	5       (00000010) const/4              v0, 0
+
+allowedInBarrier-BB@0x12 : 
+	6       (00000012) return               v0
+

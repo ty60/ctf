@@ -1,0 +1,167 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setDimensionRatio(Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:java.lang.String
+#
+# - return:void
+
+setDimensionRatio-BB@0x0 : [ setDimensionRatio-BB@0x6 setDimensionRatio-BB@0x132 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-eqz               v13, +98
+
+setDimensionRatio-BB@0x6 : [ setDimensionRatio-BB@0x12 setDimensionRatio-BB@0x16 ]
+	2       (00000006) invoke-virtual       v13, Ljava/lang/String;->length()I
+	3       (0000000c) move-result          v1
+	4       (0000000e) if-nez               v1, +4
+
+setDimensionRatio-BB@0x12 : [ setDimensionRatio-BB@0x132 ]
+	5       (00000012) goto/16              +90
+
+setDimensionRatio-BB@0x16 : [ setDimensionRatio-BB@0x34 setDimensionRatio-BB@0x70 ]
+	6       (00000016) const/4              v1, -1
+	7       (00000018) const/4              v2, 0
+	8       (0000001a) invoke-virtual       v13, Ljava/lang/String;->length()I
+	9       (00000020) move-result          v3
+	10      (00000022) const/16             v4, 44
+	11      (00000026) invoke-virtual       v13, v4, Ljava/lang/String;->indexOf(I)I
+	12      (0000002c) move-result          v4
+	13      (0000002e) const/4              v5, 1
+	14      (00000030) if-lez               v4, +20
+
+setDimensionRatio-BB@0x34 : [ setDimensionRatio-BB@0x3c setDimensionRatio-BB@0x70 ]
+	15      (00000034) add-int/lit8         v6, v3, -1
+	16      (00000038) if-ge                v4, v6, +1c
+
+setDimensionRatio-BB@0x3c : [ setDimensionRatio-BB@0x56 setDimensionRatio-BB@0x5a ]
+	17      (0000003c) const/4              v6, 0
+	18      (0000003e) invoke-virtual       v13, v6, v4, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	19      (00000044) move-result-object   v6
+	20      (00000046) const-string         v7, 'W'
+	21      (0000004a) invoke-virtual       v6, v7, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+	22      (00000050) move-result          v7
+	23      (00000052) if-eqz               v7, +4
+
+setDimensionRatio-BB@0x56 : [ setDimensionRatio-BB@0x6c ]
+	24      (00000056) const/4              v1, 0
+	25      (00000058) goto                 +a
+
+setDimensionRatio-BB@0x5a : [ setDimensionRatio-BB@0x6a setDimensionRatio-BB@0x6c ]
+	26      (0000005a) const-string         v7, 'H'
+	27      (0000005e) invoke-virtual       v6, v7, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+	28      (00000064) move-result          v7
+	29      (00000066) if-eqz               v7, +3
+
+setDimensionRatio-BB@0x6a : [ setDimensionRatio-BB@0x6c ]
+	30      (0000006a) const/4              v1, 1
+
+setDimensionRatio-BB@0x6c : [ setDimensionRatio-BB@0x72 ]
+	31      (0000006c) add-int/2addr        v4, v5
+	32      (0000006e) goto                 +2
+
+setDimensionRatio-BB@0x70 : [ setDimensionRatio-BB@0x72 ]
+	33      (00000070) const/4              v4, 0
+
+setDimensionRatio-BB@0x72 : [ setDimensionRatio-BB@0x82 setDimensionRatio-BB@0xfe ]
+	34      (00000072) const/16             v6, 58
+	35      (00000076) invoke-virtual       v13, v6, Ljava/lang/String;->indexOf(I)I
+	36      (0000007c) move-result          v6
+	37      (0000007e) if-ltz               v6, +40
+
+setDimensionRatio-BB@0x82 : [ setDimensionRatio-BB@0x8a setDimensionRatio-BB@0xfe ]
+	38      (00000082) add-int/lit8         v7, v3, -1
+	39      (00000086) if-ge                v6, v7, +3c
+
+setDimensionRatio-BB@0x8a : [ setDimensionRatio-BB@0xaa setDimensionRatio-BB@0xfc ]
+	40      (0000008a) invoke-virtual       v13, v4, v6, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	41      (00000090) move-result-object   v7
+	42      (00000092) add-int/lit8         v8, v6, 1
+	43      (00000096) invoke-virtual       v13, v8, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	44      (0000009c) move-result-object   v8
+	45      (0000009e) invoke-virtual       v7, Ljava/lang/String;->length()I
+	46      (000000a4) move-result          v9
+	47      (000000a6) if-lez               v9, +2b
+
+setDimensionRatio-BB@0xaa : [ setDimensionRatio-BB@0xb6 setDimensionRatio-BB@0xfc ]
+	48      (000000aa) invoke-virtual       v8, Ljava/lang/String;->length()I
+	49      (000000b0) move-result          v9
+	50      (000000b2) if-lez               v9, +25
+
+setDimensionRatio-BB@0xb6 : [ setDimensionRatio-BB@0xce setDimensionRatio-BB@0xf8 ]
+	51      (000000b6) invoke-static        v7, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+	52      (000000bc) move-result          v9
+	53      (000000be) invoke-static        v8, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+	54      (000000c4) move-result          v10
+	55      (000000c6) cmpl-float           v11, v9, v0
+	56      (000000ca) if-lez               v11, +17
+	b6:f5
+	(Ljava/lang/NumberFormatException; -> fa setDimensionRatio-BB@0xfa)
+
+setDimensionRatio-BB@0xce : [ setDimensionRatio-BB@0xd6 setDimensionRatio-BB@0xf8 ]
+	57      (000000ce) cmpl-float           v11, v10, v0
+	58      (000000d2) if-lez               v11, +13
+	b6:f5
+	(Ljava/lang/NumberFormatException; -> fa setDimensionRatio-BB@0xfa)
+
+setDimensionRatio-BB@0xd6 : [ setDimensionRatio-BB@0xda setDimensionRatio-BB@0xea ]
+	59      (000000d6) if-ne                v1, v5, +a
+	b6:f5
+	(Ljava/lang/NumberFormatException; -> fa setDimensionRatio-BB@0xfa)
+
+setDimensionRatio-BB@0xda : [ setDimensionRatio-BB@0xf8 ]
+	60      (000000da) div-float            v5, v10, v9
+	61      (000000de) invoke-static        v5, Ljava/lang/Math;->abs(F)F
+	62      (000000e4) move-result          v5
+	63      (000000e6) move                 v2, v5
+	64      (000000e8) goto                 +8
+	b6:f5
+	(Ljava/lang/NumberFormatException; -> fa setDimensionRatio-BB@0xfa)
+
+setDimensionRatio-BB@0xea : [ setDimensionRatio-BB@0xf8 ]
+	65      (000000ea) div-float            v5, v9, v10
+	66      (000000ee) invoke-static        v5, Ljava/lang/Math;->abs(F)F
+	67      (000000f4) move-result          v5
+	68      (000000f6) move                 v2, v5
+
+setDimensionRatio-BB@0xf8 : [ setDimensionRatio-BB@0xfc ]
+	69      (000000f8) goto                 +2
+
+setDimensionRatio-BB@0xfa : [ setDimensionRatio-BB@0xfc ]
+	70      (000000fa) move-exception       v5
+
+setDimensionRatio-BB@0xfc : [ setDimensionRatio-BB@0x120 ]
+	71      (000000fc) goto                 +12
+
+setDimensionRatio-BB@0xfe : [ setDimensionRatio-BB@0x112 setDimensionRatio-BB@0x120 ]
+	72      (000000fe) invoke-virtual       v13, v4, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	73      (00000104) move-result-object   v5
+	74      (00000106) invoke-virtual       v5, Ljava/lang/String;->length()I
+	75      (0000010c) move-result          v7
+	76      (0000010e) if-lez               v7, +9
+
+setDimensionRatio-BB@0x112 : [ setDimensionRatio-BB@0x120 ]
+	77      (00000112) invoke-static        v5, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+	78      (00000118) move-result          v7
+	79      (0000011a) move                 v2, v7
+	80      (0000011c) goto                 +2
+	112:119
+	(Ljava/lang/NumberFormatException; -> 11e setDimensionRatio-BB@0x11e)
+
+setDimensionRatio-BB@0x11e : [ setDimensionRatio-BB@0x120 ]
+	81      (0000011e) move-exception       v7
+
+setDimensionRatio-BB@0x120 : [ setDimensionRatio-BB@0x128 setDimensionRatio-BB@0x130 ]
+	82      (00000120) cmpl-float           v0, v2, v0
+	83      (00000124) if-lez               v0, +6
+
+setDimensionRatio-BB@0x128 : [ setDimensionRatio-BB@0x130 ]
+	84      (00000128) iput                 v2, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDimensionRatio F
+	85      (0000012c) iput                 v1, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDimensionRatioSide I
+
+setDimensionRatio-BB@0x130 : 
+	86      (00000130) return-void          
+
+setDimensionRatio-BB@0x132 : 
+	87      (00000132) iput                 v0, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDimensionRatio F
+	88      (00000136) return-void          
+

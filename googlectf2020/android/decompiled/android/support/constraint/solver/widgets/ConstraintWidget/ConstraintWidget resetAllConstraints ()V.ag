@@ -1,0 +1,80 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->resetAllConstraints()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+resetAllConstraints-BB@0x0 : [ resetAllConstraints-BB@0x22 resetAllConstraints-BB@0x24 ]
+	0       (00000000) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->resetAnchors()V
+	1       (00000006) sget                 v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->DEFAULT_BIAS F
+	2       (0000000a) invoke-virtual       v2, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setVerticalBiasPercent(F)V
+	3       (00000010) sget                 v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->DEFAULT_BIAS F
+	4       (00000014) invoke-virtual       v2, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalBiasPercent(F)V
+	5       (0000001a) instance-of          v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	6       (0000001e) if-eqz               v0, +3
+
+resetAllConstraints-BB@0x22 : 
+	7       (00000022) return-void          
+
+resetAllConstraints-BB@0x24 : [ resetAllConstraints-BB@0x34 resetAllConstraints-BB@0x72 ]
+	8       (00000024) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHorizontalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	9       (0000002a) move-result-object   v0
+	10      (0000002c) sget-object          v1, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	11      (00000030) if-ne                v0, v1, +21
+
+resetAllConstraints-BB@0x34 : [ resetAllConstraints-BB@0x48 resetAllConstraints-BB@0x54 ]
+	12      (00000034) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	13      (0000003a) move-result          v0
+	14      (0000003c) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWrapWidth()I
+	15      (00000042) move-result          v1
+	16      (00000044) if-ne                v0, v1, +8
+
+resetAllConstraints-BB@0x48 : [ resetAllConstraints-BB@0x72 ]
+	17      (00000048) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	18      (0000004c) invoke-virtual       v2, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
+	19      (00000052) goto                 +10
+
+resetAllConstraints-BB@0x54 : [ resetAllConstraints-BB@0x68 resetAllConstraints-BB@0x72 ]
+	20      (00000054) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	21      (0000005a) move-result          v0
+	22      (0000005c) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getMinWidth()I
+	23      (00000062) move-result          v1
+	24      (00000064) if-le                v0, v1, +7
+
+resetAllConstraints-BB@0x68 : [ resetAllConstraints-BB@0x72 ]
+	25      (00000068) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->FIXED Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	26      (0000006c) invoke-virtual       v2, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
+
+resetAllConstraints-BB@0x72 : [ resetAllConstraints-BB@0x82 resetAllConstraints-BB@0xc0 ]
+	27      (00000072) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVerticalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	28      (00000078) move-result-object   v0
+	29      (0000007a) sget-object          v1, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	30      (0000007e) if-ne                v0, v1, +21
+
+resetAllConstraints-BB@0x82 : [ resetAllConstraints-BB@0x96 resetAllConstraints-BB@0xa2 ]
+	31      (00000082) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	32      (00000088) move-result          v0
+	33      (0000008a) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWrapHeight()I
+	34      (00000090) move-result          v1
+	35      (00000092) if-ne                v0, v1, +8
+
+resetAllConstraints-BB@0x96 : [ resetAllConstraints-BB@0xc0 ]
+	36      (00000096) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	37      (0000009a) invoke-virtual       v2, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setVerticalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
+	38      (000000a0) goto                 +10
+
+resetAllConstraints-BB@0xa2 : [ resetAllConstraints-BB@0xb6 resetAllConstraints-BB@0xc0 ]
+	39      (000000a2) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	40      (000000a8) move-result          v0
+	41      (000000aa) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getMinHeight()I
+	42      (000000b0) move-result          v1
+	43      (000000b2) if-le                v0, v1, +7
+
+resetAllConstraints-BB@0xb6 : [ resetAllConstraints-BB@0xc0 ]
+	44      (000000b6) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->FIXED Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	45      (000000ba) invoke-virtual       v2, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setVerticalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
+
+resetAllConstraints-BB@0xc0 : 
+	46      (000000c0) return-void          
+

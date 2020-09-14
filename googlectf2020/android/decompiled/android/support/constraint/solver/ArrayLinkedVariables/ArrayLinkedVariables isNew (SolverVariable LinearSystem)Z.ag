@@ -1,0 +1,23 @@
+# Landroid/support/constraint/solver/ArrayLinkedVariables;->isNew(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/LinearSystem;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.constraint.solver.SolverVariable
+# - v4:android.support.constraint.solver.LinearSystem
+#
+# - return:boolean
+
+isNew-BB@0x0 : [ isNew-BB@0xa isNew-BB@0xc ]
+	0       (00000000) iget                 v0, v3, Landroid/support/constraint/solver/SolverVariable;->usageInRowCount I
+	1       (00000004) const/4              v1, 1
+	2       (00000006) if-gt                v0, v1, +3
+
+isNew-BB@0xa : [ isNew-BB@0xe ]
+	3       (0000000a) goto                 +2
+
+isNew-BB@0xc : [ isNew-BB@0xe ]
+	4       (0000000c) const/4              v1, 0
+
+isNew-BB@0xe : 
+	5       (0000000e) return               v1
+

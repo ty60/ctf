@@ -1,0 +1,21 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->optimize()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+optimize-BB@0x0 : [ optimize-BB@0x10 optimize-BB@0x1a ]
+	0       (00000000) const/16             v0, 8
+	1       (00000004) invoke-virtual       v1, v0, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->optimizeFor(I)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +7
+
+optimize-BB@0x10 : [ optimize-BB@0x1a ]
+	4       (00000010) iget                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mOptimizationLevel I
+	5       (00000014) invoke-virtual       v1, v0, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->analyze(I)V
+
+optimize-BB@0x1a : 
+	6       (0000001a) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->solveGraph()V
+	7       (00000020) return-void          
+

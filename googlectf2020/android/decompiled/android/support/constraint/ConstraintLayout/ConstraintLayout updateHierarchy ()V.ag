@@ -1,0 +1,42 @@
+# Landroid/support/constraint/ConstraintLayout;->updateHierarchy()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+updateHierarchy-BB@0x0 : [ updateHierarchy-BB@0xc ]
+	0       (00000000) invoke-virtual       v5, Landroid/support/constraint/ConstraintLayout;->getChildCount()I
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) const/4              v2, 0
+
+updateHierarchy-BB@0xc : [ updateHierarchy-BB@0x10 updateHierarchy-BB@0x2e ]
+	4       (0000000c) if-ge                v2, v0, +11
+
+updateHierarchy-BB@0x10 : [ updateHierarchy-BB@0x24 updateHierarchy-BB@0x28 ]
+	5       (00000010) invoke-virtual       v5, v2, Landroid/support/constraint/ConstraintLayout;->getChildAt(I)Landroid/view/View;
+	6       (00000016) move-result-object   v3
+	7       (00000018) invoke-virtual       v3, Landroid/view/View;->isLayoutRequested()Z
+	8       (0000001e) move-result          v4
+	9       (00000020) if-eqz               v4, +4
+
+updateHierarchy-BB@0x24 : [ updateHierarchy-BB@0x2e ]
+	10      (00000024) const/4              v1, 1
+	11      (00000026) goto                 +4
+
+updateHierarchy-BB@0x28 : [ updateHierarchy-BB@0xc ]
+	12      (00000028) add-int/lit8         v2, v2, 1
+	13      (0000002c) goto                 -10
+
+updateHierarchy-BB@0x2e : [ updateHierarchy-BB@0x32 updateHierarchy-BB@0x42 ]
+	14      (0000002e) if-eqz               v1, +a
+
+updateHierarchy-BB@0x32 : [ updateHierarchy-BB@0x42 ]
+	15      (00000032) iget-object          v2, v5, Landroid/support/constraint/ConstraintLayout;->mVariableDimensionsWidgets Ljava/util/ArrayList;
+	16      (00000036) invoke-virtual       v2, Ljava/util/ArrayList;->clear()V
+	17      (0000003c) invoke-direct        v5, Landroid/support/constraint/ConstraintLayout;->setChildrenConstraints()V
+
+updateHierarchy-BB@0x42 : 
+	18      (00000042) return-void          
+

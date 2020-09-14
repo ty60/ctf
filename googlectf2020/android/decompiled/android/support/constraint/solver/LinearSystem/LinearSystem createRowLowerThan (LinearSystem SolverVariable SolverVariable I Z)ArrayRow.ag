@@ -1,0 +1,32 @@
+# Landroid/support/constraint/solver/LinearSystem;->createRowLowerThan(Landroid/support/constraint/solver/LinearSystem; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; I Z)Landroid/support/constraint/solver/ArrayRow; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.support.constraint.solver.LinearSystem
+# - v5:android.support.constraint.solver.SolverVariable
+# - v6:android.support.constraint.solver.SolverVariable
+# - v7:int
+# - v8:boolean
+#
+# - return:android.support.constraint.solver.ArrayRow
+
+createRowLowerThan-BB@0x0 : [ createRowLowerThan-BB@0x1a createRowLowerThan-BB@0x34 ]
+	0       (00000000) invoke-virtual       v4, Landroid/support/constraint/solver/LinearSystem;->createSlackVariable()Landroid/support/constraint/solver/SolverVariable;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v4, Landroid/support/constraint/solver/LinearSystem;->createRow()Landroid/support/constraint/solver/ArrayRow;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-virtual       v1, v5, v6, v0, v7, Landroid/support/constraint/solver/ArrayRow;->createRowLowerThan(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; I)Landroid/support/constraint/solver/ArrayRow;
+	5       (00000016) if-eqz               v8, +f
+
+createRowLowerThan-BB@0x1a : [ createRowLowerThan-BB@0x34 ]
+	6       (0000001a) iget-object          v2, v1, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	7       (0000001e) invoke-virtual       v2, v0, Landroid/support/constraint/solver/ArrayLinkedVariables;->get(Landroid/support/constraint/solver/SolverVariable;)F
+	8       (00000024) move-result          v2
+	9       (00000026) const/high16         v3, -16512 # [-1.0]
+	10      (0000002a) mul-float/2addr      v3, v2
+	11      (0000002c) float-to-int         v3, v3
+	12      (0000002e) invoke-direct        v4, v1, v3, Landroid/support/constraint/solver/LinearSystem;->addSingleError(Landroid/support/constraint/solver/ArrayRow; I)V
+
+createRowLowerThan-BB@0x34 : 
+	13      (00000034) return-object        v1
+

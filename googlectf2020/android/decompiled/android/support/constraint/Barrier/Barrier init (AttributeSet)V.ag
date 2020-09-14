@@ -1,0 +1,62 @@
+# Landroid/support/constraint/Barrier;->init(Landroid/util/AttributeSet;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.util.AttributeSet
+#
+# - return:void
+
+init-BB@0x0 : [ init-BB@0x18 init-BB@0x7e ]
+	0       (00000000) invoke-super         v7, v8, Landroid/support/constraint/ConstraintHelper;->init(Landroid/util/AttributeSet;)V
+	1       (00000006) new-instance         v0, Landroid/support/constraint/solver/widgets/Barrier;
+	2       (0000000a) invoke-direct        v0, Landroid/support/constraint/solver/widgets/Barrier;-><init>()V
+	3       (00000010) iput-object          v0, v7, Landroid/support/constraint/Barrier;->mBarrier Landroid/support/constraint/solver/widgets/Barrier;
+	4       (00000014) if-eqz               v8, +35
+
+init-BB@0x18 : [ init-BB@0x38 ]
+	5       (00000018) invoke-virtual       v7, Landroid/support/constraint/Barrier;->getContext()Landroid/content/Context;
+	6       (0000001e) move-result-object   v0
+	7       (00000020) sget-object          v1, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout [I
+	8       (00000024) invoke-virtual       v0, v8, v1, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+	9       (0000002a) move-result-object   v0
+	10      (0000002c) invoke-virtual       v0, Landroid/content/res/TypedArray;->getIndexCount()I
+	11      (00000032) move-result          v1
+	12      (00000034) const/4              v2, 0
+	13      (00000036) move                 v3, v2
+
+init-BB@0x38 : [ init-BB@0x3c init-BB@0x7e ]
+	14      (00000038) if-ge                v3, v1, +23
+
+init-BB@0x3c : [ init-BB@0x4c init-BB@0x5c ]
+	15      (0000003c) invoke-virtual       v0, v3, Landroid/content/res/TypedArray;->getIndex(I)I
+	16      (00000042) move-result          v4
+	17      (00000044) sget                 v5, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout_barrierDirection I
+	18      (00000048) if-ne                v4, v5, +a
+
+init-BB@0x4c : [ init-BB@0x78 ]
+	19      (0000004c) invoke-virtual       v0, v4, v2, Landroid/content/res/TypedArray;->getInt(I I)I
+	20      (00000052) move-result          v5
+	21      (00000054) invoke-virtual       v7, v5, Landroid/support/constraint/Barrier;->setType(I)V
+	22      (0000005a) goto                 +f
+
+init-BB@0x5c : [ init-BB@0x64 init-BB@0x78 ]
+	23      (0000005c) sget                 v5, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout_barrierAllowsGoneWidgets I
+	24      (00000060) if-ne                v4, v5, +c
+
+init-BB@0x64 : [ init-BB@0x78 ]
+	25      (00000064) iget-object          v5, v7, Landroid/support/constraint/Barrier;->mBarrier Landroid/support/constraint/solver/widgets/Barrier;
+	26      (00000068) const/4              v6, 1
+	27      (0000006a) invoke-virtual       v0, v4, v6, Landroid/content/res/TypedArray;->getBoolean(I Z)Z
+	28      (00000070) move-result          v6
+	29      (00000072) invoke-virtual       v5, v6, Landroid/support/constraint/solver/widgets/Barrier;->setAllowsGoneWidget(Z)V
+
+init-BB@0x78 : [ init-BB@0x38 ]
+	30      (00000078) add-int/lit8         v3, v3, 1
+	31      (0000007c) goto                 -22
+
+init-BB@0x7e : 
+	32      (0000007e) iget-object          v0, v7, Landroid/support/constraint/Barrier;->mBarrier Landroid/support/constraint/solver/widgets/Barrier;
+	33      (00000082) iput-object          v0, v7, Landroid/support/constraint/Barrier;->mHelperWidget Landroid/support/constraint/solver/widgets/Helper;
+	34      (00000086) invoke-virtual       v7, Landroid/support/constraint/Barrier;->validateParams()V
+	35      (0000008c) return-void          
+

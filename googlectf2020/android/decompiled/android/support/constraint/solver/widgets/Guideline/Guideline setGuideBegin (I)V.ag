@@ -1,0 +1,21 @@
+# Landroid/support/constraint/solver/widgets/Guideline;->setGuideBegin(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+setGuideBegin-BB@0x0 : [ setGuideBegin-BB@0x6 setGuideBegin-BB@0x16 ]
+	0       (00000000) const/4              v0, -1
+	1       (00000002) if-le                v3, v0, +a
+
+setGuideBegin-BB@0x6 : [ setGuideBegin-BB@0x16 ]
+	2       (00000006) const/high16         v1, -16512 # [-1.0]
+	3       (0000000a) iput                 v1, v2, Landroid/support/constraint/solver/widgets/Guideline;->mRelativePercent F
+	4       (0000000e) iput                 v3, v2, Landroid/support/constraint/solver/widgets/Guideline;->mRelativeBegin I
+	5       (00000012) iput                 v0, v2, Landroid/support/constraint/solver/widgets/Guideline;->mRelativeEnd I
+
+setGuideBegin-BB@0x16 : 
+	6       (00000016) return-void          
+

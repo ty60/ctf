@@ -1,0 +1,49 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->disconnectUnlockedWidget(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.support.constraint.solver.widgets.ConstraintWidget
+#
+# - return:void
+
+disconnectUnlockedWidget-BB@0x0 : [ disconnectUnlockedWidget-BB@0x12 ]
+	0       (00000000) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchors()Ljava/util/ArrayList;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	4       (00000010) move-result          v2
+
+disconnectUnlockedWidget-BB@0x12 : [ disconnectUnlockedWidget-BB@0x16 disconnectUnlockedWidget-BB@0x5c ]
+	5       (00000012) if-ge                v1, v2, +25
+
+disconnectUnlockedWidget-BB@0x16 : [ disconnectUnlockedWidget-BB@0x2e disconnectUnlockedWidget-BB@0x56 ]
+	6       (00000016) invoke-virtual       v0, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	7       (0000001c) move-result-object   v3
+	8       (0000001e) check-cast           v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	9       (00000022) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->isConnected()Z
+	10      (00000028) move-result          v4
+	11      (0000002a) if-eqz               v4, +16
+
+disconnectUnlockedWidget-BB@0x2e : [ disconnectUnlockedWidget-BB@0x42 disconnectUnlockedWidget-BB@0x56 ]
+	12      (0000002e) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getTarget()Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	13      (00000034) move-result-object   v4
+	14      (00000036) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getOwner()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	15      (0000003c) move-result-object   v4
+	16      (0000003e) if-ne                v4, v7, +c
+
+disconnectUnlockedWidget-BB@0x42 : [ disconnectUnlockedWidget-BB@0x50 disconnectUnlockedWidget-BB@0x56 ]
+	17      (00000042) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getConnectionCreator()I
+	18      (00000048) move-result          v4
+	19      (0000004a) const/4              v5, 2
+	20      (0000004c) if-ne                v4, v5, +5
+
+disconnectUnlockedWidget-BB@0x50 : [ disconnectUnlockedWidget-BB@0x56 ]
+	21      (00000050) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->reset()V
+
+disconnectUnlockedWidget-BB@0x56 : [ disconnectUnlockedWidget-BB@0x12 ]
+	22      (00000056) add-int/lit8         v1, v1, 1
+	23      (0000005a) goto                 -24
+
+disconnectUnlockedWidget-BB@0x5c : 
+	24      (0000005c) return-void          
+

@@ -1,0 +1,60 @@
+# Landroid/support/constraint/solver/widgets/Chain;->applyChainConstraints(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/LinearSystem; I)V [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.support.constraint.solver.widgets.ConstraintWidgetContainer
+# - v7:android.support.constraint.solver.LinearSystem
+# - v8:int
+#
+# - return:void
+
+applyChainConstraints-BB@0x0 : [ applyChainConstraints-BB@0xa applyChainConstraints-BB@0x16 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const/4              v1, 0
+	2       (00000004) const/4              v2, 0
+	3       (00000006) if-nez               v8, +8
+
+applyChainConstraints-BB@0xa : [ applyChainConstraints-BB@0x20 ]
+	4       (0000000a) const/4              v0, 0
+	5       (0000000c) iget                 v1, v6, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsSize I
+	6       (00000010) iget-object          v2, v6, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsArray [Landroid/support/constraint/solver/widgets/ChainHead;
+	7       (00000014) goto                 +6
+
+applyChainConstraints-BB@0x16 : [ applyChainConstraints-BB@0x20 ]
+	8       (00000016) const/4              v0, 2
+	9       (00000018) iget                 v1, v6, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mVerticalChainsSize I
+	10      (0000001c) iget-object          v2, v6, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mVerticalChainsArray [Landroid/support/constraint/solver/widgets/ChainHead;
+
+applyChainConstraints-BB@0x20 : [ applyChainConstraints-BB@0x22 ]
+	11      (00000020) const/4              v3, 0
+
+applyChainConstraints-BB@0x22 : [ applyChainConstraints-BB@0x26 applyChainConstraints-BB@0x5e ]
+	12      (00000022) if-ge                v3, v1, +1e
+
+applyChainConstraints-BB@0x26 : [ applyChainConstraints-BB@0x3e applyChainConstraints-BB@0x52 ]
+	13      (00000026) aget-object          v4, v2, v3
+	14      (0000002a) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ChainHead;->define()V
+	15      (00000030) const/4              v5, 4
+	16      (00000032) invoke-virtual       v6, v5, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->optimizeFor(I)Z
+	17      (00000038) move-result          v5
+	18      (0000003a) if-eqz               v5, +c
+
+applyChainConstraints-BB@0x3e : [ applyChainConstraints-BB@0x4a applyChainConstraints-BB@0x58 ]
+	19      (0000003e) invoke-static        v6, v7, v8, v0, v4, Landroid/support/constraint/solver/widgets/Optimizer;->applyChainOptimized(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/LinearSystem; I I Landroid/support/constraint/solver/widgets/ChainHead;)Z
+	20      (00000044) move-result          v5
+	21      (00000046) if-nez               v5, +9
+
+applyChainConstraints-BB@0x4a : [ applyChainConstraints-BB@0x58 ]
+	22      (0000004a) invoke-static        v6, v7, v8, v0, v4, Landroid/support/constraint/solver/widgets/Chain;->applyChainConstraints(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/LinearSystem; I I Landroid/support/constraint/solver/widgets/ChainHead;)V
+	23      (00000050) goto                 +4
+
+applyChainConstraints-BB@0x52 : [ applyChainConstraints-BB@0x58 ]
+	24      (00000052) invoke-static        v6, v7, v8, v0, v4, Landroid/support/constraint/solver/widgets/Chain;->applyChainConstraints(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/LinearSystem; I I Landroid/support/constraint/solver/widgets/ChainHead;)V
+
+applyChainConstraints-BB@0x58 : [ applyChainConstraints-BB@0x22 ]
+	25      (00000058) add-int/lit8         v3, v3, 1
+	26      (0000005c) goto                 -1d
+
+applyChainConstraints-BB@0x5e : 
+	27      (0000005e) return-void          
+

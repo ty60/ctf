@@ -1,0 +1,46 @@
+# Landroid/support/constraint/solver/ArrayLinkedVariables;->clear()V [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+clear-BB@0x0 : [ clear-BB@0xa ]
+	0       (00000000) iget                 v0, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	1       (00000004) const/4              v1, 0
+	2       (00000006) move                 v2, v0
+	3       (00000008) move                 v0, v1
+
+clear-BB@0xa : [ clear-BB@0x10 clear-BB@0x48 ]
+	4       (0000000a) const/4              v3, -1
+	5       (0000000c) if-eq                v2, v3, +1e
+
+clear-BB@0x10 : [ clear-BB@0x18 clear-BB@0x48 ]
+	6       (00000010) iget                 v4, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	7       (00000014) if-ge                v0, v4, +1a
+
+clear-BB@0x18 : [ clear-BB@0x30 clear-BB@0x3a ]
+	8       (00000018) iget-object          v3, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mCache Landroid/support/constraint/solver/Cache;
+	9       (0000001c) iget-object          v3, v3, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	10      (00000020) iget-object          v4, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	11      (00000024) aget                 v4, v4, v2
+	12      (00000028) aget-object          v3, v3, v4
+	13      (0000002c) if-eqz               v3, +7
+
+clear-BB@0x30 : [ clear-BB@0x3a ]
+	14      (00000030) iget-object          v4, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mRow Landroid/support/constraint/solver/ArrayRow;
+	15      (00000034) invoke-virtual       v3, v4, Landroid/support/constraint/solver/SolverVariable;->removeFromRow(Landroid/support/constraint/solver/ArrayRow;)V
+
+clear-BB@0x3a : [ clear-BB@0xa ]
+	16      (0000003a) iget-object          v4, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	17      (0000003e) aget                 v2, v4, v2
+	18      (00000042) add-int/lit8         v0, v0, 1
+	19      (00000046) goto                 -1e
+
+clear-BB@0x48 : 
+	20      (00000048) iput                 v3, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	21      (0000004c) iput                 v3, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mLast I
+	22      (00000050) iput-boolean         v1, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mDidFillOnce Z
+	23      (00000054) iput                 v1, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	24      (00000058) return-void          
+

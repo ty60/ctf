@@ -1,0 +1,43 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->isFullyResolved()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isFullyResolved-BB@0x0 : [ isFullyResolved-BB@0x16 isFullyResolved-BB@0x54 ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	1       (00000004) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	4       (00000010) const/4              v1, 1
+	5       (00000012) if-ne                v0, v1, +21
+
+isFullyResolved-BB@0x16 : [ isFullyResolved-BB@0x2a isFullyResolved-BB@0x54 ]
+	6       (00000016) iget-object          v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	7       (0000001a) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	8       (00000020) move-result-object   v0
+	9       (00000022) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	10      (00000026) if-ne                v0, v1, +17
+
+isFullyResolved-BB@0x2a : [ isFullyResolved-BB@0x3e isFullyResolved-BB@0x54 ]
+	11      (0000002a) iget-object          v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	12      (0000002e) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	13      (00000034) move-result-object   v0
+	14      (00000036) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	15      (0000003a) if-ne                v0, v1, +d
+
+isFullyResolved-BB@0x3e : [ isFullyResolved-BB@0x52 isFullyResolved-BB@0x54 ]
+	16      (0000003e) iget-object          v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	17      (00000042) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	18      (00000048) move-result-object   v0
+	19      (0000004a) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	20      (0000004e) if-ne                v0, v1, +3
+
+isFullyResolved-BB@0x52 : 
+	21      (00000052) return               v1
+
+isFullyResolved-BB@0x54 : 
+	22      (00000054) const/4              v0, 0
+	23      (00000056) return               v0
+

@@ -1,0 +1,56 @@
+# Landroid/support/constraint/solver/LinearSystem;->getDisplaySize(I)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:java.lang.String
+
+getDisplaySize-BB@0x0 : [ getDisplaySize-BB@0x10 getDisplaySize-BB@0x3e ]
+	0       (00000000) mul-int/lit8         v0, v5, 4
+	1       (00000004) div-int/lit16        v0, v0, 1024
+	2       (00000008) div-int/lit16        v0, v0, 1024
+	3       (0000000c) if-lez               v0, +19
+
+getDisplaySize-BB@0x10 : 
+	4       (00000010) new-instance         v1, Ljava/lang/StringBuilder;
+	5       (00000014) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001a) const-string         v2, ''
+	7       (0000001e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000024) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	9       (0000002a) const-string         v2, ' Mb'
+	10      (0000002e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (00000034) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	12      (0000003a) move-result-object   v1
+	13      (0000003c) return-object        v1
+
+getDisplaySize-BB@0x3e : [ getDisplaySize-BB@0x4a getDisplaySize-BB@0x78 ]
+	14      (0000003e) mul-int/lit8         v1, v5, 4
+	15      (00000042) div-int/lit16        v1, v1, 1024
+	16      (00000046) if-lez               v1, +19
+
+getDisplaySize-BB@0x4a : 
+	17      (0000004a) new-instance         v2, Ljava/lang/StringBuilder;
+	18      (0000004e) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	19      (00000054) const-string         v3, ''
+	20      (00000058) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (0000005e) invoke-virtual       v2, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	22      (00000064) const-string         v3, ' Kb'
+	23      (00000068) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (0000006e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	25      (00000074) move-result-object   v2
+	26      (00000076) return-object        v2
+
+getDisplaySize-BB@0x78 : 
+	27      (00000078) new-instance         v2, Ljava/lang/StringBuilder;
+	28      (0000007c) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	29      (00000082) const-string         v3, ''
+	30      (00000086) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	31      (0000008c) mul-int/lit8         v3, v5, 4
+	32      (00000090) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	33      (00000096) const-string         v3, ' bytes'
+	34      (0000009a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	35      (000000a0) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	36      (000000a6) move-result-object   v2
+	37      (000000a8) return-object        v2
+

@@ -1,0 +1,33 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->getRootWidgetContainer()Landroid/support/constraint/solver/widgets/WidgetContainer; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.support.constraint.solver.widgets.WidgetContainer
+
+getRootWidgetContainer-BB@0x0 : [ getRootWidgetContainer-BB@0x2 ]
+	0       (00000000) move-object          v0, v2
+
+getRootWidgetContainer-BB@0x2 : [ getRootWidgetContainer-BB@0xe getRootWidgetContainer-BB@0x18 ]
+	1       (00000002) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) if-eqz               v1, +7
+
+getRootWidgetContainer-BB@0xe : [ getRootWidgetContainer-BB@0x2 ]
+	4       (0000000e) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	5       (00000014) move-result-object   v0
+	6       (00000016) goto                 -a
+
+getRootWidgetContainer-BB@0x18 : [ getRootWidgetContainer-BB@0x20 getRootWidgetContainer-BB@0x28 ]
+	7       (00000018) instance-of          v1, v0, Landroid/support/constraint/solver/widgets/WidgetContainer;
+	8       (0000001c) if-eqz               v1, +6
+
+getRootWidgetContainer-BB@0x20 : 
+	9       (00000020) move-object          v1, v0
+	10      (00000022) check-cast           v1, Landroid/support/constraint/solver/widgets/WidgetContainer;
+	11      (00000026) return-object        v1
+
+getRootWidgetContainer-BB@0x28 : 
+	12      (00000028) const/4              v1, 0
+	13      (0000002a) return-object        v1
+

@@ -1,0 +1,26 @@
+# Landroid/support/constraint/solver/LinearSystem;->createRowDimensionPercent(Landroid/support/constraint/solver/LinearSystem; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; F Z)Landroid/support/constraint/solver/ArrayRow; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.constraint.solver.LinearSystem
+# - v3:android.support.constraint.solver.SolverVariable
+# - v4:android.support.constraint.solver.SolverVariable
+# - v5:android.support.constraint.solver.SolverVariable
+# - v6:float
+# - v7:boolean
+#
+# - return:android.support.constraint.solver.ArrayRow
+
+createRowDimensionPercent-BB@0x0 : [ createRowDimensionPercent-BB@0xc createRowDimensionPercent-BB@0x12 ]
+	0       (00000000) invoke-virtual       v2, Landroid/support/constraint/solver/LinearSystem;->createRow()Landroid/support/constraint/solver/ArrayRow;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v7, +5
+
+createRowDimensionPercent-BB@0xc : [ createRowDimensionPercent-BB@0x12 ]
+	3       (0000000c) invoke-direct        v2, v0, Landroid/support/constraint/solver/LinearSystem;->addError(Landroid/support/constraint/solver/ArrayRow;)V
+
+createRowDimensionPercent-BB@0x12 : 
+	4       (00000012) invoke-virtual       v0, v3, v4, v5, v6, Landroid/support/constraint/solver/ArrayRow;->createRowDimensionPercent(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/SolverVariable; F)Landroid/support/constraint/solver/ArrayRow;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) return-object        v1
+

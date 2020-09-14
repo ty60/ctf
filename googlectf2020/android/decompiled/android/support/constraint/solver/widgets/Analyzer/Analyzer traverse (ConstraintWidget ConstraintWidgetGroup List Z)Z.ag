@@ -1,0 +1,535 @@
+# Landroid/support/constraint/solver/widgets/Analyzer;->traverse(Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup; Ljava/util/List; Z)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.support.constraint.solver.widgets.ConstraintWidget
+# - v9:android.support.constraint.solver.widgets.ConstraintWidgetGroup
+# - v10:java.util.List
+# - v11:boolean
+#
+# - return:boolean
+
+traverse-BB@0x0 : [ traverse-BB@0x6 traverse-BB@0x8 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) if-nez               v8, +3
+
+traverse-BB@0x6 : 
+	2       (00000006) return               v0
+
+traverse-BB@0x8 : [ traverse-BB@0x22 traverse-BB@0x442 ]
+	3       (00000008) const/4              v1, 0
+	4       (0000000a) iput-boolean         v1, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mOptimizerMeasured Z
+	5       (0000000e) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	6       (00000014) move-result-object   v2
+	7       (00000016) check-cast           v2, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	8       (0000001a) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBelongingGroup Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;
+	9       (0000001e) if-nez               v3, +212
+
+traverse-BB@0x22 : [ traverse-BB@0x40 traverse-BB@0x88 ]
+	10      (00000022) iput-boolean         v0, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mOptimizerMeasurable Z
+	11      (00000026) iget-object          v3, v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mConstrainedGroup Ljava/util/List;
+	12      (0000002a) invoke-interface     v3, v8, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	13      (00000030) iput-object          v9, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBelongingGroup Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;
+	14      (00000034) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	15      (00000038) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	16      (0000003c) if-nez               v3, +26
+
+traverse-BB@0x40 : [ traverse-BB@0x4c traverse-BB@0x88 ]
+	17      (00000040) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	18      (00000044) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	19      (00000048) if-nez               v3, +20
+
+traverse-BB@0x4c : [ traverse-BB@0x58 traverse-BB@0x88 ]
+	20      (0000004c) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	21      (00000050) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	22      (00000054) if-nez               v3, +1a
+
+traverse-BB@0x58 : [ traverse-BB@0x64 traverse-BB@0x88 ]
+	23      (00000058) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	24      (0000005c) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	25      (00000060) if-nez               v3, +14
+
+traverse-BB@0x64 : [ traverse-BB@0x70 traverse-BB@0x88 ]
+	26      (00000064) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaseline Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	27      (00000068) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	28      (0000006c) if-nez               v3, +e
+
+traverse-BB@0x70 : [ traverse-BB@0x7c traverse-BB@0x88 ]
+	29      (00000070) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mCenter Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	30      (00000074) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	31      (00000078) if-nez               v3, +8
+
+traverse-BB@0x7c : [ traverse-BB@0x86 traverse-BB@0x88 ]
+	32      (0000007c) invoke-static        v2, v8, v9, Landroid/support/constraint/solver/widgets/Analyzer;->invalidate(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;)V
+	33      (00000082) if-eqz               v11, +3
+
+traverse-BB@0x86 : 
+	34      (00000086) return               v1
+
+traverse-BB@0x88 : [ traverse-BB@0x94 traverse-BB@0xf8 ]
+	35      (00000088) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	36      (0000008c) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	37      (00000090) if-eqz               v3, +34
+
+traverse-BB@0x94 : [ traverse-BB@0xa0 traverse-BB@0xf8 ]
+	38      (00000094) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	39      (00000098) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	40      (0000009c) if-eqz               v3, +2e
+
+traverse-BB@0xa0 : [ traverse-BB@0xb0 traverse-BB@0xb4 ]
+	41      (000000a0) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getVerticalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	42      (000000a6) move-result-object   v3
+	43      (000000a8) sget-object          v4, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	44      (000000ac) if-ne                v3, v4, +4
+
+traverse-BB@0xb0 : [ traverse-BB@0xb6 ]
+	45      (000000b0) move                 v3, v0
+	46      (000000b2) goto                 +2
+
+traverse-BB@0xb4 : [ traverse-BB@0xb6 ]
+	47      (000000b4) move                 v3, v1
+
+traverse-BB@0xb6 : [ traverse-BB@0xba traverse-BB@0xc2 ]
+	48      (000000b6) if-eqz               v11, +6
+
+traverse-BB@0xba : 
+	49      (000000ba) invoke-static        v2, v8, v9, Landroid/support/constraint/solver/widgets/Analyzer;->invalidate(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;)V
+	50      (000000c0) return               v1
+
+traverse-BB@0xc2 : [ traverse-BB@0xda traverse-BB@0xf2 ]
+	51      (000000c2) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	52      (000000c6) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	53      (000000ca) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	54      (000000ce) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	55      (000000d4) move-result-object   v5
+	56      (000000d6) if-ne                v4, v5, +e
+
+traverse-BB@0xda : [ traverse-BB@0xf2 traverse-BB@0xf8 ]
+	57      (000000da) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	58      (000000de) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	59      (000000e2) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	60      (000000e6) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	61      (000000ec) move-result-object   v5
+	62      (000000ee) if-eq                v4, v5, +5
+
+traverse-BB@0xf2 : [ traverse-BB@0xf8 ]
+	63      (000000f2) invoke-static        v2, v8, v9, Landroid/support/constraint/solver/widgets/Analyzer;->invalidate(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;)V
+
+traverse-BB@0xf8 : [ traverse-BB@0x104 traverse-BB@0x168 ]
+	64      (000000f8) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	65      (000000fc) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	66      (00000100) if-eqz               v3, +34
+
+traverse-BB@0x104 : [ traverse-BB@0x110 traverse-BB@0x168 ]
+	67      (00000104) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	68      (00000108) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	69      (0000010c) if-eqz               v3, +2e
+
+traverse-BB@0x110 : [ traverse-BB@0x120 traverse-BB@0x124 ]
+	70      (00000110) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->getHorizontalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	71      (00000116) move-result-object   v3
+	72      (00000118) sget-object          v4, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	73      (0000011c) if-ne                v3, v4, +4
+
+traverse-BB@0x120 : [ traverse-BB@0x126 ]
+	74      (00000120) move                 v3, v0
+	75      (00000122) goto                 +2
+
+traverse-BB@0x124 : [ traverse-BB@0x126 ]
+	76      (00000124) move                 v3, v1
+
+traverse-BB@0x126 : [ traverse-BB@0x12a traverse-BB@0x132 ]
+	77      (00000126) if-eqz               v11, +6
+
+traverse-BB@0x12a : 
+	78      (0000012a) invoke-static        v2, v8, v9, Landroid/support/constraint/solver/widgets/Analyzer;->invalidate(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;)V
+	79      (00000130) return               v1
+
+traverse-BB@0x132 : [ traverse-BB@0x14a traverse-BB@0x162 ]
+	80      (00000132) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	81      (00000136) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	82      (0000013a) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	83      (0000013e) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	84      (00000144) move-result-object   v5
+	85      (00000146) if-ne                v4, v5, +e
+
+traverse-BB@0x14a : [ traverse-BB@0x162 traverse-BB@0x168 ]
+	86      (0000014a) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	87      (0000014e) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	88      (00000152) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	89      (00000156) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	90      (0000015c) move-result-object   v5
+	91      (0000015e) if-eq                v4, v5, +5
+
+traverse-BB@0x162 : [ traverse-BB@0x168 ]
+	92      (00000162) invoke-static        v2, v8, v9, Landroid/support/constraint/solver/widgets/Analyzer;->invalidate(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;)V
+
+traverse-BB@0x168 : [ traverse-BB@0x178 traverse-BB@0x17c ]
+	93      (00000168) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHorizontalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	94      (0000016e) move-result-object   v3
+	95      (00000170) sget-object          v4, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	96      (00000174) if-ne                v3, v4, +4
+
+traverse-BB@0x178 : [ traverse-BB@0x180 ]
+	97      (00000178) move                 v3, v0
+	98      (0000017a) goto                 +3
+
+traverse-BB@0x17c : [ traverse-BB@0x180 ]
+	99      (0000017c) nop                  
+	100     (0000017e) move                 v3, v1
+
+traverse-BB@0x180 : [ traverse-BB@0x190 traverse-BB@0x194 ]
+	101     (00000180) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVerticalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	102     (00000186) move-result-object   v4
+	103     (00000188) sget-object          v5, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	104     (0000018c) if-ne                v4, v5, +4
+
+traverse-BB@0x190 : [ traverse-BB@0x196 ]
+	105     (00000190) move                 v4, v0
+	106     (00000192) goto                 +2
+
+traverse-BB@0x194 : [ traverse-BB@0x196 ]
+	107     (00000194) move                 v4, v1
+
+traverse-BB@0x196 : [ traverse-BB@0x19c traverse-BB@0x1b2 ]
+	108     (00000196) xor-int/2addr        v3, v4
+	109     (00000198) if-eqz               v3, +d
+
+traverse-BB@0x19c : [ traverse-BB@0x1aa traverse-BB@0x1b2 ]
+	110     (0000019c) iget                 v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDimensionRatio F
+	111     (000001a0) const/4              v4, 0
+	112     (000001a2) cmpl-float           v3, v3, v4
+	113     (000001a6) if-eqz               v3, +6
+
+traverse-BB@0x1aa : [ traverse-BB@0x1de ]
+	114     (000001aa) invoke-static        v8, Landroid/support/constraint/solver/widgets/Analyzer;->resolveDimensionRatio(Landroid/support/constraint/solver/widgets/ConstraintWidget;)I
+	115     (000001b0) goto                 +17
+
+traverse-BB@0x1b2 : [ traverse-BB@0x1c2 traverse-BB@0x1d2 ]
+	116     (000001b2) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHorizontalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	117     (000001b8) move-result-object   v3
+	118     (000001ba) sget-object          v4, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	119     (000001be) if-eq                v3, v4, +a
+
+traverse-BB@0x1c2 : [ traverse-BB@0x1d2 traverse-BB@0x1de ]
+	120     (000001c2) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVerticalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	121     (000001c8) move-result-object   v3
+	122     (000001ca) sget-object          v4, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	123     (000001ce) if-ne                v3, v4, +8
+
+traverse-BB@0x1d2 : [ traverse-BB@0x1dc traverse-BB@0x1de ]
+	124     (000001d2) invoke-static        v2, v8, v9, Landroid/support/constraint/solver/widgets/Analyzer;->invalidate(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;)V
+	125     (000001d8) if-eqz               v11, +3
+
+traverse-BB@0x1dc : 
+	126     (000001dc) return               v1
+
+traverse-BB@0x1de : [ traverse-BB@0x1ea traverse-BB@0x1f6 ]
+	127     (000001de) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	128     (000001e2) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	129     (000001e6) if-nez               v3, +8
+
+traverse-BB@0x1ea : [ traverse-BB@0x1f6 traverse-BB@0x28e ]
+	130     (000001ea) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	131     (000001ee) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	132     (000001f2) if-eqz               v3, +4e
+
+traverse-BB@0x1f6 : [ traverse-BB@0x202 traverse-BB@0x222 ]
+	133     (000001f6) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	134     (000001fa) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	135     (000001fe) if-eqz               v3, +12
+
+traverse-BB@0x202 : [ traverse-BB@0x216 traverse-BB@0x222 ]
+	136     (00000202) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	137     (00000206) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	138     (0000020a) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	139     (0000020e) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mParent Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	140     (00000212) if-ne                v3, v4, +8
+
+traverse-BB@0x216 : [ traverse-BB@0x222 traverse-BB@0x28e ]
+	141     (00000216) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	142     (0000021a) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	143     (0000021e) if-eqz               v3, +38
+
+traverse-BB@0x222 : [ traverse-BB@0x22e traverse-BB@0x24e ]
+	144     (00000222) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	145     (00000226) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	146     (0000022a) if-eqz               v3, +12
+
+traverse-BB@0x22e : [ traverse-BB@0x242 traverse-BB@0x24e ]
+	147     (0000022e) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	148     (00000232) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	149     (00000236) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	150     (0000023a) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mParent Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	151     (0000023e) if-ne                v3, v4, +8
+
+traverse-BB@0x242 : [ traverse-BB@0x24e traverse-BB@0x28e ]
+	152     (00000242) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	153     (00000246) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	154     (0000024a) if-eqz               v3, +22
+
+traverse-BB@0x24e : [ traverse-BB@0x25a traverse-BB@0x2b4 ]
+	155     (0000024e) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	156     (00000252) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	157     (00000256) if-eqz               v3, +2f
+
+traverse-BB@0x25a : [ traverse-BB@0x26e traverse-BB@0x2b4 ]
+	158     (0000025a) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	159     (0000025e) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	160     (00000262) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	161     (00000266) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mParent Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	162     (0000026a) if-ne                v3, v4, +25
+
+traverse-BB@0x26e : [ traverse-BB@0x27a traverse-BB@0x2b4 ]
+	163     (0000026e) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	164     (00000272) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	165     (00000276) if-eqz               v3, +1f
+
+traverse-BB@0x27a : [ traverse-BB@0x28e traverse-BB@0x2b4 ]
+	166     (0000027a) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	167     (0000027e) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	168     (00000282) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	169     (00000286) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mParent Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	170     (0000028a) if-ne                v3, v4, +15
+
+traverse-BB@0x28e : [ traverse-BB@0x29a traverse-BB@0x2b4 ]
+	171     (0000028e) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mCenter Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	172     (00000292) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	173     (00000296) if-nez               v3, +f
+
+traverse-BB@0x29a : [ traverse-BB@0x2a2 traverse-BB@0x2b4 ]
+	174     (0000029a) instance-of          v3, v8, Landroid/support/constraint/solver/widgets/Guideline;
+	175     (0000029e) if-nez               v3, +b
+
+traverse-BB@0x2a2 : [ traverse-BB@0x2aa traverse-BB@0x2b4 ]
+	176     (000002a2) instance-of          v3, v8, Landroid/support/constraint/solver/widgets/Helper;
+	177     (000002a6) if-nez               v3, +7
+
+traverse-BB@0x2aa : [ traverse-BB@0x2b4 ]
+	178     (000002aa) iget-object          v3, v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mStartHorizontalWidgets Ljava/util/List;
+	179     (000002ae) invoke-interface     v3, v8, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+traverse-BB@0x2b4 : [ traverse-BB@0x2c0 traverse-BB@0x2cc ]
+	180     (000002b4) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	181     (000002b8) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	182     (000002bc) if-nez               v3, +8
+
+traverse-BB@0x2c0 : [ traverse-BB@0x2cc traverse-BB@0x364 ]
+	183     (000002c0) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	184     (000002c4) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	185     (000002c8) if-eqz               v3, +4e
+
+traverse-BB@0x2cc : [ traverse-BB@0x2d8 traverse-BB@0x2f8 ]
+	186     (000002cc) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	187     (000002d0) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	188     (000002d4) if-eqz               v3, +12
+
+traverse-BB@0x2d8 : [ traverse-BB@0x2ec traverse-BB@0x2f8 ]
+	189     (000002d8) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	190     (000002dc) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	191     (000002e0) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	192     (000002e4) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mParent Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	193     (000002e8) if-ne                v3, v4, +8
+
+traverse-BB@0x2ec : [ traverse-BB@0x2f8 traverse-BB@0x364 ]
+	194     (000002ec) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	195     (000002f0) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	196     (000002f4) if-eqz               v3, +38
+
+traverse-BB@0x2f8 : [ traverse-BB@0x304 traverse-BB@0x324 ]
+	197     (000002f8) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	198     (000002fc) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	199     (00000300) if-eqz               v3, +12
+
+traverse-BB@0x304 : [ traverse-BB@0x318 traverse-BB@0x324 ]
+	200     (00000304) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	201     (00000308) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	202     (0000030c) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	203     (00000310) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mParent Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	204     (00000314) if-ne                v3, v4, +8
+
+traverse-BB@0x318 : [ traverse-BB@0x324 traverse-BB@0x364 ]
+	205     (00000318) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	206     (0000031c) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	207     (00000320) if-eqz               v3, +22
+
+traverse-BB@0x324 : [ traverse-BB@0x330 traverse-BB@0x396 ]
+	208     (00000324) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	209     (00000328) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	210     (0000032c) if-eqz               v3, +35
+
+traverse-BB@0x330 : [ traverse-BB@0x344 traverse-BB@0x396 ]
+	211     (00000330) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	212     (00000334) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	213     (00000338) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	214     (0000033c) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mParent Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	215     (00000340) if-ne                v3, v4, +2b
+
+traverse-BB@0x344 : [ traverse-BB@0x350 traverse-BB@0x396 ]
+	216     (00000344) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	217     (00000348) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	218     (0000034c) if-eqz               v3, +25
+
+traverse-BB@0x350 : [ traverse-BB@0x364 traverse-BB@0x396 ]
+	219     (00000350) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	220     (00000354) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	221     (00000358) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	222     (0000035c) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mParent Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	223     (00000360) if-ne                v3, v4, +1b
+
+traverse-BB@0x364 : [ traverse-BB@0x370 traverse-BB@0x396 ]
+	224     (00000364) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mCenter Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	225     (00000368) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	226     (0000036c) if-nez               v3, +15
+
+traverse-BB@0x370 : [ traverse-BB@0x37c traverse-BB@0x396 ]
+	227     (00000370) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaseline Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	228     (00000374) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	229     (00000378) if-nez               v3, +f
+
+traverse-BB@0x37c : [ traverse-BB@0x384 traverse-BB@0x396 ]
+	230     (0000037c) instance-of          v3, v8, Landroid/support/constraint/solver/widgets/Guideline;
+	231     (00000380) if-nez               v3, +b
+
+traverse-BB@0x384 : [ traverse-BB@0x38c traverse-BB@0x396 ]
+	232     (00000384) instance-of          v3, v8, Landroid/support/constraint/solver/widgets/Helper;
+	233     (00000388) if-nez               v3, +7
+
+traverse-BB@0x38c : [ traverse-BB@0x396 ]
+	234     (0000038c) iget-object          v3, v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mStartVerticalWidgets Ljava/util/List;
+	235     (00000390) invoke-interface     v3, v8, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+traverse-BB@0x396 : [ traverse-BB@0x39e traverse-BB@0x3d6 ]
+	236     (00000396) instance-of          v3, v8, Landroid/support/constraint/solver/widgets/Helper;
+	237     (0000039a) if-eqz               v3, +1e
+
+traverse-BB@0x39e : [ traverse-BB@0x3a8 traverse-BB@0x3aa ]
+	238     (0000039e) invoke-static        v2, v8, v9, Landroid/support/constraint/solver/widgets/Analyzer;->invalidate(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;)V
+	239     (000003a4) if-eqz               v11, +3
+
+traverse-BB@0x3a8 : 
+	240     (000003a8) return               v1
+
+traverse-BB@0x3aa : [ traverse-BB@0x3b2 ]
+	241     (000003aa) move-object          v3, v8
+	242     (000003ac) check-cast           v3, Landroid/support/constraint/solver/widgets/Helper;
+	243     (000003b0) move                 v4, v1
+
+traverse-BB@0x3b2 : [ traverse-BB@0x3ba traverse-BB@0x3d6 ]
+	244     (000003b2) iget                 v5, v3, Landroid/support/constraint/solver/widgets/Helper;->mWidgetsCount I
+	245     (000003b6) if-ge                v4, v5, +10
+
+traverse-BB@0x3ba : [ traverse-BB@0x3ce traverse-BB@0x3d0 ]
+	246     (000003ba) iget-object          v5, v3, Landroid/support/constraint/solver/widgets/Helper;->mWidgets [Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	247     (000003be) aget-object          v5, v5, v4
+	248     (000003c2) invoke-static        v5, v9, v10, v11, Landroid/support/constraint/solver/widgets/Analyzer;->traverse(Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup; Ljava/util/List; Z)Z
+	249     (000003c8) move-result          v5
+	250     (000003ca) if-nez               v5, +3
+
+traverse-BB@0x3ce : 
+	251     (000003ce) return               v1
+
+traverse-BB@0x3d0 : [ traverse-BB@0x3b2 ]
+	252     (000003d0) add-int/lit8         v4, v4, 1
+	253     (000003d4) goto                 -11
+
+traverse-BB@0x3d6 : [ traverse-BB@0x3de ]
+	254     (000003d6) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	255     (000003da) array-length         v3, v3
+	256     (000003dc) move                 v4, v1
+
+traverse-BB@0x3de : [ traverse-BB@0x3e2 traverse-BB@0x440 ]
+	257     (000003de) if-ge                v4, v3, +31
+
+traverse-BB@0x3e2 : [ traverse-BB@0x3f2 traverse-BB@0x43a ]
+	258     (000003e2) iget-object          v5, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	259     (000003e6) aget-object          v5, v5, v4
+	260     (000003ea) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	261     (000003ee) if-eqz               v6, +26
+
+traverse-BB@0x3f2 : [ traverse-BB@0x406 traverse-BB@0x43a ]
+	262     (000003f2) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	263     (000003f6) iget-object          v6, v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	264     (000003fa) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	265     (00000400) move-result-object   v7
+	266     (00000402) if-eq                v6, v7, +1c
+
+traverse-BB@0x406 : [ traverse-BB@0x412 traverse-BB@0x41e ]
+	267     (00000406) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	268     (0000040a) sget-object          v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->CENTER Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	269     (0000040e) if-ne                v6, v7, +8
+
+traverse-BB@0x412 : [ traverse-BB@0x41c traverse-BB@0x424 ]
+	270     (00000412) invoke-static        v2, v8, v9, Landroid/support/constraint/solver/widgets/Analyzer;->invalidate(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;)V
+	271     (00000418) if-eqz               v11, +6
+
+traverse-BB@0x41c : 
+	272     (0000041c) return               v1
+
+traverse-BB@0x41e : [ traverse-BB@0x424 ]
+	273     (0000041e) invoke-static        v5, Landroid/support/constraint/solver/widgets/Analyzer;->setConnection(Landroid/support/constraint/solver/widgets/ConstraintAnchor;)V
+
+traverse-BB@0x424 : [ traverse-BB@0x438 traverse-BB@0x43a ]
+	274     (00000424) iget-object          v6, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	275     (00000428) iget-object          v6, v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	276     (0000042c) invoke-static        v6, v9, v10, v11, Landroid/support/constraint/solver/widgets/Analyzer;->traverse(Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup; Ljava/util/List; Z)Z
+	277     (00000432) move-result          v6
+	278     (00000434) if-nez               v6, +3
+
+traverse-BB@0x438 : 
+	279     (00000438) return               v1
+
+traverse-BB@0x43a : [ traverse-BB@0x3de ]
+	280     (0000043a) add-int/lit8         v4, v4, 1
+	281     (0000043e) goto                 -30
+
+traverse-BB@0x440 : 
+	282     (00000440) return               v0
+
+traverse-BB@0x442 : [ traverse-BB@0x44a traverse-BB@0x4c8 ]
+	283     (00000442) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBelongingGroup Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;
+	284     (00000446) if-eq                v3, v9, +41
+
+traverse-BB@0x44a : [ traverse-BB@0x48c traverse-BB@0x490 ]
+	285     (0000044a) iget-object          v3, v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mConstrainedGroup Ljava/util/List;
+	286     (0000044e) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBelongingGroup Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;
+	287     (00000452) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mConstrainedGroup Ljava/util/List;
+	288     (00000456) invoke-interface     v3, v4, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+	289     (0000045c) iget-object          v3, v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mStartHorizontalWidgets Ljava/util/List;
+	290     (00000460) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBelongingGroup Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;
+	291     (00000464) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mStartHorizontalWidgets Ljava/util/List;
+	292     (00000468) invoke-interface     v3, v4, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+	293     (0000046e) iget-object          v3, v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mStartVerticalWidgets Ljava/util/List;
+	294     (00000472) iget-object          v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBelongingGroup Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;
+	295     (00000476) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mStartVerticalWidgets Ljava/util/List;
+	296     (0000047a) invoke-interface     v3, v4, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+	297     (00000480) iget-object          v3, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBelongingGroup Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;
+	298     (00000484) iget-boolean         v3, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mSkipSolver Z
+	299     (00000488) if-nez               v3, +4
+
+traverse-BB@0x48c : [ traverse-BB@0x490 ]
+	300     (0000048c) iput-boolean         v1, v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mSkipSolver Z
+
+traverse-BB@0x490 : [ traverse-BB@0x4aa ]
+	301     (00000490) iget-object          v1, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBelongingGroup Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;
+	302     (00000494) invoke-interface     v10, v1, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+	303     (0000049a) iget-object          v1, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBelongingGroup Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;
+	304     (0000049e) iget-object          v1, v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mConstrainedGroup Ljava/util/List;
+	305     (000004a2) invoke-interface     v1, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	306     (000004a8) move-result-object   v1
+
+traverse-BB@0x4aa : [ traverse-BB@0x4b6 traverse-BB@0x4c8 ]
+	307     (000004aa) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	308     (000004b0) move-result          v3
+	309     (000004b2) if-eqz               v3, +b
+
+traverse-BB@0x4b6 : [ traverse-BB@0x4aa ]
+	310     (000004b6) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	311     (000004bc) move-result-object   v3
+	312     (000004be) check-cast           v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	313     (000004c2) iput-object          v9, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBelongingGroup Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;
+	314     (000004c6) goto                 -e
+
+traverse-BB@0x4c8 : 
+	315     (000004c8) return               v0
+

@@ -1,0 +1,13 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->getInternalDrawBottom()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+getInternalDrawBottom-BB@0x0 : 
+	0       (00000000) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDrawY I
+	1       (00000004) iget                 v1, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDrawHeight I
+	2       (00000008) add-int/2addr        v0, v1
+	3       (0000000a) return               v0
+

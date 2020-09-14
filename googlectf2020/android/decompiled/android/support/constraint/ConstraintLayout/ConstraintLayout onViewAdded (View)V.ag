@@ -1,0 +1,69 @@
+# Landroid/support/constraint/ConstraintLayout;->onViewAdded(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.view.View
+#
+# - return:void
+
+onViewAdded-BB@0x0 : [ onViewAdded-BB@0xc onViewAdded-BB@0x12 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 14
+	2       (00000008) if-lt                v0, v1, +5
+
+onViewAdded-BB@0xc : [ onViewAdded-BB@0x12 ]
+	3       (0000000c) invoke-super         v5, v6, Landroid/view/ViewGroup;->onViewAdded(Landroid/view/View;)V
+
+onViewAdded-BB@0x12 : [ onViewAdded-BB@0x24 onViewAdded-BB@0x5c ]
+	4       (00000012) invoke-virtual       v5, v6, Landroid/support/constraint/ConstraintLayout;->getViewWidget(Landroid/view/View;)Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) instance-of          v1, v6, Landroid/support/constraint/Guideline;
+	7       (0000001e) const/4              v2, 1
+	8       (00000020) if-eqz               v1, +1e
+
+onViewAdded-BB@0x24 : [ onViewAdded-BB@0x2c onViewAdded-BB@0x5c ]
+	9       (00000024) instance-of          v1, v0, Landroid/support/constraint/solver/widgets/Guideline;
+	10      (00000028) if-nez               v1, +1a
+
+onViewAdded-BB@0x2c : [ onViewAdded-BB@0x5c ]
+	11      (0000002c) invoke-virtual       v6, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	12      (00000032) move-result-object   v1
+	13      (00000034) check-cast           v1, Landroid/support/constraint/ConstraintLayout$LayoutParams;
+	14      (00000038) new-instance         v3, Landroid/support/constraint/solver/widgets/Guideline;
+	15      (0000003c) invoke-direct        v3, Landroid/support/constraint/solver/widgets/Guideline;-><init>()V
+	16      (00000042) iput-object          v3, v1, Landroid/support/constraint/ConstraintLayout$LayoutParams;->widget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	17      (00000046) iput-boolean         v2, v1, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isGuideline Z
+	18      (0000004a) iget-object          v3, v1, Landroid/support/constraint/ConstraintLayout$LayoutParams;->widget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	19      (0000004e) check-cast           v3, Landroid/support/constraint/solver/widgets/Guideline;
+	20      (00000052) iget                 v4, v1, Landroid/support/constraint/ConstraintLayout$LayoutParams;->orientation I
+	21      (00000056) invoke-virtual       v3, v4, Landroid/support/constraint/solver/widgets/Guideline;->setOrientation(I)V
+
+onViewAdded-BB@0x5c : [ onViewAdded-BB@0x64 onViewAdded-BB@0x9a ]
+	22      (0000005c) instance-of          v1, v6, Landroid/support/constraint/ConstraintHelper;
+	23      (00000060) if-eqz               v1, +1d
+
+onViewAdded-BB@0x64 : [ onViewAdded-BB@0x90 onViewAdded-BB@0x9a ]
+	24      (00000064) move-object          v1, v6
+	25      (00000066) check-cast           v1, Landroid/support/constraint/ConstraintHelper;
+	26      (0000006a) invoke-virtual       v1, Landroid/support/constraint/ConstraintHelper;->validateParams()V
+	27      (00000070) invoke-virtual       v6, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	28      (00000076) move-result-object   v3
+	29      (00000078) check-cast           v3, Landroid/support/constraint/ConstraintLayout$LayoutParams;
+	30      (0000007c) iput-boolean         v2, v3, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isHelper Z
+	31      (00000080) iget-object          v4, v5, Landroid/support/constraint/ConstraintLayout;->mConstraintHelpers Ljava/util/ArrayList;
+	32      (00000084) invoke-virtual       v4, v1, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+	33      (0000008a) move-result          v4
+	34      (0000008c) if-nez               v4, +7
+
+onViewAdded-BB@0x90 : [ onViewAdded-BB@0x9a ]
+	35      (00000090) iget-object          v4, v5, Landroid/support/constraint/ConstraintLayout;->mConstraintHelpers Ljava/util/ArrayList;
+	36      (00000094) invoke-virtual       v4, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+onViewAdded-BB@0x9a : 
+	37      (0000009a) iget-object          v1, v5, Landroid/support/constraint/ConstraintLayout;->mChildrenByIds Landroid/util/SparseArray;
+	38      (0000009e) invoke-virtual       v6, Landroid/view/View;->getId()I
+	39      (000000a4) move-result          v3
+	40      (000000a6) invoke-virtual       v1, v3, v6, Landroid/util/SparseArray;->put(I Ljava/lang/Object;)V
+	41      (000000ac) iput-boolean         v2, v5, Landroid/support/constraint/ConstraintLayout;->mDirtyHierarchy Z
+	42      (000000b0) return-void          
+

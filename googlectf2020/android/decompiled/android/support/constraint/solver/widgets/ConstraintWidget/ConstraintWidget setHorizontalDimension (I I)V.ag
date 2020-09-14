@@ -1,0 +1,24 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalDimension(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+setHorizontalDimension-BB@0x0 : [ setHorizontalDimension-BB@0x18 setHorizontalDimension-BB@0x20 ]
+	0       (00000000) iput                 v3, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mX I
+	1       (00000004) sub-int              v0, v4, v3
+	2       (00000008) iput                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWidth I
+	3       (0000000c) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWidth I
+	4       (00000010) iget                 v1, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinWidth I
+	5       (00000014) if-ge                v0, v1, +6
+
+setHorizontalDimension-BB@0x18 : [ setHorizontalDimension-BB@0x20 ]
+	6       (00000018) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinWidth I
+	7       (0000001c) iput                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWidth I
+
+setHorizontalDimension-BB@0x20 : 
+	8       (00000020) return-void          
+

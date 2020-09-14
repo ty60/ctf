@@ -1,0 +1,30 @@
+# Landroid/support/constraint/ConstraintSet$Constraint;->fillFromConstraints(Landroid/support/constraint/ConstraintHelper; I Landroid/support/constraint/Constraints$LayoutParams;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.constraint.ConstraintHelper
+# - v4:int
+# - v5:android.support.constraint.Constraints$LayoutParams
+#
+# - return:void
+
+fillFromConstraints-BB@0x0 : [ fillFromConstraints-BB@0xe fillFromConstraints-BB@0x32 ]
+	0       (00000000) invoke-direct        v2, v4, v5, Landroid/support/constraint/ConstraintSet$Constraint;->fillFromConstraints(I Landroid/support/constraint/Constraints$LayoutParams;)V
+	1       (00000006) instance-of          v0, v3, Landroid/support/constraint/Barrier;
+	2       (0000000a) if-eqz               v0, +14
+
+fillFromConstraints-BB@0xe : [ fillFromConstraints-BB@0x32 ]
+	3       (0000000e) const/4              v0, 1
+	4       (00000010) iput                 v0, v2, Landroid/support/constraint/ConstraintSet$Constraint;->mHelperType I
+	5       (00000014) move-object          v0, v3
+	6       (00000016) check-cast           v0, Landroid/support/constraint/Barrier;
+	7       (0000001a) invoke-virtual       v0, Landroid/support/constraint/Barrier;->getType()I
+	8       (00000020) move-result          v1
+	9       (00000022) iput                 v1, v2, Landroid/support/constraint/ConstraintSet$Constraint;->mBarrierDirection I
+	10      (00000026) invoke-virtual       v0, Landroid/support/constraint/Barrier;->getReferencedIds()[I
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) iput-object          v1, v2, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIds [I
+
+fillFromConstraints-BB@0x32 : 
+	13      (00000032) return-void          
+

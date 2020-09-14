@@ -1,0 +1,88 @@
+# Landroid/support/constraint/ConstraintSet$Constraint;-><init>()V [access_flags=private constructor]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v5, Ljava/lang/Object;-><init>()V
+	1       (00000006) const/4              v0, 0
+	2       (00000008) iput-boolean         v0, v5, Landroid/support/constraint/ConstraintSet$Constraint;->mIsGuideline Z
+	3       (0000000c) const/4              v1, -1
+	4       (0000000e) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->guideBegin I
+	5       (00000012) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->guideEnd I
+	6       (00000016) const/high16         v2, -16512 # [-1.0]
+	7       (0000001a) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->guidePercent F
+	8       (0000001e) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->leftToLeft I
+	9       (00000022) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->leftToRight I
+	10      (00000026) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->rightToLeft I
+	11      (0000002a) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->rightToRight I
+	12      (0000002e) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->topToTop I
+	13      (00000032) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->topToBottom I
+	14      (00000036) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->bottomToTop I
+	15      (0000003a) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->bottomToBottom I
+	16      (0000003e) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->baselineToBaseline I
+	17      (00000042) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->startToEnd I
+	18      (00000046) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->startToStart I
+	19      (0000004a) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->endToStart I
+	20      (0000004e) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->endToEnd I
+	21      (00000052) const/high16         v2, 16128 # [0.5]
+	22      (00000056) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->horizontalBias F
+	23      (0000005a) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->verticalBias F
+	24      (0000005e) const/4              v2, 0
+	25      (00000060) iput-object          v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->dimensionRatio Ljava/lang/String;
+	26      (00000064) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->circleConstraint I
+	27      (00000068) iput                 v0, v5, Landroid/support/constraint/ConstraintSet$Constraint;->circleRadius I
+	28      (0000006c) const/4              v2, 0
+	29      (0000006e) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->circleAngle F
+	30      (00000072) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->editorAbsoluteX I
+	31      (00000076) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->editorAbsoluteY I
+	32      (0000007a) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->orientation I
+	33      (0000007e) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->leftMargin I
+	34      (00000082) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->rightMargin I
+	35      (00000086) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->topMargin I
+	36      (0000008a) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->bottomMargin I
+	37      (0000008e) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->endMargin I
+	38      (00000092) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->startMargin I
+	39      (00000096) iput                 v0, v5, Landroid/support/constraint/ConstraintSet$Constraint;->visibility I
+	40      (0000009a) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->goneLeftMargin I
+	41      (0000009e) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->goneTopMargin I
+	42      (000000a2) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->goneRightMargin I
+	43      (000000a6) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->goneBottomMargin I
+	44      (000000aa) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->goneEndMargin I
+	45      (000000ae) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->goneStartMargin I
+	46      (000000b2) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->verticalWeight F
+	47      (000000b6) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->horizontalWeight F
+	48      (000000ba) iput                 v0, v5, Landroid/support/constraint/ConstraintSet$Constraint;->horizontalChainStyle I
+	49      (000000be) iput                 v0, v5, Landroid/support/constraint/ConstraintSet$Constraint;->verticalChainStyle I
+	50      (000000c2) const/high16         v3, 16256 # [1.0]
+	51      (000000c6) iput                 v3, v5, Landroid/support/constraint/ConstraintSet$Constraint;->alpha F
+	52      (000000ca) iput-boolean         v0, v5, Landroid/support/constraint/ConstraintSet$Constraint;->applyElevation Z
+	53      (000000ce) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->elevation F
+	54      (000000d2) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->rotation F
+	55      (000000d6) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->rotationX F
+	56      (000000da) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->rotationY F
+	57      (000000de) iput                 v3, v5, Landroid/support/constraint/ConstraintSet$Constraint;->scaleX F
+	58      (000000e2) iput                 v3, v5, Landroid/support/constraint/ConstraintSet$Constraint;->scaleY F
+	59      (000000e6) const/high16         v4, 32704 # [nan]
+	60      (000000ea) iput                 v4, v5, Landroid/support/constraint/ConstraintSet$Constraint;->transformPivotX F
+	61      (000000ee) iput                 v4, v5, Landroid/support/constraint/ConstraintSet$Constraint;->transformPivotY F
+	62      (000000f2) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->translationX F
+	63      (000000f6) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->translationY F
+	64      (000000fa) iput                 v2, v5, Landroid/support/constraint/ConstraintSet$Constraint;->translationZ F
+	65      (000000fe) iput-boolean         v0, v5, Landroid/support/constraint/ConstraintSet$Constraint;->constrainedWidth Z
+	66      (00000102) iput-boolean         v0, v5, Landroid/support/constraint/ConstraintSet$Constraint;->constrainedHeight Z
+	67      (00000106) iput                 v0, v5, Landroid/support/constraint/ConstraintSet$Constraint;->widthDefault I
+	68      (0000010a) iput                 v0, v5, Landroid/support/constraint/ConstraintSet$Constraint;->heightDefault I
+	69      (0000010e) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->widthMax I
+	70      (00000112) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->heightMax I
+	71      (00000116) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->widthMin I
+	72      (0000011a) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->heightMin I
+	73      (0000011e) iput                 v3, v5, Landroid/support/constraint/ConstraintSet$Constraint;->widthPercent F
+	74      (00000122) iput                 v3, v5, Landroid/support/constraint/ConstraintSet$Constraint;->heightPercent F
+	75      (00000126) iput-boolean         v0, v5, Landroid/support/constraint/ConstraintSet$Constraint;->mBarrierAllowsGoneWidgets Z
+	76      (0000012a) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->mBarrierDirection I
+	77      (0000012e) iput                 v1, v5, Landroid/support/constraint/ConstraintSet$Constraint;->mHelperType I
+	78      (00000132) return-void          
+

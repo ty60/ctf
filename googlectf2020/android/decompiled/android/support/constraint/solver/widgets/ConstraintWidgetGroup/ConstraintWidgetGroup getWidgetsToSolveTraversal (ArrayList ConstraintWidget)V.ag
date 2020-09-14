@@ -1,0 +1,82 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->getWidgetsToSolveTraversal(Ljava/util/ArrayList; Landroid/support/constraint/solver/widgets/ConstraintWidget;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.util.ArrayList
+# - v7:android.support.constraint.solver.widgets.ConstraintWidget
+#
+# - return:void
+
+getWidgetsToSolveTraversal-BB@0x0 : [ getWidgetsToSolveTraversal-BB@0x8 getWidgetsToSolveTraversal-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mGroupsToSolver Z
+	1       (00000004) if-eqz               v0, +3
+
+getWidgetsToSolveTraversal-BB@0x8 : 
+	2       (00000008) return-void          
+
+getWidgetsToSolveTraversal-BB@0xa : [ getWidgetsToSolveTraversal-BB@0x22 getWidgetsToSolveTraversal-BB@0x24 ]
+	3       (0000000a) invoke-virtual       v6, v7, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	4       (00000010) const/4              v0, 1
+	5       (00000012) iput-boolean         v0, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mGroupsToSolver Z
+	6       (00000016) invoke-virtual       v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->isFullyResolved()Z
+	7       (0000001c) move-result          v0
+	8       (0000001e) if-eqz               v0, +3
+
+getWidgetsToSolveTraversal-BB@0x22 : 
+	9       (00000022) return-void          
+
+getWidgetsToSolveTraversal-BB@0x24 : [ getWidgetsToSolveTraversal-BB@0x2e getWidgetsToSolveTraversal-BB@0x52 ]
+	10      (00000024) instance-of          v0, v7, Landroid/support/constraint/solver/widgets/Helper;
+	11      (00000028) const/4              v1, 0
+	12      (0000002a) if-eqz               v0, +14
+
+getWidgetsToSolveTraversal-BB@0x2e : [ getWidgetsToSolveTraversal-BB@0x3a ]
+	13      (0000002e) move-object          v0, v7
+	14      (00000030) check-cast           v0, Landroid/support/constraint/solver/widgets/Helper;
+	15      (00000034) iget                 v2, v0, Landroid/support/constraint/solver/widgets/Helper;->mWidgetsCount I
+	16      (00000038) move                 v3, v1
+
+getWidgetsToSolveTraversal-BB@0x3a : [ getWidgetsToSolveTraversal-BB@0x3e getWidgetsToSolveTraversal-BB@0x52 ]
+	17      (0000003a) if-ge                v3, v2, +c
+
+getWidgetsToSolveTraversal-BB@0x3e : [ getWidgetsToSolveTraversal-BB@0x3a ]
+	18      (0000003e) iget-object          v4, v0, Landroid/support/constraint/solver/widgets/Helper;->mWidgets [Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	19      (00000042) aget-object          v4, v4, v3
+	20      (00000046) invoke-direct        v5, v6, v4, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->getWidgetsToSolveTraversal(Ljava/util/ArrayList; Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+	21      (0000004c) add-int/lit8         v3, v3, 1
+	22      (00000050) goto                 -b
+
+getWidgetsToSolveTraversal-BB@0x52 : [ getWidgetsToSolveTraversal-BB@0x5a ]
+	23      (00000052) iget-object          v0, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	24      (00000056) array-length         v0, v0
+	25      (00000058) nop                  
+
+getWidgetsToSolveTraversal-BB@0x5a : [ getWidgetsToSolveTraversal-BB@0x5e getWidgetsToSolveTraversal-BB@0x90 ]
+	26      (0000005a) if-ge                v1, v0, +1b
+
+getWidgetsToSolveTraversal-BB@0x5e : [ getWidgetsToSolveTraversal-BB@0x70 getWidgetsToSolveTraversal-BB@0x8a ]
+	27      (0000005e) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	28      (00000062) aget-object          v2, v2, v1
+	29      (00000066) iget-object          v2, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	30      (0000006a) const/4              v3, 0
+	31      (0000006c) if-eqz               v2, +f
+
+getWidgetsToSolveTraversal-BB@0x70 : [ getWidgetsToSolveTraversal-BB@0x78 getWidgetsToSolveTraversal-BB@0x8a ]
+	32      (00000070) iget-object          v3, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	33      (00000074) if-eqz               v2, +b
+
+getWidgetsToSolveTraversal-BB@0x78 : [ getWidgetsToSolveTraversal-BB@0x84 getWidgetsToSolveTraversal-BB@0x8a ]
+	34      (00000078) invoke-virtual       v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	35      (0000007e) move-result-object   v4
+	36      (00000080) if-eq                v3, v4, +5
+
+getWidgetsToSolveTraversal-BB@0x84 : [ getWidgetsToSolveTraversal-BB@0x8a ]
+	37      (00000084) invoke-direct        v5, v6, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->getWidgetsToSolveTraversal(Ljava/util/ArrayList; Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+
+getWidgetsToSolveTraversal-BB@0x8a : [ getWidgetsToSolveTraversal-BB@0x5a ]
+	38      (0000008a) add-int/lit8         v1, v1, 1
+	39      (0000008e) goto                 -1a
+
+getWidgetsToSolveTraversal-BB@0x90 : 
+	40      (00000090) return-void          
+

@@ -1,0 +1,85 @@
+# Landroid/support/constraint/ConstraintLayout$LayoutParams;-><init>(I I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+# - v8:int
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v6, v7, v8, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(I I)V
+	1       (00000006) const/4              v0, -1
+	2       (00000008) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guideBegin I
+	3       (0000000c) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guideEnd I
+	4       (00000010) const/high16         v1, -16512 # [-1.0]
+	5       (00000014) iput                 v1, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->guidePercent F
+	6       (00000018) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->leftToLeft I
+	7       (0000001c) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->leftToRight I
+	8       (00000020) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->rightToLeft I
+	9       (00000024) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->rightToRight I
+	10      (00000028) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->topToTop I
+	11      (0000002c) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->topToBottom I
+	12      (00000030) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->bottomToTop I
+	13      (00000034) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->bottomToBottom I
+	14      (00000038) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->baselineToBaseline I
+	15      (0000003c) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->circleConstraint I
+	16      (00000040) const/4              v2, 0
+	17      (00000042) iput                 v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->circleRadius I
+	18      (00000046) const/4              v3, 0
+	19      (00000048) iput                 v3, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->circleAngle F
+	20      (0000004c) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToEnd I
+	21      (00000050) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->startToStart I
+	22      (00000054) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToStart I
+	23      (00000058) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->endToEnd I
+	24      (0000005c) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneLeftMargin I
+	25      (00000060) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneTopMargin I
+	26      (00000064) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneRightMargin I
+	27      (00000068) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneBottomMargin I
+	28      (0000006c) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneStartMargin I
+	29      (00000070) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->goneEndMargin I
+	30      (00000074) const/high16         v4, 16128 # [0.5]
+	31      (00000078) iput                 v4, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalBias F
+	32      (0000007c) iput                 v4, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->verticalBias F
+	33      (00000080) const/4              v5, 0
+	34      (00000082) iput-object          v5, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->dimensionRatio Ljava/lang/String;
+	35      (00000086) iput                 v3, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->dimensionRatioValue F
+	36      (0000008a) const/4              v3, 1
+	37      (0000008c) iput                 v3, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->dimensionRatioSide I
+	38      (00000090) iput                 v1, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalWeight F
+	39      (00000094) iput                 v1, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->verticalWeight F
+	40      (00000098) iput                 v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalChainStyle I
+	41      (0000009c) iput                 v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->verticalChainStyle I
+	42      (000000a0) iput                 v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintDefaultWidth I
+	43      (000000a4) iput                 v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintDefaultHeight I
+	44      (000000a8) iput                 v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintMinWidth I
+	45      (000000ac) iput                 v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintMinHeight I
+	46      (000000b0) iput                 v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintMaxWidth I
+	47      (000000b4) iput                 v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintMaxHeight I
+	48      (000000b8) const/high16         v1, 16256 # [1.0]
+	49      (000000bc) iput                 v1, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintPercentWidth F
+	50      (000000c0) iput                 v1, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintPercentHeight F
+	51      (000000c4) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->editorAbsoluteX I
+	52      (000000c8) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->editorAbsoluteY I
+	53      (000000cc) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->orientation I
+	54      (000000d0) iput-boolean         v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->constrainedWidth Z
+	55      (000000d4) iput-boolean         v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->constrainedHeight Z
+	56      (000000d8) iput-boolean         v3, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalDimensionFixed Z
+	57      (000000dc) iput-boolean         v3, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->verticalDimensionFixed Z
+	58      (000000e0) iput-boolean         v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->needsBaseline Z
+	59      (000000e4) iput-boolean         v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isGuideline Z
+	60      (000000e8) iput-boolean         v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isHelper Z
+	61      (000000ec) iput-boolean         v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isInPlaceholder Z
+	62      (000000f0) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedLeftToLeft I
+	63      (000000f4) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedLeftToRight I
+	64      (000000f8) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedRightToLeft I
+	65      (000000fc) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedRightToRight I
+	66      (00000100) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolveGoneLeftMargin I
+	67      (00000104) iput                 v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolveGoneRightMargin I
+	68      (00000108) iput                 v4, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->resolvedHorizontalBias F
+	69      (0000010c) new-instance         v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	70      (00000110) invoke-direct        v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;-><init>()V
+	71      (00000116) iput-object          v0, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->widget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	72      (0000011a) iput-boolean         v2, v6, Landroid/support/constraint/ConstraintLayout$LayoutParams;->helped Z
+	73      (0000011e) return-void          
+

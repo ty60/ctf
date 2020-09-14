@@ -1,0 +1,42 @@
+# Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:int
+
+getMargin-BB@0x0 : [ getMargin-BB@0x14 getMargin-BB@0x18 ]
+	0       (00000000) iget-object          v0, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	1       (00000004) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVisibility()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) const/16             v1, 8
+	4       (00000010) if-ne                v0, v1, +4
+
+getMargin-BB@0x14 : 
+	5       (00000014) const/4              v0, 0
+	6       (00000016) return               v0
+
+getMargin-BB@0x18 : [ getMargin-BB@0x22 getMargin-BB@0x44 ]
+	7       (00000018) iget                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mGoneMargin I
+	8       (0000001c) const/4              v2, -1
+	9       (0000001e) if-le                v0, v2, +13
+
+getMargin-BB@0x22 : [ getMargin-BB@0x2a getMargin-BB@0x44 ]
+	10      (00000022) iget-object          v0, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	11      (00000026) if-eqz               v0, +f
+
+getMargin-BB@0x2a : [ getMargin-BB@0x3e getMargin-BB@0x44 ]
+	12      (0000002a) iget-object          v0, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	13      (0000002e) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	14      (00000032) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVisibility()I
+	15      (00000038) move-result          v0
+	16      (0000003a) if-ne                v0, v1, +5
+
+getMargin-BB@0x3e : 
+	17      (0000003e) iget                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mGoneMargin I
+	18      (00000042) return               v0
+
+getMargin-BB@0x44 : 
+	19      (00000044) iget                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mMargin I
+	20      (00000048) return               v0
+

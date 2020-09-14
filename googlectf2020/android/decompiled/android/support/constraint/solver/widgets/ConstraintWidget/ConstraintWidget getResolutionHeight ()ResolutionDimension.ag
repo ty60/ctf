@@ -1,0 +1,20 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->getResolutionHeight()Landroid/support/constraint/solver/widgets/ResolutionDimension; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.support.constraint.solver.widgets.ResolutionDimension
+
+getResolutionHeight-BB@0x0 : [ getResolutionHeight-BB@0x8 getResolutionHeight-BB@0x16 ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mResolutionHeight Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	1       (00000004) if-nez               v0, +9
+
+getResolutionHeight-BB@0x8 : [ getResolutionHeight-BB@0x16 ]
+	2       (00000008) new-instance         v0, Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	3       (0000000c) invoke-direct        v0, Landroid/support/constraint/solver/widgets/ResolutionDimension;-><init>()V
+	4       (00000012) iput-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mResolutionHeight Landroid/support/constraint/solver/widgets/ResolutionDimension;
+
+getResolutionHeight-BB@0x16 : 
+	5       (00000016) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mResolutionHeight Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	6       (0000001a) return-object        v0
+

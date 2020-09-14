@@ -1,0 +1,82 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->toString()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : [ toString-BB@0x12 toString-BB@0x44 ]
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) iget-object          v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mType Ljava/lang/String;
+	3       (0000000e) if-eqz               v1, +1b
+
+toString-BB@0x12 : [ toString-BB@0x48 ]
+	4       (00000012) new-instance         v1, Ljava/lang/StringBuilder;
+	5       (00000016) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001c) const-string         v2, 'type: '
+	7       (00000020) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000026) iget-object          v2, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mType Ljava/lang/String;
+	9       (0000002a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (00000030) const-string         v2, ' '
+	11      (00000034) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (0000003a) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	13      (00000040) move-result-object   v1
+	14      (00000042) goto                 +3
+
+toString-BB@0x44 : [ toString-BB@0x48 ]
+	15      (00000044) const-string         v1, ''
+
+toString-BB@0x48 : [ toString-BB@0x56 toString-BB@0x88 ]
+	16      (00000048) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (0000004e) iget-object          v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDebugName Ljava/lang/String;
+	18      (00000052) if-eqz               v1, +1b
+
+toString-BB@0x56 : [ toString-BB@0x8c ]
+	19      (00000056) new-instance         v1, Ljava/lang/StringBuilder;
+	20      (0000005a) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	21      (00000060) const-string         v2, 'id: '
+	22      (00000064) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (0000006a) iget-object          v2, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDebugName Ljava/lang/String;
+	24      (0000006e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (00000074) const-string         v2, ' '
+	26      (00000078) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (0000007e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	28      (00000084) move-result-object   v1
+	29      (00000086) goto                 +3
+
+toString-BB@0x88 : [ toString-BB@0x8c ]
+	30      (00000088) const-string         v1, ''
+
+toString-BB@0x8c : 
+	31      (0000008c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	32      (00000092) const-string         v1, '('
+	33      (00000096) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	34      (0000009c) iget                 v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mX I
+	35      (000000a0) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	36      (000000a6) const-string         v1, ', '
+	37      (000000aa) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	38      (000000b0) iget                 v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mY I
+	39      (000000b4) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	40      (000000ba) const-string         v1, ') - ('
+	41      (000000be) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	42      (000000c4) iget                 v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWidth I
+	43      (000000c8) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	44      (000000ce) const-string         v1, ' x '
+	45      (000000d2) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	46      (000000d8) iget                 v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHeight I
+	47      (000000dc) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	48      (000000e2) const-string         v1, ') wrap: ('
+	49      (000000e6) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	50      (000000ec) iget                 v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWrapWidth I
+	51      (000000f0) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	52      (000000f6) const-string         v1, ' x '
+	53      (000000fa) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	54      (00000100) iget                 v1, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWrapHeight I
+	55      (00000104) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	56      (0000010a) const-string         v1, ')'
+	57      (0000010e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	58      (00000114) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	59      (0000011a) move-result-object   v0
+	60      (0000011c) return-object        v0
+

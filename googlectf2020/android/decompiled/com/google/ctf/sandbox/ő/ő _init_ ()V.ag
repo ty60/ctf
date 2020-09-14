@@ -1,0 +1,40 @@
+# Lcom/google/ctf/sandbox/ő;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v14
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x6 ]
+	0       (00000000) invoke-direct        v14, Landroid/app/Activity;-><init>()V
+
+<init>-BB@0x6 : [ <init>-BB@0x2e ]
+	1       (00000006) const/16             v0, 12
+	2       (0000000a) new-array            v1, v0, [J
+	3       (0000000e) fill-array-data      v1, +11 (0x30)
+	4       (00000014) iput-object          v1, v14, Lcom/google/ctf/sandbox/ő;->class [J
+	5       (00000018) new-array            v0, v0, [J
+	6       (0000001c) iput-object          v0, v14, Lcom/google/ctf/sandbox/ő;->ő [J
+	7       (00000020) const/4              v0, 0
+	8       (00000022) iput                 v0, v14, Lcom/google/ctf/sandbox/ő;->ő I
+	9       (00000026) goto/16              +4
+	6:25
+	(Ljava/lang/Exception; -> 6 <init>-BB@0x6)
+	(Ljava/lang/Error; -> 6 <init>-BB@0x6)
+	(I -> 2e <init>-BB@0x2e)
+
+<init>-BB@0x2a : [ <init>-BB@0x2e ]
+	10      (0000002a) const/16             v0, 12
+	2a:97
+	(Ljava/lang/Exception; -> 6 <init>-BB@0x6)
+
+<init>-BB@0x2e : 
+	11      (0000002e) return-void          
+	2a:97
+	(Ljava/lang/Exception; -> 6 <init>-BB@0x6)
+
+<init>-BB@0x30 : 
+	12      (00000030) fill-array-data-payload bytearray(b'k\x98q\x02\x00\x00\x00\x00\xc99B\xa6\x00\x00\x00\x00K\xed\x1d\'\x00\x00\x00\x00Ca\x18\x01\x00\x00\x00\x00\x9f"\xfa\xc0\x00\x00\x00\x00\xbf\x10\x0ei\x00\x00\x00\x00W\xa2\xdc(\x00\x00\x00\x00\xd1\x99\xc6\x16\x00\x00\x00\x00\xfdo\xa5U\x00\x00\x00\x00\xa1p\xb8~\x00\x00\x00\x00\x9fy\xc9\xc5\x00\x00\x00\x00e\x8e\x83/\x00\x00\x00\x00') | \x6b\x98\x71\x02\x00\x00\x00\x00\xc9\x39\x42\xa6\x00\x00\x00\x00\x4b\xed\x1d\x27\x00\x00\x00\x00\x43\x61\x18\x01\x00\x00\x00\x00\x9f\x22\xfa\xc0\x00\x00\x00\x00\xbf\x10\x0e\x69\x00\x00\x00\x00\x57\xa2\xdc\x28\x00\x00\x00\x00\xd1\x99\xc6\x16\x00\x00\x00\x00\xfd\x6f\xa5\x55\x00\x00\x00\x00\xa1\x70\xb8\x7e\x00\x00\x00\x00\x9f\x79\xc9\xc5\x00\x00\x00\x00\x65\x8e\x83\x2f\x00\x00\x00\x00
+	2a:97
+	(Ljava/lang/Exception; -> 6 <init>-BB@0x6)
+

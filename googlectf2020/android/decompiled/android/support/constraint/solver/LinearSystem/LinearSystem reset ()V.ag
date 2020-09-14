@@ -1,0 +1,72 @@
+# Landroid/support/constraint/solver/LinearSystem;->reset()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+reset-BB@0x0 : [ reset-BB@0x4 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) move                 v1, v0
+
+reset-BB@0x4 : [ reset-BB@0x12 reset-BB@0x2e ]
+	2       (00000004) iget-object          v2, v4, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	3       (00000008) iget-object          v2, v2, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	4       (0000000c) array-length         v2, v2
+	5       (0000000e) if-ge                v1, v2, +10
+
+reset-BB@0x12 : [ reset-BB@0x22 reset-BB@0x28 ]
+	6       (00000012) iget-object          v2, v4, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	7       (00000016) iget-object          v2, v2, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	8       (0000001a) aget-object          v2, v2, v1
+	9       (0000001e) if-eqz               v2, +5
+
+reset-BB@0x22 : [ reset-BB@0x28 ]
+	10      (00000022) invoke-virtual       v2, Landroid/support/constraint/solver/SolverVariable;->reset()V
+
+reset-BB@0x28 : [ reset-BB@0x4 ]
+	11      (00000028) add-int/lit8         v1, v1, 1
+	12      (0000002c) goto                 -14
+
+reset-BB@0x2e : [ reset-BB@0x60 reset-BB@0x6a ]
+	13      (0000002e) iget-object          v1, v4, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	14      (00000032) iget-object          v1, v1, Landroid/support/constraint/solver/Cache;->solverVariablePool Landroid/support/constraint/solver/Pools$Pool;
+	15      (00000036) iget-object          v2, v4, Landroid/support/constraint/solver/LinearSystem;->mPoolVariables [Landroid/support/constraint/solver/SolverVariable;
+	16      (0000003a) iget                 v3, v4, Landroid/support/constraint/solver/LinearSystem;->mPoolVariablesCount I
+	17      (0000003e) invoke-interface     v1, v2, v3, Landroid/support/constraint/solver/Pools$Pool;->releaseAll([Ljava/lang/Object; I)V
+	18      (00000044) iput                 v0, v4, Landroid/support/constraint/solver/LinearSystem;->mPoolVariablesCount I
+	19      (00000048) iget-object          v1, v4, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	20      (0000004c) iget-object          v1, v1, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	21      (00000050) const/4              v2, 0
+	22      (00000052) invoke-static        v1, v2, Ljava/util/Arrays;->fill([Ljava/lang/Object; Ljava/lang/Object;)V
+	23      (00000058) iget-object          v1, v4, Landroid/support/constraint/solver/LinearSystem;->mVariables Ljava/util/HashMap;
+	24      (0000005c) if-eqz               v1, +7
+
+reset-BB@0x60 : [ reset-BB@0x6a ]
+	25      (00000060) iget-object          v1, v4, Landroid/support/constraint/solver/LinearSystem;->mVariables Ljava/util/HashMap;
+	26      (00000064) invoke-virtual       v1, Ljava/util/HashMap;->clear()V
+
+reset-BB@0x6a : [ reset-BB@0x80 ]
+	27      (0000006a) iput                 v0, v4, Landroid/support/constraint/solver/LinearSystem;->mVariablesID I
+	28      (0000006e) iget-object          v1, v4, Landroid/support/constraint/solver/LinearSystem;->mGoal Landroid/support/constraint/solver/LinearSystem$Row;
+	29      (00000072) invoke-interface     v1, Landroid/support/constraint/solver/LinearSystem$Row;->clear()V
+	30      (00000078) const/4              v1, 1
+	31      (0000007a) iput                 v1, v4, Landroid/support/constraint/solver/LinearSystem;->mNumColumns I
+	32      (0000007e) move                 v1, v0
+
+reset-BB@0x80 : [ reset-BB@0x88 reset-BB@0x9a ]
+	33      (00000080) iget                 v2, v4, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	34      (00000084) if-ge                v1, v2, +b
+
+reset-BB@0x88 : [ reset-BB@0x80 ]
+	35      (00000088) iget-object          v2, v4, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	36      (0000008c) aget-object          v2, v2, v1
+	37      (00000090) iput-boolean         v0, v2, Landroid/support/constraint/solver/ArrayRow;->used Z
+	38      (00000094) add-int/lit8         v1, v1, 1
+	39      (00000098) goto                 -c
+
+reset-BB@0x9a : 
+	40      (0000009a) invoke-direct        v4, Landroid/support/constraint/solver/LinearSystem;->releaseRows()V
+	41      (000000a0) iput                 v0, v4, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	42      (000000a4) return-void          
+

@@ -1,0 +1,33 @@
+# Landroid/support/constraint/solver/ArrayLinkedVariables;->invert()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+invert-BB@0x0 : [ invert-BB@0x6 ]
+	0       (00000000) iget                 v0, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	1       (00000004) const/4              v1, 0
+
+invert-BB@0x6 : [ invert-BB@0xc invert-BB@0x34 ]
+	2       (00000006) const/4              v2, -1
+	3       (00000008) if-eq                v0, v2, +16
+
+invert-BB@0xc : [ invert-BB@0x14 invert-BB@0x34 ]
+	4       (0000000c) iget                 v2, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	5       (00000010) if-ge                v1, v2, +12
+
+invert-BB@0x14 : [ invert-BB@0x6 ]
+	6       (00000014) iget-object          v2, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	7       (00000018) aget                 v3, v2, v0
+	8       (0000001c) const/high16         v4, -16512 # [-1.0]
+	9       (00000020) mul-float/2addr      v3, v4
+	10      (00000022) aput                 v3, v2, v0
+	11      (00000026) iget-object          v2, v5, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	12      (0000002a) aget                 v0, v2, v0
+	13      (0000002e) add-int/lit8         v1, v1, 1
+	14      (00000032) goto                 -16
+
+invert-BB@0x34 : 
+	15      (00000034) return-void          
+

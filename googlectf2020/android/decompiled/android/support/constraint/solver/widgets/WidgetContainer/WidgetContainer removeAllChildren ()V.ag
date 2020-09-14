@@ -1,0 +1,12 @@
+# Landroid/support/constraint/solver/widgets/WidgetContainer;->removeAllChildren()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+removeAllChildren-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/WidgetContainer;->mChildren Ljava/util/ArrayList;
+	1       (00000004) invoke-virtual       v0, Ljava/util/ArrayList;->clear()V
+	2       (0000000a) return-void          
+

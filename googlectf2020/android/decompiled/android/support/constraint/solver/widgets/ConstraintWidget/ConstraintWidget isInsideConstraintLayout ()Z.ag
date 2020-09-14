@@ -1,0 +1,35 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->isInsideConstraintLayout()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+isInsideConstraintLayout-BB@0x0 : [ isInsideConstraintLayout-BB@0xe isInsideConstraintLayout-BB@0x10 ]
+	0       (00000000) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) if-nez               v0, +3
+
+isInsideConstraintLayout-BB@0xe : 
+	4       (0000000e) return               v1
+
+isInsideConstraintLayout-BB@0x10 : [ isInsideConstraintLayout-BB@0x14 isInsideConstraintLayout-BB@0x2a ]
+	5       (00000010) if-eqz               v0, +d
+
+isInsideConstraintLayout-BB@0x14 : [ isInsideConstraintLayout-BB@0x1c isInsideConstraintLayout-BB@0x20 ]
+	6       (00000014) instance-of          v2, v0, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	7       (00000018) if-eqz               v2, +4
+
+isInsideConstraintLayout-BB@0x1c : 
+	8       (0000001c) const/4              v1, 1
+	9       (0000001e) return               v1
+
+isInsideConstraintLayout-BB@0x20 : [ isInsideConstraintLayout-BB@0x10 ]
+	10      (00000020) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	11      (00000026) move-result-object   v0
+	12      (00000028) goto                 -c
+
+isInsideConstraintLayout-BB@0x2a : 
+	13      (0000002a) return               v1
+

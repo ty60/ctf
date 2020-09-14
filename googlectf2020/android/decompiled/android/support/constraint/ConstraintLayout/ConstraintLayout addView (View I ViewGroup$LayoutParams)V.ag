@@ -1,0 +1,22 @@
+# Landroid/support/constraint/ConstraintLayout;->addView(Landroid/view/View; I Landroid/view/ViewGroup$LayoutParams;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+# - v4:int
+# - v5:android.view.ViewGroup$LayoutParams
+#
+# - return:void
+
+addView-BB@0x0 : [ addView-BB@0x12 addView-BB@0x18 ]
+	0       (00000000) invoke-super         v2, v3, v4, v5, Landroid/view/ViewGroup;->addView(Landroid/view/View; I Landroid/view/ViewGroup$LayoutParams;)V
+	1       (00000006) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	2       (0000000a) const/16             v1, 14
+	3       (0000000e) if-ge                v0, v1, +5
+
+addView-BB@0x12 : [ addView-BB@0x18 ]
+	4       (00000012) invoke-virtual       v2, v3, Landroid/support/constraint/ConstraintLayout;->onViewAdded(Landroid/view/View;)V
+
+addView-BB@0x18 : 
+	5       (00000018) return-void          
+

@@ -1,0 +1,46 @@
+# Landroid/support/constraint/solver/LinearSystem;->createExtraVariable()Landroid/support/constraint/solver/SolverVariable; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:android.support.constraint.solver.SolverVariable
+
+createExtraVariable-BB@0x0 : [ createExtraVariable-BB@0x8 createExtraVariable-BB@0x1a ]
+	0       (00000000) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	1       (00000004) if-eqz               v0, +b
+
+createExtraVariable-BB@0x8 : [ createExtraVariable-BB@0x1a ]
+	2       (00000008) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	3       (0000000c) iget-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->extravariables J
+	4       (00000010) const-wide/16        v3, 1 # [1.0]
+	5       (00000014) add-long/2addr       v1, v3
+	6       (00000016) iput-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->extravariables J
+
+createExtraVariable-BB@0x1a : [ createExtraVariable-BB@0x2a createExtraVariable-BB@0x30 ]
+	7       (0000001a) iget                 v0, v5, Landroid/support/constraint/solver/LinearSystem;->mNumColumns I
+	8       (0000001e) add-int/lit8         v0, v0, 1
+	9       (00000022) iget                 v1, v5, Landroid/support/constraint/solver/LinearSystem;->mMaxColumns I
+	10      (00000026) if-lt                v0, v1, +5
+
+createExtraVariable-BB@0x2a : [ createExtraVariable-BB@0x30 ]
+	11      (0000002a) invoke-direct        v5, Landroid/support/constraint/solver/LinearSystem;->increaseTableSize()V
+
+createExtraVariable-BB@0x30 : 
+	12      (00000030) sget-object          v0, Landroid/support/constraint/solver/SolverVariable$Type;->SLACK Landroid/support/constraint/solver/SolverVariable$Type;
+	13      (00000034) const/4              v1, 0
+	14      (00000036) invoke-direct        v5, v0, v1, Landroid/support/constraint/solver/LinearSystem;->acquireSolverVariable(Landroid/support/constraint/solver/SolverVariable$Type; Ljava/lang/String;)Landroid/support/constraint/solver/SolverVariable;
+	15      (0000003c) move-result-object   v0
+	16      (0000003e) iget                 v1, v5, Landroid/support/constraint/solver/LinearSystem;->mVariablesID I
+	17      (00000042) add-int/lit8         v1, v1, 1
+	18      (00000046) iput                 v1, v5, Landroid/support/constraint/solver/LinearSystem;->mVariablesID I
+	19      (0000004a) iget                 v1, v5, Landroid/support/constraint/solver/LinearSystem;->mNumColumns I
+	20      (0000004e) add-int/lit8         v1, v1, 1
+	21      (00000052) iput                 v1, v5, Landroid/support/constraint/solver/LinearSystem;->mNumColumns I
+	22      (00000056) iget                 v1, v5, Landroid/support/constraint/solver/LinearSystem;->mVariablesID I
+	23      (0000005a) iput                 v1, v0, Landroid/support/constraint/solver/SolverVariable;->id I
+	24      (0000005e) iget-object          v1, v5, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	25      (00000062) iget-object          v1, v1, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	26      (00000066) iget                 v2, v5, Landroid/support/constraint/solver/LinearSystem;->mVariablesID I
+	27      (0000006a) aput-object          v0, v1, v2
+	28      (0000006e) return-object        v0
+

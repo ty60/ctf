@@ -1,0 +1,52 @@
+# Landroid/support/constraint/solver/widgets/ResolutionAnchor;->sType(I)Ljava/lang/String; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:java.lang.String
+
+sType-BB@0x0 : [ sType-BB@0x6 sType-BB@0xc ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) if-ne                v2, v0, +5
+
+sType-BB@0x6 : 
+	2       (00000006) const-string         v0, 'DIRECT'
+	3       (0000000a) return-object        v0
+
+sType-BB@0xc : [ sType-BB@0x12 sType-BB@0x18 ]
+	4       (0000000c) const/4              v0, 2
+	5       (0000000e) if-ne                v2, v0, +5
+
+sType-BB@0x12 : 
+	6       (00000012) const-string         v0, 'CENTER'
+	7       (00000016) return-object        v0
+
+sType-BB@0x18 : [ sType-BB@0x1e sType-BB@0x24 ]
+	8       (00000018) const/4              v0, 3
+	9       (0000001a) if-ne                v2, v0, +5
+
+sType-BB@0x1e : 
+	10      (0000001e) const-string         v0, 'MATCH'
+	11      (00000022) return-object        v0
+
+sType-BB@0x24 : [ sType-BB@0x2a sType-BB@0x30 ]
+	12      (00000024) const/4              v0, 4
+	13      (00000026) if-ne                v2, v0, +5
+
+sType-BB@0x2a : 
+	14      (0000002a) const-string         v0, 'CHAIN'
+	15      (0000002e) return-object        v0
+
+sType-BB@0x30 : [ sType-BB@0x36 sType-BB@0x3c ]
+	16      (00000030) const/4              v0, 5
+	17      (00000032) if-ne                v2, v0, +5
+
+sType-BB@0x36 : 
+	18      (00000036) const-string         v0, 'BARRIER'
+	19      (0000003a) return-object        v0
+
+sType-BB@0x3c : 
+	20      (0000003c) const-string         v0, 'UNCONNECTED'
+	21      (00000040) return-object        v0
+

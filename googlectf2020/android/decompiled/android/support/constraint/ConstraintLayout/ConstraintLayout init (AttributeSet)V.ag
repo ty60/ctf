@@ -1,0 +1,130 @@
+# Landroid/support/constraint/ConstraintLayout;->init(Landroid/util/AttributeSet;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.util.AttributeSet
+#
+# - return:void
+
+init-BB@0x0 : [ init-BB@0x26 init-BB@0x11c ]
+	0       (00000000) iget-object          v0, v9, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	1       (00000004) invoke-virtual       v0, v9, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setCompanionWidget(Ljava/lang/Object;)V
+	2       (0000000a) iget-object          v0, v9, Landroid/support/constraint/ConstraintLayout;->mChildrenByIds Landroid/util/SparseArray;
+	3       (0000000e) invoke-virtual       v9, Landroid/support/constraint/ConstraintLayout;->getId()I
+	4       (00000014) move-result          v1
+	5       (00000016) invoke-virtual       v0, v1, v9, Landroid/util/SparseArray;->put(I Ljava/lang/Object;)V
+	6       (0000001c) const/4              v0, 0
+	7       (0000001e) iput-object          v0, v9, Landroid/support/constraint/ConstraintLayout;->mConstraintSet Landroid/support/constraint/ConstraintSet;
+	8       (00000022) if-eqz               v10, +7d
+
+init-BB@0x26 : [ init-BB@0x46 ]
+	9       (00000026) invoke-virtual       v9, Landroid/support/constraint/ConstraintLayout;->getContext()Landroid/content/Context;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) sget-object          v2, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout [I
+	12      (00000032) invoke-virtual       v1, v10, v2, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+	13      (00000038) move-result-object   v1
+	14      (0000003a) invoke-virtual       v1, Landroid/content/res/TypedArray;->getIndexCount()I
+	15      (00000040) move-result          v2
+	16      (00000042) const/4              v3, 0
+	17      (00000044) move                 v4, v3
+
+init-BB@0x46 : [ init-BB@0x4a init-BB@0x116 ]
+	18      (00000046) if-ge                v4, v2, +68
+
+init-BB@0x4a : [ init-BB@0x5a init-BB@0x6c ]
+	19      (0000004a) invoke-virtual       v1, v4, Landroid/content/res/TypedArray;->getIndex(I)I
+	20      (00000050) move-result          v5
+	21      (00000052) sget                 v6, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout_android_minWidth I
+	22      (00000056) if-ne                v5, v6, +b
+
+init-BB@0x5a : [ init-BB@0x110 ]
+	23      (0000005a) iget                 v6, v9, Landroid/support/constraint/ConstraintLayout;->mMinWidth I
+	24      (0000005e) invoke-virtual       v1, v5, v6, Landroid/content/res/TypedArray;->getDimensionPixelOffset(I I)I
+	25      (00000064) move-result          v6
+	26      (00000066) iput                 v6, v9, Landroid/support/constraint/ConstraintLayout;->mMinWidth I
+	27      (0000006a) goto                 +53
+
+init-BB@0x6c : [ init-BB@0x74 init-BB@0x86 ]
+	28      (0000006c) sget                 v6, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout_android_minHeight I
+	29      (00000070) if-ne                v5, v6, +b
+
+init-BB@0x74 : [ init-BB@0x110 ]
+	30      (00000074) iget                 v6, v9, Landroid/support/constraint/ConstraintLayout;->mMinHeight I
+	31      (00000078) invoke-virtual       v1, v5, v6, Landroid/content/res/TypedArray;->getDimensionPixelOffset(I I)I
+	32      (0000007e) move-result          v6
+	33      (00000080) iput                 v6, v9, Landroid/support/constraint/ConstraintLayout;->mMinHeight I
+	34      (00000084) goto                 +46
+
+init-BB@0x86 : [ init-BB@0x8e init-BB@0xa0 ]
+	35      (00000086) sget                 v6, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout_android_maxWidth I
+	36      (0000008a) if-ne                v5, v6, +b
+
+init-BB@0x8e : [ init-BB@0x110 ]
+	37      (0000008e) iget                 v6, v9, Landroid/support/constraint/ConstraintLayout;->mMaxWidth I
+	38      (00000092) invoke-virtual       v1, v5, v6, Landroid/content/res/TypedArray;->getDimensionPixelOffset(I I)I
+	39      (00000098) move-result          v6
+	40      (0000009a) iput                 v6, v9, Landroid/support/constraint/ConstraintLayout;->mMaxWidth I
+	41      (0000009e) goto                 +39
+
+init-BB@0xa0 : [ init-BB@0xa8 init-BB@0xba ]
+	42      (000000a0) sget                 v6, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout_android_maxHeight I
+	43      (000000a4) if-ne                v5, v6, +b
+
+init-BB@0xa8 : [ init-BB@0x110 ]
+	44      (000000a8) iget                 v6, v9, Landroid/support/constraint/ConstraintLayout;->mMaxHeight I
+	45      (000000ac) invoke-virtual       v1, v5, v6, Landroid/content/res/TypedArray;->getDimensionPixelOffset(I I)I
+	46      (000000b2) move-result          v6
+	47      (000000b4) iput                 v6, v9, Landroid/support/constraint/ConstraintLayout;->mMaxHeight I
+	48      (000000b8) goto                 +2c
+
+init-BB@0xba : [ init-BB@0xc2 init-BB@0xd4 ]
+	49      (000000ba) sget                 v6, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout_layout_optimizationLevel I
+	50      (000000be) if-ne                v5, v6, +b
+
+init-BB@0xc2 : [ init-BB@0x110 ]
+	51      (000000c2) iget                 v6, v9, Landroid/support/constraint/ConstraintLayout;->mOptimizationLevel I
+	52      (000000c6) invoke-virtual       v1, v5, v6, Landroid/content/res/TypedArray;->getInt(I I)I
+	53      (000000cc) move-result          v6
+	54      (000000ce) iput                 v6, v9, Landroid/support/constraint/ConstraintLayout;->mOptimizationLevel I
+	55      (000000d2) goto                 +1f
+
+init-BB@0xd4 : [ init-BB@0xdc init-BB@0x110 ]
+	56      (000000d4) sget                 v6, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout_constraintSet I
+	57      (000000d8) if-ne                v5, v6, +1c
+
+init-BB@0xdc : [ init-BB@0xe4 ]
+	58      (000000dc) invoke-virtual       v1, v5, v3, Landroid/content/res/TypedArray;->getResourceId(I I)I
+	59      (000000e2) move-result          v6
+
+init-BB@0xe4 : [ init-BB@0x10c ]
+	60      (000000e4) new-instance         v7, Landroid/support/constraint/ConstraintSet;
+	61      (000000e8) invoke-direct        v7, Landroid/support/constraint/ConstraintSet;-><init>()V
+	62      (000000ee) iput-object          v7, v9, Landroid/support/constraint/ConstraintLayout;->mConstraintSet Landroid/support/constraint/ConstraintSet;
+	63      (000000f2) iget-object          v7, v9, Landroid/support/constraint/ConstraintLayout;->mConstraintSet Landroid/support/constraint/ConstraintSet;
+	64      (000000f6) invoke-virtual       v9, Landroid/support/constraint/ConstraintLayout;->getContext()Landroid/content/Context;
+	65      (000000fc) move-result-object   v8
+	66      (000000fe) invoke-virtual       v7, v8, v6, Landroid/support/constraint/ConstraintSet;->load(Landroid/content/Context; I)V
+	67      (00000104) goto                 +4
+	e4:103
+	(Landroid/content/res/Resources$NotFoundException; -> 106 init-BB@0x106)
+
+init-BB@0x106 : [ init-BB@0x10c ]
+	68      (00000106) move-exception       v7
+	69      (00000108) iput-object          v0, v9, Landroid/support/constraint/ConstraintLayout;->mConstraintSet Landroid/support/constraint/ConstraintSet;
+
+init-BB@0x10c : [ init-BB@0x110 ]
+	70      (0000010c) iput                 v6, v9, Landroid/support/constraint/ConstraintLayout;->mConstraintSetId I
+
+init-BB@0x110 : [ init-BB@0x46 ]
+	71      (00000110) add-int/lit8         v4, v4, 1
+	72      (00000114) goto                 -67
+
+init-BB@0x116 : [ init-BB@0x11c ]
+	73      (00000116) invoke-virtual       v1, Landroid/content/res/TypedArray;->recycle()V
+
+init-BB@0x11c : 
+	74      (0000011c) iget-object          v0, v9, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	75      (00000120) iget                 v1, v9, Landroid/support/constraint/ConstraintLayout;->mOptimizationLevel I
+	76      (00000124) invoke-virtual       v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->setOptimizationLevel(I)V
+	77      (0000012a) return-void          
+

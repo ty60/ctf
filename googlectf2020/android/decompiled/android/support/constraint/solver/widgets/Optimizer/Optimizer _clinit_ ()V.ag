@@ -1,0 +1,13 @@
+# Landroid/support/constraint/solver/widgets/Optimizer;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v0, 3
+	1       (00000002) new-array            v0, v0, [Z
+	2       (00000006) sput-object          v0, Landroid/support/constraint/solver/widgets/Optimizer;->flags [Z
+	3       (0000000a) return-void          
+

@@ -1,0 +1,31 @@
+# Landroid/support/constraint/solver/widgets/Guideline;->inferRelativeEndPosition()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+inferRelativeEndPosition-BB@0x0 : [ inferRelativeEndPosition-BB@0x22 inferRelativeEndPosition-BB@0x3e ]
+	0       (00000000) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/Guideline;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	3       (0000000e) move-result          v0
+	4       (00000010) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/Guideline;->getX()I
+	5       (00000016) move-result          v1
+	6       (00000018) sub-int/2addr        v0, v1
+	7       (0000001a) iget                 v1, v3, Landroid/support/constraint/solver/widgets/Guideline;->mOrientation I
+	8       (0000001e) if-nez               v1, +10
+
+inferRelativeEndPosition-BB@0x22 : [ inferRelativeEndPosition-BB@0x3e ]
+	9       (00000022) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/Guideline;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	10      (00000028) move-result-object   v1
+	11      (0000002a) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	12      (00000030) move-result          v1
+	13      (00000032) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/Guideline;->getY()I
+	14      (00000038) move-result          v2
+	15      (0000003a) sub-int              v0, v1, v2
+
+inferRelativeEndPosition-BB@0x3e : 
+	16      (0000003e) invoke-virtual       v3, v0, Landroid/support/constraint/solver/widgets/Guideline;->setGuideEnd(I)V
+	17      (00000044) return-void          
+

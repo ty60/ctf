@@ -1,0 +1,39 @@
+# Landroid/support/constraint/solver/widgets/Rectangle;->contains(I I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+#
+# - return:boolean
+
+contains-BB@0x0 : [ contains-BB@0x8 contains-BB@0x30 ]
+	0       (00000000) iget                 v0, v2, Landroid/support/constraint/solver/widgets/Rectangle;->x I
+	1       (00000004) if-lt                v3, v0, +16
+
+contains-BB@0x8 : [ contains-BB@0x16 contains-BB@0x30 ]
+	2       (00000008) iget                 v0, v2, Landroid/support/constraint/solver/widgets/Rectangle;->x I
+	3       (0000000c) iget                 v1, v2, Landroid/support/constraint/solver/widgets/Rectangle;->width I
+	4       (00000010) add-int/2addr        v0, v1
+	5       (00000012) if-ge                v3, v0, +f
+
+contains-BB@0x16 : [ contains-BB@0x1e contains-BB@0x30 ]
+	6       (00000016) iget                 v0, v2, Landroid/support/constraint/solver/widgets/Rectangle;->y I
+	7       (0000001a) if-lt                v4, v0, +b
+
+contains-BB@0x1e : [ contains-BB@0x2c contains-BB@0x30 ]
+	8       (0000001e) iget                 v0, v2, Landroid/support/constraint/solver/widgets/Rectangle;->y I
+	9       (00000022) iget                 v1, v2, Landroid/support/constraint/solver/widgets/Rectangle;->height I
+	10      (00000026) add-int/2addr        v0, v1
+	11      (00000028) if-ge                v4, v0, +4
+
+contains-BB@0x2c : [ contains-BB@0x32 ]
+	12      (0000002c) const/4              v0, 1
+	13      (0000002e) goto                 +2
+
+contains-BB@0x30 : [ contains-BB@0x32 ]
+	14      (00000030) const/4              v0, 0
+
+contains-BB@0x32 : 
+	15      (00000032) return               v0
+

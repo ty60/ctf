@@ -1,0 +1,23 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->optimizeFor(I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:boolean
+
+optimizeFor-BB@0x0 : [ optimizeFor-BB@0xa optimizeFor-BB@0xe ]
+	0       (00000000) iget                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mOptimizationLevel I
+	1       (00000004) and-int/2addr        v0, v2
+	2       (00000006) if-ne                v0, v2, +4
+
+optimizeFor-BB@0xa : [ optimizeFor-BB@0x10 ]
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) goto                 +2
+
+optimizeFor-BB@0xe : [ optimizeFor-BB@0x10 ]
+	5       (0000000e) const/4              v0, 0
+
+optimizeFor-BB@0x10 : 
+	6       (00000010) return               v0
+

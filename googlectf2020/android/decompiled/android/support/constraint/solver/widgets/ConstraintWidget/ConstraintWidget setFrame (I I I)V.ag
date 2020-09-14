@@ -1,0 +1,28 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setFrame(I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+setFrame-BB@0x0 : [ setFrame-BB@0x6 setFrame-BB@0xe ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) if-nez               v4, +6
+
+setFrame-BB@0x6 : [ setFrame-BB@0x18 ]
+	2       (00000006) invoke-virtual       v1, v2, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalDimension(I I)V
+	3       (0000000c) goto                 +6
+
+setFrame-BB@0xe : [ setFrame-BB@0x12 setFrame-BB@0x18 ]
+	4       (0000000e) if-ne                v4, v0, +5
+
+setFrame-BB@0x12 : [ setFrame-BB@0x18 ]
+	5       (00000012) invoke-virtual       v1, v2, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setVerticalDimension(I I)V
+
+setFrame-BB@0x18 : 
+	6       (00000018) iput-boolean         v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mOptimizerMeasured Z
+	7       (0000001c) return-void          
+

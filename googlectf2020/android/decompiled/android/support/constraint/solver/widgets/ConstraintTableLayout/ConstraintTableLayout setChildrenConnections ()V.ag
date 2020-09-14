@@ -1,0 +1,155 @@
+# Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->setChildrenConnections()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v15
+#
+# - return:void
+
+setChildrenConnections-BB@0x0 : [ setChildrenConnections-BB@0x10 ]
+	0       (00000000) iget-object          v0, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mChildren Ljava/util/ArrayList;
+	1       (00000004) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) const/4              v2, 0
+
+setChildrenConnections-BB@0x10 : [ setChildrenConnections-BB@0x14 setChildrenConnections-BB@0x1ce ]
+	5       (00000010) if-ge                v2, v0, +df
+
+setChildrenConnections-BB@0x14 : [ setChildrenConnections-BB@0x98 setChildrenConnections-BB@0xbc ]
+	6       (00000014) iget-object          v3, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mChildren Ljava/util/ArrayList;
+	7       (00000018) invoke-virtual       v3, v2, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	8       (0000001e) move-result-object   v3
+	9       (00000020) check-cast           v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	10      (00000024) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getContainerItemSkip()I
+	11      (0000002a) move-result          v4
+	12      (0000002c) add-int/2addr        v1, v4
+	13      (0000002e) iget                 v4, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mNumCols I
+	14      (00000032) rem-int              v4, v1, v4
+	15      (00000036) iget                 v5, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mNumCols I
+	16      (0000003a) div-int              v5, v1, v5
+	17      (0000003e) iget-object          v6, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mHorizontalSlices Ljava/util/ArrayList;
+	18      (00000042) invoke-virtual       v6, v5, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	19      (00000048) move-result-object   v6
+	20      (0000004a) check-cast           v6, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$HorizontalSlice;
+	21      (0000004e) iget-object          v7, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mVerticalSlices Ljava/util/ArrayList;
+	22      (00000052) invoke-virtual       v7, v4, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	23      (00000058) move-result-object   v7
+	24      (0000005a) check-cast           v7, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$VerticalSlice;
+	25      (0000005e) iget-object          v8, v7, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$VerticalSlice;->left Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	26      (00000062) iget-object          v9, v7, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$VerticalSlice;->right Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	27      (00000066) iget-object          v10, v6, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$HorizontalSlice;->top Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	28      (0000006a) iget-object          v11, v6, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$HorizontalSlice;->bottom Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	29      (0000006e) sget-object          v12, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->LEFT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	30      (00000072) invoke-virtual       v3, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	31      (00000078) move-result-object   v12
+	32      (0000007a) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->LEFT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	33      (0000007e) invoke-virtual       v8, v13, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	34      (00000084) move-result-object   v13
+	35      (00000086) iget                 v14, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mPadding I
+	36      (0000008a) invoke-virtual       v12, v13, v14, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->connect(Landroid/support/constraint/solver/widgets/ConstraintAnchor; I)Z
+	37      (00000090) instance-of          v12, v9, Landroid/support/constraint/solver/widgets/Guideline;
+	38      (00000094) if-eqz               v12, +14
+
+setChildrenConnections-BB@0x98 : [ setChildrenConnections-BB@0xde ]
+	39      (00000098) sget-object          v12, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->RIGHT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	40      (0000009c) invoke-virtual       v3, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	41      (000000a2) move-result-object   v12
+	42      (000000a4) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->LEFT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	43      (000000a8) invoke-virtual       v9, v13, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	44      (000000ae) move-result-object   v13
+	45      (000000b0) iget                 v14, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mPadding I
+	46      (000000b4) invoke-virtual       v12, v13, v14, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->connect(Landroid/support/constraint/solver/widgets/ConstraintAnchor; I)Z
+	47      (000000ba) goto                 +12
+
+setChildrenConnections-BB@0xbc : [ setChildrenConnections-BB@0xde ]
+	48      (000000bc) sget-object          v12, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->RIGHT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	49      (000000c0) invoke-virtual       v3, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	50      (000000c6) move-result-object   v12
+	51      (000000c8) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->RIGHT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	52      (000000cc) invoke-virtual       v9, v13, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	53      (000000d2) move-result-object   v13
+	54      (000000d4) iget                 v14, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mPadding I
+	55      (000000d8) invoke-virtual       v12, v13, v14, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->connect(Landroid/support/constraint/solver/widgets/ConstraintAnchor; I)Z
+
+setChildrenConnections-BB@0xde : [ D:setChildrenConnections-BB@0xe8 1:setChildrenConnections-BB@0x124 2:setChildrenConnections-BB@0xf6 3:setChildrenConnections-BB@0xea ]
+	56      (000000de) iget                 v12, v7, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$VerticalSlice;->alignment I
+	57      (000000e2) packed-switch        v12, +77 (0x1d0)
+
+setChildrenConnections-BB@0xe8 : [ setChildrenConnections-BB@0x152 ]
+	58      (000000e8) goto                 +35
+
+setChildrenConnections-BB@0xea : [ setChildrenConnections-BB@0x152 ]
+	59      (000000ea) sget-object          v12, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	60      (000000ee) invoke-virtual       v3, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
+	61      (000000f4) goto                 +2f
+
+setChildrenConnections-BB@0xf6 : [ setChildrenConnections-BB@0x152 ]
+	62      (000000f6) sget-object          v12, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->LEFT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	63      (000000fa) invoke-virtual       v3, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	64      (00000100) move-result-object   v12
+	65      (00000102) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;->WEAK Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;
+	66      (00000106) invoke-virtual       v12, v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->setStrength(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;)V
+	67      (0000010c) sget-object          v12, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->RIGHT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	68      (00000110) invoke-virtual       v3, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	69      (00000116) move-result-object   v12
+	70      (00000118) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;->STRONG Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;
+	71      (0000011c) invoke-virtual       v12, v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->setStrength(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;)V
+	72      (00000122) goto                 +18
+
+setChildrenConnections-BB@0x124 : [ setChildrenConnections-BB@0x152 ]
+	73      (00000124) sget-object          v12, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->LEFT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	74      (00000128) invoke-virtual       v3, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	75      (0000012e) move-result-object   v12
+	76      (00000130) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;->STRONG Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;
+	77      (00000134) invoke-virtual       v12, v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->setStrength(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;)V
+	78      (0000013a) sget-object          v12, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->RIGHT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	79      (0000013e) invoke-virtual       v3, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	80      (00000144) move-result-object   v12
+	81      (00000146) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;->WEAK Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;
+	82      (0000014a) invoke-virtual       v12, v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->setStrength(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength;)V
+	83      (00000150) nop                  
+
+setChildrenConnections-BB@0x152 : [ setChildrenConnections-BB@0x17c setChildrenConnections-BB@0x1a0 ]
+	84      (00000152) sget-object          v12, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->TOP Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	85      (00000156) invoke-virtual       v3, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	86      (0000015c) move-result-object   v12
+	87      (0000015e) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->TOP Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	88      (00000162) invoke-virtual       v10, v13, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	89      (00000168) move-result-object   v13
+	90      (0000016a) iget                 v14, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mPadding I
+	91      (0000016e) invoke-virtual       v12, v13, v14, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->connect(Landroid/support/constraint/solver/widgets/ConstraintAnchor; I)Z
+	92      (00000174) instance-of          v12, v11, Landroid/support/constraint/solver/widgets/Guideline;
+	93      (00000178) if-eqz               v12, +14
+
+setChildrenConnections-BB@0x17c : [ setChildrenConnections-BB@0x1c2 ]
+	94      (0000017c) sget-object          v12, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->BOTTOM Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	95      (00000180) invoke-virtual       v3, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	96      (00000186) move-result-object   v12
+	97      (00000188) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->TOP Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	98      (0000018c) invoke-virtual       v11, v13, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	99      (00000192) move-result-object   v13
+	100     (00000194) iget                 v14, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mPadding I
+	101     (00000198) invoke-virtual       v12, v13, v14, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->connect(Landroid/support/constraint/solver/widgets/ConstraintAnchor; I)Z
+	102     (0000019e) goto                 +12
+
+setChildrenConnections-BB@0x1a0 : [ setChildrenConnections-BB@0x1c2 ]
+	103     (000001a0) sget-object          v12, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->BOTTOM Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	104     (000001a4) invoke-virtual       v3, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	105     (000001aa) move-result-object   v12
+	106     (000001ac) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->BOTTOM Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	107     (000001b0) invoke-virtual       v11, v13, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchor(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;)Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	108     (000001b6) move-result-object   v13
+	109     (000001b8) iget                 v14, v15, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mPadding I
+	110     (000001bc) invoke-virtual       v12, v13, v14, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->connect(Landroid/support/constraint/solver/widgets/ConstraintAnchor; I)Z
+
+setChildrenConnections-BB@0x1c2 : [ setChildrenConnections-BB@0x10 ]
+	111     (000001c2) add-int/lit8         v1, v1, 1
+	112     (000001c6) add-int/lit8         v2, v2, 1
+	113     (000001ca) goto/16              -dd
+
+setChildrenConnections-BB@0x1ce : 
+	114     (000001ce) return-void          
+
+setChildrenConnections-BB@0x1d0 : 
+	115     (000001d0) packed-switch-payload 1 2 3
+

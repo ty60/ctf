@@ -1,0 +1,92 @@
+# Landroid/support/constraint/ConstraintSet;->removeFromVerticalChain(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:int
+#
+# - return:void
+
+removeFromVerticalChain-BB@0x0 : [ removeFromVerticalChain-BB@0x18 removeFromVerticalChain-BB@0xae ]
+	0       (00000000) iget-object          v0, v9, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	1       (00000004) invoke-static        v10, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-virtual       v0, v1, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-eqz               v0, +4d
+
+removeFromVerticalChain-BB@0x18 : [ removeFromVerticalChain-BB@0x3e removeFromVerticalChain-BB@0x42 ]
+	6       (00000018) iget-object          v0, v9, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	7       (0000001c) invoke-static        v10, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	8       (00000022) move-result-object   v1
+	9       (00000024) invoke-virtual       v0, v1, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) check-cast           v0, Landroid/support/constraint/ConstraintSet$Constraint;
+	12      (00000030) iget                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->topToBottom I
+	13      (00000034) iget                 v8, v0, Landroid/support/constraint/ConstraintSet$Constraint;->bottomToTop I
+	14      (00000038) const/4              v1, -1
+	15      (0000003a) if-ne                v7, v1, +4
+
+removeFromVerticalChain-BB@0x3e : [ removeFromVerticalChain-BB@0x42 removeFromVerticalChain-BB@0xae ]
+	16      (0000003e) if-eq                v8, v1, +38
+
+removeFromVerticalChain-BB@0x42 : [ removeFromVerticalChain-BB@0x46 removeFromVerticalChain-BB@0x6c ]
+	17      (00000042) if-eq                v7, v1, +15
+
+removeFromVerticalChain-BB@0x46 : [ removeFromVerticalChain-BB@0x4a removeFromVerticalChain-BB@0x6c ]
+	18      (00000046) if-eq                v8, v1, +13
+
+removeFromVerticalChain-BB@0x4a : [ removeFromVerticalChain-BB@0xae ]
+	19      (0000004a) const/4              v3, 4
+	20      (0000004c) const/4              v5, 3
+	21      (0000004e) const/4              v6, 0
+	22      (00000050) move-object          v1, v9
+	23      (00000052) move                 v2, v7
+	24      (00000054) move                 v4, v8
+	25      (00000056) invoke-virtual/range v1 ... v6, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	26      (0000005c) const/4              v3, 3
+	27      (0000005e) const/4              v5, 4
+	28      (00000060) move                 v2, v8
+	29      (00000062) move                 v4, v7
+	30      (00000064) invoke-virtual/range v1 ... v6, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	31      (0000006a) goto                 +22
+
+removeFromVerticalChain-BB@0x6c : [ removeFromVerticalChain-BB@0x70 removeFromVerticalChain-BB@0x74 ]
+	32      (0000006c) if-ne                v7, v1, +4
+
+removeFromVerticalChain-BB@0x70 : [ removeFromVerticalChain-BB@0x74 removeFromVerticalChain-BB@0xae ]
+	33      (00000070) if-eq                v8, v1, +1f
+
+removeFromVerticalChain-BB@0x74 : [ removeFromVerticalChain-BB@0x7c removeFromVerticalChain-BB@0x92 ]
+	34      (00000074) iget                 v2, v0, Landroid/support/constraint/ConstraintSet$Constraint;->bottomToBottom I
+	35      (00000078) if-eq                v2, v1, +d
+
+removeFromVerticalChain-BB@0x7c : [ removeFromVerticalChain-BB@0xae ]
+	36      (0000007c) const/4              v3, 4
+	37      (0000007e) iget                 v4, v0, Landroid/support/constraint/ConstraintSet$Constraint;->bottomToBottom I
+	38      (00000082) const/4              v5, 4
+	39      (00000084) const/4              v6, 0
+	40      (00000086) move-object          v1, v9
+	41      (00000088) move                 v2, v7
+	42      (0000008a) invoke-virtual/range v1 ... v6, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	43      (00000090) goto                 +f
+
+removeFromVerticalChain-BB@0x92 : [ removeFromVerticalChain-BB@0x9a removeFromVerticalChain-BB@0xae ]
+	44      (00000092) iget                 v2, v0, Landroid/support/constraint/ConstraintSet$Constraint;->topToTop I
+	45      (00000096) if-eq                v2, v1, +c
+
+removeFromVerticalChain-BB@0x9a : [ removeFromVerticalChain-BB@0xae ]
+	46      (0000009a) const/4              v3, 3
+	47      (0000009c) iget                 v4, v0, Landroid/support/constraint/ConstraintSet$Constraint;->topToTop I
+	48      (000000a0) const/4              v5, 3
+	49      (000000a2) const/4              v6, 0
+	50      (000000a4) move-object          v1, v9
+	51      (000000a6) move                 v2, v8
+	52      (000000a8) invoke-virtual/range v1 ... v6, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+
+removeFromVerticalChain-BB@0xae : 
+	53      (000000ae) const/4              v0, 3
+	54      (000000b0) invoke-virtual       v9, v10, v0, Landroid/support/constraint/ConstraintSet;->clear(I I)V
+	55      (000000b6) const/4              v0, 4
+	56      (000000b8) invoke-virtual       v9, v10, v0, Landroid/support/constraint/ConstraintSet;->clear(I I)V
+	57      (000000be) return-void          
+

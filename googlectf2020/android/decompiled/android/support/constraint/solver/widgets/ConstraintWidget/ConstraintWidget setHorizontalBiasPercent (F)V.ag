@@ -1,0 +1,12 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalBiasPercent(F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:float
+#
+# - return:void
+
+setHorizontalBiasPercent-BB@0x0 : 
+	0       (00000000) iput                 v1, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHorizontalBiasPercent F
+	1       (00000004) return-void          
+

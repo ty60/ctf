@@ -1,0 +1,35 @@
+# Landroid/support/constraint/solver/widgets/ConstraintAnchor;->isSideAnchor()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isSideAnchor-BB@0x0 : [ D:isSideAnchor-BB@0x1a 1:isSideAnchor-BB@0x36 2:isSideAnchor-BB@0x32 3:isSideAnchor-BB@0x32 4:isSideAnchor-BB@0x32 5:isSideAnchor-BB@0x32 6:isSideAnchor-BB@0x36 7:isSideAnchor-BB@0x36 8:isSideAnchor-BB@0x36 9:isSideAnchor-BB@0x36 ]
+	0       (00000000) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor$1;->$SwitchMap$android$support$constraint$solver$widgets$ConstraintAnchor$Type [I
+	1       (00000004) iget-object          v1, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	2       (00000008) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->ordinal()I
+	3       (0000000e) move-result          v1
+	4       (00000010) aget                 v0, v0, v1
+	5       (00000014) packed-switch        v0, +14 (0x3c)
+
+isSideAnchor-BB@0x1a : 
+	6       (0000001a) new-instance         v0, Ljava/lang/AssertionError;
+	7       (0000001e) iget-object          v1, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	8       (00000022) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->name()Ljava/lang/String;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) invoke-direct        v0, v1, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	11      (00000030) throw                v0
+
+isSideAnchor-BB@0x32 : 
+	12      (00000032) const/4              v0, 1
+	13      (00000034) return               v0
+
+isSideAnchor-BB@0x36 : 
+	14      (00000036) const/4              v0, 0
+	15      (00000038) return               v0
+
+isSideAnchor-BB@0x3a : 
+	16      (0000003a) nop                  
+	17      (0000003c) packed-switch-payload 1 2 3 4 5 6 7 8 9
+

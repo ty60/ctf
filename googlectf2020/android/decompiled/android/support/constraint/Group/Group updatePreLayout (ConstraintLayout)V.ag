@@ -1,0 +1,54 @@
+# Landroid/support/constraint/Group;->updatePreLayout(Landroid/support/constraint/ConstraintLayout;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.support.constraint.ConstraintLayout
+#
+# - return:void
+
+updatePreLayout-BB@0x0 : [ updatePreLayout-BB@0x16 updatePreLayout-BB@0x1e ]
+	0       (00000000) invoke-virtual       v7, Landroid/support/constraint/Group;->getVisibility()I
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) sget                 v2, Landroid/os/Build$VERSION;->SDK_INT I
+	4       (0000000e) const/16             v3, 21
+	5       (00000012) if-lt                v2, v3, +6
+
+updatePreLayout-BB@0x16 : [ updatePreLayout-BB@0x1e ]
+	6       (00000016) invoke-virtual       v7, Landroid/support/constraint/Group;->getElevation()F
+	7       (0000001c) move-result          v1
+
+updatePreLayout-BB@0x1e : [ updatePreLayout-BB@0x20 ]
+	8       (0000001e) const/4              v2, 0
+
+updatePreLayout-BB@0x20 : [ updatePreLayout-BB@0x28 updatePreLayout-BB@0x60 ]
+	9       (00000020) iget                 v4, v7, Landroid/support/constraint/Group;->mCount I
+	10      (00000024) if-ge                v2, v4, +1e
+
+updatePreLayout-BB@0x28 : [ updatePreLayout-BB@0x3c updatePreLayout-BB@0x5a ]
+	11      (00000028) iget-object          v4, v7, Landroid/support/constraint/Group;->mIds [I
+	12      (0000002c) aget                 v4, v4, v2
+	13      (00000030) invoke-virtual       v8, v4, Landroid/support/constraint/ConstraintLayout;->getViewById(I)Landroid/view/View;
+	14      (00000036) move-result-object   v5
+	15      (00000038) if-eqz               v5, +11
+
+updatePreLayout-BB@0x3c : [ updatePreLayout-BB@0x4c updatePreLayout-BB@0x5a ]
+	16      (0000003c) invoke-virtual       v5, v0, Landroid/view/View;->setVisibility(I)V
+	17      (00000042) const/4              v6, 0
+	18      (00000044) cmpl-float           v6, v1, v6
+	19      (00000048) if-lez               v6, +9
+
+updatePreLayout-BB@0x4c : [ updatePreLayout-BB@0x54 updatePreLayout-BB@0x5a ]
+	20      (0000004c) sget                 v6, Landroid/os/Build$VERSION;->SDK_INT I
+	21      (00000050) if-lt                v6, v3, +5
+
+updatePreLayout-BB@0x54 : [ updatePreLayout-BB@0x5a ]
+	22      (00000054) invoke-virtual       v5, v1, Landroid/view/View;->setElevation(F)V
+
+updatePreLayout-BB@0x5a : [ updatePreLayout-BB@0x20 ]
+	23      (0000005a) add-int/lit8         v2, v2, 1
+	24      (0000005e) goto                 -1f
+
+updatePreLayout-BB@0x60 : 
+	25      (00000060) return-void          
+

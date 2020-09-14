@@ -1,0 +1,178 @@
+# Landroid/support/constraint/solver/widgets/ConstraintAnchor;->isSnapCompatibleWith(Landroid/support/constraint/solver/widgets/ConstraintAnchor;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.support.constraint.solver.widgets.ConstraintAnchor
+#
+# - return:boolean
+
+isSnapCompatibleWith-BB@0x0 : [ isSnapCompatibleWith-BB@0xe isSnapCompatibleWith-BB@0x10 ]
+	0       (00000000) iget-object          v0, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	1       (00000004) sget-object          v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->CENTER Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	2       (00000008) const/4              v2, 0
+	3       (0000000a) if-ne                v0, v1, +3
+
+isSnapCompatibleWith-BB@0xe : 
+	4       (0000000e) return               v2
+
+isSnapCompatibleWith-BB@0x10 : [ isSnapCompatibleWith-BB@0x22 isSnapCompatibleWith-BB@0x24 ]
+	5       (00000010) iget-object          v0, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	6       (00000014) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getType()Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	7       (0000001a) move-result-object   v1
+	8       (0000001c) const/4              v3, 1
+	9       (0000001e) if-ne                v0, v1, +3
+
+isSnapCompatibleWith-BB@0x22 : 
+	10      (00000022) return               v3
+
+isSnapCompatibleWith-BB@0x24 : [ D:isSnapCompatibleWith-BB@0x44 1:isSnapCompatibleWith-BB@0x144 2:isSnapCompatibleWith-BB@0x11c 3:isSnapCompatibleWith-BB@0xf4 4:isSnapCompatibleWith-BB@0xcc 5:isSnapCompatibleWith-BB@0xa4 6:isSnapCompatibleWith-BB@0x144 7:isSnapCompatibleWith-BB@0x80 8:isSnapCompatibleWith-BB@0x5c 9:isSnapCompatibleWith-BB@0x144 ]
+	11      (00000024) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor$1;->$SwitchMap$android$support$constraint$solver$widgets$ConstraintAnchor$Type [I
+	12      (00000028) iget-object          v1, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	13      (0000002c) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->ordinal()I
+	14      (00000032) move-result          v1
+	15      (00000034) aget                 v0, v0, v1
+	16      (00000038) const/4              v1, 7
+	17      (0000003a) const/16             v4, 8
+	18      (0000003e) packed-switch        v0, +85 (0x148)
+
+isSnapCompatibleWith-BB@0x44 : 
+	19      (00000044) new-instance         v0, Ljava/lang/AssertionError;
+	20      (00000048) iget-object          v1, v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	21      (0000004c) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->name()Ljava/lang/String;
+	22      (00000052) move-result-object   v1
+	23      (00000054) invoke-direct        v0, v1, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	24      (0000005a) throw                v0
+
+isSnapCompatibleWith-BB@0x5c : [ D:isSnapCompatibleWith-BB@0x7a 4:isSnapCompatibleWith-BB@0x7e 5:isSnapCompatibleWith-BB@0x7c ]
+	25      (0000005c) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor$1;->$SwitchMap$android$support$constraint$solver$widgets$ConstraintAnchor$Type [I
+	26      (00000060) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getType()Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	27      (00000066) move-result-object   v1
+	28      (00000068) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->ordinal()I
+	29      (0000006e) move-result          v1
+	30      (00000070) aget                 v0, v0, v1
+	31      (00000074) packed-switch        v0, +80 (0x174)
+
+isSnapCompatibleWith-BB@0x7a : 
+	32      (0000007a) return               v2
+
+isSnapCompatibleWith-BB@0x7c : 
+	33      (0000007c) return               v3
+
+isSnapCompatibleWith-BB@0x7e : 
+	34      (0000007e) return               v3
+
+isSnapCompatibleWith-BB@0x80 : [ D:isSnapCompatibleWith-BB@0x9e 2:isSnapCompatibleWith-BB@0xa2 3:isSnapCompatibleWith-BB@0xa0 ]
+	35      (00000080) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor$1;->$SwitchMap$android$support$constraint$solver$widgets$ConstraintAnchor$Type [I
+	36      (00000084) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getType()Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	37      (0000008a) move-result-object   v1
+	38      (0000008c) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->ordinal()I
+	39      (00000092) move-result          v1
+	40      (00000094) aget                 v0, v0, v1
+	41      (00000098) packed-switch        v0, +76 (0x184)
+
+isSnapCompatibleWith-BB@0x9e : 
+	42      (0000009e) return               v2
+
+isSnapCompatibleWith-BB@0xa0 : 
+	43      (000000a0) return               v3
+
+isSnapCompatibleWith-BB@0xa2 : 
+	44      (000000a2) return               v3
+
+isSnapCompatibleWith-BB@0xa4 : [ isSnapCompatibleWith-BB@0xc2 isSnapCompatibleWith-BB@0xca ]
+	45      (000000a4) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor$1;->$SwitchMap$android$support$constraint$solver$widgets$ConstraintAnchor$Type [I
+	46      (000000a8) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getType()Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	47      (000000ae) move-result-object   v1
+	48      (000000b0) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->ordinal()I
+	49      (000000b6) move-result          v1
+	50      (000000b8) aget                 v0, v0, v1
+	51      (000000bc) const/4              v1, 4
+	52      (000000be) if-eq                v0, v1, +6
+
+isSnapCompatibleWith-BB@0xc2 : [ isSnapCompatibleWith-BB@0xc6 isSnapCompatibleWith-BB@0xc8 ]
+	53      (000000c2) if-eq                v0, v4, +3
+
+isSnapCompatibleWith-BB@0xc6 : 
+	54      (000000c6) return               v2
+
+isSnapCompatibleWith-BB@0xc8 : 
+	55      (000000c8) return               v3
+
+isSnapCompatibleWith-BB@0xca : 
+	56      (000000ca) return               v3
+
+isSnapCompatibleWith-BB@0xcc : [ isSnapCompatibleWith-BB@0xea isSnapCompatibleWith-BB@0xf2 ]
+	57      (000000cc) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor$1;->$SwitchMap$android$support$constraint$solver$widgets$ConstraintAnchor$Type [I
+	58      (000000d0) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getType()Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	59      (000000d6) move-result-object   v1
+	60      (000000d8) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->ordinal()I
+	61      (000000de) move-result          v1
+	62      (000000e0) aget                 v0, v0, v1
+	63      (000000e4) const/4              v1, 5
+	64      (000000e6) if-eq                v0, v1, +6
+
+isSnapCompatibleWith-BB@0xea : [ isSnapCompatibleWith-BB@0xee isSnapCompatibleWith-BB@0xf0 ]
+	65      (000000ea) if-eq                v0, v4, +3
+
+isSnapCompatibleWith-BB@0xee : 
+	66      (000000ee) return               v2
+
+isSnapCompatibleWith-BB@0xf0 : 
+	67      (000000f0) return               v3
+
+isSnapCompatibleWith-BB@0xf2 : 
+	68      (000000f2) return               v3
+
+isSnapCompatibleWith-BB@0xf4 : [ isSnapCompatibleWith-BB@0x112 isSnapCompatibleWith-BB@0x11a ]
+	69      (000000f4) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor$1;->$SwitchMap$android$support$constraint$solver$widgets$ConstraintAnchor$Type [I
+	70      (000000f8) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getType()Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	71      (000000fe) move-result-object   v4
+	72      (00000100) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->ordinal()I
+	73      (00000106) move-result          v4
+	74      (00000108) aget                 v0, v0, v4
+	75      (0000010c) const/4              v4, 2
+	76      (0000010e) if-eq                v0, v4, +6
+
+isSnapCompatibleWith-BB@0x112 : [ isSnapCompatibleWith-BB@0x116 isSnapCompatibleWith-BB@0x118 ]
+	77      (00000112) if-eq                v0, v1, +3
+
+isSnapCompatibleWith-BB@0x116 : 
+	78      (00000116) return               v2
+
+isSnapCompatibleWith-BB@0x118 : 
+	79      (00000118) return               v3
+
+isSnapCompatibleWith-BB@0x11a : 
+	80      (0000011a) return               v3
+
+isSnapCompatibleWith-BB@0x11c : [ isSnapCompatibleWith-BB@0x13a isSnapCompatibleWith-BB@0x142 ]
+	81      (0000011c) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor$1;->$SwitchMap$android$support$constraint$solver$widgets$ConstraintAnchor$Type [I
+	82      (00000120) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getType()Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	83      (00000126) move-result-object   v4
+	84      (00000128) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->ordinal()I
+	85      (0000012e) move-result          v4
+	86      (00000130) aget                 v0, v0, v4
+	87      (00000134) const/4              v4, 3
+	88      (00000136) if-eq                v0, v4, +6
+
+isSnapCompatibleWith-BB@0x13a : [ isSnapCompatibleWith-BB@0x13e isSnapCompatibleWith-BB@0x140 ]
+	89      (0000013a) if-eq                v0, v1, +3
+
+isSnapCompatibleWith-BB@0x13e : 
+	90      (0000013e) return               v2
+
+isSnapCompatibleWith-BB@0x140 : 
+	91      (00000140) return               v3
+
+isSnapCompatibleWith-BB@0x142 : 
+	92      (00000142) return               v3
+
+isSnapCompatibleWith-BB@0x144 : 
+	93      (00000144) return               v2
+
+isSnapCompatibleWith-BB@0x146 : 
+	94      (00000146) nop                  
+	95      (00000148) packed-switch-payload 1 2 3 4 5 6 7 8 9
+	96      (00000174) packed-switch-payload 4 5
+	97      (00000184) packed-switch-payload 2 3
+

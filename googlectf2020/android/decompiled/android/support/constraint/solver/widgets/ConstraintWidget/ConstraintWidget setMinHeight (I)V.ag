@@ -1,0 +1,22 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setMinHeight(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setMinHeight-BB@0x0 : [ setMinHeight-BB@0x4 setMinHeight-BB@0xc ]
+	0       (00000000) if-gez               v2, +6
+
+setMinHeight-BB@0x4 : [ setMinHeight-BB@0x10 ]
+	1       (00000004) const/4              v0, 0
+	2       (00000006) iput                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinHeight I
+	3       (0000000a) goto                 +3
+
+setMinHeight-BB@0xc : [ setMinHeight-BB@0x10 ]
+	4       (0000000c) iput                 v2, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinHeight I
+
+setMinHeight-BB@0x10 : 
+	5       (00000010) return-void          
+

@@ -1,0 +1,57 @@
+# Landroid/support/constraint/solver/LinearSystem;->increaseTableSize()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+increaseTableSize-BB@0x0 : [ increaseTableSize-BB@0x68 increaseTableSize-BB@0xa8 ]
+	0       (00000000) iget                 v0, v5, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	1       (00000004) mul-int/lit8         v0, v0, 2
+	2       (00000008) iput                 v0, v5, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	3       (0000000c) iget-object          v0, v5, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	4       (00000010) iget                 v1, v5, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	5       (00000014) invoke-static        v0, v1, Ljava/util/Arrays;->copyOf([Ljava/lang/Object; I)[Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, [Landroid/support/constraint/solver/ArrayRow;
+	8       (00000020) iput-object          v0, v5, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	9       (00000024) iget-object          v0, v5, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	10      (00000028) iget-object          v1, v5, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	11      (0000002c) iget-object          v1, v1, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	12      (00000030) iget                 v2, v5, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	13      (00000034) invoke-static        v1, v2, Ljava/util/Arrays;->copyOf([Ljava/lang/Object; I)[Ljava/lang/Object;
+	14      (0000003a) move-result-object   v1
+	15      (0000003c) check-cast           v1, [Landroid/support/constraint/solver/SolverVariable;
+	16      (00000040) iput-object          v1, v0, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	17      (00000044) iget                 v0, v5, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	18      (00000048) new-array            v0, v0, [Z
+	19      (0000004c) iput-object          v0, v5, Landroid/support/constraint/solver/LinearSystem;->mAlreadyTestedCandidates [Z
+	20      (00000050) iget                 v0, v5, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	21      (00000054) iput                 v0, v5, Landroid/support/constraint/solver/LinearSystem;->mMaxColumns I
+	22      (00000058) iget                 v0, v5, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	23      (0000005c) iput                 v0, v5, Landroid/support/constraint/solver/LinearSystem;->mMaxRows I
+	24      (00000060) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	25      (00000064) if-eqz               v0, +22
+
+increaseTableSize-BB@0x68 : [ increaseTableSize-BB@0xa8 ]
+	26      (00000068) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	27      (0000006c) iget-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->tableSizeIncrease J
+	28      (00000070) const-wide/16        v3, 1 # [1.0]
+	29      (00000074) add-long/2addr       v1, v3
+	30      (00000076) iput-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->tableSizeIncrease J
+	31      (0000007a) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	32      (0000007e) sget-object          v1, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	33      (00000082) iget-wide            v1, v1, Landroid/support/constraint/solver/Metrics;->maxTableSize J
+	34      (00000086) iget                 v3, v5, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	35      (0000008a) int-to-long          v3, v3
+	36      (0000008c) invoke-static        v1, v2, v3, v4, Ljava/lang/Math;->max(J J)J
+	37      (00000092) move-result-wide     v1
+	38      (00000094) iput-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->maxTableSize J
+	39      (00000098) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	40      (0000009c) sget-object          v1, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	41      (000000a0) iget-wide            v1, v1, Landroid/support/constraint/solver/Metrics;->maxTableSize J
+	42      (000000a4) iput-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->lastTableSize J
+
+increaseTableSize-BB@0xa8 : 
+	43      (000000a8) return-void          
+

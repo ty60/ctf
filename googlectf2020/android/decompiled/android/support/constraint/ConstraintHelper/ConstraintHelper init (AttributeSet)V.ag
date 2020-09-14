@@ -1,0 +1,44 @@
+# Landroid/support/constraint/ConstraintHelper;->init(Landroid/util/AttributeSet;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.util.AttributeSet
+#
+# - return:void
+
+init-BB@0x0 : [ init-BB@0x4 init-BB@0x52 ]
+	0       (00000000) if-eqz               v6, +29
+
+init-BB@0x4 : [ init-BB@0x22 ]
+	1       (00000004) invoke-virtual       v5, Landroid/support/constraint/ConstraintHelper;->getContext()Landroid/content/Context;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) sget-object          v1, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout [I
+	4       (00000010) invoke-virtual       v0, v6, v1, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+	5       (00000016) move-result-object   v0
+	6       (00000018) invoke-virtual       v0, Landroid/content/res/TypedArray;->getIndexCount()I
+	7       (0000001e) move-result          v1
+	8       (00000020) const/4              v2, 0
+
+init-BB@0x22 : [ init-BB@0x26 init-BB@0x52 ]
+	9       (00000022) if-ge                v2, v1, +18
+
+init-BB@0x26 : [ init-BB@0x36 init-BB@0x4c ]
+	10      (00000026) invoke-virtual       v0, v2, Landroid/content/res/TypedArray;->getIndex(I)I
+	11      (0000002c) move-result          v3
+	12      (0000002e) sget                 v4, Landroid/support/constraint/R$styleable;->ConstraintLayout_Layout_constraint_referenced_ids I
+	13      (00000032) if-ne                v3, v4, +d
+
+init-BB@0x36 : [ init-BB@0x4c ]
+	14      (00000036) invoke-virtual       v0, v3, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+	15      (0000003c) move-result-object   v4
+	16      (0000003e) iput-object          v4, v5, Landroid/support/constraint/ConstraintHelper;->mReferenceIds Ljava/lang/String;
+	17      (00000042) iget-object          v4, v5, Landroid/support/constraint/ConstraintHelper;->mReferenceIds Ljava/lang/String;
+	18      (00000046) invoke-direct        v5, v4, Landroid/support/constraint/ConstraintHelper;->setIds(Ljava/lang/String;)V
+
+init-BB@0x4c : [ init-BB@0x22 ]
+	19      (0000004c) add-int/lit8         v2, v2, 1
+	20      (00000050) goto                 -17
+
+init-BB@0x52 : 
+	21      (00000052) return-void          
+

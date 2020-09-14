@@ -1,0 +1,57 @@
+# Landroid/support/constraint/ConstraintLayout;->setDesignInformation(I Ljava/lang/Object; Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:java.lang.Object
+# - v8:java.lang.Object
+#
+# - return:void
+
+setDesignInformation-BB@0x0 : [ setDesignInformation-BB@0x4 setDesignInformation-BB@0x6e ]
+	0       (00000000) if-nez               v6, +37
+
+setDesignInformation-BB@0x4 : [ setDesignInformation-BB@0xc setDesignInformation-BB@0x6e ]
+	1       (00000004) instance-of          v0, v7, Ljava/lang/String;
+	2       (00000008) if-eqz               v0, +33
+
+setDesignInformation-BB@0xc : [ setDesignInformation-BB@0x14 setDesignInformation-BB@0x6e ]
+	3       (0000000c) instance-of          v0, v8, Ljava/lang/Integer;
+	4       (00000010) if-eqz               v0, +2f
+
+setDesignInformation-BB@0x14 : [ setDesignInformation-BB@0x1c setDesignInformation-BB@0x2a ]
+	5       (00000014) iget-object          v0, v5, Landroid/support/constraint/ConstraintLayout;->mDesignIds Ljava/util/HashMap;
+	6       (00000018) if-nez               v0, +9
+
+setDesignInformation-BB@0x1c : [ setDesignInformation-BB@0x2a ]
+	7       (0000001c) new-instance         v0, Ljava/util/HashMap;
+	8       (00000020) invoke-direct        v0, Ljava/util/HashMap;-><init>()V
+	9       (00000026) iput-object          v0, v5, Landroid/support/constraint/ConstraintLayout;->mDesignIds Ljava/util/HashMap;
+
+setDesignInformation-BB@0x2a : [ setDesignInformation-BB@0x42 setDesignInformation-BB@0x4e ]
+	10      (0000002a) move-object          v0, v7
+	11      (0000002c) check-cast           v0, Ljava/lang/String;
+	12      (00000030) const-string         v1, '/'
+	13      (00000034) invoke-virtual       v0, v1, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+	14      (0000003a) move-result          v1
+	15      (0000003c) const/4              v2, -1
+	16      (0000003e) if-eq                v1, v2, +8
+
+setDesignInformation-BB@0x42 : [ setDesignInformation-BB@0x4e ]
+	17      (00000042) add-int/lit8         v2, v1, 1
+	18      (00000046) invoke-virtual       v0, v2, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	19      (0000004c) move-result-object   v0
+
+setDesignInformation-BB@0x4e : [ setDesignInformation-BB@0x6e ]
+	20      (0000004e) move-object          v2, v8
+	21      (00000050) check-cast           v2, Ljava/lang/Integer;
+	22      (00000054) invoke-virtual       v2, Ljava/lang/Integer;->intValue()I
+	23      (0000005a) move-result          v2
+	24      (0000005c) iget-object          v3, v5, Landroid/support/constraint/ConstraintLayout;->mDesignIds Ljava/util/HashMap;
+	25      (00000060) invoke-static        v2, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	26      (00000066) move-result-object   v4
+	27      (00000068) invoke-virtual       v3, v0, v4, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+
+setDesignInformation-BB@0x6e : 
+	28      (0000006e) return-void          
+

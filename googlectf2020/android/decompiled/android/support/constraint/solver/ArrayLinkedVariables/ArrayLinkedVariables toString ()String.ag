@@ -1,0 +1,57 @@
+# Landroid/support/constraint/solver/ArrayLinkedVariables;->toString()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : [ toString-BB@0xa ]
+	0       (00000000) const-string         v0, ''
+	1       (00000004) iget                 v1, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	2       (00000008) const/4              v2, 0
+
+toString-BB@0xa : [ toString-BB@0x10 toString-BB@0xaa ]
+	3       (0000000a) const/4              v3, -1
+	4       (0000000c) if-eq                v1, v3, +4f
+
+toString-BB@0x10 : [ toString-BB@0x18 toString-BB@0xaa ]
+	5       (00000010) iget                 v3, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	6       (00000014) if-ge                v2, v3, +4b
+
+toString-BB@0x18 : [ toString-BB@0xa ]
+	7       (00000018) new-instance         v3, Ljava/lang/StringBuilder;
+	8       (0000001c) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	9       (00000022) invoke-virtual       v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (00000028) const-string         v4, ' -> '
+	11      (0000002c) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000032) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) new-instance         v3, Ljava/lang/StringBuilder;
+	15      (0000003e) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	16      (00000044) invoke-virtual       v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (0000004a) iget-object          v4, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	18      (0000004e) aget                 v4, v4, v1
+	19      (00000052) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+	20      (00000058) const-string         v4, ' : '
+	21      (0000005c) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (00000062) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (00000068) move-result-object   v0
+	24      (0000006a) new-instance         v3, Ljava/lang/StringBuilder;
+	25      (0000006e) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	26      (00000074) invoke-virtual       v3, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (0000007a) iget-object          v4, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->mCache Landroid/support/constraint/solver/Cache;
+	28      (0000007e) iget-object          v4, v4, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	29      (00000082) iget-object          v5, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	30      (00000086) aget                 v5, v5, v1
+	31      (0000008a) aget-object          v4, v4, v5
+	32      (0000008e) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	33      (00000094) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	34      (0000009a) move-result-object   v0
+	35      (0000009c) iget-object          v3, v6, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	36      (000000a0) aget                 v1, v3, v1
+	37      (000000a4) add-int/lit8         v2, v2, 1
+	38      (000000a8) goto                 -4f
+
+toString-BB@0xaa : 
+	39      (000000aa) return-object        v0
+

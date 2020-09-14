@@ -1,0 +1,293 @@
+# Landroid/support/constraint/ConstraintSet;->connect(I I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:int
+# - v10:int
+# - v11:int
+# - v12:int
+#
+# - return:void
+
+connect-BB@0x0 : [ connect-BB@0x18 connect-BB@0x36 ]
+	0       (00000000) iget-object          v0, v8, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	1       (00000004) invoke-static        v9, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-virtual       v0, v1, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-nez               v0, +11
+
+connect-BB@0x18 : [ connect-BB@0x36 ]
+	6       (00000018) iget-object          v0, v8, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	7       (0000001c) invoke-static        v9, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	8       (00000022) move-result-object   v1
+	9       (00000024) new-instance         v2, Landroid/support/constraint/ConstraintSet$Constraint;
+	10      (00000028) const/4              v3, 0
+	11      (0000002a) invoke-direct        v2, v3, Landroid/support/constraint/ConstraintSet$Constraint;-><init>(Landroid/support/constraint/ConstraintSet$1;)V
+	12      (00000030) invoke-virtual       v0, v1, v2, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+
+connect-BB@0x36 : [ D:connect-BB@0x62 1:connect-BB@0x2f6 2:connect-BB@0x29a 3:connect-BB@0x236 4:connect-BB@0x1ce 5:connect-BB@0x170 6:connect-BB@0x110 7:connect-BB@0xb0 ]
+	13      (00000036) iget-object          v0, v8, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	14      (0000003a) invoke-static        v9, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	15      (00000040) move-result-object   v1
+	16      (00000042) invoke-virtual       v0, v1, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	17      (00000048) move-result-object   v0
+	18      (0000004a) check-cast           v0, Landroid/support/constraint/ConstraintSet$Constraint;
+	19      (0000004e) const/4              v1, 2
+	20      (00000050) const/4              v2, 1
+	21      (00000052) const/4              v3, 3
+	22      (00000054) const/4              v4, 4
+	23      (00000056) const/4              v5, 6
+	24      (00000058) const/4              v6, 7
+	25      (0000005a) const/4              v7, -1
+	26      (0000005c) packed-switch        v10, +17c (0x354)
+
+connect-BB@0x62 : 
+	27      (00000062) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	28      (00000066) new-instance         v2, Ljava/lang/StringBuilder;
+	29      (0000006a) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	30      (00000070) invoke-direct        v8, v10, Landroid/support/constraint/ConstraintSet;->sideToString(I)Ljava/lang/String;
+	31      (00000076) move-result-object   v3
+	32      (00000078) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	33      (0000007e) const-string         v3, ' to '
+	34      (00000082) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	35      (00000088) invoke-direct        v8, v12, Landroid/support/constraint/ConstraintSet;->sideToString(I)Ljava/lang/String;
+	36      (0000008e) move-result-object   v3
+	37      (00000090) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	38      (00000096) const-string         v3, ' unknown'
+	39      (0000009a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000a0) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	41      (000000a6) move-result-object   v2
+	42      (000000a8) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	43      (000000ae) throw                v1
+
+connect-BB@0xb0 : [ connect-BB@0xb4 connect-BB@0xc0 ]
+	44      (000000b0) if-ne                v12, v6, +8
+
+connect-BB@0xb4 : [ connect-BB@0x310 ]
+	45      (000000b4) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->endToEnd I
+	46      (000000b8) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->endToStart I
+	47      (000000bc) goto/16              +12a
+
+connect-BB@0xc0 : [ connect-BB@0xc4 connect-BB@0xd0 ]
+	48      (000000c0) if-ne                v12, v5, +8
+
+connect-BB@0xc4 : [ connect-BB@0x310 ]
+	49      (000000c4) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->endToStart I
+	50      (000000c8) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->endToEnd I
+	51      (000000cc) goto/16              +122
+
+connect-BB@0xd0 : 
+	52      (000000d0) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	53      (000000d4) new-instance         v2, Ljava/lang/StringBuilder;
+	54      (000000d8) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	55      (000000de) const-string         v3, 'right to '
+	56      (000000e2) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	57      (000000e8) invoke-direct        v8, v12, Landroid/support/constraint/ConstraintSet;->sideToString(I)Ljava/lang/String;
+	58      (000000ee) move-result-object   v3
+	59      (000000f0) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	60      (000000f6) const-string         v3, ' undefined'
+	61      (000000fa) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	62      (00000100) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	63      (00000106) move-result-object   v2
+	64      (00000108) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	65      (0000010e) throw                v1
+
+connect-BB@0x110 : [ connect-BB@0x114 connect-BB@0x120 ]
+	66      (00000110) if-ne                v12, v5, +8
+
+connect-BB@0x114 : [ connect-BB@0x310 ]
+	67      (00000114) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->startToStart I
+	68      (00000118) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->startToEnd I
+	69      (0000011c) goto/16              +fa
+
+connect-BB@0x120 : [ connect-BB@0x124 connect-BB@0x130 ]
+	70      (00000120) if-ne                v12, v6, +8
+
+connect-BB@0x124 : [ connect-BB@0x310 ]
+	71      (00000124) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->startToEnd I
+	72      (00000128) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->startToStart I
+	73      (0000012c) goto/16              +f2
+
+connect-BB@0x130 : 
+	74      (00000130) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	75      (00000134) new-instance         v2, Ljava/lang/StringBuilder;
+	76      (00000138) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	77      (0000013e) const-string         v3, 'right to '
+	78      (00000142) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	79      (00000148) invoke-direct        v8, v12, Landroid/support/constraint/ConstraintSet;->sideToString(I)Ljava/lang/String;
+	80      (0000014e) move-result-object   v3
+	81      (00000150) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	82      (00000156) const-string         v3, ' undefined'
+	83      (0000015a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	84      (00000160) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	85      (00000166) move-result-object   v2
+	86      (00000168) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	87      (0000016e) throw                v1
+
+connect-BB@0x170 : [ connect-BB@0x176 connect-BB@0x18e ]
+	88      (00000170) const/4              v1, 5
+	89      (00000172) if-ne                v12, v1, +e
+
+connect-BB@0x176 : [ connect-BB@0x310 ]
+	90      (00000176) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->baselineToBaseline I
+	91      (0000017a) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->bottomToBottom I
+	92      (0000017e) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->bottomToTop I
+	93      (00000182) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->topToTop I
+	94      (00000186) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->topToBottom I
+	95      (0000018a) goto/16              +c3
+
+connect-BB@0x18e : 
+	96      (0000018e) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	97      (00000192) new-instance         v2, Ljava/lang/StringBuilder;
+	98      (00000196) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	99      (0000019c) const-string         v3, 'right to '
+	100     (000001a0) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	101     (000001a6) invoke-direct        v8, v12, Landroid/support/constraint/ConstraintSet;->sideToString(I)Ljava/lang/String;
+	102     (000001ac) move-result-object   v3
+	103     (000001ae) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	104     (000001b4) const-string         v3, ' undefined'
+	105     (000001b8) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	106     (000001be) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	107     (000001c4) move-result-object   v2
+	108     (000001c6) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	109     (000001cc) throw                v1
+
+connect-BB@0x1ce : [ connect-BB@0x1d2 connect-BB@0x1e2 ]
+	110     (000001ce) if-ne                v12, v4, +a
+
+connect-BB@0x1d2 : [ connect-BB@0x310 ]
+	111     (000001d2) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->bottomToBottom I
+	112     (000001d6) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->bottomToTop I
+	113     (000001da) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->baselineToBaseline I
+	114     (000001de) goto/16              +99
+
+connect-BB@0x1e2 : [ connect-BB@0x1e6 connect-BB@0x1f6 ]
+	115     (000001e2) if-ne                v12, v3, +a
+
+connect-BB@0x1e6 : [ connect-BB@0x310 ]
+	116     (000001e6) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->bottomToTop I
+	117     (000001ea) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->bottomToBottom I
+	118     (000001ee) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->baselineToBaseline I
+	119     (000001f2) goto/16              +8f
+
+connect-BB@0x1f6 : 
+	120     (000001f6) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	121     (000001fa) new-instance         v2, Ljava/lang/StringBuilder;
+	122     (000001fe) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	123     (00000204) const-string         v3, 'right to '
+	124     (00000208) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	125     (0000020e) invoke-direct        v8, v12, Landroid/support/constraint/ConstraintSet;->sideToString(I)Ljava/lang/String;
+	126     (00000214) move-result-object   v3
+	127     (00000216) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	128     (0000021c) const-string         v3, ' undefined'
+	129     (00000220) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	130     (00000226) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	131     (0000022c) move-result-object   v2
+	132     (0000022e) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	133     (00000234) throw                v1
+
+connect-BB@0x236 : [ connect-BB@0x23a connect-BB@0x248 ]
+	134     (00000236) if-ne                v12, v3, +9
+
+connect-BB@0x23a : [ connect-BB@0x310 ]
+	135     (0000023a) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->topToTop I
+	136     (0000023e) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->topToBottom I
+	137     (00000242) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->baselineToBaseline I
+	138     (00000246) goto                 +65
+
+connect-BB@0x248 : [ connect-BB@0x24c connect-BB@0x25a ]
+	139     (00000248) if-ne                v12, v4, +9
+
+connect-BB@0x24c : [ connect-BB@0x310 ]
+	140     (0000024c) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->topToBottom I
+	141     (00000250) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->topToTop I
+	142     (00000254) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->baselineToBaseline I
+	143     (00000258) goto                 +5c
+
+connect-BB@0x25a : 
+	144     (0000025a) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	145     (0000025e) new-instance         v2, Ljava/lang/StringBuilder;
+	146     (00000262) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	147     (00000268) const-string         v3, 'right to '
+	148     (0000026c) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	149     (00000272) invoke-direct        v8, v12, Landroid/support/constraint/ConstraintSet;->sideToString(I)Ljava/lang/String;
+	150     (00000278) move-result-object   v3
+	151     (0000027a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	152     (00000280) const-string         v3, ' undefined'
+	153     (00000284) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	154     (0000028a) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	155     (00000290) move-result-object   v2
+	156     (00000292) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	157     (00000298) throw                v1
+
+connect-BB@0x29a : [ connect-BB@0x29e connect-BB@0x2a8 ]
+	158     (0000029a) if-ne                v12, v2, +7
+
+connect-BB@0x29e : [ connect-BB@0x310 ]
+	159     (0000029e) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->rightToLeft I
+	160     (000002a2) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->rightToRight I
+	161     (000002a6) goto                 +35
+
+connect-BB@0x2a8 : [ connect-BB@0x2ac connect-BB@0x2b6 ]
+	162     (000002a8) if-ne                v12, v1, +7
+
+connect-BB@0x2ac : [ connect-BB@0x310 ]
+	163     (000002ac) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->rightToRight I
+	164     (000002b0) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->rightToLeft I
+	165     (000002b4) goto                 +2e
+
+connect-BB@0x2b6 : 
+	166     (000002b6) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	167     (000002ba) new-instance         v2, Ljava/lang/StringBuilder;
+	168     (000002be) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	169     (000002c4) const-string         v3, 'right to '
+	170     (000002c8) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	171     (000002ce) invoke-direct        v8, v12, Landroid/support/constraint/ConstraintSet;->sideToString(I)Ljava/lang/String;
+	172     (000002d4) move-result-object   v3
+	173     (000002d6) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	174     (000002dc) const-string         v3, ' undefined'
+	175     (000002e0) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	176     (000002e6) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	177     (000002ec) move-result-object   v2
+	178     (000002ee) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	179     (000002f4) throw                v1
+
+connect-BB@0x2f6 : [ connect-BB@0x2fa connect-BB@0x304 ]
+	180     (000002f6) if-ne                v12, v2, +7
+
+connect-BB@0x2fa : [ connect-BB@0x310 ]
+	181     (000002fa) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->leftToLeft I
+	182     (000002fe) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->leftToRight I
+	183     (00000302) goto                 +7
+
+connect-BB@0x304 : [ connect-BB@0x308 connect-BB@0x312 ]
+	184     (00000304) if-ne                v12, v1, +7
+
+connect-BB@0x308 : [ connect-BB@0x310 ]
+	185     (00000308) iput                 v11, v0, Landroid/support/constraint/ConstraintSet$Constraint;->leftToRight I
+	186     (0000030c) iput                 v7, v0, Landroid/support/constraint/ConstraintSet$Constraint;->leftToLeft I
+
+connect-BB@0x310 : 
+	187     (00000310) return-void          
+
+connect-BB@0x312 : 
+	188     (00000312) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	189     (00000316) new-instance         v2, Ljava/lang/StringBuilder;
+	190     (0000031a) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	191     (00000320) const-string         v3, 'left to '
+	192     (00000324) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	193     (0000032a) invoke-direct        v8, v12, Landroid/support/constraint/ConstraintSet;->sideToString(I)Ljava/lang/String;
+	194     (00000330) move-result-object   v3
+	195     (00000332) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	196     (00000338) const-string         v3, ' undefined'
+	197     (0000033c) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	198     (00000342) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	199     (00000348) move-result-object   v2
+	200     (0000034a) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	201     (00000350) throw                v1
+
+connect-BB@0x352 : 
+	202     (00000352) nop                  
+	203     (00000354) packed-switch-payload 1 2 3 4 5 6 7
+

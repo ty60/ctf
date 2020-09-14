@@ -1,0 +1,388 @@
+# Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolve()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v9
+#
+# - return:void
+
+resolve-BB@0x0 : [ resolve-BB@0xa resolve-BB@0xc ]
+	0       (00000000) iget                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	1       (00000004) const/4              v1, 1
+	2       (00000006) if-ne                v0, v1, +3
+
+resolve-BB@0xa : 
+	3       (0000000a) return-void          
+
+resolve-BB@0xc : [ resolve-BB@0x16 resolve-BB@0x18 ]
+	4       (0000000c) iget                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->type I
+	5       (00000010) const/4              v2, 4
+	6       (00000012) if-ne                v0, v2, +3
+
+resolve-BB@0x16 : 
+	7       (00000016) return-void          
+
+resolve-BB@0x18 : [ resolve-BB@0x20 resolve-BB@0x42 ]
+	8       (00000018) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->dimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	9       (0000001c) if-eqz               v0, +13
+
+resolve-BB@0x20 : [ resolve-BB@0x2c resolve-BB@0x2e ]
+	10      (00000020) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->dimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	11      (00000024) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionDimension;->state I
+	12      (00000028) if-eq                v0, v1, +3
+
+resolve-BB@0x2c : 
+	13      (0000002c) return-void          
+
+resolve-BB@0x2e : [ resolve-BB@0x42 ]
+	14      (0000002e) iget                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->dimensionMultiplier I
+	15      (00000032) int-to-float         v0, v0
+	16      (00000034) iget-object          v2, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->dimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	17      (00000038) iget                 v2, v2, Landroid/support/constraint/solver/widgets/ResolutionDimension;->value F
+	18      (0000003c) mul-float/2addr      v0, v2
+	19      (0000003e) iput                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->offset F
+
+resolve-BB@0x42 : [ resolve-BB@0x4a resolve-BB@0x6c ]
+	20      (00000042) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeDimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	21      (00000046) if-eqz               v0, +13
+
+resolve-BB@0x4a : [ resolve-BB@0x56 resolve-BB@0x58 ]
+	22      (0000004a) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeDimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	23      (0000004e) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionDimension;->state I
+	24      (00000052) if-eq                v0, v1, +3
+
+resolve-BB@0x56 : 
+	25      (00000056) return-void          
+
+resolve-BB@0x58 : [ resolve-BB@0x6c ]
+	26      (00000058) iget                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeDimensionMultiplier I
+	27      (0000005c) int-to-float         v0, v0
+	28      (0000005e) iget-object          v2, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeDimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	29      (00000062) iget                 v2, v2, Landroid/support/constraint/solver/widgets/ResolutionDimension;->value F
+	30      (00000066) mul-float/2addr      v0, v2
+	31      (00000068) iput                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeOffset F
+
+resolve-BB@0x6c : [ resolve-BB@0x74 resolve-BB@0xc6 ]
+	32      (0000006c) iget                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->type I
+	33      (00000070) if-ne                v0, v1, +2b
+
+resolve-BB@0x74 : [ resolve-BB@0x7c resolve-BB@0x88 ]
+	34      (00000074) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	35      (00000078) if-eqz               v0, +8
+
+resolve-BB@0x7c : [ resolve-BB@0x88 resolve-BB@0xc6 ]
+	36      (0000007c) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	37      (00000080) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	38      (00000084) if-ne                v0, v1, +21
+
+resolve-BB@0x88 : [ resolve-BB@0x90 resolve-BB@0x9e ]
+	39      (00000088) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	40      (0000008c) if-nez               v0, +9
+
+resolve-BB@0x90 : [ resolve-BB@0xbc ]
+	41      (00000090) iput-object          v9, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	42      (00000094) iget                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->offset F
+	43      (00000098) iput                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	44      (0000009c) goto                 +10
+
+resolve-BB@0x9e : [ resolve-BB@0xbc ]
+	45      (0000009e) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	46      (000000a2) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	47      (000000a6) iput-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	48      (000000aa) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	49      (000000ae) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	50      (000000b2) iget                 v1, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->offset F
+	51      (000000b6) add-float/2addr      v0, v1
+	52      (000000b8) iput                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+
+resolve-BB@0xbc : [ resolve-BB@0x3b8 ]
+	53      (000000bc) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->didResolve()V
+	54      (000000c2) goto/16              +17b
+
+resolve-BB@0xc6 : [ resolve-BB@0xd4 resolve-BB@0x2de ]
+	55      (000000c6) iget                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->type I
+	56      (000000ca) const/4              v2, 2
+	57      (000000cc) const-wide/16        v3, 1 # [1.0]
+	58      (000000d0) if-ne                v0, v2, +107
+
+resolve-BB@0xd4 : [ resolve-BB@0xdc resolve-BB@0x2de ]
+	59      (000000d4) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	60      (000000d8) if-eqz               v0, +103
+
+resolve-BB@0xdc : [ resolve-BB@0xe8 resolve-BB@0x2de ]
+	61      (000000dc) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	62      (000000e0) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	63      (000000e4) if-ne                v0, v1, +fd
+
+resolve-BB@0xe8 : [ resolve-BB@0xf0 resolve-BB@0x2de ]
+	64      (000000e8) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	65      (000000ec) if-eqz               v0, +f9
+
+resolve-BB@0xf0 : [ resolve-BB@0xfc resolve-BB@0x2de ]
+	66      (000000f0) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	67      (000000f4) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	68      (000000f8) if-eqz               v0, +f3
+
+resolve-BB@0xfc : [ resolve-BB@0x10c resolve-BB@0x2de ]
+	69      (000000fc) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	70      (00000100) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	71      (00000104) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	72      (00000108) if-ne                v0, v1, +eb
+
+resolve-BB@0x10c : [ resolve-BB@0x118 resolve-BB@0x12a ]
+	73      (0000010c) invoke-static        Landroid/support/constraint/solver/LinearSystem;->getMetrics()Landroid/support/constraint/solver/Metrics;
+	74      (00000112) move-result-object   v0
+	75      (00000114) if-eqz               v0, +b
+
+resolve-BB@0x118 : [ resolve-BB@0x12a ]
+	76      (00000118) invoke-static        Landroid/support/constraint/solver/LinearSystem;->getMetrics()Landroid/support/constraint/solver/Metrics;
+	77      (0000011e) move-result-object   v0
+	78      (00000120) iget-wide            v5, v0, Landroid/support/constraint/solver/Metrics;->centerConnectionResolved J
+	79      (00000124) add-long/2addr       v5, v3
+	80      (00000126) iput-wide            v5, v0, Landroid/support/constraint/solver/Metrics;->centerConnectionResolved J
+
+resolve-BB@0x12a : [ resolve-BB@0x160 resolve-BB@0x176 ]
+	81      (0000012a) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	82      (0000012e) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	83      (00000132) iput-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	84      (00000136) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	85      (0000013a) iget-object          v2, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	86      (0000013e) iget-object          v2, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	87      (00000142) iget-object          v2, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	88      (00000146) iput-object          v2, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	89      (0000014a) const/4              v0, 0
+	90      (0000014c) const/high16         v2, 16128 # [0.5]
+	91      (00000150) iget-object          v3, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	92      (00000154) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	93      (00000158) sget-object          v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->RIGHT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	94      (0000015c) if-eq                v3, v4, +d
+
+resolve-BB@0x160 : [ resolve-BB@0x170 resolve-BB@0x172 ]
+	95      (00000160) iget-object          v3, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	96      (00000164) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	97      (00000168) sget-object          v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->BOTTOM Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	98      (0000016c) if-ne                v3, v4, +3
+
+resolve-BB@0x170 : [ resolve-BB@0x176 ]
+	99      (00000170) goto                 +3
+
+resolve-BB@0x172 : [ resolve-BB@0x176 ]
+	100     (00000172) const/4              v1, 0
+	101     (00000174) nop                  
+
+resolve-BB@0x176 : [ resolve-BB@0x17a resolve-BB@0x192 ]
+	102     (00000176) if-eqz               v1, +e
+
+resolve-BB@0x17a : [ resolve-BB@0x190 ]
+	103     (0000017a) iget-object          v3, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	104     (0000017e) iget                 v3, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	105     (00000182) iget-object          v4, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	106     (00000186) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	107     (0000018a) iget                 v4, v4, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	108     (0000018e) sub-float/2addr      v3, v4
+
+resolve-BB@0x190 : [ resolve-BB@0x1aa ]
+	109     (00000190) goto                 +d
+
+resolve-BB@0x192 : [ resolve-BB@0x190 ]
+	110     (00000192) iget-object          v3, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	111     (00000196) iget-object          v3, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	112     (0000019a) iget                 v3, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	113     (0000019e) iget-object          v4, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	114     (000001a2) iget                 v4, v4, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	115     (000001a6) sub-float/2addr      v3, v4
+	116     (000001a8) goto                 -c
+
+resolve-BB@0x1aa : [ resolve-BB@0x1ba resolve-BB@0x1ee ]
+	117     (000001aa) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	118     (000001ae) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	119     (000001b2) sget-object          v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->LEFT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	120     (000001b6) if-eq                v0, v4, +1c
+
+resolve-BB@0x1ba : [ resolve-BB@0x1ca resolve-BB@0x1cc ]
+	121     (000001ba) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	122     (000001be) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	123     (000001c2) sget-object          v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->RIGHT Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	124     (000001c6) if-ne                v0, v4, +3
+
+resolve-BB@0x1ca : [ resolve-BB@0x1ee ]
+	125     (000001ca) goto                 +12
+
+resolve-BB@0x1cc : [ resolve-BB@0x20e ]
+	126     (000001cc) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	127     (000001d0) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	128     (000001d4) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	129     (000001da) move-result          v0
+	130     (000001dc) int-to-float         v0, v0
+	131     (000001de) sub-float/2addr      v3, v0
+	132     (000001e0) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	133     (000001e4) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	134     (000001e8) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mVerticalBiasPercent F
+	135     (000001ec) goto                 +11
+
+resolve-BB@0x1ee : [ resolve-BB@0x20e ]
+	136     (000001ee) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	137     (000001f2) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	138     (000001f6) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	139     (000001fc) move-result          v0
+	140     (000001fe) int-to-float         v0, v0
+	141     (00000200) sub-float/2addr      v3, v0
+	142     (00000202) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	143     (00000206) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	144     (0000020a) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHorizontalBiasPercent F
+
+resolve-BB@0x20e : [ resolve-BB@0x24a resolve-BB@0x252 ]
+	145     (0000020e) iget-object          v2, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	146     (00000212) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	147     (00000218) move-result          v2
+	148     (0000021a) iget-object          v4, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	149     (0000021e) iget-object          v4, v4, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	150     (00000222) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	151     (00000228) move-result          v4
+	152     (0000022a) iget-object          v5, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	153     (0000022e) invoke-virtual       v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getTarget()Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	154     (00000234) move-result-object   v5
+	155     (00000236) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	156     (0000023a) iget-object          v6, v6, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	157     (0000023e) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getTarget()Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	158     (00000244) move-result-object   v6
+	159     (00000246) if-ne                v5, v6, +6
+
+resolve-BB@0x24a : [ resolve-BB@0x252 ]
+	160     (0000024a) const/high16         v0, 16128 # [0.5]
+	161     (0000024e) const/4              v2, 0
+	162     (00000250) const/4              v4, 0
+
+resolve-BB@0x252 : [ resolve-BB@0x262 resolve-BB@0x298 ]
+	163     (00000252) int-to-float         v5, v2
+	164     (00000254) sub-float/2addr      v3, v5
+	165     (00000256) int-to-float         v5, v4
+	166     (00000258) sub-float/2addr      v3, v5
+	167     (0000025a) const/high16         v5, 16256 # [1.0]
+	168     (0000025e) if-eqz               v1, +1d
+
+resolve-BB@0x262 : [ resolve-BB@0x2cc ]
+	169     (00000262) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	170     (00000266) iget-object          v7, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	171     (0000026a) iget-object          v7, v7, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	172     (0000026e) iget                 v7, v7, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	173     (00000272) int-to-float         v8, v4
+	174     (00000274) add-float/2addr      v7, v8
+	175     (00000276) mul-float            v8, v3, v0
+	176     (0000027a) add-float/2addr      v7, v8
+	177     (0000027c) iput                 v7, v6, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	178     (00000280) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	179     (00000284) iget                 v6, v6, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	180     (00000288) int-to-float         v7, v2
+	181     (0000028a) sub-float/2addr      v6, v7
+	182     (0000028c) sub-float/2addr      v5, v0
+	183     (0000028e) mul-float/2addr      v5, v3
+	184     (00000290) sub-float/2addr      v6, v5
+	185     (00000292) iput                 v6, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	186     (00000296) goto                 +1b
+
+resolve-BB@0x298 : [ resolve-BB@0x2cc ]
+	187     (00000298) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	188     (0000029c) iget                 v6, v6, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	189     (000002a0) int-to-float         v7, v2
+	190     (000002a2) add-float/2addr      v6, v7
+	191     (000002a4) mul-float            v7, v3, v0
+	192     (000002a8) add-float/2addr      v6, v7
+	193     (000002aa) iput                 v6, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	194     (000002ae) iget-object          v6, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	195     (000002b2) iget-object          v7, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	196     (000002b6) iget-object          v7, v7, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	197     (000002ba) iget                 v7, v7, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	198     (000002be) int-to-float         v8, v4
+	199     (000002c0) sub-float/2addr      v7, v8
+	200     (000002c2) sub-float/2addr      v5, v0
+	201     (000002c4) mul-float/2addr      v5, v3
+	202     (000002c6) sub-float/2addr      v7, v5
+	203     (000002c8) iput                 v7, v6, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+
+resolve-BB@0x2cc : [ resolve-BB@0x3b8 ]
+	204     (000002cc) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->didResolve()V
+	205     (000002d2) iget-object          v5, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	206     (000002d6) invoke-virtual       v5, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->didResolve()V
+	207     (000002dc) goto                 +6e
+
+resolve-BB@0x2de : [ resolve-BB@0x2e8 resolve-BB@0x3a0 ]
+	208     (000002de) iget                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->type I
+	209     (000002e2) const/4              v2, 3
+	210     (000002e4) if-ne                v0, v2, +5e
+
+resolve-BB@0x2e8 : [ resolve-BB@0x2f0 resolve-BB@0x3a0 ]
+	211     (000002e8) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	212     (000002ec) if-eqz               v0, +5a
+
+resolve-BB@0x2f0 : [ resolve-BB@0x2fc resolve-BB@0x3a0 ]
+	213     (000002f0) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	214     (000002f4) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	215     (000002f8) if-ne                v0, v1, +54
+
+resolve-BB@0x2fc : [ resolve-BB@0x304 resolve-BB@0x3a0 ]
+	216     (000002fc) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	217     (00000300) if-eqz               v0, +50
+
+resolve-BB@0x304 : [ resolve-BB@0x310 resolve-BB@0x3a0 ]
+	218     (00000304) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	219     (00000308) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	220     (0000030c) if-eqz               v0, +4a
+
+resolve-BB@0x310 : [ resolve-BB@0x320 resolve-BB@0x3a0 ]
+	221     (00000310) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	222     (00000314) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	223     (00000318) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	224     (0000031c) if-ne                v0, v1, +42
+
+resolve-BB@0x320 : [ resolve-BB@0x32c resolve-BB@0x33e ]
+	225     (00000320) invoke-static        Landroid/support/constraint/solver/LinearSystem;->getMetrics()Landroid/support/constraint/solver/Metrics;
+	226     (00000326) move-result-object   v0
+	227     (00000328) if-eqz               v0, +b
+
+resolve-BB@0x32c : [ resolve-BB@0x33e ]
+	228     (0000032c) invoke-static        Landroid/support/constraint/solver/LinearSystem;->getMetrics()Landroid/support/constraint/solver/Metrics;
+	229     (00000332) move-result-object   v0
+	230     (00000334) iget-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->matchConnectionResolved J
+	231     (00000338) add-long/2addr       v1, v3
+	232     (0000033a) iput-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->matchConnectionResolved J
+
+resolve-BB@0x33e : [ resolve-BB@0x3b8 ]
+	233     (0000033e) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	234     (00000342) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	235     (00000346) iput-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	236     (0000034a) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	237     (0000034e) iget-object          v1, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	238     (00000352) iget-object          v1, v1, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	239     (00000356) iget-object          v1, v1, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	240     (0000035a) iput-object          v1, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	241     (0000035e) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	242     (00000362) iget                 v0, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	243     (00000366) iget                 v1, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->offset F
+	244     (0000036a) add-float/2addr      v0, v1
+	245     (0000036c) iput                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	246     (00000370) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	247     (00000374) iget-object          v1, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	248     (00000378) iget-object          v1, v1, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	249     (0000037c) iget                 v1, v1, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	250     (00000380) iget-object          v2, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	251     (00000384) iget                 v2, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->offset F
+	252     (00000388) add-float/2addr      v1, v2
+	253     (0000038a) iput                 v1, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	254     (0000038e) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->didResolve()V
+	255     (00000394) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	256     (00000398) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->didResolve()V
+	257     (0000039e) goto                 +d
+
+resolve-BB@0x3a0 : [ resolve-BB@0x3aa resolve-BB@0x3b8 ]
+	258     (000003a0) iget                 v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->type I
+	259     (000003a4) const/4              v1, 5
+	260     (000003a6) if-ne                v0, v1, +9
+
+resolve-BB@0x3aa : [ resolve-BB@0x3b8 ]
+	261     (000003aa) iget-object          v0, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->myAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	262     (000003ae) iget-object          v0, v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	263     (000003b2) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->resolve()V
+
+resolve-BB@0x3b8 : 
+	264     (000003b8) return-void          
+

@@ -1,0 +1,216 @@
+# Landroid/support/constraint/solver/LinearSystem;->enforceBFS(Landroid/support/constraint/solver/LinearSystem$Row;)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v17
+# - v18:android.support.constraint.solver.LinearSystem$Row
+#
+# - return:int
+
+enforceBFS-BB@0x0 : [ enforceBFS-BB@0xa ]
+	0       (00000000) move-object/from16   v0, v17
+	1       (00000004) const/4              v1, 0
+	2       (00000006) const/4              v2, 0
+	3       (00000008) const/4              v4, 0
+
+enforceBFS-BB@0xa : [ enforceBFS-BB@0x14 enforceBFS-BB@0x4c ]
+	4       (0000000a) iget                 v5, v0, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	5       (0000000e) const/4              v6, 0
+	6       (00000010) if-ge                v4, v5, +1e
+
+enforceBFS-BB@0x14 : [ enforceBFS-BB@0x2c enforceBFS-BB@0x2e ]
+	7       (00000014) iget-object          v5, v0, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	8       (00000018) aget-object          v5, v5, v4
+	9       (0000001c) iget-object          v5, v5, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	10      (00000020) iget-object          v7, v5, Landroid/support/constraint/solver/SolverVariable;->mType Landroid/support/constraint/solver/SolverVariable$Type;
+	11      (00000024) sget-object          v8, Landroid/support/constraint/solver/SolverVariable$Type;->UNRESTRICTED Landroid/support/constraint/solver/SolverVariable$Type;
+	12      (00000028) if-ne                v7, v8, +3
+
+enforceBFS-BB@0x2c : [ enforceBFS-BB@0x46 ]
+	13      (0000002c) goto                 +d
+
+enforceBFS-BB@0x2e : [ enforceBFS-BB@0x42 enforceBFS-BB@0x46 ]
+	14      (0000002e) iget-object          v7, v0, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	15      (00000032) aget-object          v7, v7, v4
+	16      (00000036) iget                 v7, v7, Landroid/support/constraint/solver/ArrayRow;->constantValue F
+	17      (0000003a) cmpg-float           v7, v7, v6
+	18      (0000003e) if-gez               v7, +4
+
+enforceBFS-BB@0x42 : [ enforceBFS-BB@0x4c ]
+	19      (00000042) const/4              v2, 1
+	20      (00000044) goto                 +4
+
+enforceBFS-BB@0x46 : [ enforceBFS-BB@0xa ]
+	21      (00000046) add-int/lit8         v4, v4, 1
+	22      (0000004a) goto                 -20
+
+enforceBFS-BB@0x4c : [ enforceBFS-BB@0x50 enforceBFS-BB@0x1a6 ]
+	23      (0000004c) if-eqz               v2, +ad
+
+enforceBFS-BB@0x50 : [ enforceBFS-BB@0x54 ]
+	24      (00000050) const/4              v4, 0
+	25      (00000052) const/4              v1, 0
+
+enforceBFS-BB@0x54 : [ enforceBFS-BB@0x58 enforceBFS-BB@0x1a6 ]
+	26      (00000054) if-nez               v4, +a9
+
+enforceBFS-BB@0x58 : [ enforceBFS-BB@0x64 enforceBFS-BB@0x72 ]
+	27      (00000058) sget-object          v5, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	28      (0000005c) const-wide/16        v7, 1 # [1.0]
+	29      (00000060) if-eqz               v5, +9
+
+enforceBFS-BB@0x64 : [ enforceBFS-BB@0x72 ]
+	30      (00000064) sget-object          v5, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	31      (00000068) iget-wide            v9, v5, Landroid/support/constraint/solver/Metrics;->bfs J
+	32      (0000006c) add-long/2addr       v9, v7
+	33      (0000006e) iput-wide            v9, v5, Landroid/support/constraint/solver/Metrics;->bfs J
+
+enforceBFS-BB@0x72 : [ enforceBFS-BB@0x88 ]
+	34      (00000072) add-int/lit8         v1, v1, 1
+	35      (00000076) const                v5, 2139095039 # [3.4028234663852886e+38]
+	36      (0000007c) const/4              v9, 0
+	37      (0000007e) const/4              v10, -1
+	38      (00000080) const/4              v11, -1
+	39      (00000082) move                 v12, v9
+	40      (00000084) move                 v9, v5
+	41      (00000086) const/4              v5, 0
+
+enforceBFS-BB@0x88 : [ enforceBFS-BB@0x90 enforceBFS-BB@0x138 ]
+	42      (00000088) iget                 v13, v0, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	43      (0000008c) if-ge                v5, v13, +56
+
+enforceBFS-BB@0x90 : [ enforceBFS-BB@0xa8 enforceBFS-BB@0xaa ]
+	44      (00000090) iget-object          v13, v0, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	45      (00000094) aget-object          v13, v13, v5
+	46      (00000098) iget-object          v14, v13, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	47      (0000009c) iget-object          v15, v14, Landroid/support/constraint/solver/SolverVariable;->mType Landroid/support/constraint/solver/SolverVariable$Type;
+	48      (000000a0) sget-object          v3, Landroid/support/constraint/solver/SolverVariable$Type;->UNRESTRICTED Landroid/support/constraint/solver/SolverVariable$Type;
+	49      (000000a4) if-ne                v15, v3, +3
+
+enforceBFS-BB@0xa8 : [ enforceBFS-BB@0x12c ]
+	50      (000000a8) goto                 +42
+
+enforceBFS-BB@0xaa : [ enforceBFS-BB@0xb2 enforceBFS-BB@0xb4 ]
+	51      (000000aa) iget-boolean         v3, v13, Landroid/support/constraint/solver/ArrayRow;->isSimpleDefinition Z
+	52      (000000ae) if-eqz               v3, +3
+
+enforceBFS-BB@0xb2 : [ enforceBFS-BB@0x12c ]
+	53      (000000b2) goto                 +3d
+
+enforceBFS-BB@0xb4 : [ enforceBFS-BB@0xc0 enforceBFS-BB@0x12c ]
+	54      (000000b4) iget                 v3, v13, Landroid/support/constraint/solver/ArrayRow;->constantValue F
+	55      (000000b8) cmpg-float           v3, v3, v6
+	56      (000000bc) if-gez               v3, +38
+
+enforceBFS-BB@0xc0 : [ enforceBFS-BB@0xc2 ]
+	57      (000000c0) const/4              v3, 1
+
+enforceBFS-BB@0xc2 : [ enforceBFS-BB@0xca enforceBFS-BB@0x12c ]
+	58      (000000c2) iget                 v15, v0, Landroid/support/constraint/solver/LinearSystem;->mNumColumns I
+	59      (000000c6) if-ge                v3, v15, +33
+
+enforceBFS-BB@0xca : [ enforceBFS-BB@0xea enforceBFS-BB@0xec ]
+	60      (000000ca) iget-object          v15, v0, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	61      (000000ce) iget-object          v15, v15, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	62      (000000d2) aget-object          v15, v15, v3
+	63      (000000d6) iget-object          v7, v13, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	64      (000000da) invoke-virtual       v7, v15, Landroid/support/constraint/solver/ArrayLinkedVariables;->get(Landroid/support/constraint/solver/SolverVariable;)F
+	65      (000000e0) move-result          v7
+	66      (000000e2) cmpg-float           v8, v7, v6
+	67      (000000e6) if-gtz               v8, +3
+
+enforceBFS-BB@0xea : [ enforceBFS-BB@0x120 ]
+	68      (000000ea) goto                 +1b
+
+enforceBFS-BB@0xec : [ enforceBFS-BB@0xee ]
+	69      (000000ec) const/4              v8, 0
+
+enforceBFS-BB@0xee : [ enforceBFS-BB@0xf4 enforceBFS-BB@0x120 ]
+	70      (000000ee) const/4              v6, 7
+	71      (000000f0) if-ge                v8, v6, +18
+
+enforceBFS-BB@0xf4 : [ enforceBFS-BB@0x106 enforceBFS-BB@0x10a ]
+	72      (000000f4) iget-object          v6, v15, Landroid/support/constraint/solver/SolverVariable;->strengthVector [F
+	73      (000000f8) aget                 v6, v6, v8
+	74      (000000fc) div-float/2addr      v6, v7
+	75      (000000fe) cmpg-float           v16, v6, v9
+	76      (00000102) if-gez               v16, +4
+
+enforceBFS-BB@0x106 : [ enforceBFS-BB@0x10a enforceBFS-BB@0x10e ]
+	77      (00000106) if-eq                v8, v12, +4
+
+enforceBFS-BB@0x10a : [ enforceBFS-BB@0x10e enforceBFS-BB@0x118 ]
+	78      (0000010a) if-le                v8, v12, +7
+
+enforceBFS-BB@0x10e : [ enforceBFS-BB@0x118 ]
+	79      (0000010e) move                 v9, v6
+	80      (00000110) move                 v10, v5
+	81      (00000112) move                 v11, v3
+	82      (00000114) move                 v6, v8
+	83      (00000116) move                 v12, v6
+
+enforceBFS-BB@0x118 : [ enforceBFS-BB@0xee ]
+	84      (00000118) add-int/lit8         v8, v8, 1
+	85      (0000011c) const/4              v6, 0
+	86      (0000011e) goto                 -18
+
+enforceBFS-BB@0x120 : [ enforceBFS-BB@0xc2 ]
+	87      (00000120) add-int/lit8         v3, v3, 1
+	88      (00000124) const/4              v6, 0
+	89      (00000126) const-wide/16        v7, 1 # [1.0]
+	90      (0000012a) goto                 -34
+
+enforceBFS-BB@0x12c : [ enforceBFS-BB@0x88 ]
+	91      (0000012c) add-int/lit8         v5, v5, 1
+	92      (00000130) const/4              v6, 0
+	93      (00000132) const-wide/16        v7, 1 # [1.0]
+	94      (00000136) goto                 -57
+
+enforceBFS-BB@0x138 : [ enforceBFS-BB@0x13e enforceBFS-BB@0x18e ]
+	95      (00000138) const/4              v3, -1
+	96      (0000013a) if-eq                v10, v3, +2a
+
+enforceBFS-BB@0x13e : [ enforceBFS-BB@0x156 enforceBFS-BB@0x168 ]
+	97      (0000013e) iget-object          v5, v0, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	98      (00000142) aget-object          v5, v5, v10
+	99      (00000146) iget-object          v6, v5, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	100     (0000014a) iput                 v3, v6, Landroid/support/constraint/solver/SolverVariable;->definitionId I
+	101     (0000014e) sget-object          v3, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	102     (00000152) if-eqz               v3, +b
+
+enforceBFS-BB@0x156 : [ enforceBFS-BB@0x168 ]
+	103     (00000156) sget-object          v3, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	104     (0000015a) iget-wide            v6, v3, Landroid/support/constraint/solver/Metrics;->pivots J
+	105     (0000015e) const-wide/16        v13, 1 # [1.0]
+	106     (00000162) add-long/2addr       v6, v13
+	107     (00000164) iput-wide            v6, v3, Landroid/support/constraint/solver/Metrics;->pivots J
+
+enforceBFS-BB@0x168 : [ enforceBFS-BB@0x190 ]
+	108     (00000168) iget-object          v3, v0, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	109     (0000016c) iget-object          v3, v3, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	110     (00000170) aget-object          v3, v3, v11
+	111     (00000174) invoke-virtual       v5, v3, Landroid/support/constraint/solver/ArrayRow;->pivot(Landroid/support/constraint/solver/SolverVariable;)V
+	112     (0000017a) iget-object          v3, v5, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	113     (0000017e) iput                 v10, v3, Landroid/support/constraint/solver/SolverVariable;->definitionId I
+	114     (00000182) iget-object          v3, v5, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	115     (00000186) invoke-virtual       v3, v5, Landroid/support/constraint/solver/SolverVariable;->updateReferencesWithNewDefinition(Landroid/support/constraint/solver/ArrayRow;)V
+	116     (0000018c) goto                 +2
+
+enforceBFS-BB@0x18e : [ enforceBFS-BB@0x190 ]
+	117     (0000018e) const/4              v4, 1
+
+enforceBFS-BB@0x190 : [ enforceBFS-BB@0x19c enforceBFS-BB@0x1a0 ]
+	118     (00000190) iget                 v3, v0, Landroid/support/constraint/solver/LinearSystem;->mNumColumns I
+	119     (00000194) div-int/lit8         v3, v3, 2
+	120     (00000198) if-le                v1, v3, +4
+
+enforceBFS-BB@0x19c : [ enforceBFS-BB@0x1a0 ]
+	121     (0000019c) const/4              v3, 1
+	122     (0000019e) move                 v4, v3
+
+enforceBFS-BB@0x1a0 : [ enforceBFS-BB@0x54 ]
+	123     (000001a0) const/4              v6, 0
+	124     (000001a2) goto/16              -a7
+
+enforceBFS-BB@0x1a6 : 
+	125     (000001a6) return               v1
+

@@ -1,0 +1,37 @@
+# Landroid/support/constraint/solver/widgets/WidgetContainer;->getRootConstraintContainer()Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:android.support.constraint.solver.widgets.ConstraintWidgetContainer
+
+getRootConstraintContainer-BB@0x0 : [ getRootConstraintContainer-BB@0x14 getRootConstraintContainer-BB@0x1a ]
+	0       (00000000) move-object          v0, v4
+	1       (00000002) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) const/4              v2, 0
+	4       (0000000c) instance-of          v3, v0, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	5       (00000010) if-eqz               v3, +5
+
+getRootConstraintContainer-BB@0x14 : [ getRootConstraintContainer-BB@0x1a ]
+	6       (00000014) move-object          v2, v4
+	7       (00000016) check-cast           v2, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+
+getRootConstraintContainer-BB@0x1a : [ getRootConstraintContainer-BB@0x1e getRootConstraintContainer-BB@0x38 ]
+	8       (0000001a) if-eqz               v1, +f
+
+getRootConstraintContainer-BB@0x1e : [ getRootConstraintContainer-BB@0x30 getRootConstraintContainer-BB@0x1a ]
+	9       (0000001e) move-object          v0, v1
+	10      (00000020) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	11      (00000026) move-result-object   v1
+	12      (00000028) instance-of          v3, v0, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	13      (0000002c) if-eqz               v3, -9
+
+getRootConstraintContainer-BB@0x30 : [ getRootConstraintContainer-BB@0x1a ]
+	14      (00000030) move-object          v2, v0
+	15      (00000032) check-cast           v2, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	16      (00000036) goto                 -e
+
+getRootConstraintContainer-BB@0x38 : 
+	17      (00000038) return-object        v2
+

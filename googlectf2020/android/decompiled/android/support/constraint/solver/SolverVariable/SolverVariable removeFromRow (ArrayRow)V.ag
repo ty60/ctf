@@ -1,0 +1,53 @@
+# Landroid/support/constraint/solver/SolverVariable;->removeFromRow(Landroid/support/constraint/solver/ArrayRow;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.support.constraint.solver.ArrayRow
+#
+# - return:void
+
+removeFromRow-BB@0x0 : [ removeFromRow-BB@0x8 ]
+	0       (00000000) iget                 v0, v7, Landroid/support/constraint/solver/SolverVariable;->mClientEquationsCount I
+	1       (00000004) const/4              v1, 0
+	2       (00000006) move                 v2, v1
+
+removeFromRow-BB@0x8 : [ removeFromRow-BB@0xc removeFromRow-BB@0x5c ]
+	3       (00000008) if-ge                v2, v0, +2a
+
+removeFromRow-BB@0xc : [ removeFromRow-BB@0x18 removeFromRow-BB@0x56 ]
+	4       (0000000c) iget-object          v3, v7, Landroid/support/constraint/solver/SolverVariable;->mClientEquations [Landroid/support/constraint/solver/ArrayRow;
+	5       (00000010) aget-object          v3, v3, v2
+	6       (00000014) if-ne                v3, v8, +21
+
+removeFromRow-BB@0x18 : [ removeFromRow-BB@0x1a ]
+	7       (00000018) nop                  
+
+removeFromRow-BB@0x1a : [ removeFromRow-BB@0x26 removeFromRow-BB@0x48 ]
+	8       (0000001a) sub-int              v3, v0, v2
+	9       (0000001e) add-int/lit8         v3, v3, -1
+	10      (00000022) if-ge                v1, v3, +13
+
+removeFromRow-BB@0x26 : [ removeFromRow-BB@0x1a ]
+	11      (00000026) iget-object          v3, v7, Landroid/support/constraint/solver/SolverVariable;->mClientEquations [Landroid/support/constraint/solver/ArrayRow;
+	12      (0000002a) add-int              v4, v2, v1
+	13      (0000002e) iget-object          v5, v7, Landroid/support/constraint/solver/SolverVariable;->mClientEquations [Landroid/support/constraint/solver/ArrayRow;
+	14      (00000032) add-int              v6, v2, v1
+	15      (00000036) add-int/lit8         v6, v6, 1
+	16      (0000003a) aget-object          v5, v5, v6
+	17      (0000003e) aput-object          v5, v3, v4
+	18      (00000042) add-int/lit8         v1, v1, 1
+	19      (00000046) goto                 -16
+
+removeFromRow-BB@0x48 : 
+	20      (00000048) iget                 v1, v7, Landroid/support/constraint/solver/SolverVariable;->mClientEquationsCount I
+	21      (0000004c) add-int/lit8         v1, v1, -1
+	22      (00000050) iput                 v1, v7, Landroid/support/constraint/solver/SolverVariable;->mClientEquationsCount I
+	23      (00000054) return-void          
+
+removeFromRow-BB@0x56 : [ removeFromRow-BB@0x8 ]
+	24      (00000056) add-int/lit8         v2, v2, 1
+	25      (0000005a) goto                 -29
+
+removeFromRow-BB@0x5c : 
+	26      (0000005c) return-void          
+

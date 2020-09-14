@@ -1,0 +1,11 @@
+# Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->getPadding()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getPadding-BB@0x0 : 
+	0       (00000000) iget                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mPadding I
+	1       (00000004) return               v0
+

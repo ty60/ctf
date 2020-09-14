@@ -1,0 +1,92 @@
+# Landroid/support/constraint/solver/widgets/Analyzer;->updateSizeDependentWidgets(Landroid/support/constraint/solver/widgets/ConstraintWidget; I I)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.support.constraint.solver.widgets.ConstraintWidget
+# - v11:int
+# - v12:int
+#
+# - return:void
+
+updateSizeDependentWidgets-BB@0x0 : [ updateSizeDependentWidgets-BB@0x22 updateSizeDependentWidgets-BB@0x2e ]
+	0       (00000000) mul-int/lit8         v0, v11, 2
+	1       (00000004) iget-object          v1, v10, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	2       (00000008) aget-object          v1, v1, v0
+	3       (0000000c) iget-object          v2, v10, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	4       (00000010) add-int/lit8         v3, v0, 1
+	5       (00000014) aget-object          v2, v2, v3
+	6       (00000018) iget-object          v3, v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	7       (0000001c) const/4              v4, 1
+	8       (0000001e) if-eqz               v3, +8
+
+updateSizeDependentWidgets-BB@0x22 : [ updateSizeDependentWidgets-BB@0x2a updateSizeDependentWidgets-BB@0x2e ]
+	9       (00000022) iget-object          v3, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	10      (00000026) if-eqz               v3, +4
+
+updateSizeDependentWidgets-BB@0x2a : [ updateSizeDependentWidgets-BB@0x30 ]
+	11      (0000002a) move                 v3, v4
+	12      (0000002c) goto                 +2
+
+updateSizeDependentWidgets-BB@0x2e : [ updateSizeDependentWidgets-BB@0x30 ]
+	13      (0000002e) const/4              v3, 0
+
+updateSizeDependentWidgets-BB@0x30 : [ updateSizeDependentWidgets-BB@0x34 updateSizeDependentWidgets-BB@0x4e ]
+	14      (00000030) if-eqz               v3, +f
+
+updateSizeDependentWidgets-BB@0x34 : 
+	15      (00000034) invoke-static        v10, v11, Landroid/support/constraint/solver/widgets/Analyzer;->getParentBiasOffset(Landroid/support/constraint/solver/widgets/ConstraintWidget; I)I
+	16      (0000003a) move-result          v4
+	17      (0000003c) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	18      (00000042) move-result          v5
+	19      (00000044) add-int/2addr        v4, v5
+	20      (00000046) invoke-static        v10, v11, v4, Landroid/support/constraint/solver/widgets/Optimizer;->setOptimizedWidget(Landroid/support/constraint/solver/widgets/ConstraintWidget; I I)V
+	21      (0000004c) return-void          
+
+updateSizeDependentWidgets-BB@0x4e : [ updateSizeDependentWidgets-BB@0x5c updateSizeDependentWidgets-BB@0xc4 ]
+	22      (0000004e) iget                 v5, v10, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDimensionRatio F
+	23      (00000052) const/4              v6, 0
+	24      (00000054) cmpl-float           v5, v5, v6
+	25      (00000058) if-eqz               v5, +36
+
+updateSizeDependentWidgets-BB@0x5c : [ updateSizeDependentWidgets-BB@0x6c updateSizeDependentWidgets-BB@0xc4 ]
+	26      (0000005c) invoke-virtual       v10, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getDimensionBehaviour(I)Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	27      (00000062) move-result-object   v5
+	28      (00000064) sget-object          v6, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	29      (00000068) if-ne                v5, v6, +2e
+
+updateSizeDependentWidgets-BB@0x6c : 
+	30      (0000006c) invoke-static        v10, Landroid/support/constraint/solver/widgets/Analyzer;->resolveDimensionRatio(Landroid/support/constraint/solver/widgets/ConstraintWidget;)I
+	31      (00000072) move-result          v5
+	32      (00000074) iget-object          v6, v10, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	33      (00000078) aget-object          v6, v6, v0
+	34      (0000007c) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	35      (00000082) move-result-object   v6
+	36      (00000084) iget                 v6, v6, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	37      (00000088) float-to-int         v6, v6
+	38      (0000008a) add-int              v7, v6, v5
+	39      (0000008e) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	40      (00000094) move-result-object   v8
+	41      (00000096) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	42      (0000009c) move-result-object   v9
+	43      (0000009e) iput-object          v9, v8, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	44      (000000a2) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	45      (000000a8) move-result-object   v8
+	46      (000000aa) int-to-float         v9, v5
+	47      (000000ac) iput                 v9, v8, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	48      (000000b0) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	49      (000000b6) move-result-object   v8
+	50      (000000b8) iput                 v4, v8, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	51      (000000bc) invoke-virtual       v10, v6, v7, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setFrame(I I I)V
+	52      (000000c2) return-void          
+
+updateSizeDependentWidgets-BB@0xc4 : 
+	53      (000000c4) invoke-virtual       v10, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getRelativePositioning(I)I
+	54      (000000ca) move-result          v4
+	55      (000000cc) sub-int              v4, v12, v4
+	56      (000000d0) invoke-virtual       v10, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getLength(I)I
+	57      (000000d6) move-result          v5
+	58      (000000d8) sub-int              v5, v4, v5
+	59      (000000dc) invoke-virtual       v10, v5, v4, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setFrame(I I I)V
+	60      (000000e2) invoke-static        v10, v11, v5, Landroid/support/constraint/solver/widgets/Optimizer;->setOptimizedWidget(Landroid/support/constraint/solver/widgets/ConstraintWidget; I I)V
+	61      (000000e8) return-void          
+

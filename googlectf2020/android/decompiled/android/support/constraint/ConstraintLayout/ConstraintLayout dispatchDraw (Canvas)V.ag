@@ -1,0 +1,198 @@
+# Landroid/support/constraint/ConstraintLayout;->dispatchDraw(Landroid/graphics/Canvas;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v26
+# - v27:android.graphics.Canvas
+#
+# - return:void
+
+dispatchDraw-BB@0x0 : [ dispatchDraw-BB@0x12 dispatchDraw-BB@0x23c ]
+	0       (00000000) invoke-super/range   v26 ... v27, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
+	1       (00000006) invoke-virtual/range v26, Landroid/support/constraint/ConstraintLayout;->isInEditMode()Z
+	2       (0000000c) move-result          v0
+	3       (0000000e) if-eqz               v0, +117
+
+dispatchDraw-BB@0x12 : [ dispatchDraw-BB@0x3a ]
+	4       (00000012) invoke-virtual/range v26, Landroid/support/constraint/ConstraintLayout;->getChildCount()I
+	5       (00000018) move-result          v0
+	6       (0000001a) invoke-virtual/range v26, Landroid/support/constraint/ConstraintLayout;->getWidth()I
+	7       (00000020) move-result          v1
+	8       (00000022) int-to-float         v1, v1
+	9       (00000024) invoke-virtual/range v26, Landroid/support/constraint/ConstraintLayout;->getHeight()I
+	10      (0000002a) move-result          v2
+	11      (0000002c) int-to-float         v2, v2
+	12      (0000002e) const/high16         v3, 17543 # [1080.0]
+	13      (00000032) const/high16         v4, 17648 # [1920.0]
+	14      (00000036) const/4              v5, 0
+	15      (00000038) move                 v6, v5
+
+dispatchDraw-BB@0x3a : [ dispatchDraw-BB@0x3e dispatchDraw-BB@0x23c ]
+	16      (0000003a) if-ge                v6, v0, +101
+
+dispatchDraw-BB@0x3e : [ dispatchDraw-BB@0x5a dispatchDraw-BB@0x70 ]
+	17      (0000003e) move-object/from16   v7, v26
+	18      (00000042) invoke-virtual       v7, v6, Landroid/support/constraint/ConstraintLayout;->getChildAt(I)Landroid/view/View;
+	19      (00000048) move-result-object   v8
+	20      (0000004a) invoke-virtual       v8, Landroid/view/View;->getVisibility()I
+	21      (00000050) move-result          v9
+	22      (00000052) const/16             v10, 8
+	23      (00000056) if-ne                v9, v10, +d
+
+dispatchDraw-BB@0x5a : [ dispatchDraw-BB@0x222 ]
+	24      (0000005a) nop                  
+	25      (0000005c) move/from16          v22, v0
+	26      (00000060) move/from16          v23, v1
+	27      (00000064) move/from16          v24, v2
+	28      (00000068) move/from16          v25, v3
+	29      (0000006c) goto/16              +db
+
+dispatchDraw-BB@0x70 : [ dispatchDraw-BB@0x7c dispatchDraw-BB@0x212 ]
+	30      (00000070) invoke-virtual       v8, Landroid/view/View;->getTag()Ljava/lang/Object;
+	31      (00000076) move-result-object   v9
+	32      (00000078) if-eqz               v9, +cd
+
+dispatchDraw-BB@0x7c : [ dispatchDraw-BB@0x84 dispatchDraw-BB@0x212 ]
+	33      (0000007c) instance-of          v10, v9, Ljava/lang/String;
+	34      (00000080) if-eqz               v10, +c9
+
+dispatchDraw-BB@0x84 : [ dispatchDraw-BB@0x9e dispatchDraw-BB@0x212 ]
+	35      (00000084) move-object          v10, v9
+	36      (00000086) check-cast           v10, Ljava/lang/String;
+	37      (0000008a) const-string         v11, ','
+	38      (0000008e) invoke-virtual       v10, v11, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+	39      (00000094) move-result-object   v11
+	40      (00000096) array-length         v12, v11
+	41      (00000098) const/4              v13, 4
+	42      (0000009a) if-ne                v12, v13, +bc
+
+dispatchDraw-BB@0x9e : [ dispatchDraw-BB@0x222 ]
+	43      (0000009e) aget-object          v12, v11, v5
+	44      (000000a2) invoke-static        v12, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	45      (000000a8) move-result          v12
+	46      (000000aa) const/4              v13, 1
+	47      (000000ac) aget-object          v13, v11, v13
+	48      (000000b0) invoke-static        v13, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	49      (000000b6) move-result          v13
+	50      (000000b8) const/4              v14, 2
+	51      (000000ba) aget-object          v14, v11, v14
+	52      (000000be) invoke-static        v14, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	53      (000000c4) move-result          v14
+	54      (000000c6) const/4              v15, 3
+	55      (000000c8) aget-object          v15, v11, v15
+	56      (000000cc) invoke-static        v15, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	57      (000000d2) move-result          v15
+	58      (000000d4) int-to-float         v5, v12
+	59      (000000d6) div-float/2addr      v5, v3
+	60      (000000d8) mul-float/2addr      v5, v1
+	61      (000000da) float-to-int         v5, v5
+	62      (000000dc) int-to-float         v12, v13
+	63      (000000de) div-float/2addr      v12, v4
+	64      (000000e0) mul-float/2addr      v12, v2
+	65      (000000e2) float-to-int         v12, v12
+	66      (000000e4) int-to-float         v13, v14
+	67      (000000e6) div-float/2addr      v13, v3
+	68      (000000e8) mul-float/2addr      v13, v1
+	69      (000000ea) float-to-int         v13, v13
+	70      (000000ec) int-to-float         v14, v15
+	71      (000000ee) div-float/2addr      v14, v4
+	72      (000000f0) mul-float/2addr      v14, v2
+	73      (000000f2) float-to-int         v14, v14
+	74      (000000f4) new-instance         v15, Landroid/graphics/Paint;
+	75      (000000f8) invoke-direct        v15, Landroid/graphics/Paint;-><init>()V
+	76      (000000fe) move/from16          v22, v0
+	77      (00000102) const/high16         v0, -1 # [nan]
+	78      (00000106) invoke-virtual       v15, v0, Landroid/graphics/Paint;->setColor(I)V
+	79      (0000010c) int-to-float         v0, v5
+	80      (0000010e) move/from16          v23, v1
+	81      (00000112) int-to-float         v1, v12
+	82      (00000114) move/from16          v24, v2
+	83      (00000118) add-int              v2, v5, v13
+	84      (0000011c) int-to-float         v2, v2
+	85      (0000011e) move/from16          v25, v3
+	86      (00000122) int-to-float         v3, v12
+	87      (00000124) move-object/from16   v16, v27
+	88      (00000128) move/from16          v17, v0
+	89      (0000012c) move/from16          v18, v1
+	90      (00000130) move/from16          v19, v2
+	91      (00000134) move/from16          v20, v3
+	92      (00000138) move-object/from16   v21, v15
+	93      (0000013c) invoke-virtual/range v16 ... v21, Landroid/graphics/Canvas;->drawLine(F F F F Landroid/graphics/Paint;)V
+	94      (00000142) add-int              v0, v5, v13
+	95      (00000146) int-to-float         v0, v0
+	96      (00000148) int-to-float         v1, v12
+	97      (0000014a) add-int              v2, v5, v13
+	98      (0000014e) int-to-float         v2, v2
+	99      (00000150) add-int              v3, v12, v14
+	100     (00000154) int-to-float         v3, v3
+	101     (00000156) move/from16          v17, v0
+	102     (0000015a) move/from16          v18, v1
+	103     (0000015e) move/from16          v19, v2
+	104     (00000162) move/from16          v20, v3
+	105     (00000166) invoke-virtual/range v16 ... v21, Landroid/graphics/Canvas;->drawLine(F F F F Landroid/graphics/Paint;)V
+	106     (0000016c) add-int              v0, v5, v13
+	107     (00000170) int-to-float         v0, v0
+	108     (00000172) add-int              v1, v12, v14
+	109     (00000176) int-to-float         v1, v1
+	110     (00000178) int-to-float         v2, v5
+	111     (0000017a) add-int              v3, v12, v14
+	112     (0000017e) int-to-float         v3, v3
+	113     (00000180) move/from16          v17, v0
+	114     (00000184) move/from16          v18, v1
+	115     (00000188) move/from16          v19, v2
+	116     (0000018c) move/from16          v20, v3
+	117     (00000190) invoke-virtual/range v16 ... v21, Landroid/graphics/Canvas;->drawLine(F F F F Landroid/graphics/Paint;)V
+	118     (00000196) int-to-float         v0, v5
+	119     (00000198) add-int              v1, v12, v14
+	120     (0000019c) int-to-float         v1, v1
+	121     (0000019e) int-to-float         v2, v5
+	122     (000001a0) int-to-float         v3, v12
+	123     (000001a2) move/from16          v17, v0
+	124     (000001a6) move/from16          v18, v1
+	125     (000001aa) move/from16          v19, v2
+	126     (000001ae) move/from16          v20, v3
+	127     (000001b2) invoke-virtual/range v16 ... v21, Landroid/graphics/Canvas;->drawLine(F F F F Landroid/graphics/Paint;)V
+	128     (000001b8) const                v0, -16711936 # [-1.714652191593956e+38]
+	129     (000001be) invoke-virtual       v15, v0, Landroid/graphics/Paint;->setColor(I)V
+	130     (000001c4) int-to-float         v0, v5
+	131     (000001c6) int-to-float         v1, v12
+	132     (000001c8) add-int              v2, v5, v13
+	133     (000001cc) int-to-float         v2, v2
+	134     (000001ce) add-int              v3, v12, v14
+	135     (000001d2) int-to-float         v3, v3
+	136     (000001d4) move/from16          v17, v0
+	137     (000001d8) move/from16          v18, v1
+	138     (000001dc) move/from16          v19, v2
+	139     (000001e0) move/from16          v20, v3
+	140     (000001e4) invoke-virtual/range v16 ... v21, Landroid/graphics/Canvas;->drawLine(F F F F Landroid/graphics/Paint;)V
+	141     (000001ea) int-to-float         v0, v5
+	142     (000001ec) add-int              v1, v12, v14
+	143     (000001f0) int-to-float         v1, v1
+	144     (000001f2) add-int              v2, v5, v13
+	145     (000001f6) int-to-float         v2, v2
+	146     (000001f8) int-to-float         v3, v12
+	147     (000001fa) move/from16          v17, v0
+	148     (000001fe) move/from16          v18, v1
+	149     (00000202) move/from16          v19, v2
+	150     (00000206) move/from16          v20, v3
+	151     (0000020a) invoke-virtual/range v16 ... v21, Landroid/graphics/Canvas;->drawLine(F F F F Landroid/graphics/Paint;)V
+	152     (00000210) goto                 +9
+
+dispatchDraw-BB@0x212 : [ dispatchDraw-BB@0x222 ]
+	153     (00000212) move/from16          v22, v0
+	154     (00000216) move/from16          v23, v1
+	155     (0000021a) move/from16          v24, v2
+	156     (0000021e) move/from16          v25, v3
+
+dispatchDraw-BB@0x222 : [ dispatchDraw-BB@0x3a ]
+	157     (00000222) add-int/lit8         v6, v6, 1
+	158     (00000226) move/from16          v0, v22
+	159     (0000022a) move/from16          v1, v23
+	160     (0000022e) move/from16          v2, v24
+	161     (00000232) move/from16          v3, v25
+	162     (00000236) const/4              v5, 0
+	163     (00000238) goto/16              -ff
+
+dispatchDraw-BB@0x23c : 
+	164     (0000023c) move-object/from16   v7, v26
+	165     (00000240) return-void          
+

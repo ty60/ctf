@@ -1,0 +1,26 @@
+# Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->setColumnAlignment(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:void
+
+setColumnAlignment-BB@0x0 : [ setColumnAlignment-BB@0x10 setColumnAlignment-BB@0x2a ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mVerticalSlices Ljava/util/ArrayList;
+	1       (00000004) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-ge                v2, v0, +f
+
+setColumnAlignment-BB@0x10 : [ setColumnAlignment-BB@0x2a ]
+	4       (00000010) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->mVerticalSlices Ljava/util/ArrayList;
+	5       (00000014) invoke-virtual       v0, v2, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) check-cast           v0, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$VerticalSlice;
+	8       (00000020) iput                 v3, v0, Landroid/support/constraint/solver/widgets/ConstraintTableLayout$VerticalSlice;->alignment I
+	9       (00000024) invoke-direct        v1, Landroid/support/constraint/solver/widgets/ConstraintTableLayout;->setChildrenConnections()V
+
+setColumnAlignment-BB@0x2a : 
+	10      (0000002a) return-void          
+

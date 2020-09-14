@@ -1,0 +1,35 @@
+# Landroid/support/constraint/solver/widgets/ResolutionAnchor;->remove(Landroid/support/constraint/solver/widgets/ResolutionDimension;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.support.constraint.solver.widgets.ResolutionDimension
+#
+# - return:void
+
+remove-BB@0x0 : [ remove-BB@0xa remove-BB@0x1a ]
+	0       (00000000) iget-object          v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->dimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) if-ne                v0, v4, +a
+
+remove-BB@0xa : [ remove-BB@0x34 ]
+	3       (0000000a) iput-object          v1, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->dimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	4       (0000000e) iget                 v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->dimensionMultiplier I
+	5       (00000012) int-to-float         v0, v0
+	6       (00000014) iput                 v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->offset F
+	7       (00000018) goto                 +e
+
+remove-BB@0x1a : [ remove-BB@0x26 remove-BB@0x34 ]
+	8       (0000001a) iget-object          v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->dimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	9       (0000001e) iget-object          v2, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeDimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	10      (00000022) if-ne                v0, v2, +9
+
+remove-BB@0x26 : [ remove-BB@0x34 ]
+	11      (00000026) iput-object          v1, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeDimension Landroid/support/constraint/solver/widgets/ResolutionDimension;
+	12      (0000002a) iget                 v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeDimensionMultiplier I
+	13      (0000002e) int-to-float         v0, v0
+	14      (00000030) iput                 v0, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeOffset F
+
+remove-BB@0x34 : 
+	15      (00000034) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolve()V
+	16      (0000003a) return-void          
+

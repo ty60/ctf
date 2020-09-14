@@ -1,0 +1,91 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->addChildrenToSolver(Landroid/support/constraint/solver/LinearSystem;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.support.constraint.solver.LinearSystem
+#
+# - return:boolean
+
+addChildrenToSolver-BB@0x0 : [ addChildrenToSolver-BB@0x16 ]
+	0       (00000000) invoke-virtual       v7, v8, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->addToSolver(Landroid/support/constraint/solver/LinearSystem;)V
+	1       (00000006) iget-object          v0, v7, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mChildren Ljava/util/ArrayList;
+	2       (0000000a) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	3       (00000010) move-result          v0
+	4       (00000012) const/4              v1, 0
+	5       (00000014) move                 v2, v1
+
+addChildrenToSolver-BB@0x16 : [ addChildrenToSolver-BB@0x1c addChildrenToSolver-BB@0x9e ]
+	6       (00000016) const/4              v3, 1
+	7       (00000018) if-ge                v2, v0, +43
+
+addChildrenToSolver-BB@0x1c : [ addChildrenToSolver-BB@0x34 addChildrenToSolver-BB@0x8c ]
+	8       (0000001c) iget-object          v4, v7, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mChildren Ljava/util/ArrayList;
+	9       (00000020) invoke-virtual       v4, v2, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	10      (00000026) move-result-object   v4
+	11      (00000028) check-cast           v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	12      (0000002c) instance-of          v5, v4, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	13      (00000030) if-eqz               v5, +2e
+
+addChildrenToSolver-BB@0x34 : [ addChildrenToSolver-BB@0x4c addChildrenToSolver-BB@0x56 ]
+	14      (00000034) iget-object          v5, v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	15      (00000038) aget-object          v5, v5, v1
+	16      (0000003c) iget-object          v6, v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	17      (00000040) aget-object          v3, v6, v3
+	18      (00000044) sget-object          v6, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	19      (00000048) if-ne                v5, v6, +7
+
+addChildrenToSolver-BB@0x4c : [ addChildrenToSolver-BB@0x56 ]
+	20      (0000004c) sget-object          v6, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->FIXED Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	21      (00000050) invoke-virtual       v4, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
+
+addChildrenToSolver-BB@0x56 : [ addChildrenToSolver-BB@0x5e addChildrenToSolver-BB@0x68 ]
+	22      (00000056) sget-object          v6, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	23      (0000005a) if-ne                v3, v6, +7
+
+addChildrenToSolver-BB@0x5e : [ addChildrenToSolver-BB@0x68 ]
+	24      (0000005e) sget-object          v6, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->FIXED Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	25      (00000062) invoke-virtual       v4, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setVerticalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
+
+addChildrenToSolver-BB@0x68 : [ addChildrenToSolver-BB@0x76 addChildrenToSolver-BB@0x7c ]
+	26      (00000068) invoke-virtual       v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->addToSolver(Landroid/support/constraint/solver/LinearSystem;)V
+	27      (0000006e) sget-object          v6, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	28      (00000072) if-ne                v5, v6, +5
+
+addChildrenToSolver-BB@0x76 : [ addChildrenToSolver-BB@0x7c ]
+	29      (00000076) invoke-virtual       v4, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHorizontalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
+
+addChildrenToSolver-BB@0x7c : [ addChildrenToSolver-BB@0x84 addChildrenToSolver-BB@0x8a ]
+	30      (0000007c) sget-object          v6, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	31      (00000080) if-ne                v3, v6, +5
+
+addChildrenToSolver-BB@0x84 : [ addChildrenToSolver-BB@0x8a ]
+	32      (00000084) invoke-virtual       v4, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setVerticalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
+
+addChildrenToSolver-BB@0x8a : [ addChildrenToSolver-BB@0x98 ]
+	33      (0000008a) goto                 +7
+
+addChildrenToSolver-BB@0x8c : [ addChildrenToSolver-BB@0x98 ]
+	34      (0000008c) invoke-static        v7, v8, v4, Landroid/support/constraint/solver/widgets/Optimizer;->checkMatchParent(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/LinearSystem; Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+	35      (00000092) invoke-virtual       v4, v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->addToSolver(Landroid/support/constraint/solver/LinearSystem;)V
+
+addChildrenToSolver-BB@0x98 : [ addChildrenToSolver-BB@0x16 ]
+	36      (00000098) add-int/lit8         v2, v2, 1
+	37      (0000009c) goto                 -43
+
+addChildrenToSolver-BB@0x9e : [ addChildrenToSolver-BB@0xa6 addChildrenToSolver-BB@0xac ]
+	38      (0000009e) iget                 v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mHorizontalChainsSize I
+	39      (000000a2) if-lez               v2, +5
+
+addChildrenToSolver-BB@0xa6 : [ addChildrenToSolver-BB@0xac ]
+	40      (000000a6) invoke-static        v7, v8, v1, Landroid/support/constraint/solver/widgets/Chain;->applyChainConstraints(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/LinearSystem; I)V
+
+addChildrenToSolver-BB@0xac : [ addChildrenToSolver-BB@0xb4 addChildrenToSolver-BB@0xba ]
+	41      (000000ac) iget                 v1, v7, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mVerticalChainsSize I
+	42      (000000b0) if-lez               v1, +5
+
+addChildrenToSolver-BB@0xb4 : [ addChildrenToSolver-BB@0xba ]
+	43      (000000b4) invoke-static        v7, v8, v3, Landroid/support/constraint/solver/widgets/Chain;->applyChainConstraints(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/LinearSystem; I)V
+
+addChildrenToSolver-BB@0xba : 
+	44      (000000ba) return               v3
+

@@ -1,0 +1,38 @@
+# Landroid/support/constraint/ConstraintHelper;->setIds(Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+#
+# - return:void
+
+setIds-BB@0x0 : [ setIds-BB@0x4 setIds-BB@0x6 ]
+	0       (00000000) if-nez               v4, +3
+
+setIds-BB@0x4 : 
+	1       (00000004) return-void          
+
+setIds-BB@0x6 : [ setIds-BB@0x8 ]
+	2       (00000006) const/4              v0, 0
+
+setIds-BB@0x8 : [ setIds-BB@0x1a setIds-BB@0x2c ]
+	3       (00000008) const/16             v1, 44
+	4       (0000000c) invoke-virtual       v4, v1, v0, Ljava/lang/String;->indexOf(I I)I
+	5       (00000012) move-result          v1
+	6       (00000014) const/4              v2, -1
+	7       (00000016) if-ne                v1, v2, +b
+
+setIds-BB@0x1a : 
+	8       (0000001a) invoke-virtual       v4, v0, Ljava/lang/String;->substring(I)Ljava/lang/String;
+	9       (00000020) move-result-object   v2
+	10      (00000022) invoke-direct        v3, v2, Landroid/support/constraint/ConstraintHelper;->addID(Ljava/lang/String;)V
+	11      (00000028) nop                  
+	12      (0000002a) return-void          
+
+setIds-BB@0x2c : [ setIds-BB@0x8 ]
+	13      (0000002c) invoke-virtual       v4, v0, v1, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+	14      (00000032) move-result-object   v2
+	15      (00000034) invoke-direct        v3, v2, Landroid/support/constraint/ConstraintHelper;->addID(Ljava/lang/String;)V
+	16      (0000003a) add-int/lit8         v0, v1, 1
+	17      (0000003e) goto                 -1b
+

@@ -1,0 +1,26 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->updateResolutionNodes()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+updateResolutionNodes-BB@0x0 : [ updateResolutionNodes-BB@0x2 ]
+	0       (00000000) const/4              v0, 0
+
+updateResolutionNodes-BB@0x2 : [ updateResolutionNodes-BB@0x8 updateResolutionNodes-BB@0x24 ]
+	1       (00000002) const/4              v1, 6
+	2       (00000004) if-ge                v0, v1, +10
+
+updateResolutionNodes-BB@0x8 : [ updateResolutionNodes-BB@0x2 ]
+	3       (00000008) iget-object          v1, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	4       (0000000c) aget-object          v1, v1, v0
+	5       (00000010) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	6       (00000016) move-result-object   v1
+	7       (00000018) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->update()V
+	8       (0000001e) add-int/lit8         v0, v0, 1
+	9       (00000022) goto                 -10
+
+updateResolutionNodes-BB@0x24 : 
+	10      (00000024) return-void          
+

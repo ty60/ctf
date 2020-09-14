@@ -1,0 +1,27 @@
+# Landroid/support/constraint/solver/widgets/ConstraintAnchor;->resetSolverVariable(Landroid/support/constraint/solver/Cache;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.support.constraint.solver.Cache
+#
+# - return:void
+
+resetSolverVariable-BB@0x0 : [ resetSolverVariable-BB@0x8 resetSolverVariable-BB@0x1e ]
+	0       (00000000) iget-object          v0, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	1       (00000004) if-nez               v0, +d
+
+resetSolverVariable-BB@0x8 : [ resetSolverVariable-BB@0x28 ]
+	2       (00000008) new-instance         v0, Landroid/support/constraint/solver/SolverVariable;
+	3       (0000000c) sget-object          v1, Landroid/support/constraint/solver/SolverVariable$Type;->UNRESTRICTED Landroid/support/constraint/solver/SolverVariable$Type;
+	4       (00000010) const/4              v2, 0
+	5       (00000012) invoke-direct        v0, v1, v2, Landroid/support/constraint/solver/SolverVariable;-><init>(Landroid/support/constraint/solver/SolverVariable$Type; Ljava/lang/String;)V
+	6       (00000018) iput-object          v0, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	7       (0000001c) goto                 +6
+
+resetSolverVariable-BB@0x1e : [ resetSolverVariable-BB@0x28 ]
+	8       (0000001e) iget-object          v0, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mSolverVariable Landroid/support/constraint/solver/SolverVariable;
+	9       (00000022) invoke-virtual       v0, Landroid/support/constraint/solver/SolverVariable;->reset()V
+
+resetSolverVariable-BB@0x28 : 
+	10      (00000028) return-void          
+

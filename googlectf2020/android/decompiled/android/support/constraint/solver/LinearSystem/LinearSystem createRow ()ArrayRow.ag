@@ -1,0 +1,29 @@
+# Landroid/support/constraint/solver/LinearSystem;->createRow()Landroid/support/constraint/solver/ArrayRow; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:android.support.constraint.solver.ArrayRow
+
+createRow-BB@0x0 : [ createRow-BB@0x18 createRow-BB@0x2a ]
+	0       (00000000) iget-object          v0, v3, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	1       (00000004) iget-object          v0, v0, Landroid/support/constraint/solver/Cache;->arrayRowPool Landroid/support/constraint/solver/Pools$Pool;
+	2       (00000008) invoke-interface     v0, Landroid/support/constraint/solver/Pools$Pool;->acquire()Ljava/lang/Object;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) check-cast           v0, Landroid/support/constraint/solver/ArrayRow;
+	5       (00000014) if-nez               v0, +b
+
+createRow-BB@0x18 : [ createRow-BB@0x30 ]
+	6       (00000018) new-instance         v1, Landroid/support/constraint/solver/ArrayRow;
+	7       (0000001c) iget-object          v2, v3, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	8       (00000020) invoke-direct        v1, v2, Landroid/support/constraint/solver/ArrayRow;-><init>(Landroid/support/constraint/solver/Cache;)V
+	9       (00000026) move-object          v0, v1
+	10      (00000028) goto                 +4
+
+createRow-BB@0x2a : [ createRow-BB@0x30 ]
+	11      (0000002a) invoke-virtual       v0, Landroid/support/constraint/solver/ArrayRow;->reset()V
+
+createRow-BB@0x30 : 
+	12      (00000030) invoke-static        Landroid/support/constraint/solver/SolverVariable;->increaseErrorId()V
+	13      (00000036) return-object        v0
+

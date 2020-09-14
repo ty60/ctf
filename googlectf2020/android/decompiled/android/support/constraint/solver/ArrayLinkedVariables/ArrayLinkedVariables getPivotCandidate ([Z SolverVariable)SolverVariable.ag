@@ -1,0 +1,78 @@
+# Landroid/support/constraint/solver/ArrayLinkedVariables;->getPivotCandidate([Z Landroid/support/constraint/solver/SolverVariable;)Landroid/support/constraint/solver/SolverVariable; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:boolean[]
+# - v10:android.support.constraint.solver.SolverVariable
+#
+# - return:android.support.constraint.solver.SolverVariable
+
+getPivotCandidate-BB@0x0 : [ getPivotCandidate-BB@0x12 ]
+	0       (00000000) iget                 v0, v8, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	1       (00000004) const/4              v1, 0
+	2       (00000006) const/4              v2, 0
+	3       (00000008) const/4              v3, 0
+	4       (0000000a) move-object          v4, v2
+	5       (0000000c) move                 v2, v1
+	6       (0000000e) move                 v1, v0
+	7       (00000010) move                 v0, v3
+
+getPivotCandidate-BB@0x12 : [ getPivotCandidate-BB@0x18 getPivotCandidate-BB@0x92 ]
+	8       (00000012) const/4              v5, -1
+	9       (00000014) if-eq                v1, v5, +3f
+
+getPivotCandidate-BB@0x18 : [ getPivotCandidate-BB@0x20 getPivotCandidate-BB@0x92 ]
+	10      (00000018) iget                 v5, v8, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	11      (0000001c) if-ge                v2, v5, +3b
+
+getPivotCandidate-BB@0x20 : [ getPivotCandidate-BB@0x30 getPivotCandidate-BB@0x84 ]
+	12      (00000020) iget-object          v5, v8, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	13      (00000024) aget                 v5, v5, v1
+	14      (00000028) cmpg-float           v5, v5, v3
+	15      (0000002c) if-gez               v5, +2c
+
+getPivotCandidate-BB@0x30 : [ getPivotCandidate-BB@0x48 getPivotCandidate-BB@0x54 ]
+	16      (00000030) iget-object          v5, v8, Landroid/support/constraint/solver/ArrayLinkedVariables;->mCache Landroid/support/constraint/solver/Cache;
+	17      (00000034) iget-object          v5, v5, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	18      (00000038) iget-object          v6, v8, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	19      (0000003c) aget                 v6, v6, v1
+	20      (00000040) aget-object          v5, v5, v6
+	21      (00000044) if-eqz               v9, +8
+
+getPivotCandidate-BB@0x48 : [ getPivotCandidate-BB@0x54 getPivotCandidate-BB@0x84 ]
+	22      (00000048) iget                 v6, v5, Landroid/support/constraint/solver/SolverVariable;->id I
+	23      (0000004c) aget-boolean         v6, v9, v6
+	24      (00000050) if-nez               v6, +1a
+
+getPivotCandidate-BB@0x54 : [ getPivotCandidate-BB@0x58 getPivotCandidate-BB@0x84 ]
+	25      (00000054) if-eq                v5, v10, +18
+
+getPivotCandidate-BB@0x58 : [ getPivotCandidate-BB@0x64 getPivotCandidate-BB@0x70 ]
+	26      (00000058) iget-object          v6, v5, Landroid/support/constraint/solver/SolverVariable;->mType Landroid/support/constraint/solver/SolverVariable$Type;
+	27      (0000005c) sget-object          v7, Landroid/support/constraint/solver/SolverVariable$Type;->SLACK Landroid/support/constraint/solver/SolverVariable$Type;
+	28      (00000060) if-eq                v6, v7, +8
+
+getPivotCandidate-BB@0x64 : [ getPivotCandidate-BB@0x70 getPivotCandidate-BB@0x84 ]
+	29      (00000064) iget-object          v6, v5, Landroid/support/constraint/solver/SolverVariable;->mType Landroid/support/constraint/solver/SolverVariable$Type;
+	30      (00000068) sget-object          v7, Landroid/support/constraint/solver/SolverVariable$Type;->ERROR Landroid/support/constraint/solver/SolverVariable$Type;
+	31      (0000006c) if-ne                v6, v7, +c
+
+getPivotCandidate-BB@0x70 : [ getPivotCandidate-BB@0x80 getPivotCandidate-BB@0x84 ]
+	32      (00000070) iget-object          v6, v8, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	33      (00000074) aget                 v6, v6, v1
+	34      (00000078) cmpg-float           v7, v6, v0
+	35      (0000007c) if-gez               v7, +4
+
+getPivotCandidate-BB@0x80 : [ getPivotCandidate-BB@0x84 ]
+	36      (00000080) move                 v0, v6
+	37      (00000082) move-object          v4, v5
+
+getPivotCandidate-BB@0x84 : [ getPivotCandidate-BB@0x12 ]
+	38      (00000084) iget-object          v5, v8, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	39      (00000088) aget                 v1, v5, v1
+	40      (0000008c) add-int/lit8         v2, v2, 1
+	41      (00000090) goto                 -3f
+
+getPivotCandidate-BB@0x92 : 
+	42      (00000092) return-object        v4
+

@@ -1,0 +1,132 @@
+# Landroid/support/constraint/solver/Metrics;->toString()Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:java.lang.String
+
+toString-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) const-string         v1, '\n*** Metrics ***\nmeasures: '
+	3       (0000000e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	4       (00000014) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->measures J
+	5       (00000018) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	6       (0000001e) const-string         v1, '\nadditionalMeasures: '
+	7       (00000022) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000028) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->additionalMeasures J
+	9       (0000002c) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	10      (00000032) const-string         v1, '\nresolutions passes: '
+	11      (00000036) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (0000003c) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->resolutions J
+	13      (00000040) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	14      (00000046) const-string         v1, '\ntable increases: '
+	15      (0000004a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000050) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->tableSizeIncrease J
+	17      (00000054) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	18      (0000005a) const-string         v1, '\nmaxTableSize: '
+	19      (0000005e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000064) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->maxTableSize J
+	21      (00000068) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	22      (0000006e) const-string         v1, '\nmaxVariables: '
+	23      (00000072) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (00000078) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->maxVariables J
+	25      (0000007c) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	26      (00000082) const-string         v1, '\nmaxRows: '
+	27      (00000086) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (0000008c) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->maxRows J
+	29      (00000090) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	30      (00000096) const-string         v1, '\n\nminimize: '
+	31      (0000009a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	32      (000000a0) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->minimize J
+	33      (000000a4) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	34      (000000aa) const-string         v1, '\nminimizeGoal: '
+	35      (000000ae) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	36      (000000b4) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->minimizeGoal J
+	37      (000000b8) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	38      (000000be) const-string         v1, '\nconstraints: '
+	39      (000000c2) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000c8) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->constraints J
+	41      (000000cc) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	42      (000000d2) const-string         v1, '\nsimpleconstraints: '
+	43      (000000d6) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	44      (000000dc) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->simpleconstraints J
+	45      (000000e0) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	46      (000000e6) const-string         v1, '\noptimize: '
+	47      (000000ea) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	48      (000000f0) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->optimize J
+	49      (000000f4) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	50      (000000fa) const-string         v1, '\niterations: '
+	51      (000000fe) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	52      (00000104) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->iterations J
+	53      (00000108) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	54      (0000010e) const-string         v1, '\npivots: '
+	55      (00000112) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	56      (00000118) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->pivots J
+	57      (0000011c) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	58      (00000122) const-string         v1, '\nbfs: '
+	59      (00000126) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	60      (0000012c) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->bfs J
+	61      (00000130) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	62      (00000136) const-string         v1, '\nvariables: '
+	63      (0000013a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	64      (00000140) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->variables J
+	65      (00000144) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	66      (0000014a) const-string         v1, '\nerrors: '
+	67      (0000014e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	68      (00000154) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->errors J
+	69      (00000158) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	70      (0000015e) const-string         v1, '\nslackvariables: '
+	71      (00000162) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	72      (00000168) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->slackvariables J
+	73      (0000016c) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	74      (00000172) const-string         v1, '\nextravariables: '
+	75      (00000176) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	76      (0000017c) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->extravariables J
+	77      (00000180) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	78      (00000186) const-string         v1, '\nfullySolved: '
+	79      (0000018a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	80      (00000190) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->fullySolved J
+	81      (00000194) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	82      (0000019a) const-string         v1, '\ngraphOptimizer: '
+	83      (0000019e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	84      (000001a4) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->graphOptimizer J
+	85      (000001a8) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	86      (000001ae) const-string         v1, '\nresolvedWidgets: '
+	87      (000001b2) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	88      (000001b8) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->resolvedWidgets J
+	89      (000001bc) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	90      (000001c2) const-string         v1, '\noldresolvedWidgets: '
+	91      (000001c6) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	92      (000001cc) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->oldresolvedWidgets J
+	93      (000001d0) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	94      (000001d6) const-string         v1, '\nnonresolvedWidgets: '
+	95      (000001da) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	96      (000001e0) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->nonresolvedWidgets J
+	97      (000001e4) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	98      (000001ea) const-string         v1, '\ncenterConnectionResolved: '
+	99      (000001ee) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	100     (000001f4) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->centerConnectionResolved J
+	101     (000001f8) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	102     (000001fe) const-string         v1, '\nmatchConnectionResolved: '
+	103     (00000202) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	104     (00000208) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->matchConnectionResolved J
+	105     (0000020c) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	106     (00000212) const-string         v1, '\nchainConnectionResolved: '
+	107     (00000216) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	108     (0000021c) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->chainConnectionResolved J
+	109     (00000220) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	110     (00000226) const-string         v1, '\nbarrierConnectionResolved: '
+	111     (0000022a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	112     (00000230) iget-wide            v1, v3, Landroid/support/constraint/solver/Metrics;->barrierConnectionResolved J
+	113     (00000234) invoke-virtual       v0, v1, v2, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	114     (0000023a) const-string         v1, '\nproblematicsLayouts: '
+	115     (0000023e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	116     (00000244) iget-object          v1, v3, Landroid/support/constraint/solver/Metrics;->problematicLayouts Ljava/util/ArrayList;
+	117     (00000248) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	118     (0000024e) const-string         v1, '\n'
+	119     (00000252) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	120     (00000258) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	121     (0000025e) move-result-object   v0
+	122     (00000260) return-object        v0
+

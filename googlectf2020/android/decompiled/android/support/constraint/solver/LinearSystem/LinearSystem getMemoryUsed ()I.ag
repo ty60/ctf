@@ -1,0 +1,34 @@
+# Landroid/support/constraint/solver/LinearSystem;->getMemoryUsed()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:int
+
+getMemoryUsed-BB@0x0 : [ getMemoryUsed-BB@0x4 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const/4              v1, 0
+
+getMemoryUsed-BB@0x4 : [ getMemoryUsed-BB@0xc getMemoryUsed-BB@0x30 ]
+	2       (00000004) iget                 v2, v3, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	3       (00000008) if-ge                v1, v2, +14
+
+getMemoryUsed-BB@0xc : [ getMemoryUsed-BB@0x18 getMemoryUsed-BB@0x2a ]
+	4       (0000000c) iget-object          v2, v3, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	5       (00000010) aget-object          v2, v2, v1
+	6       (00000014) if-eqz               v2, +b
+
+getMemoryUsed-BB@0x18 : [ getMemoryUsed-BB@0x2a ]
+	7       (00000018) iget-object          v2, v3, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	8       (0000001c) aget-object          v2, v2, v1
+	9       (00000020) invoke-virtual       v2, Landroid/support/constraint/solver/ArrayRow;->sizeInBytes()I
+	10      (00000026) move-result          v2
+	11      (00000028) add-int/2addr        v0, v2
+
+getMemoryUsed-BB@0x2a : [ getMemoryUsed-BB@0x4 ]
+	12      (0000002a) add-int/lit8         v1, v1, 1
+	13      (0000002e) goto                 -15
+
+getMemoryUsed-BB@0x30 : 
+	14      (00000030) return               v0
+

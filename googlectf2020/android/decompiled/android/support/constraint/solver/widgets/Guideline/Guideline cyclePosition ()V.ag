@@ -1,0 +1,36 @@
+# Landroid/support/constraint/solver/widgets/Guideline;->cyclePosition()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+cyclePosition-BB@0x0 : [ cyclePosition-BB@0xa cyclePosition-BB@0x12 ]
+	0       (00000000) iget                 v0, v3, Landroid/support/constraint/solver/widgets/Guideline;->mRelativeBegin I
+	1       (00000004) const/4              v1, -1
+	2       (00000006) if-eq                v0, v1, +6
+
+cyclePosition-BB@0xa : [ cyclePosition-BB@0x38 ]
+	3       (0000000a) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/Guideline;->inferRelativePercentPosition()V
+	4       (00000010) goto                 +14
+
+cyclePosition-BB@0x12 : [ cyclePosition-BB@0x22 cyclePosition-BB@0x2a ]
+	5       (00000012) iget                 v0, v3, Landroid/support/constraint/solver/widgets/Guideline;->mRelativePercent F
+	6       (00000016) const/high16         v2, -16512 # [-1.0]
+	7       (0000001a) cmpl-float           v0, v0, v2
+	8       (0000001e) if-eqz               v0, +6
+
+cyclePosition-BB@0x22 : [ cyclePosition-BB@0x38 ]
+	9       (00000022) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/Guideline;->inferRelativeEndPosition()V
+	10      (00000028) goto                 +8
+
+cyclePosition-BB@0x2a : [ cyclePosition-BB@0x32 cyclePosition-BB@0x38 ]
+	11      (0000002a) iget                 v0, v3, Landroid/support/constraint/solver/widgets/Guideline;->mRelativeEnd I
+	12      (0000002e) if-eq                v0, v1, +5
+
+cyclePosition-BB@0x32 : [ cyclePosition-BB@0x38 ]
+	13      (00000032) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/Guideline;->inferRelativeBeginPosition()V
+
+cyclePosition-BB@0x38 : 
+	14      (00000038) return-void          
+

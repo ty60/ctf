@@ -1,0 +1,28 @@
+# Landroid/support/constraint/solver/Pools$SimplePool;->release(Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+#
+# - return:boolean
+
+release-BB@0x0 : [ release-BB@0xe release-BB@0x28 ]
+	0       (00000000) iget                 v0, v2, Landroid/support/constraint/solver/Pools$SimplePool;->mPoolSize I
+	1       (00000004) iget-object          v1, v2, Landroid/support/constraint/solver/Pools$SimplePool;->mPool [Ljava/lang/Object;
+	2       (00000008) array-length         v1, v1
+	3       (0000000a) if-ge                v0, v1, +f
+
+release-BB@0xe : 
+	4       (0000000e) iget-object          v0, v2, Landroid/support/constraint/solver/Pools$SimplePool;->mPool [Ljava/lang/Object;
+	5       (00000012) iget                 v1, v2, Landroid/support/constraint/solver/Pools$SimplePool;->mPoolSize I
+	6       (00000016) aput-object          v3, v0, v1
+	7       (0000001a) iget                 v0, v2, Landroid/support/constraint/solver/Pools$SimplePool;->mPoolSize I
+	8       (0000001e) const/4              v1, 1
+	9       (00000020) add-int/2addr        v0, v1
+	10      (00000022) iput                 v0, v2, Landroid/support/constraint/solver/Pools$SimplePool;->mPoolSize I
+	11      (00000026) return               v1
+
+release-BB@0x28 : 
+	12      (00000028) const/4              v0, 0
+	13      (0000002a) return               v0
+

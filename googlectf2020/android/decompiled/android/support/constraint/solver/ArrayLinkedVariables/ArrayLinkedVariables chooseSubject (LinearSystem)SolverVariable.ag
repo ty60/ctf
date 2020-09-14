@@ -1,0 +1,175 @@
+# Landroid/support/constraint/solver/ArrayLinkedVariables;->chooseSubject(Landroid/support/constraint/solver/LinearSystem;)Landroid/support/constraint/solver/SolverVariable; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v17
+# - v18:android.support.constraint.solver.LinearSystem
+#
+# - return:android.support.constraint.solver.SolverVariable
+
+chooseSubject-BB@0x0 : [ chooseSubject-BB@0x28 ]
+	0       (00000000) move-object/from16   v0, v17
+	1       (00000004) move-object/from16   v1, v18
+	2       (00000008) const/4              v2, 0
+	3       (0000000a) const/4              v3, 0
+	4       (0000000c) const/4              v4, 0
+	5       (0000000e) const/4              v5, 0
+	6       (00000010) const/4              v6, 0
+	7       (00000012) const/4              v7, 0
+	8       (00000014) iget                 v8, v0, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	9       (00000018) const/4              v9, 0
+	10      (0000001a) const/4              v10, 0
+	11      (0000001c) move                 v11, v7
+	12      (0000001e) move                 v7, v6
+	13      (00000020) move                 v6, v5
+	14      (00000022) move                 v5, v4
+	15      (00000024) move-object          v4, v2
+	16      (00000026) move                 v2, v10
+
+chooseSubject-BB@0x28 : [ chooseSubject-BB@0x2e chooseSubject-BB@0x14e ]
+	17      (00000028) const/4              v12, -1
+	18      (0000002a) if-eq                v8, v12, +92
+
+chooseSubject-BB@0x2e : [ chooseSubject-BB@0x36 chooseSubject-BB@0x14e ]
+	19      (0000002e) iget                 v12, v0, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	20      (00000032) if-ge                v9, v12, +8e
+
+chooseSubject-BB@0x36 : [ chooseSubject-BB@0x60 chooseSubject-BB@0x80 ]
+	21      (00000036) iget-object          v12, v0, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	22      (0000003a) aget                 v12, v12, v8
+	23      (0000003e) const                v13, 981668463 # [0.0010000000474974513]
+	24      (00000044) iget-object          v14, v0, Landroid/support/constraint/solver/ArrayLinkedVariables;->mCache Landroid/support/constraint/solver/Cache;
+	25      (00000048) iget-object          v14, v14, Landroid/support/constraint/solver/Cache;->mIndexedVariables [Landroid/support/constraint/solver/SolverVariable;
+	26      (0000004c) iget-object          v15, v0, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	27      (00000050) aget                 v15, v15, v8
+	28      (00000054) aget-object          v14, v14, v15
+	29      (00000058) cmpg-float           v15, v12, v10
+	30      (0000005c) if-gez               v15, +12
+
+chooseSubject-BB@0x60 : [ chooseSubject-BB@0x6a chooseSubject-BB@0x9c ]
+	31      (00000060) neg-float            v15, v13
+	32      (00000062) cmpl-float           v15, v12, v15
+	33      (00000066) if-lez               v15, +1b
+
+chooseSubject-BB@0x6a : [ chooseSubject-BB@0x9c ]
+	34      (0000006a) iget-object          v15, v0, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	35      (0000006e) aput                 v10, v15, v8
+	36      (00000072) const/4              v12, 0
+	37      (00000074) iget-object          v15, v0, Landroid/support/constraint/solver/ArrayLinkedVariables;->mRow Landroid/support/constraint/solver/ArrayRow;
+	38      (00000078) invoke-virtual       v14, v15, Landroid/support/constraint/solver/SolverVariable;->removeFromRow(Landroid/support/constraint/solver/ArrayRow;)V
+	39      (0000007e) goto                 +f
+
+chooseSubject-BB@0x80 : [ chooseSubject-BB@0x88 chooseSubject-BB@0x9c ]
+	40      (00000080) cmpg-float           v15, v12, v13
+	41      (00000084) if-gez               v15, +c
+
+chooseSubject-BB@0x88 : [ chooseSubject-BB@0x9c ]
+	42      (00000088) iget-object          v15, v0, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	43      (0000008c) aput                 v10, v15, v8
+	44      (00000090) const/4              v12, 0
+	45      (00000092) iget-object          v15, v0, Landroid/support/constraint/solver/ArrayLinkedVariables;->mRow Landroid/support/constraint/solver/ArrayRow;
+	46      (00000096) invoke-virtual       v14, v15, Landroid/support/constraint/solver/SolverVariable;->removeFromRow(Landroid/support/constraint/solver/ArrayRow;)V
+
+chooseSubject-BB@0x9c : [ chooseSubject-BB@0xa4 chooseSubject-BB@0x13e ]
+	47      (0000009c) cmpl-float           v15, v12, v10
+	48      (000000a0) if-eqz               v15, +4f
+
+chooseSubject-BB@0xa4 : [ chooseSubject-BB@0xb0 chooseSubject-BB@0xf2 ]
+	49      (000000a4) iget-object          v15, v14, Landroid/support/constraint/solver/SolverVariable;->mType Landroid/support/constraint/solver/SolverVariable$Type;
+	50      (000000a8) sget-object          v10, Landroid/support/constraint/solver/SolverVariable$Type;->UNRESTRICTED Landroid/support/constraint/solver/SolverVariable$Type;
+	51      (000000ac) if-ne                v15, v10, +23
+
+chooseSubject-BB@0xb0 : [ chooseSubject-BB@0xb4 chooseSubject-BB@0xc4 ]
+	52      (000000b0) if-nez               v3, +a
+
+chooseSubject-BB@0xb4 : [ chooseSubject-BB@0xc0 ]
+	53      (000000b4) move-object          v3, v14
+	54      (000000b6) move                 v5, v12
+	55      (000000b8) invoke-direct        v0, v14, v1, Landroid/support/constraint/solver/ArrayLinkedVariables;->isNew(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/LinearSystem;)Z
+	56      (000000be) move-result          v7
+
+chooseSubject-BB@0xc0 : [ chooseSubject-BB@0x13e ]
+	57      (000000c0) const/4              v10, 0
+	58      (000000c2) goto                 +3e
+
+chooseSubject-BB@0xc4 : [ chooseSubject-BB@0xcc chooseSubject-BB@0xda ]
+	59      (000000c4) cmpl-float           v10, v5, v12
+	60      (000000c8) if-lez               v10, +9
+
+chooseSubject-BB@0xcc : [ chooseSubject-BB@0xc0 ]
+	61      (000000cc) move-object          v3, v14
+	62      (000000ce) move                 v5, v12
+	63      (000000d0) invoke-direct        v0, v14, v1, Landroid/support/constraint/solver/ArrayLinkedVariables;->isNew(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/LinearSystem;)Z
+	64      (000000d6) move-result          v7
+	65      (000000d8) goto                 -c
+
+chooseSubject-BB@0xda : [ chooseSubject-BB@0xde chooseSubject-BB@0xc0 ]
+	66      (000000da) if-nez               v7, -d
+
+chooseSubject-BB@0xde : [ chooseSubject-BB@0xea chooseSubject-BB@0xc0 ]
+	67      (000000de) invoke-direct        v0, v14, v1, Landroid/support/constraint/solver/ArrayLinkedVariables;->isNew(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/LinearSystem;)Z
+	68      (000000e4) move-result          v10
+	69      (000000e6) if-eqz               v10, -13
+
+chooseSubject-BB@0xea : [ chooseSubject-BB@0xc0 ]
+	70      (000000ea) move-object          v3, v14
+	71      (000000ec) move                 v5, v12
+	72      (000000ee) const/4              v7, 1
+	73      (000000f0) goto                 -18
+
+chooseSubject-BB@0xf2 : [ chooseSubject-BB@0xf6 chooseSubject-BB@0xc0 ]
+	74      (000000f2) if-nez               v3, -19
+
+chooseSubject-BB@0xf6 : [ chooseSubject-BB@0x100 chooseSubject-BB@0x13e ]
+	75      (000000f6) const/4              v10, 0
+	76      (000000f8) cmpg-float           v15, v12, v10
+	77      (000000fc) if-gez               v15, +21
+
+chooseSubject-BB@0x100 : [ chooseSubject-BB@0x104 chooseSubject-BB@0x112 ]
+	78      (00000100) if-nez               v4, +9
+
+chooseSubject-BB@0x104 : [ chooseSubject-BB@0x13e ]
+	79      (00000104) move-object          v4, v14
+	80      (00000106) move                 v6, v12
+	81      (00000108) invoke-direct        v0, v14, v1, Landroid/support/constraint/solver/ArrayLinkedVariables;->isNew(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/LinearSystem;)Z
+	82      (0000010e) move-result          v11
+	83      (00000110) goto                 +17
+
+chooseSubject-BB@0x112 : [ chooseSubject-BB@0x11a chooseSubject-BB@0x128 ]
+	84      (00000112) cmpl-float           v15, v6, v12
+	85      (00000116) if-lez               v15, +9
+
+chooseSubject-BB@0x11a : [ chooseSubject-BB@0x13e ]
+	86      (0000011a) move-object          v4, v14
+	87      (0000011c) move                 v6, v12
+	88      (0000011e) invoke-direct        v0, v14, v1, Landroid/support/constraint/solver/ArrayLinkedVariables;->isNew(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/LinearSystem;)Z
+	89      (00000124) move-result          v11
+	90      (00000126) goto                 +c
+
+chooseSubject-BB@0x128 : [ chooseSubject-BB@0x12c chooseSubject-BB@0x13e ]
+	91      (00000128) if-nez               v11, +b
+
+chooseSubject-BB@0x12c : [ chooseSubject-BB@0x138 chooseSubject-BB@0x13e ]
+	92      (0000012c) invoke-direct        v0, v14, v1, Landroid/support/constraint/solver/ArrayLinkedVariables;->isNew(Landroid/support/constraint/solver/SolverVariable; Landroid/support/constraint/solver/LinearSystem;)Z
+	93      (00000132) move-result          v15
+	94      (00000134) if-eqz               v15, +5
+
+chooseSubject-BB@0x138 : [ chooseSubject-BB@0x13e ]
+	95      (00000138) move-object          v4, v14
+	96      (0000013a) move                 v6, v12
+	97      (0000013c) const/4              v11, 1
+
+chooseSubject-BB@0x13e : [ chooseSubject-BB@0x28 ]
+	98      (0000013e) iget-object          v15, v0, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	99      (00000142) aget                 v8, v15, v8
+	100     (00000146) add-int/lit8         v9, v9, 1
+	101     (0000014a) goto/16              -91
+
+chooseSubject-BB@0x14e : [ chooseSubject-BB@0x152 chooseSubject-BB@0x154 ]
+	102     (0000014e) if-eqz               v3, +3
+
+chooseSubject-BB@0x152 : 
+	103     (00000152) return-object        v3
+
+chooseSubject-BB@0x154 : 
+	104     (00000154) return-object        v4
+

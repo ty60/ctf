@@ -1,0 +1,151 @@
+# Landroid/support/constraint/ConstraintSet;->clone(Landroid/support/constraint/ConstraintLayout;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:android.support.constraint.ConstraintLayout
+#
+# - return:void
+
+clone-BB@0x0 : [ clone-BB@0x14 ]
+	0       (00000000) invoke-virtual       v13, Landroid/support/constraint/ConstraintLayout;->getChildCount()I
+	1       (00000006) move-result          v0
+	2       (00000008) iget-object          v1, v12, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	3       (0000000c) invoke-virtual       v1, Ljava/util/HashMap;->clear()V
+	4       (00000012) const/4              v1, 0
+
+clone-BB@0x14 : [ clone-BB@0x18 clone-BB@0x1ac ]
+	5       (00000014) if-ge                v1, v0, +cc
+
+clone-BB@0x18 : [ clone-BB@0x3a clone-BB@0x4a ]
+	6       (00000018) invoke-virtual       v13, v1, Landroid/support/constraint/ConstraintLayout;->getChildAt(I)Landroid/view/View;
+	7       (0000001e) move-result-object   v2
+	8       (00000020) invoke-virtual       v2, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	9       (00000026) move-result-object   v3
+	10      (00000028) check-cast           v3, Landroid/support/constraint/ConstraintLayout$LayoutParams;
+	11      (0000002c) invoke-virtual       v2, Landroid/view/View;->getId()I
+	12      (00000032) move-result          v4
+	13      (00000034) const/4              v5, -1
+	14      (00000036) if-ne                v4, v5, +a
+
+clone-BB@0x3a : 
+	15      (0000003a) new-instance         v5, Ljava/lang/RuntimeException;
+	16      (0000003e) const-string         v6, 'All children of ConstraintLayout must have ids to use ConstraintSet'
+	17      (00000042) invoke-direct        v5, v6, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	18      (00000048) throw                v5
+
+clone-BB@0x4a : [ clone-BB@0x62 clone-BB@0x80 ]
+	19      (0000004a) iget-object          v5, v12, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	20      (0000004e) invoke-static        v4, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	21      (00000054) move-result-object   v6
+	22      (00000056) invoke-virtual       v5, v6, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+	23      (0000005c) move-result          v5
+	24      (0000005e) if-nez               v5, +11
+
+clone-BB@0x62 : [ clone-BB@0x80 ]
+	25      (00000062) iget-object          v5, v12, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	26      (00000066) invoke-static        v4, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	27      (0000006c) move-result-object   v6
+	28      (0000006e) new-instance         v7, Landroid/support/constraint/ConstraintSet$Constraint;
+	29      (00000072) const/4              v8, 0
+	30      (00000074) invoke-direct        v7, v8, Landroid/support/constraint/ConstraintSet$Constraint;-><init>(Landroid/support/constraint/ConstraintSet$1;)V
+	31      (0000007a) invoke-virtual       v5, v6, v7, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+
+clone-BB@0x80 : [ clone-BB@0xb6 clone-BB@0x172 ]
+	32      (00000080) iget-object          v5, v12, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	33      (00000084) invoke-static        v4, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+	34      (0000008a) move-result-object   v6
+	35      (0000008c) invoke-virtual       v5, v6, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	36      (00000092) move-result-object   v5
+	37      (00000094) check-cast           v5, Landroid/support/constraint/ConstraintSet$Constraint;
+	38      (00000098) invoke-static        v5, v4, v3, Landroid/support/constraint/ConstraintSet$Constraint;->access$100(Landroid/support/constraint/ConstraintSet$Constraint; I Landroid/support/constraint/ConstraintLayout$LayoutParams;)V
+	39      (0000009e) invoke-virtual       v2, Landroid/view/View;->getVisibility()I
+	40      (000000a4) move-result          v6
+	41      (000000a6) iput                 v6, v5, Landroid/support/constraint/ConstraintSet$Constraint;->visibility I
+	42      (000000aa) sget                 v6, Landroid/os/Build$VERSION;->SDK_INT I
+	43      (000000ae) const/16             v7, 17
+	44      (000000b2) if-lt                v6, v7, +60
+
+clone-BB@0xb6 : [ clone-BB@0x11c clone-BB@0x126 ]
+	45      (000000b6) invoke-virtual       v2, Landroid/view/View;->getAlpha()F
+	46      (000000bc) move-result          v6
+	47      (000000be) iput                 v6, v5, Landroid/support/constraint/ConstraintSet$Constraint;->alpha F
+	48      (000000c2) invoke-virtual       v2, Landroid/view/View;->getRotation()F
+	49      (000000c8) move-result          v6
+	50      (000000ca) iput                 v6, v5, Landroid/support/constraint/ConstraintSet$Constraint;->rotation F
+	51      (000000ce) invoke-virtual       v2, Landroid/view/View;->getRotationX()F
+	52      (000000d4) move-result          v6
+	53      (000000d6) iput                 v6, v5, Landroid/support/constraint/ConstraintSet$Constraint;->rotationX F
+	54      (000000da) invoke-virtual       v2, Landroid/view/View;->getRotationY()F
+	55      (000000e0) move-result          v6
+	56      (000000e2) iput                 v6, v5, Landroid/support/constraint/ConstraintSet$Constraint;->rotationY F
+	57      (000000e6) invoke-virtual       v2, Landroid/view/View;->getScaleX()F
+	58      (000000ec) move-result          v6
+	59      (000000ee) iput                 v6, v5, Landroid/support/constraint/ConstraintSet$Constraint;->scaleX F
+	60      (000000f2) invoke-virtual       v2, Landroid/view/View;->getScaleY()F
+	61      (000000f8) move-result          v6
+	62      (000000fa) iput                 v6, v5, Landroid/support/constraint/ConstraintSet$Constraint;->scaleY F
+	63      (000000fe) invoke-virtual       v2, Landroid/view/View;->getPivotX()F
+	64      (00000104) move-result          v6
+	65      (00000106) invoke-virtual       v2, Landroid/view/View;->getPivotY()F
+	66      (0000010c) move-result          v7
+	67      (0000010e) float-to-double      v8, v6
+	68      (00000110) const-wide/16        v10, 0 # [0.0]
+	69      (00000114) cmpl-double          v8, v8, v10
+	70      (00000118) if-nez               v8, +7
+
+clone-BB@0x11c : [ clone-BB@0x126 clone-BB@0x12e ]
+	71      (0000011c) float-to-double      v8, v7
+	72      (0000011e) cmpl-double          v8, v8, v10
+	73      (00000122) if-eqz               v8, +6
+
+clone-BB@0x126 : [ clone-BB@0x12e ]
+	74      (00000126) iput                 v6, v5, Landroid/support/constraint/ConstraintSet$Constraint;->transformPivotX F
+	75      (0000012a) iput                 v7, v5, Landroid/support/constraint/ConstraintSet$Constraint;->transformPivotY F
+
+clone-BB@0x12e : [ clone-BB@0x152 clone-BB@0x172 ]
+	76      (0000012e) invoke-virtual       v2, Landroid/view/View;->getTranslationX()F
+	77      (00000134) move-result          v8
+	78      (00000136) iput                 v8, v5, Landroid/support/constraint/ConstraintSet$Constraint;->translationX F
+	79      (0000013a) invoke-virtual       v2, Landroid/view/View;->getTranslationY()F
+	80      (00000140) move-result          v8
+	81      (00000142) iput                 v8, v5, Landroid/support/constraint/ConstraintSet$Constraint;->translationY F
+	82      (00000146) sget                 v8, Landroid/os/Build$VERSION;->SDK_INT I
+	83      (0000014a) const/16             v9, 21
+	84      (0000014e) if-lt                v8, v9, +12
+
+clone-BB@0x152 : [ clone-BB@0x166 clone-BB@0x172 ]
+	85      (00000152) invoke-virtual       v2, Landroid/view/View;->getTranslationZ()F
+	86      (00000158) move-result          v8
+	87      (0000015a) iput                 v8, v5, Landroid/support/constraint/ConstraintSet$Constraint;->translationZ F
+	88      (0000015e) iget-boolean         v8, v5, Landroid/support/constraint/ConstraintSet$Constraint;->applyElevation Z
+	89      (00000162) if-eqz               v8, +8
+
+clone-BB@0x166 : [ clone-BB@0x172 ]
+	90      (00000166) invoke-virtual       v2, Landroid/view/View;->getElevation()F
+	91      (0000016c) move-result          v8
+	92      (0000016e) iput                 v8, v5, Landroid/support/constraint/ConstraintSet$Constraint;->elevation F
+
+clone-BB@0x172 : [ clone-BB@0x17a clone-BB@0x1a4 ]
+	93      (00000172) instance-of          v6, v2, Landroid/support/constraint/Barrier;
+	94      (00000176) if-eqz               v6, +17
+
+clone-BB@0x17a : [ clone-BB@0x1a4 ]
+	95      (0000017a) move-object          v6, v2
+	96      (0000017c) check-cast           v6, Landroid/support/constraint/Barrier;
+	97      (00000180) invoke-virtual       v6, Landroid/support/constraint/Barrier;->allowsGoneWidget()Z
+	98      (00000186) move-result          v7
+	99      (00000188) iput-boolean         v7, v5, Landroid/support/constraint/ConstraintSet$Constraint;->mBarrierAllowsGoneWidgets Z
+	100     (0000018c) invoke-virtual       v6, Landroid/support/constraint/Barrier;->getReferencedIds()[I
+	101     (00000192) move-result-object   v7
+	102     (00000194) iput-object          v7, v5, Landroid/support/constraint/ConstraintSet$Constraint;->mReferenceIds [I
+	103     (00000198) invoke-virtual       v6, Landroid/support/constraint/Barrier;->getType()I
+	104     (0000019e) move-result          v7
+	105     (000001a0) iput                 v7, v5, Landroid/support/constraint/ConstraintSet$Constraint;->mBarrierDirection I
+
+clone-BB@0x1a4 : [ clone-BB@0x14 ]
+	106     (000001a4) add-int/lit8         v1, v1, 1
+	107     (000001a8) goto/16              -ca
+
+clone-BB@0x1ac : 
+	108     (000001ac) return-void          
+

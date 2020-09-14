@@ -1,0 +1,36 @@
+# Landroid/support/constraint/solver/LinearSystem;->addRow(Landroid/support/constraint/solver/ArrayRow;)V [access_flags=private final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.support.constraint.solver.ArrayRow
+#
+# - return:void
+
+addRow-BB@0x0 : [ addRow-BB@0x10 addRow-BB@0x2a ]
+	0       (00000000) iget-object          v0, v3, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	1       (00000004) iget                 v1, v3, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	2       (00000008) aget-object          v0, v0, v1
+	3       (0000000c) if-eqz               v0, +f
+
+addRow-BB@0x10 : [ addRow-BB@0x2a ]
+	4       (00000010) iget-object          v0, v3, Landroid/support/constraint/solver/LinearSystem;->mCache Landroid/support/constraint/solver/Cache;
+	5       (00000014) iget-object          v0, v0, Landroid/support/constraint/solver/Cache;->arrayRowPool Landroid/support/constraint/solver/Pools$Pool;
+	6       (00000018) iget-object          v1, v3, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	7       (0000001c) iget                 v2, v3, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	8       (00000020) aget-object          v1, v1, v2
+	9       (00000024) invoke-interface     v0, v1, Landroid/support/constraint/solver/Pools$Pool;->release(Ljava/lang/Object;)Z
+
+addRow-BB@0x2a : 
+	10      (0000002a) iget-object          v0, v3, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	11      (0000002e) iget                 v1, v3, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	12      (00000032) aput-object          v4, v0, v1
+	13      (00000036) iget-object          v0, v4, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	14      (0000003a) iget                 v1, v3, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	15      (0000003e) iput                 v1, v0, Landroid/support/constraint/solver/SolverVariable;->definitionId I
+	16      (00000042) iget                 v0, v3, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	17      (00000046) add-int/lit8         v0, v0, 1
+	18      (0000004a) iput                 v0, v3, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	19      (0000004e) iget-object          v0, v4, Landroid/support/constraint/solver/ArrayRow;->variable Landroid/support/constraint/solver/SolverVariable;
+	20      (00000052) invoke-virtual       v0, v4, Landroid/support/constraint/solver/SolverVariable;->updateReferencesWithNewDefinition(Landroid/support/constraint/solver/ArrayRow;)V
+	21      (00000058) return-void          
+

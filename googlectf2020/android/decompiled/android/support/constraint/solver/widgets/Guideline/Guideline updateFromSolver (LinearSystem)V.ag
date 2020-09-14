@@ -1,0 +1,49 @@
+# Landroid/support/constraint/solver/widgets/Guideline;->updateFromSolver(Landroid/support/constraint/solver/LinearSystem;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.support.constraint.solver.LinearSystem
+#
+# - return:void
+
+updateFromSolver-BB@0x0 : [ updateFromSolver-BB@0xc updateFromSolver-BB@0xe ]
+	0       (00000000) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/Guideline;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-nez               v0, +3
+
+updateFromSolver-BB@0xc : 
+	3       (0000000c) return-void          
+
+updateFromSolver-BB@0xe : [ updateFromSolver-BB@0x26 updateFromSolver-BB@0x50 ]
+	4       (0000000e) iget-object          v0, v4, Landroid/support/constraint/solver/widgets/Guideline;->mAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	5       (00000012) invoke-virtual       v5, v0, Landroid/support/constraint/solver/LinearSystem;->getObjectVariableValue(Ljava/lang/Object;)I
+	6       (00000018) move-result          v0
+	7       (0000001a) iget                 v1, v4, Landroid/support/constraint/solver/widgets/Guideline;->mOrientation I
+	8       (0000001e) const/4              v2, 1
+	9       (00000020) const/4              v3, 0
+	10      (00000022) if-ne                v1, v2, +17
+
+updateFromSolver-BB@0x26 : [ updateFromSolver-BB@0x78 ]
+	11      (00000026) invoke-virtual       v4, v0, Landroid/support/constraint/solver/widgets/Guideline;->setX(I)V
+	12      (0000002c) invoke-virtual       v4, v3, Landroid/support/constraint/solver/widgets/Guideline;->setY(I)V
+	13      (00000032) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/Guideline;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	14      (00000038) move-result-object   v1
+	15      (0000003a) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	16      (00000040) move-result          v1
+	17      (00000042) invoke-virtual       v4, v1, Landroid/support/constraint/solver/widgets/Guideline;->setHeight(I)V
+	18      (00000048) invoke-virtual       v4, v3, Landroid/support/constraint/solver/widgets/Guideline;->setWidth(I)V
+	19      (0000004e) goto                 +15
+
+updateFromSolver-BB@0x50 : [ updateFromSolver-BB@0x78 ]
+	20      (00000050) invoke-virtual       v4, v3, Landroid/support/constraint/solver/widgets/Guideline;->setX(I)V
+	21      (00000056) invoke-virtual       v4, v0, Landroid/support/constraint/solver/widgets/Guideline;->setY(I)V
+	22      (0000005c) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/Guideline;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	23      (00000062) move-result-object   v1
+	24      (00000064) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	25      (0000006a) move-result          v1
+	26      (0000006c) invoke-virtual       v4, v1, Landroid/support/constraint/solver/widgets/Guideline;->setWidth(I)V
+	27      (00000072) invoke-virtual       v4, v3, Landroid/support/constraint/solver/widgets/Guideline;->setHeight(I)V
+
+updateFromSolver-BB@0x78 : 
+	28      (00000078) return-void          
+

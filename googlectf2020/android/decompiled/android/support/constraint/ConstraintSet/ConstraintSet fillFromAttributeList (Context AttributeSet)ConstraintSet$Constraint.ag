@@ -1,0 +1,20 @@
+# Landroid/support/constraint/ConstraintSet;->fillFromAttributeList(Landroid/content/Context; Landroid/util/AttributeSet;)Landroid/support/constraint/ConstraintSet$Constraint; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:android.util.AttributeSet
+#
+# - return:android.support.constraint.ConstraintSet$Constraint
+
+fillFromAttributeList-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/support/constraint/ConstraintSet$Constraint;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) invoke-direct        v0, v1, Landroid/support/constraint/ConstraintSet$Constraint;-><init>(Landroid/support/constraint/ConstraintSet$1;)V
+	3       (0000000c) sget-object          v1, Landroid/support/constraint/R$styleable;->ConstraintSet [I
+	4       (00000010) invoke-virtual       v3, v4, v1, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet; [I)Landroid/content/res/TypedArray;
+	5       (00000016) move-result-object   v1
+	6       (00000018) invoke-direct        v2, v0, v1, Landroid/support/constraint/ConstraintSet;->populateConstraint(Landroid/support/constraint/ConstraintSet$Constraint; Landroid/content/res/TypedArray;)V
+	7       (0000001e) invoke-virtual       v1, Landroid/content/res/TypedArray;->recycle()V
+	8       (00000024) return-object        v0
+

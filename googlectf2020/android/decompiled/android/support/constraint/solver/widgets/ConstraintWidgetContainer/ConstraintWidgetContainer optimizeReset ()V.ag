@@ -1,0 +1,29 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->optimizeReset()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+optimizeReset-BB@0x0 : [ optimizeReset-BB@0x14 ]
+	0       (00000000) iget-object          v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mChildren Ljava/util/ArrayList;
+	1       (00000004) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->resetResolutionNodes()V
+	4       (00000012) const/4              v1, 0
+
+optimizeReset-BB@0x14 : [ optimizeReset-BB@0x18 optimizeReset-BB@0x34 ]
+	5       (00000014) if-ge                v1, v0, +10
+
+optimizeReset-BB@0x18 : [ optimizeReset-BB@0x14 ]
+	6       (00000018) iget-object          v2, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mChildren Ljava/util/ArrayList;
+	7       (0000001c) invoke-virtual       v2, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	8       (00000022) move-result-object   v2
+	9       (00000024) check-cast           v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	10      (00000028) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->resetResolutionNodes()V
+	11      (0000002e) add-int/lit8         v1, v1, 1
+	12      (00000032) goto                 -f
+
+optimizeReset-BB@0x34 : 
+	13      (00000034) return-void          
+

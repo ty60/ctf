@@ -1,0 +1,23 @@
+# Landroid/support/constraint/solver/SolverVariable;->reset()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+reset-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-object          v0, v2, Landroid/support/constraint/solver/SolverVariable;->mName Ljava/lang/String;
+	2       (00000006) sget-object          v0, Landroid/support/constraint/solver/SolverVariable$Type;->UNKNOWN Landroid/support/constraint/solver/SolverVariable$Type;
+	3       (0000000a) iput-object          v0, v2, Landroid/support/constraint/solver/SolverVariable;->mType Landroid/support/constraint/solver/SolverVariable$Type;
+	4       (0000000e) const/4              v0, 0
+	5       (00000010) iput                 v0, v2, Landroid/support/constraint/solver/SolverVariable;->strength I
+	6       (00000014) const/4              v1, -1
+	7       (00000016) iput                 v1, v2, Landroid/support/constraint/solver/SolverVariable;->id I
+	8       (0000001a) iput                 v1, v2, Landroid/support/constraint/solver/SolverVariable;->definitionId I
+	9       (0000001e) const/4              v1, 0
+	10      (00000020) iput                 v1, v2, Landroid/support/constraint/solver/SolverVariable;->computedValue F
+	11      (00000024) iput                 v0, v2, Landroid/support/constraint/solver/SolverVariable;->mClientEquationsCount I
+	12      (00000028) iput                 v0, v2, Landroid/support/constraint/solver/SolverVariable;->usageInRowCount I
+	13      (0000002c) return-void          
+

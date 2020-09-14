@@ -1,0 +1,13 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->preOptimize()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+preOptimize-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->optimizeReset()V
+	1       (00000006) iget                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mOptimizationLevel I
+	2       (0000000a) invoke-virtual       v1, v0, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->analyze(I)V
+	3       (00000010) return-void          
+

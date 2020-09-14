@@ -1,0 +1,55 @@
+# Landroid/support/constraint/solver/widgets/WidgetContainer;->findWidgets(I I I I)Ljava/util/ArrayList; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:int
+# - v12:int
+# - v13:int
+# - v14:int
+#
+# - return:java.util.ArrayList
+
+findWidgets-BB@0x0 : [ findWidgets-BB@0x28 ]
+	0       (00000000) new-instance         v0, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v0, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) new-instance         v1, Landroid/support/constraint/solver/widgets/Rectangle;
+	3       (0000000e) invoke-direct        v1, Landroid/support/constraint/solver/widgets/Rectangle;-><init>()V
+	4       (00000014) invoke-virtual       v1, v11, v12, v13, v14, Landroid/support/constraint/solver/widgets/Rectangle;->setBounds(I I I I)V
+	5       (0000001a) const/4              v2, 0
+	6       (0000001c) iget-object          v3, v10, Landroid/support/constraint/solver/widgets/WidgetContainer;->mChildren Ljava/util/ArrayList;
+	7       (00000020) invoke-virtual       v3, Ljava/util/ArrayList;->size()I
+	8       (00000026) move-result          v3
+
+findWidgets-BB@0x28 : [ findWidgets-BB@0x2c findWidgets-BB@0x84 ]
+	9       (00000028) if-ge                v2, v3, +2e
+
+findWidgets-BB@0x2c : [ findWidgets-BB@0x78 findWidgets-BB@0x7e ]
+	10      (0000002c) iget-object          v4, v10, Landroid/support/constraint/solver/widgets/WidgetContainer;->mChildren Ljava/util/ArrayList;
+	11      (00000030) invoke-virtual       v4, v2, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	12      (00000036) move-result-object   v4
+	13      (00000038) check-cast           v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	14      (0000003c) new-instance         v5, Landroid/support/constraint/solver/widgets/Rectangle;
+	15      (00000040) invoke-direct        v5, Landroid/support/constraint/solver/widgets/Rectangle;-><init>()V
+	16      (00000046) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getDrawX()I
+	17      (0000004c) move-result          v6
+	18      (0000004e) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getDrawY()I
+	19      (00000054) move-result          v7
+	20      (00000056) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	21      (0000005c) move-result          v8
+	22      (0000005e) invoke-virtual       v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	23      (00000064) move-result          v9
+	24      (00000066) invoke-virtual       v5, v6, v7, v8, v9, Landroid/support/constraint/solver/widgets/Rectangle;->setBounds(I I I I)V
+	25      (0000006c) invoke-virtual       v1, v5, Landroid/support/constraint/solver/widgets/Rectangle;->intersects(Landroid/support/constraint/solver/widgets/Rectangle;)Z
+	26      (00000072) move-result          v6
+	27      (00000074) if-eqz               v6, +5
+
+findWidgets-BB@0x78 : [ findWidgets-BB@0x7e ]
+	28      (00000078) invoke-virtual       v0, v4, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+findWidgets-BB@0x7e : [ findWidgets-BB@0x28 ]
+	29      (0000007e) add-int/lit8         v2, v2, 1
+	30      (00000082) goto                 -2d
+
+findWidgets-BB@0x84 : 
+	31      (00000084) return-object        v0
+

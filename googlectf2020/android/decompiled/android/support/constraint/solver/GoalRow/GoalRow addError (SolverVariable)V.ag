@@ -1,0 +1,15 @@
+# Landroid/support/constraint/solver/GoalRow;->addError(Landroid/support/constraint/solver/SolverVariable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.constraint.solver.SolverVariable
+#
+# - return:void
+
+addError-BB@0x0 : 
+	0       (00000000) invoke-super         v1, v2, Landroid/support/constraint/solver/ArrayRow;->addError(Landroid/support/constraint/solver/SolverVariable;)V
+	1       (00000006) iget                 v0, v2, Landroid/support/constraint/solver/SolverVariable;->usageInRowCount I
+	2       (0000000a) add-int/lit8         v0, v0, -1
+	3       (0000000e) iput                 v0, v2, Landroid/support/constraint/solver/SolverVariable;->usageInRowCount I
+	4       (00000012) return-void          
+

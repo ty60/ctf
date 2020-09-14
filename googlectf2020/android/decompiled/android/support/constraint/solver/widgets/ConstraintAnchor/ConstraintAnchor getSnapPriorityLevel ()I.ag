@@ -1,0 +1,57 @@
+# Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getSnapPriorityLevel()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:int
+
+getSnapPriorityLevel-BB@0x0 : [ D:getSnapPriorityLevel-BB@0x1e 1:getSnapPriorityLevel-BB@0x48 2:getSnapPriorityLevel-BB@0x46 3:getSnapPriorityLevel-BB@0x44 4:getSnapPriorityLevel-BB@0x42 5:getSnapPriorityLevel-BB@0x40 6:getSnapPriorityLevel-BB@0x3c 7:getSnapPriorityLevel-BB@0x3a 8:getSnapPriorityLevel-BB@0x38 9:getSnapPriorityLevel-BB@0x36 ]
+	0       (00000000) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor$1;->$SwitchMap$android$support$constraint$solver$widgets$ConstraintAnchor$Type [I
+	1       (00000004) iget-object          v1, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	2       (00000008) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->ordinal()I
+	3       (0000000e) move-result          v1
+	4       (00000010) aget                 v0, v0, v1
+	5       (00000014) const/4              v1, 1
+	6       (00000016) const/4              v2, 0
+	7       (00000018) packed-switch        v0, +1a (0x4c)
+
+getSnapPriorityLevel-BB@0x1e : 
+	8       (0000001e) new-instance         v0, Ljava/lang/AssertionError;
+	9       (00000022) iget-object          v1, v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mType Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	10      (00000026) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;->name()Ljava/lang/String;
+	11      (0000002c) move-result-object   v1
+	12      (0000002e) invoke-direct        v0, v1, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	13      (00000034) throw                v0
+
+getSnapPriorityLevel-BB@0x36 : 
+	14      (00000036) return               v2
+
+getSnapPriorityLevel-BB@0x38 : 
+	15      (00000038) return               v1
+
+getSnapPriorityLevel-BB@0x3a : 
+	16      (0000003a) return               v2
+
+getSnapPriorityLevel-BB@0x3c : 
+	17      (0000003c) const/4              v0, 2
+	18      (0000003e) return               v0
+
+getSnapPriorityLevel-BB@0x40 : 
+	19      (00000040) return               v2
+
+getSnapPriorityLevel-BB@0x42 : 
+	20      (00000042) return               v2
+
+getSnapPriorityLevel-BB@0x44 : 
+	21      (00000044) return               v1
+
+getSnapPriorityLevel-BB@0x46 : 
+	22      (00000046) return               v1
+
+getSnapPriorityLevel-BB@0x48 : 
+	23      (00000048) const/4              v0, 3
+	24      (0000004a) return               v0
+
+getSnapPriorityLevel-BB@0x4c : 
+	25      (0000004c) packed-switch-payload 1 2 3 4 5 6 7 8 9
+

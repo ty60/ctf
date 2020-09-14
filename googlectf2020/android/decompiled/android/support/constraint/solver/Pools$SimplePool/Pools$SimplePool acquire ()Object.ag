@@ -1,0 +1,27 @@
+# Landroid/support/constraint/solver/Pools$SimplePool;->acquire()Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:java.lang.Object
+
+acquire-BB@0x0 : [ acquire-BB@0xa acquire-BB@0x30 ]
+	0       (00000000) iget                 v0, v4, Landroid/support/constraint/solver/Pools$SimplePool;->mPoolSize I
+	1       (00000004) const/4              v1, 0
+	2       (00000006) if-lez               v0, +15
+
+acquire-BB@0xa : 
+	3       (0000000a) iget                 v0, v4, Landroid/support/constraint/solver/Pools$SimplePool;->mPoolSize I
+	4       (0000000e) add-int/lit8         v0, v0, -1
+	5       (00000012) iget-object          v2, v4, Landroid/support/constraint/solver/Pools$SimplePool;->mPool [Ljava/lang/Object;
+	6       (00000016) aget-object          v2, v2, v0
+	7       (0000001a) iget-object          v3, v4, Landroid/support/constraint/solver/Pools$SimplePool;->mPool [Ljava/lang/Object;
+	8       (0000001e) aput-object          v1, v3, v0
+	9       (00000022) iget                 v1, v4, Landroid/support/constraint/solver/Pools$SimplePool;->mPoolSize I
+	10      (00000026) add-int/lit8         v1, v1, -1
+	11      (0000002a) iput                 v1, v4, Landroid/support/constraint/solver/Pools$SimplePool;->mPoolSize I
+	12      (0000002e) return-object        v2
+
+acquire-BB@0x30 : 
+	13      (00000030) return-object        v1
+

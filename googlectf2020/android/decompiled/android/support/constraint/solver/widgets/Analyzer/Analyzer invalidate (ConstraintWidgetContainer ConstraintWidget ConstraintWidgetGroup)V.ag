@@ -1,0 +1,17 @@
+# Landroid/support/constraint/solver/widgets/Analyzer;->invalidate(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.constraint.solver.widgets.ConstraintWidgetContainer
+# - v2:android.support.constraint.solver.widgets.ConstraintWidget
+# - v3:android.support.constraint.solver.widgets.ConstraintWidgetGroup
+#
+# - return:void
+
+invalidate-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-boolean         v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mSkipSolver Z
+	2       (00000006) iput-boolean         v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mSkipSolver Z
+	3       (0000000a) iput-boolean         v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mOptimizerMeasurable Z
+	4       (0000000e) return-void          
+

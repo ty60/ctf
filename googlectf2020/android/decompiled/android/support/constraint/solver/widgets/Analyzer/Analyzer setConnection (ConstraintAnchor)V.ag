@@ -1,0 +1,28 @@
+# Landroid/support/constraint/solver/widgets/Analyzer;->setConnection(Landroid/support/constraint/solver/widgets/ConstraintAnchor;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.constraint.solver.widgets.ConstraintAnchor
+#
+# - return:void
+
+setConnection-BB@0x0 : [ setConnection-BB@0x10 setConnection-BB@0x2e ]
+	0       (00000000) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	1       (00000006) move-result-object   v0
+	2       (00000008) iget-object          v1, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	3       (0000000c) if-eqz               v1, +11
+
+setConnection-BB@0x10 : [ setConnection-BB@0x1c setConnection-BB@0x2e ]
+	4       (00000010) iget-object          v1, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	5       (00000014) iget-object          v1, v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	6       (00000018) if-eq                v1, v2, +b
+
+setConnection-BB@0x1c : [ setConnection-BB@0x2e ]
+	7       (0000001c) iget-object          v1, v2, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	8       (00000020) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	9       (00000026) move-result-object   v1
+	10      (00000028) invoke-virtual       v1, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->addDependent(Landroid/support/constraint/solver/widgets/ResolutionNode;)V
+
+setConnection-BB@0x2e : 
+	11      (0000002e) return-void          
+

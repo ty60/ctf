@@ -1,0 +1,22 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setMinWidth(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setMinWidth-BB@0x0 : [ setMinWidth-BB@0x4 setMinWidth-BB@0xc ]
+	0       (00000000) if-gez               v2, +6
+
+setMinWidth-BB@0x4 : [ setMinWidth-BB@0x10 ]
+	1       (00000004) const/4              v0, 0
+	2       (00000006) iput                 v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinWidth I
+	3       (0000000a) goto                 +3
+
+setMinWidth-BB@0xc : [ setMinWidth-BB@0x10 ]
+	4       (0000000c) iput                 v2, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinWidth I
+
+setMinWidth-BB@0x10 : 
+	5       (00000010) return-void          
+

@@ -1,0 +1,32 @@
+# Landroid/support/constraint/solver/LinearSystem;->getVariable(Ljava/lang/String; Landroid/support/constraint/solver/SolverVariable$Type;)Landroid/support/constraint/solver/SolverVariable; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:android.support.constraint.solver.SolverVariable$Type
+#
+# - return:android.support.constraint.solver.SolverVariable
+
+getVariable-BB@0x0 : [ getVariable-BB@0x8 getVariable-BB@0x16 ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/constraint/solver/LinearSystem;->mVariables Ljava/util/HashMap;
+	1       (00000004) if-nez               v0, +9
+
+getVariable-BB@0x8 : [ getVariable-BB@0x16 ]
+	2       (00000008) new-instance         v0, Ljava/util/HashMap;
+	3       (0000000c) invoke-direct        v0, Ljava/util/HashMap;-><init>()V
+	4       (00000012) iput-object          v0, v1, Landroid/support/constraint/solver/LinearSystem;->mVariables Ljava/util/HashMap;
+
+getVariable-BB@0x16 : [ getVariable-BB@0x2a getVariable-BB@0x32 ]
+	5       (00000016) iget-object          v0, v1, Landroid/support/constraint/solver/LinearSystem;->mVariables Ljava/util/HashMap;
+	6       (0000001a) invoke-virtual       v0, v2, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	7       (00000020) move-result-object   v0
+	8       (00000022) check-cast           v0, Landroid/support/constraint/solver/SolverVariable;
+	9       (00000026) if-nez               v0, +6
+
+getVariable-BB@0x2a : [ getVariable-BB@0x32 ]
+	10      (0000002a) invoke-direct        v1, v2, v3, Landroid/support/constraint/solver/LinearSystem;->createVariable(Ljava/lang/String; Landroid/support/constraint/solver/SolverVariable$Type;)Landroid/support/constraint/solver/SolverVariable;
+	11      (00000030) move-result-object   v0
+
+getVariable-BB@0x32 : 
+	12      (00000032) return-object        v0
+

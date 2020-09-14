@@ -1,0 +1,70 @@
+# Landroid/support/constraint/solver/widgets/ConstraintAnchor;->isConnectionToMe(Landroid/support/constraint/solver/widgets/ConstraintWidget; Ljava/util/HashSet;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.support.constraint.solver.widgets.ConstraintWidget
+# - v9:java.util.HashSet
+#
+# - return:boolean
+
+isConnectionToMe-BB@0x0 : [ isConnectionToMe-BB@0xe isConnectionToMe-BB@0x10 ]
+	0       (00000000) invoke-virtual       v9, v8, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) if-eqz               v0, +3
+
+isConnectionToMe-BB@0xe : 
+	4       (0000000e) return               v1
+
+isConnectionToMe-BB@0x10 : [ isConnectionToMe-BB@0x24 isConnectionToMe-BB@0x26 ]
+	5       (00000010) invoke-virtual       v9, v8, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+	6       (00000016) invoke-virtual       v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getOwner()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) const/4              v2, 1
+	9       (00000020) if-ne                v8, v0, +3
+
+isConnectionToMe-BB@0x24 : 
+	10      (00000024) return               v2
+
+isConnectionToMe-BB@0x26 : [ isConnectionToMe-BB@0x38 ]
+	11      (00000026) invoke-virtual       v8, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getAnchors()Ljava/util/ArrayList;
+	12      (0000002c) move-result-object   v0
+	13      (0000002e) const/4              v3, 0
+	14      (00000030) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	15      (00000036) move-result          v4
+
+isConnectionToMe-BB@0x38 : [ isConnectionToMe-BB@0x3c isConnectionToMe-BB@0x84 ]
+	16      (00000038) if-ge                v3, v4, +26
+
+isConnectionToMe-BB@0x3c : [ isConnectionToMe-BB@0x54 isConnectionToMe-BB@0x7e ]
+	17      (0000003c) invoke-virtual       v0, v3, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	18      (00000042) move-result-object   v5
+	19      (00000044) check-cast           v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	20      (00000048) invoke-virtual       v5, v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->isSimilarDimensionConnection(Landroid/support/constraint/solver/widgets/ConstraintAnchor;)Z
+	21      (0000004e) move-result          v6
+	22      (00000050) if-eqz               v6, +17
+
+isConnectionToMe-BB@0x54 : [ isConnectionToMe-BB@0x60 isConnectionToMe-BB@0x7e ]
+	23      (00000054) invoke-virtual       v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->isConnected()Z
+	24      (0000005a) move-result          v6
+	25      (0000005c) if-eqz               v6, +11
+
+isConnectionToMe-BB@0x60 : [ isConnectionToMe-BB@0x7c isConnectionToMe-BB@0x7e ]
+	26      (00000060) invoke-virtual       v5, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getTarget()Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	27      (00000066) move-result-object   v6
+	28      (00000068) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getOwner()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	29      (0000006e) move-result-object   v6
+	30      (00000070) invoke-direct        v7, v6, v9, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->isConnectionToMe(Landroid/support/constraint/solver/widgets/ConstraintWidget; Ljava/util/HashSet;)Z
+	31      (00000076) move-result          v6
+	32      (00000078) if-eqz               v6, +3
+
+isConnectionToMe-BB@0x7c : 
+	33      (0000007c) return               v2
+
+isConnectionToMe-BB@0x7e : [ isConnectionToMe-BB@0x38 ]
+	34      (0000007e) add-int/lit8         v3, v3, 1
+	35      (00000082) goto                 -25
+
+isConnectionToMe-BB@0x84 : 
+	36      (00000084) return               v1
+

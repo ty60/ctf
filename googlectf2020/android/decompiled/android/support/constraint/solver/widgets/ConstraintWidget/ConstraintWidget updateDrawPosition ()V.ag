@@ -1,0 +1,24 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->updateDrawPosition()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+updateDrawPosition-BB@0x0 : 
+	0       (00000000) iget                 v0, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mX I
+	1       (00000004) iget                 v1, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mY I
+	2       (00000008) iget                 v2, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mX I
+	3       (0000000c) iget                 v3, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWidth I
+	4       (00000010) add-int/2addr        v2, v3
+	5       (00000012) iget                 v3, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mY I
+	6       (00000016) iget                 v4, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHeight I
+	7       (0000001a) add-int/2addr        v3, v4
+	8       (0000001c) iput                 v0, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDrawX I
+	9       (00000020) iput                 v1, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDrawY I
+	10      (00000024) sub-int              v4, v2, v0
+	11      (00000028) iput                 v4, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDrawWidth I
+	12      (0000002c) sub-int              v4, v3, v1
+	13      (00000030) iput                 v4, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDrawHeight I
+	14      (00000034) return-void          
+

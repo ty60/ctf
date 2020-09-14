@@ -1,0 +1,32 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setDimension(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+setDimension-BB@0x0 : [ setDimension-BB@0x10 setDimension-BB@0x18 ]
+	0       (00000000) iput                 v3, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWidth I
+	1       (00000004) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWidth I
+	2       (00000008) iget                 v1, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinWidth I
+	3       (0000000c) if-ge                v0, v1, +6
+
+setDimension-BB@0x10 : [ setDimension-BB@0x18 ]
+	4       (00000010) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinWidth I
+	5       (00000014) iput                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWidth I
+
+setDimension-BB@0x18 : [ setDimension-BB@0x28 setDimension-BB@0x30 ]
+	6       (00000018) iput                 v4, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHeight I
+	7       (0000001c) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHeight I
+	8       (00000020) iget                 v1, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinHeight I
+	9       (00000024) if-ge                v0, v1, +6
+
+setDimension-BB@0x28 : [ setDimension-BB@0x30 ]
+	10      (00000028) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMinHeight I
+	11      (0000002c) iput                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHeight I
+
+setDimension-BB@0x30 : 
+	12      (00000030) return-void          
+

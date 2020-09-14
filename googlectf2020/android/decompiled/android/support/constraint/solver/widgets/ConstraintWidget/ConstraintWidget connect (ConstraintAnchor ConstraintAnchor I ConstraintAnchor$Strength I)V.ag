@@ -1,0 +1,33 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->connect(Landroid/support/constraint/solver/widgets/ConstraintAnchor; Landroid/support/constraint/solver/widgets/ConstraintAnchor; I Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.support.constraint.solver.widgets.ConstraintAnchor
+# - v10:android.support.constraint.solver.widgets.ConstraintAnchor
+# - v11:int
+# - v12:android.support.constraint.solver.widgets.ConstraintAnchor$Strength
+# - v13:int
+#
+# - return:void
+
+connect-BB@0x0 : [ connect-BB@0xc connect-BB@0x32 ]
+	0       (00000000) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getOwner()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-ne                v0, v8, +15
+
+connect-BB@0xc : [ connect-BB@0x32 ]
+	3       (0000000c) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getType()Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	4       (00000012) move-result-object   v2
+	5       (00000014) invoke-virtual       v10, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getOwner()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	6       (0000001a) move-result-object   v3
+	7       (0000001c) invoke-virtual       v10, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getType()Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type;
+	8       (00000022) move-result-object   v4
+	9       (00000024) move-object          v1, v8
+	10      (00000026) move                 v5, v11
+	11      (00000028) move-object          v6, v12
+	12      (0000002a) move                 v7, v13
+	13      (0000002c) invoke-virtual/range v1 ... v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->connect(Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type; Landroid/support/constraint/solver/widgets/ConstraintWidget; Landroid/support/constraint/solver/widgets/ConstraintAnchor$Type; I Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength; I)V
+
+connect-BB@0x32 : 
+	14      (00000032) return-void          
+

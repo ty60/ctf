@@ -1,0 +1,27 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->getWidgetsToSet(I)Ljava/util/Set; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:java.util.Set
+
+getWidgetsToSet-BB@0x0 : [ getWidgetsToSet-BB@0x4 getWidgetsToSet-BB@0xa ]
+	0       (00000000) if-nez               v2, +5
+
+getWidgetsToSet-BB@0x4 : 
+	1       (00000004) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetHorizontal Ljava/util/HashSet;
+	2       (00000008) return-object        v0
+
+getWidgetsToSet-BB@0xa : [ getWidgetsToSet-BB@0x10 getWidgetsToSet-BB@0x16 ]
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) if-ne                v2, v0, +5
+
+getWidgetsToSet-BB@0x10 : 
+	5       (00000010) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetVertical Ljava/util/HashSet;
+	6       (00000014) return-object        v0
+
+getWidgetsToSet-BB@0x16 : 
+	7       (00000016) const/4              v0, 0
+	8       (00000018) return-object        v0
+

@@ -1,0 +1,41 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->isSpreadHeight()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+isSpreadHeight-BB@0x0 : [ isSpreadHeight-BB@0xa isSpreadHeight-BB@0x3a ]
+	0       (00000000) iget                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintDefaultHeight I
+	1       (00000004) const/4              v1, 1
+	2       (00000006) if-nez               v0, +1a
+
+isSpreadHeight-BB@0xa : [ isSpreadHeight-BB@0x18 isSpreadHeight-BB@0x3a ]
+	3       (0000000a) iget                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDimensionRatio F
+	4       (0000000e) const/4              v2, 0
+	5       (00000010) cmpl-float           v0, v0, v2
+	6       (00000014) if-nez               v0, +13
+
+isSpreadHeight-BB@0x18 : [ isSpreadHeight-BB@0x20 isSpreadHeight-BB@0x3a ]
+	7       (00000018) iget                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintMinHeight I
+	8       (0000001c) if-nez               v0, +f
+
+isSpreadHeight-BB@0x20 : [ isSpreadHeight-BB@0x28 isSpreadHeight-BB@0x3a ]
+	9       (00000020) iget                 v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintMaxHeight I
+	10      (00000024) if-nez               v0, +b
+
+isSpreadHeight-BB@0x28 : [ isSpreadHeight-BB@0x38 isSpreadHeight-BB@0x3a ]
+	11      (00000028) iget-object          v0, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	12      (0000002c) aget-object          v0, v0, v1
+	13      (00000030) sget-object          v2, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	14      (00000034) if-ne                v0, v2, +3
+
+isSpreadHeight-BB@0x38 : [ isSpreadHeight-BB@0x3c ]
+	15      (00000038) goto                 +2
+
+isSpreadHeight-BB@0x3a : [ isSpreadHeight-BB@0x3c ]
+	16      (0000003a) const/4              v1, 0
+
+isSpreadHeight-BB@0x3c : 
+	17      (0000003c) return               v1
+

@@ -1,0 +1,47 @@
+# Landroid/support/constraint/solver/widgets/WidgetContainer;->updateDrawPosition()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+updateDrawPosition-BB@0x0 : [ updateDrawPosition-BB@0xe updateDrawPosition-BB@0x10 ]
+	0       (00000000) invoke-super         v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->updateDrawPosition()V
+	1       (00000006) iget-object          v0, v5, Landroid/support/constraint/solver/widgets/WidgetContainer;->mChildren Ljava/util/ArrayList;
+	2       (0000000a) if-nez               v0, +3
+
+updateDrawPosition-BB@0xe : 
+	3       (0000000e) return-void          
+
+updateDrawPosition-BB@0x10 : [ updateDrawPosition-BB@0x1e ]
+	4       (00000010) iget-object          v0, v5, Landroid/support/constraint/solver/widgets/WidgetContainer;->mChildren Ljava/util/ArrayList;
+	5       (00000014) invoke-virtual       v0, Ljava/util/ArrayList;->size()I
+	6       (0000001a) move-result          v0
+	7       (0000001c) const/4              v1, 0
+
+updateDrawPosition-BB@0x1e : [ updateDrawPosition-BB@0x22 updateDrawPosition-BB@0x5c ]
+	8       (0000001e) if-ge                v1, v0, +1f
+
+updateDrawPosition-BB@0x22 : [ updateDrawPosition-BB@0x50 updateDrawPosition-BB@0x56 ]
+	9       (00000022) iget-object          v2, v5, Landroid/support/constraint/solver/widgets/WidgetContainer;->mChildren Ljava/util/ArrayList;
+	10      (00000026) invoke-virtual       v2, v1, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	11      (0000002c) move-result-object   v2
+	12      (0000002e) check-cast           v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	13      (00000032) invoke-virtual       v5, Landroid/support/constraint/solver/widgets/WidgetContainer;->getDrawX()I
+	14      (00000038) move-result          v3
+	15      (0000003a) invoke-virtual       v5, Landroid/support/constraint/solver/widgets/WidgetContainer;->getDrawY()I
+	16      (00000040) move-result          v4
+	17      (00000042) invoke-virtual       v2, v3, v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setOffset(I I)V
+	18      (00000048) instance-of          v3, v2, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	19      (0000004c) if-nez               v3, +5
+
+updateDrawPosition-BB@0x50 : [ updateDrawPosition-BB@0x56 ]
+	20      (00000050) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->updateDrawPosition()V
+
+updateDrawPosition-BB@0x56 : [ updateDrawPosition-BB@0x1e ]
+	21      (00000056) add-int/lit8         v1, v1, 1
+	22      (0000005a) goto                 -1e
+
+updateDrawPosition-BB@0x5c : 
+	23      (0000005c) return-void          
+

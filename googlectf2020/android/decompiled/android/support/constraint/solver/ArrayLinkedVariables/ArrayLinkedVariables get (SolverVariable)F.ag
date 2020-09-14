@@ -1,0 +1,41 @@
+# Landroid/support/constraint/solver/ArrayLinkedVariables;->get(Landroid/support/constraint/solver/SolverVariable;)F [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.support.constraint.solver.SolverVariable
+#
+# - return:float
+
+get-BB@0x0 : [ get-BB@0x6 ]
+	0       (00000000) iget                 v0, v4, Landroid/support/constraint/solver/ArrayLinkedVariables;->mHead I
+	1       (00000004) const/4              v1, 0
+
+get-BB@0x6 : [ get-BB@0xc get-BB@0x3c ]
+	2       (00000006) const/4              v2, -1
+	3       (00000008) if-eq                v0, v2, +1a
+
+get-BB@0xc : [ get-BB@0x14 get-BB@0x3c ]
+	4       (0000000c) iget                 v2, v4, Landroid/support/constraint/solver/ArrayLinkedVariables;->currentSize I
+	5       (00000010) if-ge                v1, v2, +16
+
+get-BB@0x14 : [ get-BB@0x24 get-BB@0x2e ]
+	6       (00000014) iget-object          v2, v4, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayIndices [I
+	7       (00000018) aget                 v2, v2, v0
+	8       (0000001c) iget                 v3, v5, Landroid/support/constraint/solver/SolverVariable;->id I
+	9       (00000020) if-ne                v2, v3, +7
+
+get-BB@0x24 : 
+	10      (00000024) iget-object          v2, v4, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayValues [F
+	11      (00000028) aget                 v2, v2, v0
+	12      (0000002c) return               v2
+
+get-BB@0x2e : [ get-BB@0x6 ]
+	13      (0000002e) iget-object          v2, v4, Landroid/support/constraint/solver/ArrayLinkedVariables;->mArrayNextIndices [I
+	14      (00000032) aget                 v0, v2, v0
+	15      (00000036) add-int/lit8         v1, v1, 1
+	16      (0000003a) goto                 -1a
+
+get-BB@0x3c : 
+	17      (0000003c) const/4              v2, 0
+	18      (0000003e) return               v2
+

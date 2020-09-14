@@ -1,0 +1,27 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->addChain(Landroid/support/constraint/solver/widgets/ConstraintWidget; I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.constraint.solver.widgets.ConstraintWidget
+# - v4:int
+#
+# - return:void
+
+addChain-BB@0x0 : [ addChain-BB@0x6 addChain-BB@0xe ]
+	0       (00000000) move-object          v0, v3
+	1       (00000002) if-nez               v4, +6
+
+addChain-BB@0x6 : [ addChain-BB@0x1a ]
+	2       (00000006) invoke-direct        v2, v0, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->addHorizontalChain(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+	3       (0000000c) goto                 +7
+
+addChain-BB@0xe : [ addChain-BB@0x14 addChain-BB@0x1a ]
+	4       (0000000e) const/4              v1, 1
+	5       (00000010) if-ne                v4, v1, +5
+
+addChain-BB@0x14 : [ addChain-BB@0x1a ]
+	6       (00000014) invoke-direct        v2, v0, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->addVerticalChain(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+
+addChain-BB@0x1a : 
+	7       (0000001a) return-void          
+

@@ -1,0 +1,13 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHorizontalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.support.constraint.solver.widgets.ConstraintWidget$DimensionBehaviour
+
+getHorizontalDimensionBehaviour-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) aget-object          v0, v0, v1
+	3       (0000000a) return-object        v0
+

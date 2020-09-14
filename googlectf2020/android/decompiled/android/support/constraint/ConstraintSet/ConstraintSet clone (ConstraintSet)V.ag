@@ -1,0 +1,39 @@
+# Landroid/support/constraint/ConstraintSet;->clone(Landroid/support/constraint/ConstraintSet;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.support.constraint.ConstraintSet
+#
+# - return:void
+
+clone-BB@0x0 : [ clone-BB@0x1e ]
+	0       (00000000) iget-object          v0, v4, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	1       (00000004) invoke-virtual       v0, Ljava/util/HashMap;->clear()V
+	2       (0000000a) iget-object          v0, v5, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	3       (0000000e) invoke-virtual       v0, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+	4       (00000014) move-result-object   v0
+	5       (00000016) invoke-interface     v0, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+	6       (0000001c) move-result-object   v0
+
+clone-BB@0x1e : [ clone-BB@0x2a clone-BB@0x5a ]
+	7       (0000001e) invoke-interface     v0, Ljava/util/Iterator;->hasNext()Z
+	8       (00000024) move-result          v1
+	9       (00000026) if-eqz               v1, +1a
+
+clone-BB@0x2a : [ clone-BB@0x1e ]
+	10      (0000002a) invoke-interface     v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	11      (00000030) move-result-object   v1
+	12      (00000032) check-cast           v1, Ljava/lang/Integer;
+	13      (00000036) iget-object          v2, v4, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	14      (0000003a) iget-object          v3, v5, Landroid/support/constraint/ConstraintSet;->mConstraints Ljava/util/HashMap;
+	15      (0000003e) invoke-virtual       v3, v1, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	16      (00000044) move-result-object   v3
+	17      (00000046) check-cast           v3, Landroid/support/constraint/ConstraintSet$Constraint;
+	18      (0000004a) invoke-virtual       v3, Landroid/support/constraint/ConstraintSet$Constraint;->clone()Landroid/support/constraint/ConstraintSet$Constraint;
+	19      (00000050) move-result-object   v3
+	20      (00000052) invoke-virtual       v2, v1, v3, Ljava/util/HashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	21      (00000058) goto                 -1d
+
+clone-BB@0x5a : 
+	22      (0000005a) return-void          
+

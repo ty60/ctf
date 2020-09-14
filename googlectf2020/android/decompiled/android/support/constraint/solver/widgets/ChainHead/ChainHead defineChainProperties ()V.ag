@@ -1,0 +1,226 @@
+# Landroid/support/constraint/solver/widgets/ChainHead;->defineChainProperties()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v13
+#
+# - return:void
+
+defineChainProperties-BB@0x0 : [ defineChainProperties-BB@0x1c ]
+	0       (00000000) iget                 v0, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	1       (00000004) const/4              v1, 2
+	2       (00000006) mul-int/2addr        v0, v1
+	3       (00000008) iget-object          v2, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mFirst Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	4       (0000000c) iget-object          v3, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mFirst Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	5       (00000010) iget-object          v4, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mFirst Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	6       (00000014) const/4              v5, 0
+	7       (00000016) move-object          v6, v4
+	8       (00000018) move-object          v4, v2
+	9       (0000001a) move                 v2, v5
+
+defineChainProperties-BB@0x1c : [ defineChainProperties-BB@0x22 defineChainProperties-BB@0x1ae ]
+	10      (0000001c) const/4              v7, 1
+	11      (0000001e) if-nez               v2, +c8
+
+defineChainProperties-BB@0x22 : [ defineChainProperties-BB@0x56 defineChainProperties-BB@0x14c ]
+	12      (00000022) iget                 v8, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mWidgetsCount I
+	13      (00000026) add-int/2addr        v8, v7
+	14      (00000028) iput                 v8, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mWidgetsCount I
+	15      (0000002c) iget-object          v8, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mNextChainWidget [Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	16      (00000030) iget                 v9, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	17      (00000034) const/4              v10, 0
+	18      (00000036) aput-object          v10, v8, v9
+	19      (0000003a) iget-object          v8, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListNextMatchConstraintsWidget [Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	20      (0000003e) iget                 v9, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	21      (00000042) aput-object          v10, v8, v9
+	22      (00000046) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVisibility()I
+	23      (0000004c) move-result          v8
+	24      (0000004e) const/16             v9, 8
+	25      (00000052) if-eq                v8, v9, +7d
+
+defineChainProperties-BB@0x56 : [ defineChainProperties-BB@0x5e defineChainProperties-BB@0x62 ]
+	26      (00000056) iget-object          v8, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mFirstVisibleWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	27      (0000005a) if-nez               v8, +4
+
+defineChainProperties-BB@0x5e : [ defineChainProperties-BB@0x62 ]
+	28      (0000005e) iput-object          v3, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mFirstVisibleWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+
+defineChainProperties-BB@0x62 : [ defineChainProperties-BB@0x7a defineChainProperties-BB@0x14c ]
+	29      (00000062) iput-object          v3, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mLastVisibleWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	30      (00000066) iget-object          v8, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	31      (0000006a) iget                 v9, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	32      (0000006e) aget-object          v8, v8, v9
+	33      (00000072) sget-object          v9, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	34      (00000076) if-ne                v8, v9, +6b
+
+defineChainProperties-BB@0x7a : [ defineChainProperties-BB@0x8a defineChainProperties-BB@0xac ]
+	35      (0000007a) iget-object          v8, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mResolvedMatchConstraintDefault [I
+	36      (0000007e) iget                 v9, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	37      (00000082) aget                 v8, v8, v9
+	38      (00000086) if-eqz               v8, +13
+
+defineChainProperties-BB@0x8a : [ defineChainProperties-BB@0x9c defineChainProperties-BB@0xac ]
+	39      (0000008a) iget-object          v8, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mResolvedMatchConstraintDefault [I
+	40      (0000008e) iget                 v9, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	41      (00000092) aget                 v8, v8, v9
+	42      (00000096) const/4              v9, 3
+	43      (00000098) if-eq                v8, v9, +a
+
+defineChainProperties-BB@0x9c : [ defineChainProperties-BB@0xac defineChainProperties-BB@0x14c ]
+	44      (0000009c) iget-object          v8, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mResolvedMatchConstraintDefault [I
+	45      (000000a0) iget                 v9, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	46      (000000a4) aget                 v8, v8, v9
+	47      (000000a8) if-ne                v8, v1, +52
+
+defineChainProperties-BB@0xac : [ defineChainProperties-BB@0xcc defineChainProperties-BB@0xe2 ]
+	48      (000000ac) iget                 v8, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mWidgetsMatchCount I
+	49      (000000b0) add-int/2addr        v8, v7
+	50      (000000b2) iput                 v8, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mWidgetsMatchCount I
+	51      (000000b6) iget-object          v8, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWeight [F
+	52      (000000ba) iget                 v9, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	53      (000000be) aget                 v8, v8, v9
+	54      (000000c2) const/4              v9, 0
+	55      (000000c4) cmpl-float           v10, v8, v9
+	56      (000000c8) if-lez               v10, +d
+
+defineChainProperties-BB@0xcc : [ defineChainProperties-BB@0xe2 ]
+	57      (000000cc) iget                 v10, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mTotalWeight F
+	58      (000000d0) iget-object          v11, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWeight [F
+	59      (000000d4) iget                 v12, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	60      (000000d8) aget                 v11, v11, v12
+	61      (000000dc) add-float/2addr      v10, v11
+	62      (000000de) iput                 v10, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mTotalWeight F
+
+defineChainProperties-BB@0xe2 : [ defineChainProperties-BB@0xf2 defineChainProperties-BB@0x124 ]
+	63      (000000e2) iget                 v10, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	64      (000000e6) invoke-static        v3, v10, Landroid/support/constraint/solver/widgets/ChainHead;->isMatchConstraintEqualityCandidate(Landroid/support/constraint/solver/widgets/ConstraintWidget; I)Z
+	65      (000000ec) move-result          v10
+	66      (000000ee) if-eqz               v10, +1b
+
+defineChainProperties-BB@0xf2 : [ defineChainProperties-BB@0xfa defineChainProperties-BB@0x100 ]
+	67      (000000f2) cmpg-float           v9, v8, v9
+	68      (000000f6) if-gez               v9, +5
+
+defineChainProperties-BB@0xfa : [ defineChainProperties-BB@0x104 ]
+	69      (000000fa) iput-boolean         v7, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mHasUndefinedWeights Z
+	70      (000000fe) goto                 +3
+
+defineChainProperties-BB@0x100 : [ defineChainProperties-BB@0x104 ]
+	71      (00000100) iput-boolean         v7, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mHasDefinedWeights Z
+
+defineChainProperties-BB@0x104 : [ defineChainProperties-BB@0x10c defineChainProperties-BB@0x11a ]
+	72      (00000104) iget-object          v7, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mWeightedMatchConstraintsWidgets Ljava/util/ArrayList;
+	73      (00000108) if-nez               v7, +9
+
+defineChainProperties-BB@0x10c : [ defineChainProperties-BB@0x11a ]
+	74      (0000010c) new-instance         v7, Ljava/util/ArrayList;
+	75      (00000110) invoke-direct        v7, Ljava/util/ArrayList;-><init>()V
+	76      (00000116) iput-object          v7, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mWeightedMatchConstraintsWidgets Ljava/util/ArrayList;
+
+defineChainProperties-BB@0x11a : [ defineChainProperties-BB@0x124 ]
+	77      (0000011a) iget-object          v7, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mWeightedMatchConstraintsWidgets Ljava/util/ArrayList;
+	78      (0000011e) invoke-virtual       v7, v3, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+defineChainProperties-BB@0x124 : [ defineChainProperties-BB@0x12c defineChainProperties-BB@0x130 ]
+	79      (00000124) iget-object          v7, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mFirstMatchConstraintWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	80      (00000128) if-nez               v7, +4
+
+defineChainProperties-BB@0x12c : [ defineChainProperties-BB@0x130 ]
+	81      (0000012c) iput-object          v3, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mFirstMatchConstraintWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+
+defineChainProperties-BB@0x130 : [ defineChainProperties-BB@0x138 defineChainProperties-BB@0x148 ]
+	82      (00000130) iget-object          v7, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mLastMatchConstraintWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	83      (00000134) if-eqz               v7, +a
+
+defineChainProperties-BB@0x138 : [ defineChainProperties-BB@0x148 ]
+	84      (00000138) iget-object          v7, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mLastMatchConstraintWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	85      (0000013c) iget-object          v7, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListNextMatchConstraintsWidget [Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	86      (00000140) iget                 v9, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	87      (00000144) aput-object          v3, v7, v9
+
+defineChainProperties-BB@0x148 : [ defineChainProperties-BB@0x14c ]
+	88      (00000148) iput-object          v3, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mLastMatchConstraintWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+
+defineChainProperties-BB@0x14c : [ defineChainProperties-BB@0x150 defineChainProperties-BB@0x15c ]
+	89      (0000014c) if-eq                v4, v3, +8
+
+defineChainProperties-BB@0x150 : [ defineChainProperties-BB@0x15c ]
+	90      (00000150) iget-object          v7, v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mNextChainWidget [Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	91      (00000154) iget                 v8, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	92      (00000158) aput-object          v3, v7, v8
+
+defineChainProperties-BB@0x15c : [ defineChainProperties-BB@0x172 defineChainProperties-BB@0x19e ]
+	93      (0000015c) move-object          v4, v3
+	94      (0000015e) iget-object          v7, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	95      (00000162) add-int/lit8         v8, v0, 1
+	96      (00000166) aget-object          v7, v7, v8
+	97      (0000016a) iget-object          v7, v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	98      (0000016e) if-eqz               v7, +18
+
+defineChainProperties-BB@0x172 : [ defineChainProperties-BB@0x186 defineChainProperties-BB@0x19a ]
+	99      (00000172) iget-object          v6, v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	100     (00000176) iget-object          v8, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	101     (0000017a) aget-object          v8, v8, v0
+	102     (0000017e) iget-object          v8, v8, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	103     (00000182) if-eqz               v8, +c
+
+defineChainProperties-BB@0x186 : [ defineChainProperties-BB@0x19a defineChainProperties-BB@0x1a0 ]
+	104     (00000186) iget-object          v8, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	105     (0000018a) aget-object          v8, v8, v0
+	106     (0000018e) iget-object          v8, v8, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	107     (00000192) iget-object          v8, v8, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	108     (00000196) if-eq                v8, v3, +5
+
+defineChainProperties-BB@0x19a : [ defineChainProperties-BB@0x1a0 ]
+	109     (0000019a) const/4              v6, 0
+	110     (0000019c) goto                 +2
+
+defineChainProperties-BB@0x19e : [ defineChainProperties-BB@0x1a0 ]
+	111     (0000019e) const/4              v6, 0
+
+defineChainProperties-BB@0x1a0 : [ defineChainProperties-BB@0x1a4 defineChainProperties-BB@0x1a8 ]
+	112     (000001a0) if-eqz               v6, +4
+
+defineChainProperties-BB@0x1a4 : [ defineChainProperties-BB@0x1aa ]
+	113     (000001a4) move-object          v3, v6
+	114     (000001a6) goto                 +2
+
+defineChainProperties-BB@0x1a8 : [ defineChainProperties-BB@0x1aa ]
+	115     (000001a8) const/4              v2, 1
+
+defineChainProperties-BB@0x1aa : [ defineChainProperties-BB@0x1c ]
+	116     (000001aa) goto/16              -c7
+
+defineChainProperties-BB@0x1ae : [ defineChainProperties-BB@0x1ba defineChainProperties-BB@0x1cc ]
+	117     (000001ae) iput-object          v3, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mLast Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	118     (000001b2) iget                 v1, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mOrientation I
+	119     (000001b6) if-nez               v1, +b
+
+defineChainProperties-BB@0x1ba : [ defineChainProperties-BB@0x1c2 defineChainProperties-BB@0x1cc ]
+	120     (000001ba) iget-boolean         v1, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mIsRtl Z
+	121     (000001be) if-eqz               v1, +7
+
+defineChainProperties-BB@0x1c2 : [ defineChainProperties-BB@0x1d4 ]
+	122     (000001c2) iget-object          v1, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mLast Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	123     (000001c6) iput-object          v1, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mHead Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	124     (000001ca) goto                 +5
+
+defineChainProperties-BB@0x1cc : [ defineChainProperties-BB@0x1d4 ]
+	125     (000001cc) iget-object          v1, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mFirst Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	126     (000001d0) iput-object          v1, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mHead Landroid/support/constraint/solver/widgets/ConstraintWidget;
+
+defineChainProperties-BB@0x1d4 : [ defineChainProperties-BB@0x1dc defineChainProperties-BB@0x1e8 ]
+	127     (000001d4) iget-boolean         v1, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mHasDefinedWeights Z
+	128     (000001d8) if-eqz               v1, +8
+
+defineChainProperties-BB@0x1dc : [ defineChainProperties-BB@0x1e4 defineChainProperties-BB@0x1e8 ]
+	129     (000001dc) iget-boolean         v1, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mHasUndefinedWeights Z
+	130     (000001e0) if-eqz               v1, +4
+
+defineChainProperties-BB@0x1e4 : [ defineChainProperties-BB@0x1e8 ]
+	131     (000001e4) move                 v5, v7
+	132     (000001e6) nop                  
+
+defineChainProperties-BB@0x1e8 : 
+	133     (000001e8) iput-boolean         v5, v13, Landroid/support/constraint/solver/widgets/ChainHead;->mHasComplexMatchWeights Z
+	134     (000001ec) return-void          
+

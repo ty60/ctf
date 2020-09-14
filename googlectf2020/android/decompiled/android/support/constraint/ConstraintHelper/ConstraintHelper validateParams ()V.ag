@@ -1,0 +1,29 @@
+# Landroid/support/constraint/ConstraintHelper;->validateParams()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+validateParams-BB@0x0 : [ validateParams-BB@0x8 validateParams-BB@0xa ]
+	0       (00000000) iget-object          v0, v3, Landroid/support/constraint/ConstraintHelper;->mHelperWidget Landroid/support/constraint/solver/widgets/Helper;
+	1       (00000004) if-nez               v0, +3
+
+validateParams-BB@0x8 : 
+	2       (00000008) return-void          
+
+validateParams-BB@0xa : [ validateParams-BB@0x1a validateParams-BB@0x28 ]
+	3       (0000000a) invoke-virtual       v3, Landroid/support/constraint/ConstraintHelper;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	4       (00000010) move-result-object   v0
+	5       (00000012) instance-of          v1, v0, Landroid/support/constraint/ConstraintLayout$LayoutParams;
+	6       (00000016) if-eqz               v1, +9
+
+validateParams-BB@0x1a : [ validateParams-BB@0x28 ]
+	7       (0000001a) move-object          v1, v0
+	8       (0000001c) check-cast           v1, Landroid/support/constraint/ConstraintLayout$LayoutParams;
+	9       (00000020) iget-object          v2, v3, Landroid/support/constraint/ConstraintHelper;->mHelperWidget Landroid/support/constraint/solver/widgets/Helper;
+	10      (00000024) iput-object          v2, v1, Landroid/support/constraint/ConstraintLayout$LayoutParams;->widget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+
+validateParams-BB@0x28 : 
+	11      (00000028) return-void          
+

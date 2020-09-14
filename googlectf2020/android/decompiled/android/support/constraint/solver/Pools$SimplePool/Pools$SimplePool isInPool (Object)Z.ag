@@ -1,0 +1,32 @@
+# Landroid/support/constraint/solver/Pools$SimplePool;->isInPool(Ljava/lang/Object;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Object
+#
+# - return:boolean
+
+isInPool-BB@0x0 : [ isInPool-BB@0x4 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) move                 v1, v0
+
+isInPool-BB@0x4 : [ isInPool-BB@0xc isInPool-BB@0x22 ]
+	2       (00000004) iget                 v2, v3, Landroid/support/constraint/solver/Pools$SimplePool;->mPoolSize I
+	3       (00000008) if-ge                v1, v2, +d
+
+isInPool-BB@0xc : [ isInPool-BB@0x18 isInPool-BB@0x1c ]
+	4       (0000000c) iget-object          v2, v3, Landroid/support/constraint/solver/Pools$SimplePool;->mPool [Ljava/lang/Object;
+	5       (00000010) aget-object          v2, v2, v1
+	6       (00000014) if-ne                v2, v4, +4
+
+isInPool-BB@0x18 : 
+	7       (00000018) const/4              v0, 1
+	8       (0000001a) return               v0
+
+isInPool-BB@0x1c : [ isInPool-BB@0x4 ]
+	9       (0000001c) add-int/lit8         v1, v1, 1
+	10      (00000020) goto                 -e
+
+isInPool-BB@0x22 : 
+	11      (00000022) return               v0
+

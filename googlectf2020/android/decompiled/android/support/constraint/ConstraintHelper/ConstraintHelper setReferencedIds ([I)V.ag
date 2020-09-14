@@ -1,0 +1,27 @@
+# Landroid/support/constraint/ConstraintHelper;->setReferencedIds([I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int[]
+#
+# - return:void
+
+setReferencedIds-BB@0x0 : [ setReferencedIds-BB@0x8 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput                 v0, v3, Landroid/support/constraint/ConstraintHelper;->mCount I
+	2       (00000006) nop                  
+
+setReferencedIds-BB@0x8 : [ setReferencedIds-BB@0xe setReferencedIds-BB@0x20 ]
+	3       (00000008) array-length         v1, v4
+	4       (0000000a) if-ge                v0, v1, +b
+
+setReferencedIds-BB@0xe : [ setReferencedIds-BB@0x8 ]
+	5       (0000000e) aget                 v1, v4, v0
+	6       (00000012) const/4              v2, 0
+	7       (00000014) invoke-virtual       v3, v1, v2, Landroid/support/constraint/ConstraintHelper;->setTag(I Ljava/lang/Object;)V
+	8       (0000001a) add-int/lit8         v0, v0, 1
+	9       (0000001e) goto                 -b
+
+setReferencedIds-BB@0x20 : 
+	10      (00000020) return-void          
+

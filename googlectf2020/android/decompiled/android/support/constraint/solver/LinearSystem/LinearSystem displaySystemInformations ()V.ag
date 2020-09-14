@@ -1,0 +1,113 @@
+# Landroid/support/constraint/solver/LinearSystem;->displaySystemInformations()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:void
+
+displaySystemInformations-BB@0x0 : [ displaySystemInformations-BB@0xa ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const/4              v1, 0
+	2       (00000004) const/4              v2, 0
+	3       (00000006) move                 v3, v1
+	4       (00000008) move                 v1, v2
+
+displaySystemInformations-BB@0xa : [ displaySystemInformations-BB@0x12 displaySystemInformations-BB@0x36 ]
+	5       (0000000a) iget                 v4, v7, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	6       (0000000e) if-ge                v1, v4, +14
+
+displaySystemInformations-BB@0x12 : [ displaySystemInformations-BB@0x1e displaySystemInformations-BB@0x30 ]
+	7       (00000012) iget-object          v4, v7, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	8       (00000016) aget-object          v4, v4, v1
+	9       (0000001a) if-eqz               v4, +b
+
+displaySystemInformations-BB@0x1e : [ displaySystemInformations-BB@0x30 ]
+	10      (0000001e) iget-object          v4, v7, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	11      (00000022) aget-object          v4, v4, v1
+	12      (00000026) invoke-virtual       v4, Landroid/support/constraint/solver/ArrayRow;->sizeInBytes()I
+	13      (0000002c) move-result          v4
+	14      (0000002e) add-int/2addr        v3, v4
+
+displaySystemInformations-BB@0x30 : [ displaySystemInformations-BB@0xa ]
+	15      (00000030) add-int/lit8         v1, v1, 1
+	16      (00000034) goto                 -15
+
+displaySystemInformations-BB@0x36 : [ displaySystemInformations-BB@0x3a ]
+	17      (00000036) const/4              v1, 0
+	18      (00000038) nop                  
+
+displaySystemInformations-BB@0x3a : [ displaySystemInformations-BB@0x42 displaySystemInformations-BB@0x66 ]
+	19      (0000003a) iget                 v4, v7, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	20      (0000003e) if-ge                v2, v4, +14
+
+displaySystemInformations-BB@0x42 : [ displaySystemInformations-BB@0x4e displaySystemInformations-BB@0x60 ]
+	21      (00000042) iget-object          v4, v7, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	22      (00000046) aget-object          v4, v4, v2
+	23      (0000004a) if-eqz               v4, +b
+
+displaySystemInformations-BB@0x4e : [ displaySystemInformations-BB@0x60 ]
+	24      (0000004e) iget-object          v4, v7, Landroid/support/constraint/solver/LinearSystem;->mRows [Landroid/support/constraint/solver/ArrayRow;
+	25      (00000052) aget-object          v4, v4, v2
+	26      (00000056) invoke-virtual       v4, Landroid/support/constraint/solver/ArrayRow;->sizeInBytes()I
+	27      (0000005c) move-result          v4
+	28      (0000005e) add-int/2addr        v1, v4
+
+displaySystemInformations-BB@0x60 : [ displaySystemInformations-BB@0x3a ]
+	29      (00000060) add-int/lit8         v2, v2, 1
+	30      (00000064) goto                 -15
+
+displaySystemInformations-BB@0x66 : 
+	31      (00000066) sget-object          v2, Ljava/lang/System;->out Ljava/io/PrintStream;
+	32      (0000006a) new-instance         v4, Ljava/lang/StringBuilder;
+	33      (0000006e) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	34      (00000074) const-string         v5, 'Linear System -> Table size: '
+	35      (00000078) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	36      (0000007e) iget                 v5, v7, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	37      (00000082) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	38      (00000088) const-string         v5, ' ('
+	39      (0000008c) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (00000092) iget                 v5, v7, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	41      (00000096) iget                 v6, v7, Landroid/support/constraint/solver/LinearSystem;->TABLE_SIZE I
+	42      (0000009a) mul-int/2addr        v5, v6
+	43      (0000009c) invoke-direct        v7, v5, Landroid/support/constraint/solver/LinearSystem;->getDisplaySize(I)Ljava/lang/String;
+	44      (000000a2) move-result-object   v5
+	45      (000000a4) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	46      (000000aa) const-string         v5, ') -- row sizes: '
+	47      (000000ae) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	48      (000000b4) invoke-direct        v7, v3, Landroid/support/constraint/solver/LinearSystem;->getDisplaySize(I)Ljava/lang/String;
+	49      (000000ba) move-result-object   v5
+	50      (000000bc) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	51      (000000c2) const-string         v5, ', actual size: '
+	52      (000000c6) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	53      (000000cc) invoke-direct        v7, v1, Landroid/support/constraint/solver/LinearSystem;->getDisplaySize(I)Ljava/lang/String;
+	54      (000000d2) move-result-object   v5
+	55      (000000d4) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	56      (000000da) const-string         v5, ' rows: '
+	57      (000000de) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	58      (000000e4) iget                 v5, v7, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	59      (000000e8) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	60      (000000ee) const-string         v5, '/'
+	61      (000000f2) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	62      (000000f8) iget                 v5, v7, Landroid/support/constraint/solver/LinearSystem;->mMaxRows I
+	63      (000000fc) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	64      (00000102) const-string         v5, ' cols: '
+	65      (00000106) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	66      (0000010c) iget                 v5, v7, Landroid/support/constraint/solver/LinearSystem;->mNumColumns I
+	67      (00000110) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	68      (00000116) const-string         v5, '/'
+	69      (0000011a) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	70      (00000120) iget                 v5, v7, Landroid/support/constraint/solver/LinearSystem;->mMaxColumns I
+	71      (00000124) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	72      (0000012a) const-string         v5, ' '
+	73      (0000012e) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	74      (00000134) invoke-virtual       v4, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	75      (0000013a) const-string         v5, ' occupied cells, '
+	76      (0000013e) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	77      (00000144) invoke-direct        v7, v0, Landroid/support/constraint/solver/LinearSystem;->getDisplaySize(I)Ljava/lang/String;
+	78      (0000014a) move-result-object   v5
+	79      (0000014c) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	80      (00000152) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	81      (00000158) move-result-object   v4
+	82      (0000015a) invoke-virtual       v2, v4, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+	83      (00000160) return-void          
+

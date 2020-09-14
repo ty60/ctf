@@ -1,0 +1,14 @@
+# Landroid/support/constraint/solver/widgets/ResolutionAnchor;->setOpposite(Landroid/support/constraint/solver/widgets/ResolutionAnchor; F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.constraint.solver.widgets.ResolutionAnchor
+# - v2:float
+#
+# - return:void
+
+setOpposite-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->opposite Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	1       (00000004) iput                 v2, v0, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->oppositeOffset F
+	2       (00000008) return-void          
+

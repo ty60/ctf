@@ -1,0 +1,21 @@
+# Landroid/support/constraint/solver/widgets/ConstraintAnchor;->isConnected()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isConnected-BB@0x0 : [ isConnected-BB@0x8 isConnected-BB@0xc ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	1       (00000004) if-eqz               v0, +4
+
+isConnected-BB@0x8 : [ isConnected-BB@0xe ]
+	2       (00000008) const/4              v0, 1
+	3       (0000000a) goto                 +2
+
+isConnected-BB@0xc : [ isConnected-BB@0xe ]
+	4       (0000000c) const/4              v0, 0
+
+isConnected-BB@0xe : 
+	5       (0000000e) return               v0
+

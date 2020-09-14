@@ -1,0 +1,22 @@
+# Landroid/support/constraint/solver/widgets/Guideline;->setGuidePercent(F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:float
+#
+# - return:void
+
+setGuidePercent-BB@0x0 : [ setGuidePercent-BB@0xc setGuidePercent-BB@0x1a ]
+	0       (00000000) const/high16         v0, -16512 # [-1.0]
+	1       (00000004) cmpl-float           v0, v2, v0
+	2       (00000008) if-lez               v0, +9
+
+setGuidePercent-BB@0xc : [ setGuidePercent-BB@0x1a ]
+	3       (0000000c) iput                 v2, v1, Landroid/support/constraint/solver/widgets/Guideline;->mRelativePercent F
+	4       (00000010) const/4              v0, -1
+	5       (00000012) iput                 v0, v1, Landroid/support/constraint/solver/widgets/Guideline;->mRelativeBegin I
+	6       (00000016) iput                 v0, v1, Landroid/support/constraint/solver/widgets/Guideline;->mRelativeEnd I
+
+setGuidePercent-BB@0x1a : 
+	7       (0000001a) return-void          
+

@@ -1,0 +1,28 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->addWidgetsToSet(Landroid/support/constraint/solver/widgets/ConstraintWidget; I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.constraint.solver.widgets.ConstraintWidget
+# - v3:int
+#
+# - return:void
+
+addWidgetsToSet-BB@0x0 : [ addWidgetsToSet-BB@0x4 addWidgetsToSet-BB@0x10 ]
+	0       (00000000) if-nez               v3, +8
+
+addWidgetsToSet-BB@0x4 : [ addWidgetsToSet-BB@0x20 ]
+	1       (00000004) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetHorizontal Ljava/util/HashSet;
+	2       (00000008) invoke-virtual       v0, v2, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+	3       (0000000e) goto                 +9
+
+addWidgetsToSet-BB@0x10 : [ addWidgetsToSet-BB@0x16 addWidgetsToSet-BB@0x20 ]
+	4       (00000010) const/4              v0, 1
+	5       (00000012) if-ne                v3, v0, +7
+
+addWidgetsToSet-BB@0x16 : [ addWidgetsToSet-BB@0x20 ]
+	6       (00000016) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetGroup;->mWidgetsToSetVertical Ljava/util/HashSet;
+	7       (0000001a) invoke-virtual       v0, v2, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+addWidgetsToSet-BB@0x20 : 
+	8       (00000020) return-void          
+

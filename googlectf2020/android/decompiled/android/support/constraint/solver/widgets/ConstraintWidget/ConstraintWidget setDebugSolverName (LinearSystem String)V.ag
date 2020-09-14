@@ -1,0 +1,74 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setDebugSolverName(Landroid/support/constraint/solver/LinearSystem; Ljava/lang/String;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.support.constraint.solver.LinearSystem
+# - v9:java.lang.String
+#
+# - return:void
+
+setDebugSolverName-BB@0x0 : [ setDebugSolverName-BB@0xdc setDebugSolverName-BB@0x110 ]
+	0       (00000000) iput-object          v9, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDebugName Ljava/lang/String;
+	1       (00000004) iget-object          v0, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	2       (00000008) invoke-virtual       v8, v0, Landroid/support/constraint/solver/LinearSystem;->createObjectVariable(Ljava/lang/Object;)Landroid/support/constraint/solver/SolverVariable;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) iget-object          v1, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	5       (00000014) invoke-virtual       v8, v1, Landroid/support/constraint/solver/LinearSystem;->createObjectVariable(Ljava/lang/Object;)Landroid/support/constraint/solver/SolverVariable;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) iget-object          v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mRight Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	8       (00000020) invoke-virtual       v8, v2, Landroid/support/constraint/solver/LinearSystem;->createObjectVariable(Ljava/lang/Object;)Landroid/support/constraint/solver/SolverVariable;
+	9       (00000026) move-result-object   v2
+	10      (00000028) iget-object          v3, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBottom Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	11      (0000002c) invoke-virtual       v8, v3, Landroid/support/constraint/solver/LinearSystem;->createObjectVariable(Ljava/lang/Object;)Landroid/support/constraint/solver/SolverVariable;
+	12      (00000032) move-result-object   v3
+	13      (00000034) new-instance         v4, Ljava/lang/StringBuilder;
+	14      (00000038) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	15      (0000003e) invoke-virtual       v4, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) const-string         v5, '.left'
+	17      (00000048) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (0000004e) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	19      (00000054) move-result-object   v4
+	20      (00000056) invoke-virtual       v0, v4, Landroid/support/constraint/solver/SolverVariable;->setName(Ljava/lang/String;)V
+	21      (0000005c) new-instance         v4, Ljava/lang/StringBuilder;
+	22      (00000060) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	23      (00000066) invoke-virtual       v4, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (0000006c) const-string         v5, '.top'
+	25      (00000070) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	26      (00000076) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	27      (0000007c) move-result-object   v4
+	28      (0000007e) invoke-virtual       v1, v4, Landroid/support/constraint/solver/SolverVariable;->setName(Ljava/lang/String;)V
+	29      (00000084) new-instance         v4, Ljava/lang/StringBuilder;
+	30      (00000088) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	31      (0000008e) invoke-virtual       v4, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	32      (00000094) const-string         v5, '.right'
+	33      (00000098) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	34      (0000009e) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	35      (000000a4) move-result-object   v4
+	36      (000000a6) invoke-virtual       v2, v4, Landroid/support/constraint/solver/SolverVariable;->setName(Ljava/lang/String;)V
+	37      (000000ac) new-instance         v4, Ljava/lang/StringBuilder;
+	38      (000000b0) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	39      (000000b6) invoke-virtual       v4, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000bc) const-string         v5, '.bottom'
+	41      (000000c0) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	42      (000000c6) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	43      (000000cc) move-result-object   v4
+	44      (000000ce) invoke-virtual       v3, v4, Landroid/support/constraint/solver/SolverVariable;->setName(Ljava/lang/String;)V
+	45      (000000d4) iget                 v4, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaselineDistance I
+	46      (000000d8) if-lez               v4, +1c
+
+setDebugSolverName-BB@0xdc : [ setDebugSolverName-BB@0x110 ]
+	47      (000000dc) iget-object          v4, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mBaseline Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	48      (000000e0) invoke-virtual       v8, v4, Landroid/support/constraint/solver/LinearSystem;->createObjectVariable(Ljava/lang/Object;)Landroid/support/constraint/solver/SolverVariable;
+	49      (000000e6) move-result-object   v4
+	50      (000000e8) new-instance         v5, Ljava/lang/StringBuilder;
+	51      (000000ec) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	52      (000000f2) invoke-virtual       v5, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	53      (000000f8) const-string         v6, '.baseline'
+	54      (000000fc) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	55      (00000102) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	56      (00000108) move-result-object   v5
+	57      (0000010a) invoke-virtual       v4, v5, Landroid/support/constraint/solver/SolverVariable;->setName(Ljava/lang/String;)V
+
+setDebugSolverName-BB@0x110 : 
+	58      (00000110) return-void          
+

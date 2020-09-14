@@ -1,0 +1,22 @@
+# Landroid/support/constraint/solver/LinearSystem;->getValueFor(Ljava/lang/String;)F [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:float
+
+getValueFor-BB@0x0 : [ getValueFor-BB@0x10 getValueFor-BB@0x14 ]
+	0       (00000000) sget-object          v0, Landroid/support/constraint/solver/SolverVariable$Type;->UNRESTRICTED Landroid/support/constraint/solver/SolverVariable$Type;
+	1       (00000004) invoke-virtual       v2, v3, v0, Landroid/support/constraint/solver/LinearSystem;->getVariable(Ljava/lang/String; Landroid/support/constraint/solver/SolverVariable$Type;)Landroid/support/constraint/solver/SolverVariable;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-nez               v0, +4
+
+getValueFor-BB@0x10 : 
+	4       (00000010) const/4              v1, 0
+	5       (00000012) return               v1
+
+getValueFor-BB@0x14 : 
+	6       (00000014) iget                 v1, v0, Landroid/support/constraint/solver/SolverVariable;->computedValue F
+	7       (00000018) return               v1
+

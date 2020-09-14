@@ -1,0 +1,22 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setVerticalDimensionBehaviour(Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.constraint.solver.widgets.ConstraintWidget$DimensionBehaviour
+#
+# - return:void
+
+setVerticalDimensionBehaviour-BB@0x0 : [ setVerticalDimensionBehaviour-BB@0x12 setVerticalDimensionBehaviour-BB@0x1c ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	1       (00000004) const/4              v1, 1
+	2       (00000006) aput-object          v3, v0, v1
+	3       (0000000a) sget-object          v0, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	4       (0000000e) if-ne                v3, v0, +7
+
+setVerticalDimensionBehaviour-BB@0x12 : [ setVerticalDimensionBehaviour-BB@0x1c ]
+	5       (00000012) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWrapHeight I
+	6       (00000016) invoke-virtual       v2, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHeight(I)V
+
+setVerticalDimensionBehaviour-BB@0x1c : 
+	7       (0000001c) return-void          
+

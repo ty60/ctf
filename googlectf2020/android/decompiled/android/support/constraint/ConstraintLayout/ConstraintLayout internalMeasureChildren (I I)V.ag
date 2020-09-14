@@ -1,0 +1,246 @@
+# Landroid/support/constraint/ConstraintLayout;->internalMeasureChildren(I I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v22
+# - v23:int
+# - v24:int
+#
+# - return:void
+
+internalMeasureChildren-BB@0x0 : [ internalMeasureChildren-BB@0x3a ]
+	0       (00000000) move-object/from16   v0, v22
+	1       (00000004) move/from16          v1, v23
+	2       (00000008) move/from16          v2, v24
+	3       (0000000c) invoke-virtual/range v22, Landroid/support/constraint/ConstraintLayout;->getPaddingTop()I
+	4       (00000012) move-result          v3
+	5       (00000014) invoke-virtual/range v22, Landroid/support/constraint/ConstraintLayout;->getPaddingBottom()I
+	6       (0000001a) move-result          v4
+	7       (0000001c) add-int/2addr        v3, v4
+	8       (0000001e) invoke-virtual/range v22, Landroid/support/constraint/ConstraintLayout;->getPaddingLeft()I
+	9       (00000024) move-result          v4
+	10      (00000026) invoke-virtual/range v22, Landroid/support/constraint/ConstraintLayout;->getPaddingRight()I
+	11      (0000002c) move-result          v5
+	12      (0000002e) add-int/2addr        v4, v5
+	13      (00000030) invoke-virtual/range v22, Landroid/support/constraint/ConstraintLayout;->getChildCount()I
+	14      (00000036) move-result          v5
+	15      (00000038) const/4              v7, 0
+
+internalMeasureChildren-BB@0x3a : [ internalMeasureChildren-BB@0x3e internalMeasureChildren-BB@0x1fe ]
+	16      (0000003a) if-ge                v7, v5, +e2
+
+internalMeasureChildren-BB@0x3e : [ internalMeasureChildren-BB@0x56 internalMeasureChildren-BB@0x5a ]
+	17      (0000003e) invoke-virtual       v0, v7, Landroid/support/constraint/ConstraintLayout;->getChildAt(I)Landroid/view/View;
+	18      (00000044) move-result-object   v8
+	19      (00000046) invoke-virtual       v8, Landroid/view/View;->getVisibility()I
+	20      (0000004c) move-result          v9
+	21      (0000004e) const/16             v10, 8
+	22      (00000052) if-ne                v9, v10, +4
+
+internalMeasureChildren-BB@0x56 : [ internalMeasureChildren-BB@0x1ee ]
+	23      (00000056) goto/16              +cc
+
+internalMeasureChildren-BB@0x5a : [ internalMeasureChildren-BB@0x72 internalMeasureChildren-BB@0x1ee ]
+	24      (0000005a) invoke-virtual       v8, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	25      (00000060) move-result-object   v9
+	26      (00000062) check-cast           v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;
+	27      (00000066) iget-object          v10, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->widget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	28      (0000006a) iget-boolean         v11, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isGuideline Z
+	29      (0000006e) if-nez               v11, +c0
+
+internalMeasureChildren-BB@0x72 : [ internalMeasureChildren-BB@0x7a internalMeasureChildren-BB@0x7e ]
+	30      (00000072) iget-boolean         v11, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->isHelper Z
+	31      (00000076) if-eqz               v11, +4
+
+internalMeasureChildren-BB@0x7a : [ internalMeasureChildren-BB@0x1ee ]
+	32      (0000007a) goto/16              +ba
+
+internalMeasureChildren-BB@0x7e : [ internalMeasureChildren-BB@0xa0 internalMeasureChildren-BB@0xde ]
+	33      (0000007e) invoke-virtual       v8, Landroid/view/View;->getVisibility()I
+	34      (00000084) move-result          v11
+	35      (00000086) invoke-virtual       v10, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setVisibility(I)V
+	36      (0000008c) iget                 v11, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->width I
+	37      (00000090) iget                 v12, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->height I
+	38      (00000094) iget-boolean         v13, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalDimensionFixed Z
+	39      (00000098) const/4              v14, 1
+	40      (0000009a) const/4              v15, -1
+	41      (0000009c) if-nez               v13, +21
+
+internalMeasureChildren-BB@0xa0 : [ internalMeasureChildren-BB@0xa8 internalMeasureChildren-BB@0xde ]
+	42      (000000a0) iget-boolean         v13, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->verticalDimensionFixed Z
+	43      (000000a4) if-nez               v13, +1d
+
+internalMeasureChildren-BB@0xa8 : [ internalMeasureChildren-BB@0xb0 internalMeasureChildren-BB@0xb8 ]
+	44      (000000a8) iget-boolean         v13, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->horizontalDimensionFixed Z
+	45      (000000ac) if-nez               v13, +6
+
+internalMeasureChildren-BB@0xb0 : [ internalMeasureChildren-BB@0xb8 internalMeasureChildren-BB@0xde ]
+	46      (000000b0) iget                 v13, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintDefaultWidth I
+	47      (000000b4) if-eq                v13, v14, +15
+
+internalMeasureChildren-BB@0xb8 : [ internalMeasureChildren-BB@0xc0 internalMeasureChildren-BB@0xde ]
+	48      (000000b8) iget                 v13, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->width I
+	49      (000000bc) if-eq                v13, v15, +11
+
+internalMeasureChildren-BB@0xc0 : [ internalMeasureChildren-BB@0xc8 internalMeasureChildren-BB@0xda ]
+	50      (000000c0) iget-boolean         v13, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->verticalDimensionFixed Z
+	51      (000000c4) if-nez               v13, +b
+
+internalMeasureChildren-BB@0xc8 : [ internalMeasureChildren-BB@0xd0 internalMeasureChildren-BB@0xde ]
+	52      (000000c8) iget                 v13, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->matchConstraintDefaultHeight I
+	53      (000000cc) if-eq                v13, v14, +9
+
+internalMeasureChildren-BB@0xd0 : [ internalMeasureChildren-BB@0xd8 internalMeasureChildren-BB@0xda ]
+	54      (000000d0) iget                 v13, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->height I
+	55      (000000d4) if-ne                v13, v15, +3
+
+internalMeasureChildren-BB@0xd8 : [ internalMeasureChildren-BB@0xde ]
+	56      (000000d8) goto                 +3
+
+internalMeasureChildren-BB@0xda : [ internalMeasureChildren-BB@0xe0 ]
+	57      (000000da) const/4              v13, 0
+	58      (000000dc) goto                 +2
+
+internalMeasureChildren-BB@0xde : [ internalMeasureChildren-BB@0xe0 ]
+	59      (000000de) move                 v13, v14
+
+internalMeasureChildren-BB@0xe0 : [ internalMeasureChildren-BB@0xec internalMeasureChildren-BB@0x1b2 ]
+	60      (000000e0) const/16             v16, 0
+	61      (000000e4) const/16             v17, 0
+	62      (000000e8) if-eqz               v13, +65
+
+internalMeasureChildren-BB@0xec : [ internalMeasureChildren-BB@0xf2 internalMeasureChildren-BB@0x100 ]
+	63      (000000ec) const/4              v6, -2
+	64      (000000ee) if-nez               v11, +9
+
+internalMeasureChildren-BB@0xf2 : [ internalMeasureChildren-BB@0x11e ]
+	65      (000000f2) invoke-static        v1, v4, v6, Landroid/support/constraint/ConstraintLayout;->getChildMeasureSpec(I I I)I
+	66      (000000f8) move-result          v18
+	67      (000000fa) const/16             v16, 1
+	68      (000000fe) goto                 +10
+
+internalMeasureChildren-BB@0x100 : [ internalMeasureChildren-BB@0x104 internalMeasureChildren-BB@0x10e ]
+	69      (00000100) if-ne                v11, v15, +7
+
+internalMeasureChildren-BB@0x104 : [ internalMeasureChildren-BB@0x11e ]
+	70      (00000104) invoke-static        v1, v4, v15, Landroid/support/constraint/ConstraintLayout;->getChildMeasureSpec(I I I)I
+	71      (0000010a) move-result          v18
+	72      (0000010c) goto                 +9
+
+internalMeasureChildren-BB@0x10e : [ internalMeasureChildren-BB@0x112 internalMeasureChildren-BB@0x116 ]
+	73      (0000010e) if-ne                v11, v6, +4
+
+internalMeasureChildren-BB@0x112 : [ internalMeasureChildren-BB@0x116 ]
+	74      (00000112) const/16             v16, 1
+
+internalMeasureChildren-BB@0x116 : [ internalMeasureChildren-BB@0x11e ]
+	75      (00000116) invoke-static        v1, v4, v11, Landroid/support/constraint/ConstraintLayout;->getChildMeasureSpec(I I I)I
+	76      (0000011c) move-result          v18
+
+internalMeasureChildren-BB@0x11e : [ internalMeasureChildren-BB@0x126 internalMeasureChildren-BB@0x134 ]
+	77      (0000011e) move/from16          v19, v18
+	78      (00000122) if-nez               v12, +9
+
+internalMeasureChildren-BB@0x126 : [ internalMeasureChildren-BB@0x152 ]
+	79      (00000126) invoke-static        v2, v3, v6, Landroid/support/constraint/ConstraintLayout;->getChildMeasureSpec(I I I)I
+	80      (0000012c) move-result          v18
+	81      (0000012e) const/16             v17, 1
+	82      (00000132) goto                 +10
+
+internalMeasureChildren-BB@0x134 : [ internalMeasureChildren-BB@0x138 internalMeasureChildren-BB@0x142 ]
+	83      (00000134) if-ne                v12, v15, +7
+
+internalMeasureChildren-BB@0x138 : [ internalMeasureChildren-BB@0x152 ]
+	84      (00000138) invoke-static        v2, v3, v15, Landroid/support/constraint/ConstraintLayout;->getChildMeasureSpec(I I I)I
+	85      (0000013e) move-result          v18
+	86      (00000140) goto                 +9
+
+internalMeasureChildren-BB@0x142 : [ internalMeasureChildren-BB@0x146 internalMeasureChildren-BB@0x14a ]
+	87      (00000142) if-ne                v12, v6, +4
+
+internalMeasureChildren-BB@0x146 : [ internalMeasureChildren-BB@0x14a ]
+	88      (00000146) const/16             v17, 1
+
+internalMeasureChildren-BB@0x14a : [ internalMeasureChildren-BB@0x152 ]
+	89      (0000014a) invoke-static        v2, v3, v12, Landroid/support/constraint/ConstraintLayout;->getChildMeasureSpec(I I I)I
+	90      (00000150) move-result          v18
+
+internalMeasureChildren-BB@0x152 : [ internalMeasureChildren-BB@0x16c internalMeasureChildren-BB@0x180 ]
+	91      (00000152) move/from16          v20, v18
+	92      (00000156) move/from16          v14, v19
+	93      (0000015a) move/from16          v15, v20
+	94      (0000015e) invoke-virtual       v8, v14, v15, Landroid/view/View;->measure(I I)V
+	95      (00000164) iget-object          v6, v0, Landroid/support/constraint/ConstraintLayout;->mMetrics Landroid/support/constraint/solver/Metrics;
+	96      (00000168) if-eqz               v6, +c
+
+internalMeasureChildren-BB@0x16c : [ internalMeasureChildren-BB@0x180 ]
+	97      (0000016c) iget-object          v6, v0, Landroid/support/constraint/ConstraintLayout;->mMetrics Landroid/support/constraint/solver/Metrics;
+	98      (00000170) iget-wide            v0, v6, Landroid/support/constraint/solver/Metrics;->measures J
+	99      (00000174) const-wide/16        v18, 1 # [1.0]
+	100     (00000178) add-long             v0, v0, v18
+	101     (0000017c) iput-wide            v0, v6, Landroid/support/constraint/solver/Metrics;->measures J
+
+internalMeasureChildren-BB@0x180 : [ internalMeasureChildren-BB@0x186 internalMeasureChildren-BB@0x18a ]
+	102     (00000180) const/4              v0, -2
+	103     (00000182) if-ne                v11, v0, +4
+
+internalMeasureChildren-BB@0x186 : [ internalMeasureChildren-BB@0x18c ]
+	104     (00000186) const/4              v1, 1
+	105     (00000188) goto                 +2
+
+internalMeasureChildren-BB@0x18a : [ internalMeasureChildren-BB@0x18c ]
+	106     (0000018a) const/4              v1, 0
+
+internalMeasureChildren-BB@0x18c : [ internalMeasureChildren-BB@0x196 internalMeasureChildren-BB@0x19a ]
+	107     (0000018c) invoke-virtual       v10, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setWidthWrapContent(Z)V
+	108     (00000192) if-ne                v12, v0, +4
+
+internalMeasureChildren-BB@0x196 : [ internalMeasureChildren-BB@0x19c ]
+	109     (00000196) const/4              v0, 1
+	110     (00000198) goto                 +2
+
+internalMeasureChildren-BB@0x19a : [ internalMeasureChildren-BB@0x19c ]
+	111     (0000019a) const/4              v0, 0
+
+internalMeasureChildren-BB@0x19c : [ internalMeasureChildren-BB@0x1b2 ]
+	112     (0000019c) invoke-virtual       v10, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHeightWrapContent(Z)V
+	113     (000001a2) invoke-virtual       v8, Landroid/view/View;->getMeasuredWidth()I
+	114     (000001a8) move-result          v11
+	115     (000001aa) invoke-virtual       v8, Landroid/view/View;->getMeasuredHeight()I
+	116     (000001b0) move-result          v12
+
+internalMeasureChildren-BB@0x1b2 : [ internalMeasureChildren-BB@0x1c2 internalMeasureChildren-BB@0x1c8 ]
+	117     (000001b2) invoke-virtual       v10, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setWidth(I)V
+	118     (000001b8) invoke-virtual       v10, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHeight(I)V
+	119     (000001be) if-eqz               v16, +5
+
+internalMeasureChildren-BB@0x1c2 : [ internalMeasureChildren-BB@0x1c8 ]
+	120     (000001c2) invoke-virtual       v10, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setWrapWidth(I)V
+
+internalMeasureChildren-BB@0x1c8 : [ internalMeasureChildren-BB@0x1cc internalMeasureChildren-BB@0x1d2 ]
+	121     (000001c8) if-eqz               v17, +5
+
+internalMeasureChildren-BB@0x1cc : [ internalMeasureChildren-BB@0x1d2 ]
+	122     (000001cc) invoke-virtual       v10, v12, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setWrapHeight(I)V
+
+internalMeasureChildren-BB@0x1d2 : [ internalMeasureChildren-BB@0x1da internalMeasureChildren-BB@0x1ee ]
+	123     (000001d2) iget-boolean         v0, v9, Landroid/support/constraint/ConstraintLayout$LayoutParams;->needsBaseline Z
+	124     (000001d6) if-eqz               v0, +c
+
+internalMeasureChildren-BB@0x1da : [ internalMeasureChildren-BB@0x1e8 internalMeasureChildren-BB@0x1ee ]
+	125     (000001da) invoke-virtual       v8, Landroid/view/View;->getBaseline()I
+	126     (000001e0) move-result          v0
+	127     (000001e2) const/4              v1, -1
+	128     (000001e4) if-eq                v0, v1, +5
+
+internalMeasureChildren-BB@0x1e8 : [ internalMeasureChildren-BB@0x1ee ]
+	129     (000001e8) invoke-virtual       v10, v0, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setBaselineDistance(I)V
+
+internalMeasureChildren-BB@0x1ee : [ internalMeasureChildren-BB@0x3a ]
+	130     (000001ee) add-int/lit8         v7, v7, 1
+	131     (000001f2) move-object/from16   v0, v22
+	132     (000001f6) move/from16          v1, v23
+	133     (000001fa) goto/16              -e0
+
+internalMeasureChildren-BB@0x1fe : 
+	134     (000001fe) return-void          
+

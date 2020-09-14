@@ -1,0 +1,24 @@
+# Landroid/support/constraint/ConstraintHelper;->onMeasure(I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:void
+
+onMeasure-BB@0x0 : [ onMeasure-BB@0x8 onMeasure-BB@0x10 ]
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/constraint/ConstraintHelper;->mUseViewMeasure Z
+	1       (00000004) if-eqz               v0, +6
+
+onMeasure-BB@0x8 : [ onMeasure-BB@0x18 ]
+	2       (00000008) invoke-super         v1, v2, v3, Landroid/view/View;->onMeasure(I I)V
+	3       (0000000e) goto                 +5
+
+onMeasure-BB@0x10 : [ onMeasure-BB@0x18 ]
+	4       (00000010) const/4              v0, 0
+	5       (00000012) invoke-virtual       v1, v0, v0, Landroid/support/constraint/ConstraintHelper;->setMeasuredDimension(I I)V
+
+onMeasure-BB@0x18 : 
+	6       (00000018) return-void          
+

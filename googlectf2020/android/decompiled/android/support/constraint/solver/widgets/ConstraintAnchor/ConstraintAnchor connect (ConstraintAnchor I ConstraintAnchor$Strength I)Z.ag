@@ -1,0 +1,23 @@
+# Landroid/support/constraint/solver/widgets/ConstraintAnchor;->connect(Landroid/support/constraint/solver/widgets/ConstraintAnchor; I Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength; I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.support.constraint.solver.widgets.ConstraintAnchor
+# - v9:int
+# - v10:android.support.constraint.solver.widgets.ConstraintAnchor$Strength
+# - v11:int
+#
+# - return:boolean
+
+connect-BB@0x0 : 
+	0       (00000000) const/4              v3, -1
+	1       (00000002) const/4              v6, 0
+	2       (00000004) move-object          v0, v7
+	3       (00000006) move-object          v1, v8
+	4       (00000008) move                 v2, v9
+	5       (0000000a) move-object          v4, v10
+	6       (0000000c) move                 v5, v11
+	7       (0000000e) invoke-virtual/range v0 ... v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->connect(Landroid/support/constraint/solver/widgets/ConstraintAnchor; I I Landroid/support/constraint/solver/widgets/ConstraintAnchor$Strength; I Z)Z
+	8       (00000014) move-result          v0
+	9       (00000016) return               v0
+

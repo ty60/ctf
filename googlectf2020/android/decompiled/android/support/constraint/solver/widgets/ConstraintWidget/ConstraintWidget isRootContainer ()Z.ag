@@ -1,0 +1,30 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->isRootContainer()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isRootContainer-BB@0x0 : [ isRootContainer-BB@0x8 isRootContainer-BB@0x20 ]
+	0       (00000000) instance-of          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	1       (00000004) if-eqz               v0, +e
+
+isRootContainer-BB@0x8 : [ isRootContainer-BB@0x10 isRootContainer-BB@0x1c ]
+	2       (00000008) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mParent Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	3       (0000000c) if-eqz               v0, +8
+
+isRootContainer-BB@0x10 : [ isRootContainer-BB@0x1c isRootContainer-BB@0x20 ]
+	4       (00000010) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mParent Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	5       (00000014) instance-of          v0, v0, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	6       (00000018) if-nez               v0, +4
+
+isRootContainer-BB@0x1c : [ isRootContainer-BB@0x22 ]
+	7       (0000001c) const/4              v0, 1
+	8       (0000001e) goto                 +2
+
+isRootContainer-BB@0x20 : [ isRootContainer-BB@0x22 ]
+	9       (00000020) const/4              v0, 0
+
+isRootContainer-BB@0x22 : 
+	10      (00000022) return               v0
+

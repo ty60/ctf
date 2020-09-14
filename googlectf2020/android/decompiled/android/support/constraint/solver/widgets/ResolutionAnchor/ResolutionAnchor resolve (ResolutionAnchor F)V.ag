@@ -1,0 +1,38 @@
+# Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolve(Landroid/support/constraint/solver/widgets/ResolutionAnchor; F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.constraint.solver.widgets.ResolutionAnchor
+# - v4:float
+#
+# - return:void
+
+resolve-BB@0x0 : [ resolve-BB@0x8 resolve-BB@0x1c ]
+	0       (00000000) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	1       (00000004) if-eqz               v0, +c
+
+resolve-BB@0x8 : [ resolve-BB@0x10 resolve-BB@0x3a ]
+	2       (00000008) iget-object          v0, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	3       (0000000c) if-eq                v0, v3, +17
+
+resolve-BB@0x10 : [ resolve-BB@0x1c resolve-BB@0x3a ]
+	4       (00000010) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	5       (00000014) cmpl-float           v0, v0, v4
+	6       (00000018) if-eqz               v0, +11
+
+resolve-BB@0x1c : [ resolve-BB@0x2e resolve-BB@0x34 ]
+	7       (0000001c) iput-object          v3, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	8       (00000020) iput                 v4, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	9       (00000024) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	10      (00000028) const/4              v1, 1
+	11      (0000002a) if-ne                v0, v1, +5
+
+resolve-BB@0x2e : [ resolve-BB@0x34 ]
+	12      (0000002e) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->invalidate()V
+
+resolve-BB@0x34 : [ resolve-BB@0x3a ]
+	13      (00000034) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->didResolve()V
+
+resolve-BB@0x3a : 
+	14      (0000003a) return-void          
+

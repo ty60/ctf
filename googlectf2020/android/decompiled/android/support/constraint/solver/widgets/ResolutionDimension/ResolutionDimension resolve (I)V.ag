@@ -1,0 +1,34 @@
+# Landroid/support/constraint/solver/widgets/ResolutionDimension;->resolve(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+resolve-BB@0x0 : [ resolve-BB@0x8 resolve-BB@0x16 ]
+	0       (00000000) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ResolutionDimension;->state I
+	1       (00000004) if-eqz               v0, +9
+
+resolve-BB@0x8 : [ resolve-BB@0x16 resolve-BB@0x32 ]
+	2       (00000008) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ResolutionDimension;->value F
+	3       (0000000c) int-to-float         v1, v3
+	4       (0000000e) cmpl-float           v0, v0, v1
+	5       (00000012) if-eqz               v0, +10
+
+resolve-BB@0x16 : [ resolve-BB@0x26 resolve-BB@0x2c ]
+	6       (00000016) int-to-float         v0, v3
+	7       (00000018) iput                 v0, v2, Landroid/support/constraint/solver/widgets/ResolutionDimension;->value F
+	8       (0000001c) iget                 v0, v2, Landroid/support/constraint/solver/widgets/ResolutionDimension;->state I
+	9       (00000020) const/4              v1, 1
+	10      (00000022) if-ne                v0, v1, +5
+
+resolve-BB@0x26 : [ resolve-BB@0x2c ]
+	11      (00000026) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ResolutionDimension;->invalidate()V
+
+resolve-BB@0x2c : [ resolve-BB@0x32 ]
+	12      (0000002c) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ResolutionDimension;->didResolve()V
+
+resolve-BB@0x32 : 
+	13      (00000032) return-void          
+

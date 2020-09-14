@@ -1,0 +1,53 @@
+# Landroid/support/constraint/solver/widgets/Guideline;->setOrientation(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:void
+
+setOrientation-BB@0x0 : [ setOrientation-BB@0x8 setOrientation-BB@0xa ]
+	0       (00000000) iget                 v0, v4, Landroid/support/constraint/solver/widgets/Guideline;->mOrientation I
+	1       (00000004) if-ne                v0, v5, +3
+
+setOrientation-BB@0x8 : 
+	2       (00000008) return-void          
+
+setOrientation-BB@0xa : [ setOrientation-BB@0x22 setOrientation-BB@0x2c ]
+	3       (0000000a) iput                 v5, v4, Landroid/support/constraint/solver/widgets/Guideline;->mOrientation I
+	4       (0000000e) iget-object          v0, v4, Landroid/support/constraint/solver/widgets/Guideline;->mAnchors Ljava/util/ArrayList;
+	5       (00000012) invoke-virtual       v0, Ljava/util/ArrayList;->clear()V
+	6       (00000018) iget                 v0, v4, Landroid/support/constraint/solver/widgets/Guideline;->mOrientation I
+	7       (0000001c) const/4              v1, 1
+	8       (0000001e) if-ne                v0, v1, +7
+
+setOrientation-BB@0x22 : [ setOrientation-BB@0x34 ]
+	9       (00000022) iget-object          v0, v4, Landroid/support/constraint/solver/widgets/Guideline;->mLeft Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	10      (00000026) iput-object          v0, v4, Landroid/support/constraint/solver/widgets/Guideline;->mAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	11      (0000002a) goto                 +5
+
+setOrientation-BB@0x2c : [ setOrientation-BB@0x34 ]
+	12      (0000002c) iget-object          v0, v4, Landroid/support/constraint/solver/widgets/Guideline;->mTop Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	13      (00000030) iput-object          v0, v4, Landroid/support/constraint/solver/widgets/Guideline;->mAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+
+setOrientation-BB@0x34 : [ setOrientation-BB@0x4a ]
+	14      (00000034) iget-object          v0, v4, Landroid/support/constraint/solver/widgets/Guideline;->mAnchors Ljava/util/ArrayList;
+	15      (00000038) iget-object          v1, v4, Landroid/support/constraint/solver/widgets/Guideline;->mAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	16      (0000003c) invoke-virtual       v0, v1, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	17      (00000042) iget-object          v0, v4, Landroid/support/constraint/solver/widgets/Guideline;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	18      (00000046) array-length         v0, v0
+	19      (00000048) const/4              v1, 0
+
+setOrientation-BB@0x4a : [ setOrientation-BB@0x4e setOrientation-BB@0x60 ]
+	20      (0000004a) if-ge                v1, v0, +b
+
+setOrientation-BB@0x4e : [ setOrientation-BB@0x4a ]
+	21      (0000004e) iget-object          v2, v4, Landroid/support/constraint/solver/widgets/Guideline;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	22      (00000052) iget-object          v3, v4, Landroid/support/constraint/solver/widgets/Guideline;->mAnchor Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	23      (00000056) aput-object          v3, v2, v1
+	24      (0000005a) add-int/lit8         v1, v1, 1
+	25      (0000005e) goto                 -a
+
+setOrientation-BB@0x60 : 
+	26      (00000060) return-void          
+

@@ -1,0 +1,13 @@
+# Landroid/support/constraint/solver/widgets/ResolutionNode;->addDependent(Landroid/support/constraint/solver/widgets/ResolutionNode;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.constraint.solver.widgets.ResolutionNode
+#
+# - return:void
+
+addDependent-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/constraint/solver/widgets/ResolutionNode;->dependents Ljava/util/HashSet;
+	1       (00000004) invoke-virtual       v0, v2, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+	2       (0000000a) return-void          
+

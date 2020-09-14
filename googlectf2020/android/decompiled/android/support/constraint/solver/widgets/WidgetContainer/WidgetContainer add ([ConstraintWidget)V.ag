@@ -1,0 +1,24 @@
+# Landroid/support/constraint/solver/widgets/WidgetContainer;->add([Landroid/support/constraint/solver/widgets/ConstraintWidget;)V [access_flags=public varargs]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.support.constraint.solver.widgets.ConstraintWidget[]
+#
+# - return:void
+
+add-BB@0x0 : [ add-BB@0x4 ]
+	0       (00000000) array-length         v0, v4
+	1       (00000002) const/4              v1, 0
+
+add-BB@0x4 : [ add-BB@0x8 add-BB@0x18 ]
+	2       (00000004) if-ge                v1, v0, +a
+
+add-BB@0x8 : [ add-BB@0x4 ]
+	3       (00000008) aget-object          v2, v4, v1
+	4       (0000000c) invoke-virtual       v3, v2, Landroid/support/constraint/solver/widgets/WidgetContainer;->add(Landroid/support/constraint/solver/widgets/ConstraintWidget;)V
+	5       (00000012) add-int/lit8         v1, v1, 1
+	6       (00000016) goto                 -9
+
+add-BB@0x18 : 
+	7       (00000018) return-void          
+

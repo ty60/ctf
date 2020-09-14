@@ -1,0 +1,1024 @@
+# Landroid/support/constraint/solver/widgets/Optimizer;->applyChainOptimized(Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer; Landroid/support/constraint/solver/LinearSystem; I I Landroid/support/constraint/solver/widgets/ChainHead;)Z [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v42
+# - v43:android.support.constraint.solver.widgets.ConstraintWidgetContainer
+# - v44:android.support.constraint.solver.LinearSystem
+# - v45:int
+# - v46:int
+# - v47:android.support.constraint.solver.widgets.ChainHead
+#
+# - return:boolean
+
+applyChainOptimized-BB@0x0 : [ applyChainOptimized-BB@0x52 applyChainOptimized-BB@0x56 ]
+	0       (00000000) move-object/from16   v0, v44
+	1       (00000004) move/from16          v1, v45
+	2       (00000008) move-object/from16   v2, v47
+	3       (0000000c) iget-object          v3, v2, Landroid/support/constraint/solver/widgets/ChainHead;->mFirst Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	4       (00000010) iget-object          v4, v2, Landroid/support/constraint/solver/widgets/ChainHead;->mLast Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	5       (00000014) iget-object          v5, v2, Landroid/support/constraint/solver/widgets/ChainHead;->mFirstVisibleWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	6       (00000018) iget-object          v6, v2, Landroid/support/constraint/solver/widgets/ChainHead;->mLastVisibleWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	7       (0000001c) iget-object          v7, v2, Landroid/support/constraint/solver/widgets/ChainHead;->mHead Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	8       (00000020) move-object          v8, v3
+	9       (00000022) const/4              v9, 0
+	10      (00000024) const/4              v10, 0
+	11      (00000026) const/4              v11, 0
+	12      (00000028) iget                 v12, v2, Landroid/support/constraint/solver/widgets/ChainHead;->mTotalWeight F
+	13      (0000002c) iget-object          v13, v2, Landroid/support/constraint/solver/widgets/ChainHead;->mFirstMatchConstraintWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	14      (00000030) iget-object          v14, v2, Landroid/support/constraint/solver/widgets/ChainHead;->mLastMatchConstraintWidget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	15      (00000034) move-object/from16   v2, v43
+	16      (00000038) move-object          v15, v8
+	17      (0000003a) iget-object          v8, v2, Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	18      (0000003e) aget-object          v8, v8, v1
+	19      (00000042) sget-object          v2, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	20      (00000046) const/16             v16, 0
+	21      (0000004a) move-object/from16   v17, v9
+	22      (0000004e) if-ne                v8, v2, +4
+
+applyChainOptimized-BB@0x52 : [ applyChainOptimized-BB@0x5a ]
+	23      (00000052) const/4              v2, 1
+	24      (00000054) goto                 +3
+
+applyChainOptimized-BB@0x56 : [ applyChainOptimized-BB@0x5a ]
+	25      (00000056) move/from16          v2, v16
+
+applyChainOptimized-BB@0x5a : [ applyChainOptimized-BB@0x68 applyChainOptimized-BB@0xa8 ]
+	26      (0000005a) const/4              v8, 0
+	27      (0000005c) const/16             v18, 0
+	28      (00000060) const/16             v19, 0
+	29      (00000064) if-nez               v1, +22
+
+applyChainOptimized-BB@0x68 : [ applyChainOptimized-BB@0x70 applyChainOptimized-BB@0x74 ]
+	30      (00000068) iget                 v9, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHorizontalChainStyle I
+	31      (0000006c) if-nez               v9, +4
+
+applyChainOptimized-BB@0x70 : [ applyChainOptimized-BB@0x78 ]
+	32      (00000070) const/4              v9, 1
+	33      (00000072) goto                 +3
+
+applyChainOptimized-BB@0x74 : [ applyChainOptimized-BB@0x78 ]
+	34      (00000074) move/from16          v9, v16
+
+applyChainOptimized-BB@0x78 : [ applyChainOptimized-BB@0x88 applyChainOptimized-BB@0x8c ]
+	35      (00000078) move                 v8, v9
+	36      (0000007a) iget                 v9, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHorizontalChainStyle I
+	37      (0000007e) move/from16          v21, v2
+	38      (00000082) const/4              v2, 1
+	39      (00000084) if-ne                v9, v2, +4
+
+applyChainOptimized-BB@0x88 : [ applyChainOptimized-BB@0x90 ]
+	40      (00000088) const/4              v2, 1
+	41      (0000008a) goto                 +3
+
+applyChainOptimized-BB@0x8c : [ applyChainOptimized-BB@0x90 ]
+	42      (0000008c) move/from16          v2, v16
+
+applyChainOptimized-BB@0x90 : [ applyChainOptimized-BB@0x9e applyChainOptimized-BB@0xa2 ]
+	43      (00000090) iget                 v9, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mHorizontalChainStyle I
+	44      (00000094) move/from16          v22, v2
+	45      (00000098) const/4              v2, 2
+	46      (0000009a) if-ne                v9, v2, +4
+
+applyChainOptimized-BB@0x9e : [ applyChainOptimized-BB@0xa6 ]
+	47      (0000009e) const/4              v2, 1
+	48      (000000a0) goto                 +3
+
+applyChainOptimized-BB@0xa2 : [ applyChainOptimized-BB@0xa6 ]
+	49      (000000a2) move/from16          v2, v16
+
+applyChainOptimized-BB@0xa6 : [ applyChainOptimized-BB@0xea ]
+	50      (000000a6) goto                 +22
+
+applyChainOptimized-BB@0xa8 : [ applyChainOptimized-BB@0xb4 applyChainOptimized-BB@0xb8 ]
+	51      (000000a8) move/from16          v21, v2
+	52      (000000ac) iget                 v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mVerticalChainStyle I
+	53      (000000b0) if-nez               v2, +4
+
+applyChainOptimized-BB@0xb4 : [ applyChainOptimized-BB@0xbc ]
+	54      (000000b4) const/4              v2, 1
+	55      (000000b6) goto                 +3
+
+applyChainOptimized-BB@0xb8 : [ applyChainOptimized-BB@0xbc ]
+	56      (000000b8) move/from16          v2, v16
+
+applyChainOptimized-BB@0xbc : [ applyChainOptimized-BB@0xc8 applyChainOptimized-BB@0xcc ]
+	57      (000000bc) move                 v8, v2
+	58      (000000be) iget                 v2, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mVerticalChainStyle I
+	59      (000000c2) const/4              v9, 1
+	60      (000000c4) if-ne                v2, v9, +4
+
+applyChainOptimized-BB@0xc8 : [ applyChainOptimized-BB@0xd0 ]
+	61      (000000c8) const/4              v2, 1
+	62      (000000ca) goto                 +3
+
+applyChainOptimized-BB@0xcc : [ applyChainOptimized-BB@0xd0 ]
+	63      (000000cc) move/from16          v2, v16
+
+applyChainOptimized-BB@0xd0 : [ applyChainOptimized-BB@0xde applyChainOptimized-BB@0xe2 ]
+	64      (000000d0) iget                 v9, v7, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mVerticalChainStyle I
+	65      (000000d4) move/from16          v23, v2
+	66      (000000d8) const/4              v2, 2
+	67      (000000da) if-ne                v9, v2, +4
+
+applyChainOptimized-BB@0xde : [ applyChainOptimized-BB@0xe6 ]
+	68      (000000de) const/4              v2, 1
+	69      (000000e0) goto                 +3
+
+applyChainOptimized-BB@0xe2 : [ applyChainOptimized-BB@0xe6 ]
+	70      (000000e2) move/from16          v2, v16
+
+applyChainOptimized-BB@0xe6 : [ applyChainOptimized-BB@0xea ]
+	71      (000000e6) move/from16          v22, v23
+
+applyChainOptimized-BB@0xea : [ applyChainOptimized-BB@0xfe ]
+	72      (000000ea) const/4              v9, 0
+	73      (000000ec) const/16             v18, 0
+	74      (000000f0) move-object/from16   v24, v7
+	75      (000000f4) move                 v7, v11
+	76      (000000f6) move-object          v11, v15
+	77      (000000f8) move                 v15, v9
+	78      (000000fa) move/from16          v9, v16
+
+applyChainOptimized-BB@0xfe : [ applyChainOptimized-BB@0x10e applyChainOptimized-BB@0x296 ]
+	79      (000000fe) const/16             v19, 0
+	80      (00000102) move-object/from16   v25, v13
+	81      (00000106) const/16             v13, 8
+	82      (0000010a) if-nez               v10, +c6
+
+applyChainOptimized-BB@0x10e : [ applyChainOptimized-BB@0x11e applyChainOptimized-BB@0x1a4 ]
+	83      (0000010e) move/from16          v26, v10
+	84      (00000112) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVisibility()I
+	85      (00000118) move-result          v10
+	86      (0000011a) if-eq                v10, v13, +45
+
+applyChainOptimized-BB@0x11e : [ applyChainOptimized-BB@0x126 applyChainOptimized-BB@0x134 ]
+	87      (0000011e) add-int/lit8         v9, v9, 1
+	88      (00000122) if-nez               v1, +9
+
+applyChainOptimized-BB@0x126 : [ applyChainOptimized-BB@0x140 ]
+	89      (00000126) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	90      (0000012c) move-result          v10
+	91      (0000012e) int-to-float         v10, v10
+	92      (00000130) add-float/2addr      v15, v10
+	93      (00000132) goto                 +7
+
+applyChainOptimized-BB@0x134 : [ applyChainOptimized-BB@0x140 ]
+	94      (00000134) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	95      (0000013a) move-result          v10
+	96      (0000013c) int-to-float         v10, v10
+	97      (0000013e) add-float/2addr      v15, v10
+
+applyChainOptimized-BB@0x140 : [ applyChainOptimized-BB@0x144 applyChainOptimized-BB@0x158 ]
+	98      (00000140) if-eq                v11, v5, +c
+
+applyChainOptimized-BB@0x144 : [ applyChainOptimized-BB@0x158 ]
+	99      (00000144) iget-object          v10, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	100     (00000148) aget-object          v10, v10, v46
+	101     (0000014c) invoke-virtual       v10, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	102     (00000152) move-result          v10
+	103     (00000154) int-to-float         v10, v10
+	104     (00000156) add-float/2addr      v15, v10
+
+applyChainOptimized-BB@0x158 : [ applyChainOptimized-BB@0x15c applyChainOptimized-BB@0x174 ]
+	105     (00000158) if-eq                v11, v6, +e
+
+applyChainOptimized-BB@0x15c : [ applyChainOptimized-BB@0x174 ]
+	106     (0000015c) iget-object          v10, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	107     (00000160) add-int/lit8         v20, v46, 1
+	108     (00000164) aget-object          v10, v10, v20
+	109     (00000168) invoke-virtual       v10, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	110     (0000016e) move-result          v10
+	111     (00000170) int-to-float         v10, v10
+	112     (00000172) add-float/2addr      v15, v10
+
+applyChainOptimized-BB@0x174 : [ applyChainOptimized-BB@0x1a4 ]
+	113     (00000174) iget-object          v10, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	114     (00000178) aget-object          v10, v10, v46
+	115     (0000017c) invoke-virtual       v10, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	116     (00000182) move-result          v10
+	117     (00000184) int-to-float         v10, v10
+	118     (00000186) add-float            v18, v18, v10
+	119     (0000018a) iget-object          v10, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	120     (0000018e) add-int/lit8         v20, v46, 1
+	121     (00000192) aget-object          v10, v10, v20
+	122     (00000196) invoke-virtual       v10, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	123     (0000019c) move-result          v10
+	124     (0000019e) int-to-float         v10, v10
+	125     (000001a0) add-float            v18, v18, v10
+
+applyChainOptimized-BB@0x1a4 : [ applyChainOptimized-BB@0x1bc applyChainOptimized-BB@0x21c ]
+	126     (000001a4) iget-object          v10, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	127     (000001a8) aget-object          v10, v10, v46
+	128     (000001ac) move/from16          v27, v9
+	129     (000001b0) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVisibility()I
+	130     (000001b6) move-result          v9
+	131     (000001b8) if-eq                v9, v13, +32
+
+applyChainOptimized-BB@0x1bc : [ applyChainOptimized-BB@0x1cc applyChainOptimized-BB@0x21c ]
+	132     (000001bc) iget-object          v9, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	133     (000001c0) aget-object          v9, v9, v1
+	134     (000001c4) sget-object          v13, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	135     (000001c8) if-ne                v9, v13, +2a
+
+applyChainOptimized-BB@0x1cc : [ applyChainOptimized-BB@0x1d4 applyChainOptimized-BB@0x1f0 ]
+	136     (000001cc) add-int/lit8         v7, v7, 1
+	137     (000001d0) if-nez               v1, +10
+
+applyChainOptimized-BB@0x1d4 : [ applyChainOptimized-BB@0x1dc applyChainOptimized-BB@0x1de ]
+	138     (000001d4) iget                 v9, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintDefaultWidth I
+	139     (000001d8) if-eqz               v9, +3
+
+applyChainOptimized-BB@0x1dc : 
+	140     (000001dc) return               v16
+
+applyChainOptimized-BB@0x1de : [ applyChainOptimized-BB@0x1e6 applyChainOptimized-BB@0x1ee ]
+	141     (000001de) iget                 v9, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintMinWidth I
+	142     (000001e2) if-nez               v9, +6
+
+applyChainOptimized-BB@0x1e6 : [ applyChainOptimized-BB@0x1ee applyChainOptimized-BB@0x20c ]
+	143     (000001e6) iget                 v9, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintMaxWidth I
+	144     (000001ea) if-eqz               v9, +11
+
+applyChainOptimized-BB@0x1ee : 
+	145     (000001ee) return               v16
+
+applyChainOptimized-BB@0x1f0 : [ applyChainOptimized-BB@0x1f8 applyChainOptimized-BB@0x1fa ]
+	146     (000001f0) iget                 v9, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintDefaultHeight I
+	147     (000001f4) if-eqz               v9, +3
+
+applyChainOptimized-BB@0x1f8 : 
+	148     (000001f8) return               v16
+
+applyChainOptimized-BB@0x1fa : [ applyChainOptimized-BB@0x202 applyChainOptimized-BB@0x21a ]
+	149     (000001fa) iget                 v9, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintMinHeight I
+	150     (000001fe) if-nez               v9, +e
+
+applyChainOptimized-BB@0x202 : [ applyChainOptimized-BB@0x20a applyChainOptimized-BB@0x20c ]
+	151     (00000202) iget                 v9, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mMatchConstraintMaxHeight I
+	152     (00000206) if-eqz               v9, +3
+
+applyChainOptimized-BB@0x20a : [ applyChainOptimized-BB@0x21a ]
+	153     (0000020a) goto                 +8
+
+applyChainOptimized-BB@0x20c : [ applyChainOptimized-BB@0x218 applyChainOptimized-BB@0x21c ]
+	154     (0000020c) iget                 v9, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mDimensionRatio F
+	155     (00000210) cmpl-float           v9, v9, v19
+	156     (00000214) if-eqz               v9, +4
+
+applyChainOptimized-BB@0x218 : 
+	157     (00000218) return               v16
+
+applyChainOptimized-BB@0x21a : 
+	158     (0000021a) return               v16
+
+applyChainOptimized-BB@0x21c : [ applyChainOptimized-BB@0x230 applyChainOptimized-BB@0x268 ]
+	159     (0000021c) iget-object          v9, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	160     (00000220) add-int/lit8         v13, v46, 1
+	161     (00000224) aget-object          v9, v9, v13
+	162     (00000228) iget-object          v9, v9, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	163     (0000022c) if-eqz               v9, +1e
+
+applyChainOptimized-BB@0x230 : [ applyChainOptimized-BB@0x248 applyChainOptimized-BB@0x264 ]
+	164     (00000230) iget-object          v13, v9, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	165     (00000234) move/from16          v28, v7
+	166     (00000238) iget-object          v7, v13, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	167     (0000023c) aget-object          v7, v7, v46
+	168     (00000240) iget-object          v7, v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	169     (00000244) if-eqz               v7, +10
+
+applyChainOptimized-BB@0x248 : [ applyChainOptimized-BB@0x25c applyChainOptimized-BB@0x25e ]
+	170     (00000248) iget-object          v7, v13, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	171     (0000024c) aget-object          v7, v7, v46
+	172     (00000250) iget-object          v7, v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mTarget Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	173     (00000254) iget-object          v7, v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->mOwner Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	174     (00000258) if-eq                v7, v11, +3
+
+applyChainOptimized-BB@0x25c : [ applyChainOptimized-BB@0x264 ]
+	175     (0000025c) goto                 +4
+
+applyChainOptimized-BB@0x25e : [ applyChainOptimized-BB@0x272 ]
+	176     (0000025e) move-object/from16   v17, v13
+	177     (00000262) goto                 +8
+
+applyChainOptimized-BB@0x264 : [ applyChainOptimized-BB@0x26e ]
+	178     (00000264) const/4              v7, 0
+	179     (00000266) goto                 +4
+
+applyChainOptimized-BB@0x268 : [ applyChainOptimized-BB@0x26e ]
+	180     (00000268) move/from16          v28, v7
+	181     (0000026c) const/4              v7, 0
+
+applyChainOptimized-BB@0x26e : [ applyChainOptimized-BB@0x272 ]
+	182     (0000026e) move-object/from16   v17, v7
+
+applyChainOptimized-BB@0x272 : [ applyChainOptimized-BB@0x276 applyChainOptimized-BB@0x282 ]
+	183     (00000272) if-eqz               v17, +8
+
+applyChainOptimized-BB@0x276 : [ applyChainOptimized-BB@0x286 ]
+	184     (00000276) move-object/from16   v7, v17
+	185     (0000027a) move-object          v11, v7
+	186     (0000027c) move/from16          v10, v26
+	187     (00000280) goto                 +3
+
+applyChainOptimized-BB@0x282 : [ applyChainOptimized-BB@0x286 ]
+	188     (00000282) const/4              v7, 1
+	189     (00000284) move                 v10, v7
+
+applyChainOptimized-BB@0x286 : [ applyChainOptimized-BB@0xfe ]
+	190     (00000286) move-object/from16   v13, v25
+	191     (0000028a) move/from16          v9, v27
+	192     (0000028e) move/from16          v7, v28
+	193     (00000292) goto/16              -ca
+
+applyChainOptimized-BB@0x296 : [ applyChainOptimized-BB@0x2ca applyChainOptimized-BB@0x974 ]
+	194     (00000296) move/from16          v26, v10
+	195     (0000029a) iget-object          v10, v3, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	196     (0000029e) aget-object          v10, v10, v46
+	197     (000002a2) invoke-virtual       v10, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	198     (000002a8) move-result-object   v10
+	199     (000002aa) iget-object          v13, v4, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	200     (000002ae) add-int/lit8         v20, v46, 1
+	201     (000002b2) aget-object          v13, v13, v20
+	202     (000002b6) invoke-virtual       v13, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	203     (000002bc) move-result-object   v13
+	204     (000002be) move-object/from16   v29, v14
+	205     (000002c2) iget-object          v14, v10, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	206     (000002c6) if-eqz               v14, +357
+
+applyChainOptimized-BB@0x2ca : [ applyChainOptimized-BB@0x2d2 applyChainOptimized-BB@0x2f2 ]
+	207     (000002ca) iget-object          v14, v13, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	208     (000002ce) if-nez               v14, +12
+
+applyChainOptimized-BB@0x2d2 : [ applyChainOptimized-BB@0x990 ]
+	209     (000002d2) move/from16          v30, v2
+	210     (000002d6) move-object/from16   v32, v6
+	211     (000002da) move/from16          v39, v7
+	212     (000002de) move/from16          v33, v8
+	213     (000002e2) move/from16          v40, v9
+	214     (000002e6) move-object/from16   v35, v13
+	215     (000002ea) move-object          v13, v0
+	216     (000002ec) move-object          v9, v3
+	217     (000002ee) goto/16              +351
+
+applyChainOptimized-BB@0x2f2 : [ applyChainOptimized-BB@0x300 applyChainOptimized-BB@0x954 ]
+	218     (000002f2) iget-object          v14, v10, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	219     (000002f6) iget                 v14, v14, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	220     (000002fa) const/4              v0, 1
+	221     (000002fc) if-ne                v14, v0, +32c
+
+applyChainOptimized-BB@0x300 : [ applyChainOptimized-BB@0x30c applyChainOptimized-BB@0x32e ]
+	222     (00000300) iget-object          v14, v13, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	223     (00000304) iget                 v14, v14, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->state I
+	224     (00000308) if-eq                v14, v0, +13
+
+applyChainOptimized-BB@0x30c : [ applyChainOptimized-BB@0x972 ]
+	225     (0000030c) move/from16          v30, v2
+	226     (00000310) move-object/from16   v32, v6
+	227     (00000314) move/from16          v39, v7
+	228     (00000318) move/from16          v33, v8
+	229     (0000031c) move/from16          v40, v9
+	230     (00000320) move-object/from16   v35, v13
+	231     (00000324) move-object/from16   v13, v44
+	232     (00000328) move-object          v9, v3
+	233     (0000032a) goto/16              +324
+
+applyChainOptimized-BB@0x32e : [ applyChainOptimized-BB@0x332 applyChainOptimized-BB@0x338 ]
+	234     (0000032e) if-lez               v7, +5
+
+applyChainOptimized-BB@0x332 : [ applyChainOptimized-BB@0x336 applyChainOptimized-BB@0x338 ]
+	235     (00000332) if-eq                v7, v9, +3
+
+applyChainOptimized-BB@0x336 : 
+	236     (00000336) return               v16
+
+applyChainOptimized-BB@0x338 : [ applyChainOptimized-BB@0x33e applyChainOptimized-BB@0x346 ]
+	237     (00000338) const/4              v0, 0
+	238     (0000033a) if-nez               v2, +6
+
+applyChainOptimized-BB@0x33e : [ applyChainOptimized-BB@0x342 applyChainOptimized-BB@0x346 ]
+	239     (0000033e) if-nez               v8, +4
+
+applyChainOptimized-BB@0x342 : [ applyChainOptimized-BB@0x346 applyChainOptimized-BB@0x378 ]
+	240     (00000342) if-eqz               v22, +1b
+
+applyChainOptimized-BB@0x346 : [ applyChainOptimized-BB@0x34a applyChainOptimized-BB@0x35c ]
+	241     (00000346) if-eqz               v5, +b
+
+applyChainOptimized-BB@0x34a : [ applyChainOptimized-BB@0x35c ]
+	242     (0000034a) iget-object          v14, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	243     (0000034e) aget-object          v14, v14, v46
+	244     (00000352) invoke-virtual       v14, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	245     (00000358) move-result          v14
+	246     (0000035a) int-to-float         v0, v14
+
+applyChainOptimized-BB@0x35c : [ applyChainOptimized-BB@0x360 applyChainOptimized-BB@0x378 ]
+	247     (0000035c) if-eqz               v6, +e
+
+applyChainOptimized-BB@0x360 : [ applyChainOptimized-BB@0x378 ]
+	248     (00000360) iget-object          v14, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	249     (00000364) add-int/lit8         v20, v46, 1
+	250     (00000368) aget-object          v14, v14, v20
+	251     (0000036c) invoke-virtual       v14, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	252     (00000372) move-result          v14
+	253     (00000374) int-to-float         v14, v14
+	254     (00000376) add-float/2addr      v0, v14
+
+applyChainOptimized-BB@0x378 : [ applyChainOptimized-BB@0x398 applyChainOptimized-BB@0x3a2 ]
+	255     (00000378) iget-object          v14, v10, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	256     (0000037c) iget                 v14, v14, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	257     (00000380) move/from16          v30, v2
+	258     (00000384) iget-object          v2, v13, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->target Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	259     (00000388) iget                 v2, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedOffset F
+	260     (0000038c) const/16             v20, 0
+	261     (00000390) cmpg-float           v23, v14, v2
+	262     (00000394) if-gez               v23, +7
+
+applyChainOptimized-BB@0x398 : [ applyChainOptimized-BB@0x3a0 ]
+	263     (00000398) sub-float            v23, v2, v14
+	264     (0000039c) sub-float            v23, v23, v15
+
+applyChainOptimized-BB@0x3a0 : [ applyChainOptimized-BB@0x3ac ]
+	265     (000003a0) goto                 +6
+
+applyChainOptimized-BB@0x3a2 : [ applyChainOptimized-BB@0x3a0 ]
+	266     (000003a2) sub-float            v23, v14, v2
+	267     (000003a6) sub-float            v23, v23, v15
+	268     (000003aa) goto                 -5
+
+applyChainOptimized-BB@0x3ac : [ applyChainOptimized-BB@0x3b4 applyChainOptimized-BB@0x588 ]
+	269     (000003ac) const-wide/16        v27, 1 # [1.0]
+	270     (000003b0) if-lez               v7, +ec
+
+applyChainOptimized-BB@0x3b4 : [ applyChainOptimized-BB@0x3b8 applyChainOptimized-BB@0x588 ]
+	271     (000003b4) if-ne                v7, v9, +ea
+
+applyChainOptimized-BB@0x3b8 : [ applyChainOptimized-BB@0x3c4 applyChainOptimized-BB@0x3e6 ]
+	272     (000003b8) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	273     (000003be) move-result-object   v20
+	274     (000003c0) if-eqz               v20, +13
+
+applyChainOptimized-BB@0x3c4 : [ applyChainOptimized-BB@0x3e4 applyChainOptimized-BB@0x3ee ]
+	275     (000003c4) move/from16          v31, v2
+	276     (000003c8) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getParent()Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	277     (000003ce) move-result-object   v2
+	278     (000003d0) iget-object          v2, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListDimensionBehaviors [Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	279     (000003d4) aget-object          v2, v2, v1
+	280     (000003d8) move-object/from16   v32, v6
+	281     (000003dc) sget-object          v6, Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	282     (000003e0) if-ne                v2, v6, +7
+
+applyChainOptimized-BB@0x3e4 : 
+	283     (000003e4) return               v16
+
+applyChainOptimized-BB@0x3e6 : [ applyChainOptimized-BB@0x3ee ]
+	284     (000003e6) move/from16          v31, v2
+	285     (000003ea) move-object/from16   v32, v6
+
+applyChainOptimized-BB@0x3ee : [ applyChainOptimized-BB@0x3fc ]
+	286     (000003ee) add-float            v23, v23, v15
+	287     (000003f2) sub-float            v23, v23, v18
+	288     (000003f6) move-object          v2, v3
+	289     (000003f8) move-object          v6, v2
+	290     (000003fa) move                 v2, v14
+
+applyChainOptimized-BB@0x3fc : [ applyChainOptimized-BB@0x400 applyChainOptimized-BB@0x570 ]
+	291     (000003fc) if-eqz               v6, +ba
+
+applyChainOptimized-BB@0x400 : [ applyChainOptimized-BB@0x408 applyChainOptimized-BB@0x44a ]
+	292     (00000400) sget-object          v11, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	293     (00000404) if-eqz               v11, +23
+
+applyChainOptimized-BB@0x408 : [ applyChainOptimized-BB@0x45a ]
+	294     (00000408) sget-object          v11, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	295     (0000040c) move/from16          v33, v8
+	296     (00000410) move/from16          v34, v9
+	297     (00000414) iget-wide            v8, v11, Landroid/support/constraint/solver/Metrics;->nonresolvedWidgets J
+	298     (00000418) sub-long             v8, v8, v27
+	299     (0000041c) iput-wide            v8, v11, Landroid/support/constraint/solver/Metrics;->nonresolvedWidgets J
+	300     (00000420) sget-object          v8, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	301     (00000424) move-object/from16   v35, v13
+	302     (00000428) move/from16          v36, v14
+	303     (0000042c) iget-wide            v13, v8, Landroid/support/constraint/solver/Metrics;->resolvedWidgets J
+	304     (00000430) add-long             v13, v13, v27
+	305     (00000434) iput-wide            v13, v8, Landroid/support/constraint/solver/Metrics;->resolvedWidgets J
+	306     (00000438) sget-object          v8, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	307     (0000043c) iget-wide            v13, v8, Landroid/support/constraint/solver/Metrics;->chainConnectionResolved J
+	308     (00000440) add-long             v13, v13, v27
+	309     (00000444) iput-wide            v13, v8, Landroid/support/constraint/solver/Metrics;->chainConnectionResolved J
+	310     (00000448) goto                 +9
+
+applyChainOptimized-BB@0x44a : [ applyChainOptimized-BB@0x45a ]
+	311     (0000044a) move/from16          v33, v8
+	312     (0000044e) move/from16          v34, v9
+	313     (00000452) move-object/from16   v35, v13
+	314     (00000456) move/from16          v36, v14
+
+applyChainOptimized-BB@0x45a : [ applyChainOptimized-BB@0x466 applyChainOptimized-BB@0x472 ]
+	315     (0000045a) iget-object          v8, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mNextChainWidget [Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	316     (0000045e) aget-object          v17, v8, v1
+	317     (00000462) if-nez               v17, +8
+
+applyChainOptimized-BB@0x466 : [ applyChainOptimized-BB@0x46a applyChainOptimized-BB@0x46c ]
+	318     (00000466) if-ne                v6, v4, +3
+
+applyChainOptimized-BB@0x46a : [ applyChainOptimized-BB@0x472 ]
+	319     (0000046a) goto                 +4
+
+applyChainOptimized-BB@0x46c : [ applyChainOptimized-BB@0x558 ]
+	320     (0000046c) move-object/from16   v13, v44
+	321     (00000470) goto                 +74
+
+applyChainOptimized-BB@0x472 : [ applyChainOptimized-BB@0x480 applyChainOptimized-BB@0x4a8 ]
+	322     (00000472) int-to-float         v8, v7
+	323     (00000474) div-float            v8, v23, v8
+	324     (00000478) cmpl-float           v9, v12, v19
+	325     (0000047c) if-lez               v9, +16
+
+applyChainOptimized-BB@0x480 : [ applyChainOptimized-BB@0x494 applyChainOptimized-BB@0x498 ]
+	326     (00000480) iget-object          v9, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWeight [F
+	327     (00000484) aget                 v9, v9, v1
+	328     (00000488) const/high16         v11, -16512 # [-1.0]
+	329     (0000048c) cmpl-float           v9, v9, v11
+	330     (00000490) if-nez               v9, +4
+
+applyChainOptimized-BB@0x494 : [ applyChainOptimized-BB@0x4a8 ]
+	331     (00000494) const/4              v8, 0
+	332     (00000496) goto                 +9
+
+applyChainOptimized-BB@0x498 : [ applyChainOptimized-BB@0x4a8 ]
+	333     (00000498) iget-object          v9, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mWeight [F
+	334     (0000049c) aget                 v9, v9, v1
+	335     (000004a0) mul-float            v9, v9, v23
+	336     (000004a4) div-float            v8, v9, v12
+
+applyChainOptimized-BB@0x4a8 : [ applyChainOptimized-BB@0x4b8 applyChainOptimized-BB@0x4ba ]
+	337     (000004a8) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVisibility()I
+	338     (000004ae) move-result          v9
+	339     (000004b0) const/16             v11, 8
+	340     (000004b4) if-ne                v9, v11, +3
+
+applyChainOptimized-BB@0x4b8 : [ applyChainOptimized-BB@0x4ba ]
+	341     (000004b8) const/4              v8, 0
+
+applyChainOptimized-BB@0x4ba : [ applyChainOptimized-BB@0x558 ]
+	342     (000004ba) iget-object          v9, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	343     (000004be) aget-object          v9, v9, v46
+	344     (000004c2) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	345     (000004c8) move-result          v9
+	346     (000004ca) int-to-float         v9, v9
+	347     (000004cc) add-float/2addr      v2, v9
+	348     (000004ce) iget-object          v9, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	349     (000004d2) aget-object          v9, v9, v46
+	350     (000004d6) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	351     (000004dc) move-result-object   v9
+	352     (000004de) iget-object          v11, v10, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	353     (000004e2) invoke-virtual       v9, v11, v2, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolve(Landroid/support/constraint/solver/widgets/ResolutionAnchor; F)V
+	354     (000004e8) iget-object          v9, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	355     (000004ec) add-int/lit8         v11, v46, 1
+	356     (000004f0) aget-object          v9, v9, v11
+	357     (000004f4) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	358     (000004fa) move-result-object   v9
+	359     (000004fc) iget-object          v11, v10, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	360     (00000500) add-float            v13, v2, v8
+	361     (00000504) invoke-virtual       v9, v11, v13, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolve(Landroid/support/constraint/solver/widgets/ResolutionAnchor; F)V
+	362     (0000050a) iget-object          v9, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	363     (0000050e) aget-object          v9, v9, v46
+	364     (00000512) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	365     (00000518) move-result-object   v9
+	366     (0000051a) move-object/from16   v13, v44
+	367     (0000051e) invoke-virtual       v9, v13, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->addResolvedValue(Landroid/support/constraint/solver/LinearSystem;)V
+	368     (00000524) iget-object          v9, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	369     (00000528) add-int/lit8         v11, v46, 1
+	370     (0000052c) aget-object          v9, v9, v11
+	371     (00000530) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	372     (00000536) move-result-object   v9
+	373     (00000538) invoke-virtual       v9, v13, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->addResolvedValue(Landroid/support/constraint/solver/LinearSystem;)V
+	374     (0000053e) add-float/2addr      v2, v8
+	375     (00000540) iget-object          v9, v6, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	376     (00000544) add-int/lit8         v11, v46, 1
+	377     (00000548) aget-object          v9, v9, v11
+	378     (0000054c) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	379     (00000552) move-result          v9
+	380     (00000554) int-to-float         v9, v9
+	381     (00000556) add-float/2addr      v2, v9
+
+applyChainOptimized-BB@0x558 : [ applyChainOptimized-BB@0x3fc ]
+	382     (00000558) move-object/from16   v6, v17
+	383     (0000055c) move/from16          v8, v33
+	384     (00000560) move/from16          v9, v34
+	385     (00000564) move-object/from16   v13, v35
+	386     (00000568) move/from16          v14, v36
+	387     (0000056c) goto/16              -b8
+
+applyChainOptimized-BB@0x570 : 
+	388     (00000570) move/from16          v33, v8
+	389     (00000574) move/from16          v34, v9
+	390     (00000578) move-object/from16   v35, v13
+	391     (0000057c) move/from16          v36, v14
+	392     (00000580) move-object/from16   v13, v44
+	393     (00000584) const/4              v8, 1
+	394     (00000586) return               v8
+
+applyChainOptimized-BB@0x588 : [ applyChainOptimized-BB@0x5ac applyChainOptimized-BB@0x5b6 ]
+	395     (00000588) move/from16          v31, v2
+	396     (0000058c) move-object/from16   v32, v6
+	397     (00000590) move/from16          v33, v8
+	398     (00000594) move/from16          v34, v9
+	399     (00000598) move-object/from16   v35, v13
+	400     (0000059c) move/from16          v36, v14
+	401     (000005a0) move-object/from16   v13, v44
+	402     (000005a4) cmpg-float           v2, v23, v19
+	403     (000005a8) if-gez               v2, +7
+
+applyChainOptimized-BB@0x5ac : [ applyChainOptimized-BB@0x5be ]
+	404     (000005ac) const/4              v8, 0
+	405     (000005ae) const/16             v22, 0
+	406     (000005b2) const/4              v2, 1
+	407     (000005b4) goto                 +5
+
+applyChainOptimized-BB@0x5b6 : [ applyChainOptimized-BB@0x5be ]
+	408     (000005b6) move/from16          v2, v30
+	409     (000005ba) move/from16          v8, v33
+
+applyChainOptimized-BB@0x5be : [ applyChainOptimized-BB@0x5c2 applyChainOptimized-BB@0x728 ]
+	410     (000005be) if-eqz               v2, +b5
+
+applyChainOptimized-BB@0x5c2 : [ applyChainOptimized-BB@0x5de ]
+	411     (000005c2) sub-float            v23, v23, v0
+	412     (000005c6) move-object          v6, v3
+	413     (000005c8) invoke-virtual       v3, v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getBiasPercent(I)F
+	414     (000005ce) move-result          v9
+	415     (000005d0) mul-float            v9, v9, v23
+	416     (000005d4) add-float            v14, v36, v9
+	417     (000005d8) move-object          v11, v6
+	418     (000005da) move/from16          v23, v14
+
+applyChainOptimized-BB@0x5de : [ applyChainOptimized-BB@0x5e2 applyChainOptimized-BB@0x712 ]
+	419     (000005de) if-eqz               v11, +9a
+
+applyChainOptimized-BB@0x5e2 : [ applyChainOptimized-BB@0x5ea applyChainOptimized-BB@0x628 ]
+	420     (000005e2) sget-object          v6, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	421     (000005e6) if-eqz               v6, +21
+
+applyChainOptimized-BB@0x5ea : [ applyChainOptimized-BB@0x634 ]
+	422     (000005ea) sget-object          v6, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	423     (000005ee) move/from16          v38, v2
+	424     (000005f2) move-object/from16   v37, v3
+	425     (000005f6) iget-wide            v2, v6, Landroid/support/constraint/solver/Metrics;->nonresolvedWidgets J
+	426     (000005fa) sub-long             v2, v2, v27
+	427     (000005fe) iput-wide            v2, v6, Landroid/support/constraint/solver/Metrics;->nonresolvedWidgets J
+	428     (00000602) sget-object          v2, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	429     (00000606) move/from16          v39, v7
+	430     (0000060a) iget-wide            v6, v2, Landroid/support/constraint/solver/Metrics;->resolvedWidgets J
+	431     (0000060e) add-long             v6, v6, v27
+	432     (00000612) iput-wide            v6, v2, Landroid/support/constraint/solver/Metrics;->resolvedWidgets J
+	433     (00000616) sget-object          v2, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	434     (0000061a) iget-wide            v6, v2, Landroid/support/constraint/solver/Metrics;->chainConnectionResolved J
+	435     (0000061e) add-long             v6, v6, v27
+	436     (00000622) iput-wide            v6, v2, Landroid/support/constraint/solver/Metrics;->chainConnectionResolved J
+	437     (00000626) goto                 +7
+
+applyChainOptimized-BB@0x628 : [ applyChainOptimized-BB@0x634 ]
+	438     (00000628) move/from16          v38, v2
+	439     (0000062c) move-object/from16   v37, v3
+	440     (00000630) move/from16          v39, v7
+
+applyChainOptimized-BB@0x634 : [ applyChainOptimized-BB@0x640 applyChainOptimized-BB@0x644 ]
+	441     (00000634) iget-object          v2, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mNextChainWidget [Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	442     (00000638) aget-object          v17, v2, v1
+	443     (0000063c) if-nez               v17, +4
+
+applyChainOptimized-BB@0x640 : [ applyChainOptimized-BB@0x644 applyChainOptimized-BB@0x6fe ]
+	444     (00000640) if-ne                v11, v4, +5f
+
+applyChainOptimized-BB@0x644 : [ applyChainOptimized-BB@0x64a applyChainOptimized-BB@0x656 ]
+	445     (00000644) const/4              v2, 0
+	446     (00000646) if-nez               v1, +8
+
+applyChainOptimized-BB@0x64a : [ applyChainOptimized-BB@0x660 ]
+	447     (0000064a) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	448     (00000650) move-result          v3
+	449     (00000652) int-to-float         v2, v3
+	450     (00000654) goto                 +6
+
+applyChainOptimized-BB@0x656 : [ applyChainOptimized-BB@0x660 ]
+	451     (00000656) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	452     (0000065c) move-result          v3
+	453     (0000065e) int-to-float         v2, v3
+
+applyChainOptimized-BB@0x660 : [ applyChainOptimized-BB@0x6fe ]
+	454     (00000660) iget-object          v3, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	455     (00000664) aget-object          v3, v3, v46
+	456     (00000668) invoke-virtual       v3, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	457     (0000066e) move-result          v3
+	458     (00000670) int-to-float         v3, v3
+	459     (00000672) add-float            v3, v23, v3
+	460     (00000676) iget-object          v6, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	461     (0000067a) aget-object          v6, v6, v46
+	462     (0000067e) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	463     (00000684) move-result-object   v6
+	464     (00000686) iget-object          v7, v10, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	465     (0000068a) invoke-virtual       v6, v7, v3, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolve(Landroid/support/constraint/solver/widgets/ResolutionAnchor; F)V
+	466     (00000690) iget-object          v6, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	467     (00000694) add-int/lit8         v7, v46, 1
+	468     (00000698) aget-object          v6, v6, v7
+	469     (0000069c) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	470     (000006a2) move-result-object   v6
+	471     (000006a4) iget-object          v7, v10, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	472     (000006a8) add-float            v9, v3, v2
+	473     (000006ac) invoke-virtual       v6, v7, v9, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolve(Landroid/support/constraint/solver/widgets/ResolutionAnchor; F)V
+	474     (000006b2) iget-object          v6, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	475     (000006b6) aget-object          v6, v6, v46
+	476     (000006ba) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	477     (000006c0) move-result-object   v6
+	478     (000006c2) invoke-virtual       v6, v13, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->addResolvedValue(Landroid/support/constraint/solver/LinearSystem;)V
+	479     (000006c8) iget-object          v6, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	480     (000006cc) add-int/lit8         v7, v46, 1
+	481     (000006d0) aget-object          v6, v6, v7
+	482     (000006d4) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	483     (000006da) move-result-object   v6
+	484     (000006dc) invoke-virtual       v6, v13, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->addResolvedValue(Landroid/support/constraint/solver/LinearSystem;)V
+	485     (000006e2) add-float/2addr      v3, v2
+	486     (000006e4) iget-object          v6, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	487     (000006e8) add-int/lit8         v7, v46, 1
+	488     (000006ec) aget-object          v6, v6, v7
+	489     (000006f0) invoke-virtual       v6, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	490     (000006f6) move-result          v6
+	491     (000006f8) int-to-float         v6, v6
+	492     (000006fa) add-float            v23, v3, v6
+
+applyChainOptimized-BB@0x6fe : [ applyChainOptimized-BB@0x5de ]
+	493     (000006fe) move-object/from16   v11, v17
+	494     (00000702) move-object/from16   v3, v37
+	495     (00000706) move/from16          v2, v38
+	496     (0000070a) move/from16          v7, v39
+	497     (0000070e) goto/16              -98
+
+applyChainOptimized-BB@0x712 : [ applyChainOptimized-BB@0x950 ]
+	498     (00000712) move/from16          v38, v2
+	499     (00000716) move/from16          v39, v7
+	500     (0000071a) move/from16          v41, v0
+	501     (0000071e) move-object          v9, v3
+	502     (00000720) move/from16          v40, v34
+	503     (00000724) goto/16              +116
+
+applyChainOptimized-BB@0x728 : [ applyChainOptimized-BB@0x738 applyChainOptimized-BB@0x74e ]
+	504     (00000728) move/from16          v38, v2
+	505     (0000072c) move-object/from16   v37, v3
+	506     (00000730) move/from16          v39, v7
+	507     (00000734) if-nez               v8, +d
+
+applyChainOptimized-BB@0x738 : [ applyChainOptimized-BB@0x73c applyChainOptimized-BB@0x73e ]
+	508     (00000738) if-eqz               v22, +3
+
+applyChainOptimized-BB@0x73c : [ applyChainOptimized-BB@0x74e ]
+	509     (0000073c) goto                 +9
+
+applyChainOptimized-BB@0x73e : [ applyChainOptimized-BB@0x950 ]
+	510     (0000073e) move/from16          v41, v0
+	511     (00000742) move/from16          v40, v34
+	512     (00000746) move-object/from16   v9, v37
+	513     (0000074a) goto/16              +103
+
+applyChainOptimized-BB@0x74e : [ applyChainOptimized-BB@0x752 applyChainOptimized-BB@0x758 ]
+	514     (0000074e) if-eqz               v8, +5
+
+applyChainOptimized-BB@0x752 : [ applyChainOptimized-BB@0x760 ]
+	515     (00000752) sub-float            v23, v23, v0
+	516     (00000756) goto                 +5
+
+applyChainOptimized-BB@0x758 : [ applyChainOptimized-BB@0x75c applyChainOptimized-BB@0x760 ]
+	517     (00000758) if-eqz               v22, +4
+
+applyChainOptimized-BB@0x75c : [ applyChainOptimized-BB@0x760 ]
+	518     (0000075c) sub-float            v23, v23, v0
+
+applyChainOptimized-BB@0x760 : [ applyChainOptimized-BB@0x772 applyChainOptimized-BB@0x792 ]
+	519     (00000760) move-object/from16   v2, v37
+	520     (00000764) add-int/lit8         v9, v34, 1
+	521     (00000768) int-to-float         v3, v9
+	522     (0000076a) div-float            v3, v23, v3
+	523     (0000076e) if-eqz               v22, +12
+
+applyChainOptimized-BB@0x772 : [ applyChainOptimized-BB@0x77c applyChainOptimized-BB@0x788 ]
+	524     (00000772) move/from16          v6, v34
+	525     (00000776) const/4              v7, 1
+	526     (00000778) if-le                v6, v7, +8
+
+applyChainOptimized-BB@0x77c : [ applyChainOptimized-BB@0x796 ]
+	527     (0000077c) add-int/lit8         v9, v6, -1
+	528     (00000780) int-to-float         v7, v9
+	529     (00000782) div-float            v3, v23, v7
+	530     (00000786) goto                 +8
+
+applyChainOptimized-BB@0x788 : [ applyChainOptimized-BB@0x796 ]
+	531     (00000788) const/high16         v7, 16384 # [2.0]
+	532     (0000078c) div-float            v3, v23, v7
+	533     (00000790) goto                 +3
+
+applyChainOptimized-BB@0x792 : [ applyChainOptimized-BB@0x796 ]
+	534     (00000792) move/from16          v6, v34
+
+applyChainOptimized-BB@0x796 : [ applyChainOptimized-BB@0x7ae applyChainOptimized-BB@0x7b0 ]
+	535     (00000796) move/from16          v7, v36
+	536     (0000079a) move-object/from16   v9, v37
+	537     (0000079e) invoke-virtual       v9, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVisibility()I
+	538     (000007a4) move-result          v11
+	539     (000007a6) const/16             v14, 8
+	540     (000007aa) if-eq                v11, v14, +3
+
+applyChainOptimized-BB@0x7ae : [ applyChainOptimized-BB@0x7b0 ]
+	541     (000007ae) add-float/2addr      v7, v3
+
+applyChainOptimized-BB@0x7b0 : [ applyChainOptimized-BB@0x7b4 applyChainOptimized-BB@0x7d0 ]
+	542     (000007b0) if-eqz               v22, +10
+
+applyChainOptimized-BB@0x7b4 : [ applyChainOptimized-BB@0x7ba applyChainOptimized-BB@0x7d0 ]
+	543     (000007b4) const/4              v11, 1
+	544     (000007b6) if-le                v6, v11, +d
+
+applyChainOptimized-BB@0x7ba : [ applyChainOptimized-BB@0x7d0 ]
+	545     (000007ba) iget-object          v11, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	546     (000007be) aget-object          v11, v11, v46
+	547     (000007c2) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	548     (000007c8) move-result          v11
+	549     (000007ca) int-to-float         v11, v11
+	550     (000007cc) add-float            v7, v36, v11
+
+applyChainOptimized-BB@0x7d0 : [ applyChainOptimized-BB@0x7d4 applyChainOptimized-BB@0x7ec ]
+	551     (000007d0) if-eqz               v8, +e
+
+applyChainOptimized-BB@0x7d4 : [ applyChainOptimized-BB@0x7d8 applyChainOptimized-BB@0x7ec ]
+	552     (000007d4) if-eqz               v5, +c
+
+applyChainOptimized-BB@0x7d8 : [ applyChainOptimized-BB@0x7ec ]
+	553     (000007d8) iget-object          v11, v5, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	554     (000007dc) aget-object          v11, v11, v46
+	555     (000007e0) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	556     (000007e6) move-result          v11
+	557     (000007e8) int-to-float         v11, v11
+	558     (000007ea) add-float/2addr      v7, v11
+
+applyChainOptimized-BB@0x7ec : [ applyChainOptimized-BB@0x7f2 ]
+	559     (000007ec) move-object          v11, v2
+	560     (000007ee) move/from16          v23, v7
+
+applyChainOptimized-BB@0x7f2 : [ applyChainOptimized-BB@0x7f6 applyChainOptimized-BB@0x948 ]
+	561     (000007f2) if-eqz               v11, +ab
+
+applyChainOptimized-BB@0x7f6 : [ applyChainOptimized-BB@0x7fe applyChainOptimized-BB@0x834 ]
+	562     (000007f6) sget-object          v2, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	563     (000007fa) if-eqz               v2, +1d
+
+applyChainOptimized-BB@0x7fe : [ applyChainOptimized-BB@0x838 ]
+	564     (000007fe) sget-object          v2, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	565     (00000802) move/from16          v40, v6
+	566     (00000806) iget-wide            v6, v2, Landroid/support/constraint/solver/Metrics;->nonresolvedWidgets J
+	567     (0000080a) sub-long             v6, v6, v27
+	568     (0000080e) iput-wide            v6, v2, Landroid/support/constraint/solver/Metrics;->nonresolvedWidgets J
+	569     (00000812) sget-object          v2, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	570     (00000816) iget-wide            v6, v2, Landroid/support/constraint/solver/Metrics;->resolvedWidgets J
+	571     (0000081a) add-long             v6, v6, v27
+	572     (0000081e) iput-wide            v6, v2, Landroid/support/constraint/solver/Metrics;->resolvedWidgets J
+	573     (00000822) sget-object          v2, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	574     (00000826) iget-wide            v6, v2, Landroid/support/constraint/solver/Metrics;->chainConnectionResolved J
+	575     (0000082a) add-long             v6, v6, v27
+	576     (0000082e) iput-wide            v6, v2, Landroid/support/constraint/solver/Metrics;->chainConnectionResolved J
+	577     (00000832) goto                 +3
+
+applyChainOptimized-BB@0x834 : [ applyChainOptimized-BB@0x838 ]
+	578     (00000834) move/from16          v40, v6
+
+applyChainOptimized-BB@0x838 : [ applyChainOptimized-BB@0x844 applyChainOptimized-BB@0x854 ]
+	579     (00000838) iget-object          v2, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mNextChainWidget [Landroid/support/constraint/solver/widgets/ConstraintWidget;
+	580     (0000083c) aget-object          v2, v2, v1
+	581     (00000840) if-nez               v2, +a
+
+applyChainOptimized-BB@0x844 : [ applyChainOptimized-BB@0x848 applyChainOptimized-BB@0x84a ]
+	582     (00000844) if-ne                v11, v4, +3
+
+applyChainOptimized-BB@0x848 : [ applyChainOptimized-BB@0x854 ]
+	583     (00000848) goto                 +6
+
+applyChainOptimized-BB@0x84a : [ applyChainOptimized-BB@0x84e ]
+	584     (0000084a) move/from16          v41, v0
+
+applyChainOptimized-BB@0x84e : [ applyChainOptimized-BB@0x932 ]
+	585     (0000084e) const/16             v1, 8
+	586     (00000852) goto                 +70
+
+applyChainOptimized-BB@0x854 : [ applyChainOptimized-BB@0x85a applyChainOptimized-BB@0x866 ]
+	587     (00000854) const/4              v6, 0
+	588     (00000856) if-nez               v1, +8
+
+applyChainOptimized-BB@0x85a : [ applyChainOptimized-BB@0x870 ]
+	589     (0000085a) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getWidth()I
+	590     (00000860) move-result          v7
+	591     (00000862) int-to-float         v6, v7
+	592     (00000864) goto                 +6
+
+applyChainOptimized-BB@0x866 : [ applyChainOptimized-BB@0x870 ]
+	593     (00000866) invoke-virtual       v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHeight()I
+	594     (0000086c) move-result          v7
+	595     (0000086e) int-to-float         v6, v7
+
+applyChainOptimized-BB@0x870 : [ applyChainOptimized-BB@0x874 applyChainOptimized-BB@0x88a ]
+	596     (00000870) if-eq                v11, v5, +d
+
+applyChainOptimized-BB@0x874 : [ applyChainOptimized-BB@0x88a ]
+	597     (00000874) iget-object          v7, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	598     (00000878) aget-object          v7, v7, v46
+	599     (0000087c) invoke-virtual       v7, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	600     (00000882) move-result          v7
+	601     (00000884) int-to-float         v7, v7
+	602     (00000886) add-float            v23, v23, v7
+
+applyChainOptimized-BB@0x88a : [ applyChainOptimized-BB@0x91e applyChainOptimized-BB@0x84e ]
+	603     (0000088a) move/from16          v7, v23
+	604     (0000088e) iget-object          v14, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	605     (00000892) aget-object          v14, v14, v46
+	606     (00000896) invoke-virtual       v14, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	607     (0000089c) move-result-object   v14
+	608     (0000089e) move/from16          v41, v0
+	609     (000008a2) iget-object          v0, v10, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	610     (000008a6) invoke-virtual       v14, v0, v7, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolve(Landroid/support/constraint/solver/widgets/ResolutionAnchor; F)V
+	611     (000008ac) iget-object          v0, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	612     (000008b0) add-int/lit8         v14, v46, 1
+	613     (000008b4) aget-object          v0, v0, v14
+	614     (000008b8) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	615     (000008be) move-result-object   v0
+	616     (000008c0) iget-object          v14, v10, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolvedTarget Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	617     (000008c4) add-float            v1, v7, v6
+	618     (000008c8) invoke-virtual       v0, v14, v1, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->resolve(Landroid/support/constraint/solver/widgets/ResolutionAnchor; F)V
+	619     (000008ce) iget-object          v0, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	620     (000008d2) aget-object          v0, v0, v46
+	621     (000008d6) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	622     (000008dc) move-result-object   v0
+	623     (000008de) invoke-virtual       v0, v13, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->addResolvedValue(Landroid/support/constraint/solver/LinearSystem;)V
+	624     (000008e4) iget-object          v0, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	625     (000008e8) add-int/lit8         v1, v46, 1
+	626     (000008ec) aget-object          v0, v0, v1
+	627     (000008f0) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getResolutionNode()Landroid/support/constraint/solver/widgets/ResolutionAnchor;
+	628     (000008f6) move-result-object   v0
+	629     (000008f8) invoke-virtual       v0, v13, Landroid/support/constraint/solver/widgets/ResolutionAnchor;->addResolvedValue(Landroid/support/constraint/solver/LinearSystem;)V
+	630     (000008fe) iget-object          v0, v11, Landroid/support/constraint/solver/widgets/ConstraintWidget;->mListAnchors [Landroid/support/constraint/solver/widgets/ConstraintAnchor;
+	631     (00000902) add-int/lit8         v1, v46, 1
+	632     (00000906) aget-object          v0, v0, v1
+	633     (0000090a) invoke-virtual       v0, Landroid/support/constraint/solver/widgets/ConstraintAnchor;->getMargin()I
+	634     (00000910) move-result          v0
+	635     (00000912) int-to-float         v0, v0
+	636     (00000914) add-float/2addr      v0, v6
+	637     (00000916) add-float            v23, v7, v0
+	638     (0000091a) if-eqz               v2, -66
+
+applyChainOptimized-BB@0x91e : [ applyChainOptimized-BB@0x92e applyChainOptimized-BB@0x932 ]
+	639     (0000091e) invoke-virtual       v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVisibility()I
+	640     (00000924) move-result          v0
+	641     (00000926) const/16             v1, 8
+	642     (0000092a) if-eq                v0, v1, +4
+
+applyChainOptimized-BB@0x92e : [ applyChainOptimized-BB@0x932 ]
+	643     (0000092e) add-float            v23, v23, v3
+
+applyChainOptimized-BB@0x932 : [ applyChainOptimized-BB@0x7f2 ]
+	644     (00000932) move-object          v11, v2
+	645     (00000934) move-object/from16   v17, v2
+	646     (00000938) move/from16          v6, v40
+	647     (0000093c) move/from16          v0, v41
+	648     (00000940) move/from16          v1, v45
+	649     (00000944) goto/16              -a9
+
+applyChainOptimized-BB@0x948 : [ applyChainOptimized-BB@0x950 ]
+	650     (00000948) move/from16          v41, v0
+	651     (0000094c) move/from16          v40, v6
+
+applyChainOptimized-BB@0x950 : 
+	652     (00000950) const/4              v0, 1
+	653     (00000952) return               v0
+
+applyChainOptimized-BB@0x954 : [ applyChainOptimized-BB@0x972 ]
+	654     (00000954) move/from16          v30, v2
+	655     (00000958) move-object/from16   v32, v6
+	656     (0000095c) move/from16          v39, v7
+	657     (00000960) move/from16          v33, v8
+	658     (00000964) move/from16          v40, v9
+	659     (00000968) move-object/from16   v35, v13
+	660     (0000096c) move-object/from16   v13, v44
+	661     (00000970) move-object          v9, v3
+
+applyChainOptimized-BB@0x972 : 
+	662     (00000972) return               v16
+
+applyChainOptimized-BB@0x974 : [ applyChainOptimized-BB@0x990 ]
+	663     (00000974) move/from16          v30, v2
+	664     (00000978) move-object/from16   v32, v6
+	665     (0000097c) move/from16          v39, v7
+	666     (00000980) move/from16          v33, v8
+	667     (00000984) move/from16          v40, v9
+	668     (00000988) move-object/from16   v35, v13
+	669     (0000098c) move-object          v13, v0
+	670     (0000098e) move-object          v9, v3
+
+applyChainOptimized-BB@0x990 : 
+	671     (00000990) return               v16
+

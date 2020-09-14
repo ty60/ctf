@@ -1,0 +1,26 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->setLength(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:void
+
+setLength-BB@0x0 : [ setLength-BB@0x4 setLength-BB@0xc ]
+	0       (00000000) if-nez               v3, +6
+
+setLength-BB@0x4 : [ setLength-BB@0x18 ]
+	1       (00000004) invoke-virtual       v1, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setWidth(I)V
+	2       (0000000a) goto                 +7
+
+setLength-BB@0xc : [ setLength-BB@0x12 setLength-BB@0x18 ]
+	3       (0000000c) const/4              v0, 1
+	4       (0000000e) if-ne                v3, v0, +5
+
+setLength-BB@0x12 : [ setLength-BB@0x18 ]
+	5       (00000012) invoke-virtual       v1, v2, Landroid/support/constraint/solver/widgets/ConstraintWidget;->setHeight(I)V
+
+setLength-BB@0x18 : 
+	6       (00000018) return-void          
+

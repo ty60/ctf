@@ -1,0 +1,31 @@
+# Landroid/support/constraint/ConstraintLayout;->getViewWidget(Landroid/view/View;)Landroid/support/constraint/solver/widgets/ConstraintWidget; [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+#
+# - return:android.support.constraint.solver.widgets.ConstraintWidget
+
+getViewWidget-BB@0x0 : [ getViewWidget-BB@0x4 getViewWidget-BB@0xa ]
+	0       (00000000) if-ne                v2, v1, +5
+
+getViewWidget-BB@0x4 : 
+	1       (00000004) iget-object          v0, v1, Landroid/support/constraint/ConstraintLayout;->mLayoutWidget Landroid/support/constraint/solver/widgets/ConstraintWidgetContainer;
+	2       (00000008) return-object        v0
+
+getViewWidget-BB@0xa : [ getViewWidget-BB@0xe getViewWidget-BB@0x12 ]
+	3       (0000000a) if-nez               v2, +4
+
+getViewWidget-BB@0xe : [ getViewWidget-BB@0x22 ]
+	4       (0000000e) const/4              v0, 0
+	5       (00000010) goto                 +9
+
+getViewWidget-BB@0x12 : [ getViewWidget-BB@0x22 ]
+	6       (00000012) invoke-virtual       v2, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	7       (00000018) move-result-object   v0
+	8       (0000001a) check-cast           v0, Landroid/support/constraint/ConstraintLayout$LayoutParams;
+	9       (0000001e) iget-object          v0, v0, Landroid/support/constraint/ConstraintLayout$LayoutParams;->widget Landroid/support/constraint/solver/widgets/ConstraintWidget;
+
+getViewWidget-BB@0x22 : 
+	10      (00000022) return-object        v0
+

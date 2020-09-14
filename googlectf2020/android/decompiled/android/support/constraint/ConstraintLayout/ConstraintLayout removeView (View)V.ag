@@ -1,0 +1,20 @@
+# Landroid/support/constraint/ConstraintLayout;->removeView(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+removeView-BB@0x0 : [ removeView-BB@0x12 removeView-BB@0x18 ]
+	0       (00000000) invoke-super         v2, v3, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+	1       (00000006) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	2       (0000000a) const/16             v1, 14
+	3       (0000000e) if-ge                v0, v1, +5
+
+removeView-BB@0x12 : [ removeView-BB@0x18 ]
+	4       (00000012) invoke-virtual       v2, v3, Landroid/support/constraint/ConstraintLayout;->onViewRemoved(Landroid/view/View;)V
+
+removeView-BB@0x18 : 
+	5       (00000018) return-void          
+

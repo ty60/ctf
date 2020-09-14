@@ -1,0 +1,71 @@
+# Landroid/support/constraint/ConstraintSet;->addToVerticalChain(I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v15
+# - v16:int
+# - v17:int
+# - v18:int
+#
+# - return:void
+
+addToVerticalChain-BB@0x0 : [ addToVerticalChain-BB@0x8 addToVerticalChain-BB@0xc ]
+	0       (00000000) const/4              v6, 4
+	1       (00000002) const/4              v7, 3
+	2       (00000004) if-nez               v17, +4
+
+addToVerticalChain-BB@0x8 : [ addToVerticalChain-BB@0xe ]
+	3       (00000008) move                 v4, v7
+	4       (0000000a) goto                 +2
+
+addToVerticalChain-BB@0xc : [ addToVerticalChain-BB@0xe ]
+	5       (0000000c) move                 v4, v6
+
+addToVerticalChain-BB@0xe : [ addToVerticalChain-BB@0x28 addToVerticalChain-BB@0x2c ]
+	6       (0000000e) const/4              v5, 0
+	7       (00000010) const/4              v2, 3
+	8       (00000012) move-object          v0, v15
+	9       (00000014) move/from16          v1, v16
+	10      (00000018) move/from16          v3, v17
+	11      (0000001c) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	12      (00000022) const/4              v10, 4
+	13      (00000024) if-nez               v18, +4
+
+addToVerticalChain-BB@0x28 : [ addToVerticalChain-BB@0x2e ]
+	14      (00000028) move                 v12, v6
+	15      (0000002a) goto                 +2
+
+addToVerticalChain-BB@0x2c : [ addToVerticalChain-BB@0x2e ]
+	16      (0000002c) move                 v12, v7
+
+addToVerticalChain-BB@0x2e : [ addToVerticalChain-BB@0x44 addToVerticalChain-BB@0x5a ]
+	17      (0000002e) const/4              v13, 0
+	18      (00000030) move-object          v8, v15
+	19      (00000032) move/from16          v9, v16
+	20      (00000036) move/from16          v11, v18
+	21      (0000003a) invoke-virtual/range v8 ... v13, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	22      (00000040) if-eqz               v17, +d
+
+addToVerticalChain-BB@0x44 : [ addToVerticalChain-BB@0x5a ]
+	23      (00000044) const/4              v2, 4
+	24      (00000046) const/4              v4, 3
+	25      (00000048) const/4              v5, 0
+	26      (0000004a) move-object          v0, v15
+	27      (0000004c) move/from16          v1, v17
+	28      (00000050) move/from16          v3, v16
+	29      (00000054) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+
+addToVerticalChain-BB@0x5a : [ addToVerticalChain-BB@0x5e addToVerticalChain-BB@0x74 ]
+	30      (0000005a) if-eqz               v17, +d
+
+addToVerticalChain-BB@0x5e : [ addToVerticalChain-BB@0x74 ]
+	31      (0000005e) const/4              v2, 3
+	32      (00000060) const/4              v4, 4
+	33      (00000062) const/4              v5, 0
+	34      (00000064) move-object          v0, v15
+	35      (00000066) move/from16          v1, v18
+	36      (0000006a) move/from16          v3, v16
+	37      (0000006e) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+
+addToVerticalChain-BB@0x74 : 
+	38      (00000074) return-void          
+

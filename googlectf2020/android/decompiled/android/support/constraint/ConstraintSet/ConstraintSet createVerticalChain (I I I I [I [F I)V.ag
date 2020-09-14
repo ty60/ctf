@@ -1,0 +1,116 @@
+# Landroid/support/constraint/ConstraintSet;->createVerticalChain(I I I I [I [F I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v13
+# - v14:int
+# - v15:int
+# - v16:int
+# - v17:int
+# - v18:int[]
+# - v19:float[]
+# - v20:int
+#
+# - return:void
+
+createVerticalChain-BB@0x0 : [ createVerticalChain-BB@0x12 createVerticalChain-BB@0x22 ]
+	0       (00000000) move-object          v6, v13
+	1       (00000002) move-object/from16   v7, v18
+	2       (00000006) move-object/from16   v8, v19
+	3       (0000000a) array-length         v0, v7
+	4       (0000000c) const/4              v1, 2
+	5       (0000000e) if-ge                v0, v1, +a
+
+createVerticalChain-BB@0x12 : 
+	6       (00000012) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	7       (00000016) const-string         v1, 'must have 2 or more widgets in a chain'
+	8       (0000001a) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	9       (00000020) throw                v0
+
+createVerticalChain-BB@0x22 : [ createVerticalChain-BB@0x26 createVerticalChain-BB@0x3e ]
+	10      (00000022) if-eqz               v8, +e
+
+createVerticalChain-BB@0x26 : [ createVerticalChain-BB@0x2e createVerticalChain-BB@0x3e ]
+	11      (00000026) array-length         v0, v8
+	12      (00000028) array-length         v1, v7
+	13      (0000002a) if-eq                v0, v1, +a
+
+createVerticalChain-BB@0x2e : 
+	14      (0000002e) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	15      (00000032) const-string         v1, 'must have 2 or more widgets in a chain'
+	16      (00000036) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	17      (0000003c) throw                v0
+
+createVerticalChain-BB@0x3e : [ createVerticalChain-BB@0x44 createVerticalChain-BB@0x58 ]
+	18      (0000003e) const/4              v0, 0
+	19      (00000040) if-eqz               v8, +c
+
+createVerticalChain-BB@0x44 : [ createVerticalChain-BB@0x58 ]
+	20      (00000044) aget                 v1, v7, v0
+	21      (00000048) invoke-direct        v6, v1, Landroid/support/constraint/ConstraintSet;->get(I)Landroid/support/constraint/ConstraintSet$Constraint;
+	22      (0000004e) move-result-object   v1
+	23      (00000050) aget                 v2, v8, v0
+	24      (00000054) iput                 v2, v1, Landroid/support/constraint/ConstraintSet$Constraint;->verticalWeight F
+
+createVerticalChain-BB@0x58 : [ createVerticalChain-BB@0x84 ]
+	25      (00000058) aget                 v1, v7, v0
+	26      (0000005c) invoke-direct        v6, v1, Landroid/support/constraint/ConstraintSet;->get(I)Landroid/support/constraint/ConstraintSet$Constraint;
+	27      (00000062) move-result-object   v1
+	28      (00000064) move/from16          v9, v20
+	29      (00000068) iput                 v9, v1, Landroid/support/constraint/ConstraintSet$Constraint;->verticalChainStyle I
+	30      (0000006c) aget                 v1, v7, v0
+	31      (00000070) const/4              v2, 3
+	32      (00000072) const/4              v5, 0
+	33      (00000074) move-object          v0, v6
+	34      (00000076) move                 v3, v14
+	35      (00000078) move                 v4, v15
+	36      (0000007a) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	37      (00000080) const/4              v10, 1
+	38      (00000082) move                 v0, v10
+
+createVerticalChain-BB@0x84 : [ createVerticalChain-BB@0x8c createVerticalChain-BB@0xe0 ]
+	39      (00000084) move                 v11, v0
+	40      (00000086) array-length         v0, v7
+	41      (00000088) if-ge                v11, v0, +2c
+
+createVerticalChain-BB@0x8c : [ createVerticalChain-BB@0xc6 createVerticalChain-BB@0xda ]
+	42      (0000008c) aget                 v12, v7, v11
+	43      (00000090) aget                 v1, v7, v11
+	44      (00000094) const/4              v2, 3
+	45      (00000096) add-int/lit8         v0, v11, -1
+	46      (0000009a) aget                 v3, v7, v0
+	47      (0000009e) const/4              v4, 4
+	48      (000000a0) const/4              v5, 0
+	49      (000000a2) move-object          v0, v6
+	50      (000000a4) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	51      (000000aa) add-int/lit8         v0, v11, -1
+	52      (000000ae) aget                 v1, v7, v0
+	53      (000000b2) const/4              v2, 4
+	54      (000000b4) aget                 v3, v7, v11
+	55      (000000b8) const/4              v4, 3
+	56      (000000ba) move-object          v0, v6
+	57      (000000bc) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	58      (000000c2) if-eqz               v8, +c
+
+createVerticalChain-BB@0xc6 : [ createVerticalChain-BB@0xda ]
+	59      (000000c6) aget                 v0, v7, v11
+	60      (000000ca) invoke-direct        v6, v0, Landroid/support/constraint/ConstraintSet;->get(I)Landroid/support/constraint/ConstraintSet$Constraint;
+	61      (000000d0) move-result-object   v0
+	62      (000000d2) aget                 v1, v8, v11
+	63      (000000d6) iput                 v1, v0, Landroid/support/constraint/ConstraintSet$Constraint;->verticalWeight F
+
+createVerticalChain-BB@0xda : [ createVerticalChain-BB@0x84 ]
+	64      (000000da) add-int/lit8         v0, v11, 1
+	65      (000000de) goto                 -2d
+
+createVerticalChain-BB@0xe0 : 
+	66      (000000e0) array-length         v0, v7
+	67      (000000e2) sub-int/2addr        v0, v10
+	68      (000000e4) aget                 v1, v7, v0
+	69      (000000e8) const/4              v2, 4
+	70      (000000ea) const/4              v5, 0
+	71      (000000ec) move-object          v0, v6
+	72      (000000ee) move/from16          v3, v16
+	73      (000000f2) move/from16          v4, v17
+	74      (000000f6) invoke-virtual/range v0 ... v5, Landroid/support/constraint/ConstraintSet;->connect(I I I I I)V
+	75      (000000fc) return-void          
+

@@ -1,0 +1,45 @@
+# Landroid/support/constraint/solver/LinearSystem;->minimizeGoal(Landroid/support/constraint/solver/LinearSystem$Row;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.support.constraint.solver.LinearSystem$Row
+#
+# - return:void
+
+minimizeGoal-BB@0x0 : [ minimizeGoal-BB@0x8 minimizeGoal-BB@0x56 ]
+	0       (00000000) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	1       (00000004) if-eqz               v0, +29
+
+minimizeGoal-BB@0x8 : [ minimizeGoal-BB@0x56 ]
+	2       (00000008) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	3       (0000000c) iget-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->minimizeGoal J
+	4       (00000010) const-wide/16        v3, 1 # [1.0]
+	5       (00000014) add-long/2addr       v1, v3
+	6       (00000016) iput-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->minimizeGoal J
+	7       (0000001a) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	8       (0000001e) sget-object          v1, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	9       (00000022) iget-wide            v1, v1, Landroid/support/constraint/solver/Metrics;->maxVariables J
+	10      (00000026) iget                 v3, v5, Landroid/support/constraint/solver/LinearSystem;->mNumColumns I
+	11      (0000002a) int-to-long          v3, v3
+	12      (0000002c) invoke-static        v1, v2, v3, v4, Ljava/lang/Math;->max(J J)J
+	13      (00000032) move-result-wide     v1
+	14      (00000034) iput-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->maxVariables J
+	15      (00000038) sget-object          v0, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	16      (0000003c) sget-object          v1, Landroid/support/constraint/solver/LinearSystem;->sMetrics Landroid/support/constraint/solver/Metrics;
+	17      (00000040) iget-wide            v1, v1, Landroid/support/constraint/solver/Metrics;->maxRows J
+	18      (00000044) iget                 v3, v5, Landroid/support/constraint/solver/LinearSystem;->mNumRows I
+	19      (00000048) int-to-long          v3, v3
+	20      (0000004a) invoke-static        v1, v2, v3, v4, Ljava/lang/Math;->max(J J)J
+	21      (00000050) move-result-wide     v1
+	22      (00000052) iput-wide            v1, v0, Landroid/support/constraint/solver/Metrics;->maxRows J
+
+minimizeGoal-BB@0x56 : 
+	23      (00000056) move-object          v0, v6
+	24      (00000058) check-cast           v0, Landroid/support/constraint/solver/ArrayRow;
+	25      (0000005c) invoke-direct        v5, v0, Landroid/support/constraint/solver/LinearSystem;->updateRowFromVariables(Landroid/support/constraint/solver/ArrayRow;)V
+	26      (00000062) invoke-direct        v5, v6, Landroid/support/constraint/solver/LinearSystem;->enforceBFS(Landroid/support/constraint/solver/LinearSystem$Row;)I
+	27      (00000068) const/4              v0, 0
+	28      (0000006a) invoke-direct        v5, v6, v0, Landroid/support/constraint/solver/LinearSystem;->optimize(Landroid/support/constraint/solver/LinearSystem$Row; Z)I
+	29      (00000070) invoke-direct        v5, Landroid/support/constraint/solver/LinearSystem;->computeValues()V
+	30      (00000076) return-void          
+

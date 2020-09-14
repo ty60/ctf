@@ -1,0 +1,29 @@
+# Landroid/support/constraint/solver/widgets/ConstraintWidget;->getDimensionBehaviour(I)Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:android.support.constraint.solver.widgets.ConstraintWidget$DimensionBehaviour
+
+getDimensionBehaviour-BB@0x0 : [ getDimensionBehaviour-BB@0x4 getDimensionBehaviour-BB@0xe ]
+	0       (00000000) if-nez               v2, +7
+
+getDimensionBehaviour-BB@0x4 : 
+	1       (00000004) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getHorizontalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+
+getDimensionBehaviour-BB@0xe : [ getDimensionBehaviour-BB@0x14 getDimensionBehaviour-BB@0x1e ]
+	4       (0000000e) const/4              v0, 1
+	5       (00000010) if-ne                v2, v0, +7
+
+getDimensionBehaviour-BB@0x14 : 
+	6       (00000014) invoke-virtual       v1, Landroid/support/constraint/solver/widgets/ConstraintWidget;->getVerticalDimensionBehaviour()Landroid/support/constraint/solver/widgets/ConstraintWidget$DimensionBehaviour;
+	7       (0000001a) move-result-object   v0
+	8       (0000001c) return-object        v0
+
+getDimensionBehaviour-BB@0x1e : 
+	9       (0000001e) const/4              v0, 0
+	10      (00000020) return-object        v0
+

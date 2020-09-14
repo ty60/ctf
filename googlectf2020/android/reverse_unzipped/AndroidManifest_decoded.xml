@@ -1,0 +1,11 @@
+[94m<manifest[39;49;00m [36mxmlns:android=[39;49;00m[33m"http://schemas.android.com/apk/res/android"[39;49;00m [36mandroid:versionCode=[39;49;00m[33m"1"[39;49;00m [36mandroid:versionName=[39;49;00m[33m"1.0"[39;49;00m [36mpackage=[39;49;00m[33m"com.google.ctf.sandbox"[39;49;00m[94m>[39;49;00m
+  [94m<uses-sdk[39;49;00m [36mandroid:minSdkVersion=[39;49;00m[33m"26"[39;49;00m [36mandroid:targetSdkVersion=[39;49;00m[33m"28"[39;49;00m[94m/>[39;49;00m
+  [94m<application[39;49;00m [36mandroid:theme=[39;49;00m[33m"@7F080000"[39;49;00m [36mandroid:label=[39;49;00m[33m"@7F070000"[39;49;00m [36mandroid:icon=[39;49;00m[33m"@7F060000"[39;49;00m [36mandroid:debuggable=[39;49;00m[33m"true"[39;49;00m [36mandroid:allowBackup=[39;49;00m[33m"true"[39;49;00m [36mandroid:supportsRtl=[39;49;00m[33m"true"[39;49;00m [36mandroid:roundIcon=[39;49;00m[33m"@7F060001"[39;49;00m[94m>[39;49;00m
+    [94m<activity[39;49;00m [36mandroid:name=[39;49;00m[33m"com.google.ctf.sandbox.ő"[39;49;00m[94m>[39;49;00m
+      [94m<intent-filter[39;49;00m[94m>[39;49;00m
+        [94m<action[39;49;00m [36mandroid:name=[39;49;00m[33m"android.intent.action.MAIN"[39;49;00m[94m/>[39;49;00m
+        [94m<category[39;49;00m [36mandroid:name=[39;49;00m[33m"android.intent.category.LAUNCHER"[39;49;00m[94m/>[39;49;00m
+      [94m</intent-filter>[39;49;00m
+    [94m</activity>[39;49;00m
+  [94m</application>[39;49;00m
+[94m</manifest>[39;49;00m

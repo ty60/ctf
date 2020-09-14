@@ -1,0 +1,31 @@
+# Landroid/support/constraint/solver/ArrayRow;->createRowEquals(Landroid/support/constraint/solver/SolverVariable; I)Landroid/support/constraint/solver/ArrayRow; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.constraint.solver.SolverVariable
+# - v4:int
+#
+# - return:android.support.constraint.solver.ArrayRow
+
+createRowEquals-BB@0x0 : [ createRowEquals-BB@0x4 createRowEquals-BB@0x1e ]
+	0       (00000000) if-gez               v4, +f
+
+createRowEquals-BB@0x4 : [ createRowEquals-BB@0x32 ]
+	1       (00000004) mul-int/lit8         v0, v4, -1
+	2       (00000008) int-to-float         v0, v0
+	3       (0000000a) iput                 v0, v2, Landroid/support/constraint/solver/ArrayRow;->constantValue F
+	4       (0000000e) iget-object          v0, v2, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	5       (00000012) const/high16         v1, 16256 # [1.0]
+	6       (00000016) invoke-virtual       v0, v3, v1, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+	7       (0000001c) goto                 +b
+
+createRowEquals-BB@0x1e : [ createRowEquals-BB@0x32 ]
+	8       (0000001e) int-to-float         v0, v4
+	9       (00000020) iput                 v0, v2, Landroid/support/constraint/solver/ArrayRow;->constantValue F
+	10      (00000024) iget-object          v0, v2, Landroid/support/constraint/solver/ArrayRow;->variables Landroid/support/constraint/solver/ArrayLinkedVariables;
+	11      (00000028) const/high16         v1, -16512 # [-1.0]
+	12      (0000002c) invoke-virtual       v0, v3, v1, Landroid/support/constraint/solver/ArrayLinkedVariables;->put(Landroid/support/constraint/solver/SolverVariable; F)V
+
+createRowEquals-BB@0x32 : 
+	13      (00000032) return-object        v2
+

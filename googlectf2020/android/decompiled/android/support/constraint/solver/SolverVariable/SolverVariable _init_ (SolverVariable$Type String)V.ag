@@ -1,0 +1,27 @@
+# Landroid/support/constraint/solver/SolverVariable;-><init>(Landroid/support/constraint/solver/SolverVariable$Type; Ljava/lang/String;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.constraint.solver.SolverVariable$Type
+# - v4:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) const/4              v0, -1
+	2       (00000008) iput                 v0, v2, Landroid/support/constraint/solver/SolverVariable;->id I
+	3       (0000000c) iput                 v0, v2, Landroid/support/constraint/solver/SolverVariable;->definitionId I
+	4       (00000010) const/4              v0, 0
+	5       (00000012) iput                 v0, v2, Landroid/support/constraint/solver/SolverVariable;->strength I
+	6       (00000016) const/4              v1, 7
+	7       (00000018) new-array            v1, v1, [F
+	8       (0000001c) iput-object          v1, v2, Landroid/support/constraint/solver/SolverVariable;->strengthVector [F
+	9       (00000020) const/16             v1, 8
+	10      (00000024) new-array            v1, v1, [Landroid/support/constraint/solver/ArrayRow;
+	11      (00000028) iput-object          v1, v2, Landroid/support/constraint/solver/SolverVariable;->mClientEquations [Landroid/support/constraint/solver/ArrayRow;
+	12      (0000002c) iput                 v0, v2, Landroid/support/constraint/solver/SolverVariable;->mClientEquationsCount I
+	13      (00000030) iput                 v0, v2, Landroid/support/constraint/solver/SolverVariable;->usageInRowCount I
+	14      (00000034) iput-object          v3, v2, Landroid/support/constraint/solver/SolverVariable;->mType Landroid/support/constraint/solver/SolverVariable$Type;
+	15      (00000038) return-void          
+
