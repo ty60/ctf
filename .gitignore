@@ -3,6 +3,7 @@
 *.pyc
 m1z0r3*
 .ccls-cache
+venv/
 
 # Ignore large files
 csawctf2015/linux-3.18.4.tar.gz
