@@ -18,7 +18,8 @@ async function solve() {
   // By appending a `.` at the end of FQDN, the `<script src=...`
   // will become access to a different origin, and thus the credential (i.e., cookie)
   // will not be sent by default.
-  // Force the `<script src=...` to send cookies by appending `crossorigin=use-credentials`.
+  // Enforce CORS on `<script src=...` by appending `crossorigin=use-credentials`.
+  // (HTTP access via `<script src=...` is not managed by CORS by default.)
   const genTokenRes = await axios.post(
     `${BASE_URL}/report`,
     qs.stringify({
