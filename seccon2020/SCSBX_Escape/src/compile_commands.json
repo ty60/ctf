@@ -1,0 +1,86 @@
+[
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-O2",
+            "-o",
+            "main.o",
+            "main.cpp"
+        ],
+        "directory": "/home/ty/work/ctf/seccon2020/SCSBX_Escape/src",
+        "file": "main.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-O2",
+            "-o",
+            "instr_sys.o",
+            "instr_sys.cpp"
+        ],
+        "directory": "/home/ty/work/ctf/seccon2020/SCSBX_Escape/src",
+        "file": "instr_sys.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-O2",
+            "-o",
+            "instr_branch.o",
+            "instr_branch.cpp"
+        ],
+        "directory": "/home/ty/work/ctf/seccon2020/SCSBX_Escape/src",
+        "file": "instr_branch.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-O2",
+            "-o",
+            "instr_logic.o",
+            "instr_logic.cpp"
+        ],
+        "directory": "/home/ty/work/ctf/seccon2020/SCSBX_Escape/src",
+        "file": "instr_logic.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-O2",
+            "-o",
+            "scsbx.o",
+            "scsbx.cpp"
+        ],
+        "directory": "/home/ty/work/ctf/seccon2020/SCSBX_Escape/src",
+        "file": "scsbx.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-O2",
+            "-o",
+            "instr_mem.o",
+            "instr_mem.cpp"
+        ],
+        "directory": "/home/ty/work/ctf/seccon2020/SCSBX_Escape/src",
+        "file": "instr_mem.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-O2",
+            "-o",
+            "instr_arith.o",
+            "instr_arith.cpp"
+        ],
+        "directory": "/home/ty/work/ctf/seccon2020/SCSBX_Escape/src",
+        "file": "instr_arith.cpp"
+    }
+]
