@@ -1,0 +1,9 @@
+b *0xffffffffc0000123 - 0x30
+commands
+	printf "[+] note: %016llx\n", $rax
+end
+
+b *0xffffffff814105f6
+commands
+	printf "[+] tty: %016llx\n", $rax
+end

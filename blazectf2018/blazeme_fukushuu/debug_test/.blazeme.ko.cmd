@@ -1,0 +1,1 @@
+cmd_/home/ty/work/ctf/blazectf2018/blazeme_fukushuu/debug_test/blazeme.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/ty/work/ctf/blazectf2018/blazeme_fukushuu/debug_test/blazeme.ko /home/ty/work/ctf/blazectf2018/blazeme_fukushuu/debug_test/blazeme.o /home/ty/work/ctf/blazectf2018/blazeme_fukushuu/debug_test/blazeme.mod.o ;  true

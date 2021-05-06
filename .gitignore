@@ -4,10 +4,31 @@
 m1z0r3*
 .ccls-cache
 venv/
+# Ignore kernel
+linux*/
 
 # Ignore large files
+# find . -size +100M | sed -e 's/\.\///' | grep -v '^\.git' >> .gitignore
 csawctf2015/linux-3.18.4.tar.gz
 seccon2018/cross-gcc494-seccon2018-special_instructions_solved.zip
 seccon2018/q-escape/qemu-system-x86_64.id0
 wctf/wctf2018/camera/data.img
 starctf2019/Chrome
+wctf/wctf2018/camera/data.img
+seccon2018/q-escape/qemu-system-x86_64.id0
+seccon2018/cross-gcc494-seccon2018-special_instructions_solved.zip
+hxpctf2020/kernel-rop-bf9c106d45917343/kernel-rop/rop_rp++.txt
+starctf2019/Chrome/Release/chrome
+starctf2019/depot_tools/.cipd_bin/compiler_proxy
+starctf2019/v8/third_party/icu/.git/objects/pack/pack-b16e8a267a979d22a68acc4c2b9674e42cc40b68.pack
+starctf2019/v8/.git/objects/pack/pack-2b228973748a0f3bd62ab0dbf456e904b28e2f74.pack
+starctf2019/v8/out.gn/x64.debug/libv8_for_testing.so
+starctf2019/v8/out.gn/x64.debug/mksnapshot
+starctf2019/v8/out.gn/x64.debug/libv8.so
+starctf2019/v8/out.gn/x64.debug/cctest
+wctf2018/kernel-pwn-master.zip
+twctf2019/gnote/linux-4.19.65.tar.gz
+csawctf2015/linux-3.18.4.tar.gz
+blazectf2018/blazeme_fukushuu/v4.15.zip
+m1z0r3/webhan/20191120/S3L3CT.zip
+m1z0r3/webhan/20191120/S3L3CT/X.npy

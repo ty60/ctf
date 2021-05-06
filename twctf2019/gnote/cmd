@@ -1,0 +1,24 @@
+# ffffffffc0000149 t gnote_exit   [gnote]
+# ffffffffc00000d0 t gnote_read   [gnote]
+# ffffffffc0000000 t gnote_write  [gnote]
+# ffffffffc0000149 t cleanup_module       [gnote]
+
+target remote :1234
+gef
+
+# b *0xffffffffc0000000
+# b *0xffffffffc00000d0
+# b *0xffffffffc0000112
+
+# xchg esp, eax
+# b *0xffffffff8101992a
+# mov rdi, rax
+# b *0xffffffff810a2db5
+# b *0xffffffff81ca325d
+# b *0xffffffff81018eef
+# commit_creds
+# b *0xffffffff81069df0
+# prepare_kernel_cred
+# b *0xffffffff81069fe0
+
+c

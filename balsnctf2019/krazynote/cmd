@@ -1,0 +1,12 @@
+target remote :1234
+# ioctl
+# b *0xffffffffc0000010
+# init
+# b *0xffffffffc0000400
+set $mod_base=0xffffffffc0000000
+set $heap_base=0xffffffffc0002520
+set $top=0xffffffffc0002500
+set $table=0xffffffffc0004520
+gef
+c
+

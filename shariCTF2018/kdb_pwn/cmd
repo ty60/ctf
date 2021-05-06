@@ -1,0 +1,11 @@
+target remote :1234
+# kdb_ioctl
+# b *0xffffffffc0000240
+
+# switch case jmp inst
+# b *0xffffffffc000025d
+
+# pivot
+b *0xffffffff810e0747
+gef
+c

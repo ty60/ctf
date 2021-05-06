@@ -9,10 +9,10 @@ mount -vt devpts -o gid=4,mode=620 none /dev/pts
 mount -t proc proc /proc
 mount -t sysfs sysfs /sys
 
-echo 2 > /proc/sys/kernel/kptr_restrict
-echo 1 > /proc/sys/kernel/dmesg_restrict
-#echo 0 > /proc/sys/kernel/kptr_restrict
-#echo 0 > /proc/sys/kernel/dmesg_restrict
+# echo 2 > /proc/sys/kernel/kptr_restrict
+# echo 1 > /proc/sys/kernel/dmesg_restrict
+echo 0 > /proc/sys/kernel/kptr_restrict
+echo 0 > /proc/sys/kernel/dmesg_restrict
 
 ifup eth0 > /dev/null 2>/dev/null
 
@@ -29,8 +29,10 @@ echo " ________  ________   ________  _________  _______
     
     "
 
-#sh
+# sh
+# setsid cttyhack setuidgid 0 sh
 setsid cttyhack setuidgid 1000 sh
+# setsid cttyhack setuidgid 1000 ./exploit
 
 umount /proc
 umount /sys

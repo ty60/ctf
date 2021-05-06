@@ -1,0 +1,4 @@
+target remote :1234
+gef
+add-symbol-file ./blazeme.ko 0xffffffffc0000000
+c

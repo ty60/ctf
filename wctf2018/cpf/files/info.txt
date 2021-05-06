@@ -1,0 +1,6 @@
+[submodule "cpf/linux-hardened"]
+	path = cpf/linux-hardened
+	url = https://github.com/copperhead/linux-hardened
+	branch = 4.14-lts
+
+commit 2db4dcdee8ea727da7c6ab7802ed634cb2d1544a

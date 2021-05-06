@@ -1,0 +1,19 @@
+# ffffffffc0000000 t proc_ioctl   [kstack]
+# ffffffffc0000130 t proc_init    [kstack]
+# ffffffffc0000160 t proc_exit    [kstack]
+# ffffffffc0000160 t cleanup_module       [kstack]
+# ffffffffc0000130 t init_module  [kstack]
+
+
+gef
+file ./vmlinux
+target remote :1234
+
+set $head=0xffffffffc00022c0
+
+# b *0xffffffffc0000000
+# stack pivot
+# b *0xffffffff8110f850
+b *0xffffffffc0000112
+
+c

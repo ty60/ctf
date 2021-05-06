@@ -1,0 +1,3 @@
+file ../linux-4.15/vmlinux
+directory ../linux-4.15
+target remote :1234

@@ -1,0 +1,25 @@
+target remote :1234
+
+# ffffffffc0000000 t list_open    [list]
+# ffffffffc0000180 t list_release [list]
+# ffffffffc0000430 t list_ioctl   [list]
+# ffffffffc000047a t exit_list    [list]
+# ffffffffc0000160 t put  [list]
+# ffffffffc000047a t cleanup_module       [list]
+# ffffffffc0000050 t list_read    [list]
+# ffffffffc00003c0 t list_head    [list]
+# ffffffffc00001a0 t add_item     [list]
+# ffffffffc0000300 t remove_item  [list]
+# ffffffffc0000250 t select_item  [list]
+# ffffffffc0000150 t get  [list]
+# ffffffffc00000d0 t list_write   [list]
+
+# list_open
+# hb *0xffffffffc0000000
+# ffffffffc00003c0 t list_head    [list]
+# hb *0xffffffffc00003c0
+# ffffffffc0000250 t select_item  [list]
+# b *0xffffffffc0000250 
+
+gef
+continue

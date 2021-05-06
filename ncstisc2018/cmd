@@ -1,0 +1,25 @@
+target remote :1234
+gef
+
+# ffffffffc0000000 t babyrelease  [babydriver]
+# ffffffffc00024d0 b babydev_struct       [babydriver]
+# ffffffffc0000030 t babyopen     [babydriver]
+# ffffffffc0000080 t babyioctl    [babydriver]
+# ffffffffc00000f0 t babywrite    [babydriver]
+# ffffffffc0000130 t babyread     [babydriver]
+
+# babyioctl
+# hb *0xffffffffc0000080
+# babywrite
+# hb *0xffffffffc00000f0
+
+# copy_from_user
+# hb *0xffffffffc0000119
+
+# stack pivot gadget
+# hb *0xffffffff8108cbf5
+
+# swapgs
+# hb *0xffffffff81063694
+
+c

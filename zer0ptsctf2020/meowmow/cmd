@@ -1,0 +1,25 @@
+gef
+file vmlinux
+target remote :1234
+
+# ffffffffc0000000 t mod_close    [memo]
+# ffffffffc0000010 t mod_write    [memo]
+# ffffffffc0000070 t mod_llseek   [memo]
+# ffffffffc00000d0 t mod_open     [memo]
+# ffffffffc0000110 t mod_read     [memo]
+# ffffffffc0000169 t module_cleanup       [memo]
+# ffffffffc0000169 t cleanup_module       [memo]
+
+# read
+# b *0xffffffffc0000110
+# write
+# b *0xffffffffc0000010
+# ROP
+b *0xffffffff8194d4e3
+# prepare_kernel_cred
+set $addr_prepare_kernel_cred=0xffffffff8107bb50 
+# commit_creds
+set $addr_commit_creds=0xffffffff8107b8b0
+
+
+c
