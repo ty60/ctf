@@ -1,0 +1,4 @@
+diff -r ./buildroot-2020.08-rc3/output/build/linux-5.4.58/include/linux/tnum.h buildroot-2020.08-rc3_original/output/build/linux-5.4.58/include/linux/tnum.h
+34,35d33
+< /* Shift (alsh) a tnum left (by a fixed min_shift) */
+< struct tnum tnum_alshift(struct tnum a, u8 min_shift, u8 insn_bitness);

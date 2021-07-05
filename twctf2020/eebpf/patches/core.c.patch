@@ -1,0 +1,22 @@
+diff -r ./buildroot-2020.08-rc3/output/build/linux-5.4.58/kernel/bpf/core.c ./buildroot-2020.08-rc3_original/output/build/linux-5.4.58/kernel/bpf/core.c
+1149d1148
+< 	INSN_3(ALU, ALSH, X),			\
+1166d1164
+< 	INSN_3(ALU, ALSH, K),			\
+1181d1178
+< 	INSN_3(ALU64, ALSH, X),			\
+1196d1192
+< 	INSN_3(ALU64, ALSH, K),			\
+1385,1396d1380
+< 		CONT;
+< 	ALU_ALSH_X:
+< 		DST = (u64) (u32) (((s32) DST) << SRC);
+< 		CONT;
+< 	ALU_ALSH_K:
+< 		DST = (u64) (u32) (((s32) DST) << IMM);
+< 		CONT;
+< 	ALU64_ALSH_X:
+< 		(*(s64 *) &DST) <<= SRC;
+< 		CONT;
+< 	ALU64_ALSH_K:
+< 		(*(s64 *) &DST) <<= IMM;

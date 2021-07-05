@@ -1,0 +1,3 @@
+diff -r ./buildroot-2020.08-rc3/output/build/linux-5.4.58/kernel/bpf/disasm.c buildroot-2020.08-rc3_original/output/build/linux-5.4.58/kernel/bpf/disasm.c
+80d79
+< 	[BPF_ALSH >> 4] = "s<<=",

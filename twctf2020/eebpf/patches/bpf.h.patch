@@ -1,0 +1,3 @@
+diff -r ./buildroot-2020.08-rc3/output/build/linux-5.4.58/include/uapi/linux/bpf.h buildroot-2020.08-rc3_original/output/build/linux-5.4.58/include/uapi/linux/bpf.h
+27d26
+< #define BPF_ALSH	0xe0	/* sign extending arithmetic shift left */
