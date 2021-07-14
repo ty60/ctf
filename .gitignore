@@ -6,6 +6,8 @@ m1z0r3*
 venv/
 # Ignore kernel
 linux*/
+# Ignore buildroots
+buildroot*/
 
 # Ignore large files
 # find . -size +100M | sed -e 's/\.\///' | grep -v '^\.git' >> .gitignore
