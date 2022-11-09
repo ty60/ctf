@@ -1,0 +1,1 @@
+cmd_/home/ty/work/ctf/asisctf2021/minimemo/modules.order := {   echo /home/ty/work/ctf/asisctf2021/minimemo/minimemo.ko; :; } | awk '!x[$$0]++' - > /home/ty/work/ctf/asisctf2021/minimemo/modules.order

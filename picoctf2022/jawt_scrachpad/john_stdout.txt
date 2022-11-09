@@ -1,0 +1,13 @@
+Using default input encoding: UTF-8
+Loaded 1 password hash (HMAC-SHA256 [password is key, SHA256 256/256 AVX2 8x])
+Will run 8 OpenMP threads
+Proceeding with single, rules:Single
+Press 'q' or Ctrl-C to abort, 'h' for help, almost any other key for status
+Almost done: Processing the remaining buffered candidate passwords, if any.
+Proceeding with wordlist:./john/run/password.lst
+Enabling duplicate candidate password suppressor
+Disabling duplicate candidate password suppressor
+ilovepico        (?)
+1g 0:00:02:54 DONE 2/3 (2022-07-25 19:39) 0.005720g/s 4268Kp/s 4268Kc/s 4268KC/s FIREFIiE..deejayi7
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.

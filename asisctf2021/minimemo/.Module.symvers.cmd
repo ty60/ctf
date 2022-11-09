@@ -1,0 +1,1 @@
+cmd_/home/ty/work/ctf/asisctf2021/minimemo/Module.symvers := sed 's/\.ko$$/\.o/' /home/ty/work/ctf/asisctf2021/minimemo/modules.order | scripts/mod/modpost    -o /home/ty/work/ctf/asisctf2021/minimemo/Module.symvers -e -i Module.symvers   -T -
